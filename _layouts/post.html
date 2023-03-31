@@ -19,7 +19,8 @@ layout: base
       {%- if page.author -%}
       • {% for author in page.author %}
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+        <a itemprop="{{ site.author.url }}" class="p-author h-card" itemprop="name">{{ author }}</a>
+      </span>
       {%- if forloop.last == false %}, {% endif -%}
       {% endfor %}
       {%- endif -%}
