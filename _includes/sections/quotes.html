@@ -1,0 +1,39 @@
+<section class="container quotes banner">
+    <div class="row align-items-center justify-content-center section">
+        <div class="col-lg-6">
+            <div class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel" id="QuoteCarousel">
+                <div class="carousel-inner" style="min-height: 250px;">
+                    {% for quote in site.data.quotes %}
+                    <div class="{% if forloop.first %}carousel-item active {% else %}carousel-item {% endif %}">
+                        <div class="row d-flex justify-content-center">
+                            <div class="d-flex">
+                                <div class="flex-grow-1 ms-4 ps-3">
+                                    <figure>
+                                        <blockquote class="blockquote mb-4">{{ quote.q }}
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer">ঐশিক রেহমান</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%- endfor -%}
+                </div>
+                <div class="carousel-indicators">
+                    {% for quote in site.data.quotes %}
+                    <li data-bs-slide-to="{{ forloop.index0 }}" data-bs-target="#QuoteCarousel" type="button"  class="{% if forloop.first %}active{% endif %}"></li>
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ps-lg-5">
+                <img alt="উদ্ধৃতি ছবি" class="w-100" decoding="async" height="1600" id="Image1_img"
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s1600"
+                    srcset="https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s72 72w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s128 128w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s220 220w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s400 400w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s640 640w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s800 800w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s1024 1024w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s1280 1280w, https://blogger.googleusercontent.com/img/a/AVvXsEh-j2WOxxnro2GQJRGMSegCy1i2vjdHA_cCLptd39Ohe4phTA1MIqpli3jX31hZSvof9NS9EetI4Y3G9HBcxLSBXr1DD6Rigiwglsgnyt2jL60vJqqOe4hjlfZH9N6cV_K0TcCmcRGaPNHXuR_P00ZKoOMCPTnu6GKXIxnx9ZQ1dwcvJtUayb82dykn=s1600 1600w"
+                    width="1412">
+
+            </div>
+        </div>
+    </div>
+</section>
