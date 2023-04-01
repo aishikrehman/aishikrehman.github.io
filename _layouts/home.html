@@ -1,0 +1,76 @@
+---
+layout: base
+---
+<div class="home">
+  {%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {% if site.paginate %}
+  {% assign posts = paginator.posts %}
+  {% else %}
+  {% assign posts = site.posts %}
+  {% endif %}
+
+  <div class="container">
+    {% include sections/quotes.html %}
+    {%- if posts.size > 0 -%}
+    {%- if page.list_title -%}
+    <h2 class="post-list-heading">{{ page.list_title }}</h2>
+    {%- endif -%}
+    <div class="col-lg-12">
+      <div class="row section post-list">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {%- for post in posts -%}
+        <div class="col-lg-4 col-md-6 postbox">
+          <div class="block">
+            <a class="text-black" href="{{ post.url | relative_url }}">
+              <h3 class="mb-3 service-title" style="font-family: Kalpurush">{{ post.title | escape }}</h3>
+            </a>
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+            </a>
+            <p class="mb-0 service-description">
+              {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+              {%- endif -%}
+            </p>
+          </div>
+
+        </div>
+
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  {% if site.paginate %}
+  <div class="pager">
+    <ul class="pagination">
+      {%- if paginator.previous_page %}
+      <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page
+          }}</a></li>
+      {%- else %}
+      <li>
+        <div class="pager-edge">•</div>
+      </li>
+      {%- endif %}
+      <li>
+        <div class="current-page">{{ paginator.page }}</div>
+      </li>
+      {%- if paginator.next_page %}
+      <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
+      {%- else %}
+      <li>
+        <div class="pager-edge">•</div>
+      </li>
+      {%- endif %}
+    </ul>
+  </div>
+  {%- endif %}
+
+  {%- endif -%}
+
+</div>

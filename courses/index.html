@@ -1,0 +1,10 @@
+---
+layout: page
+permalink: /courses/
+
+---
+
+{% assign pages = site.pages | where_exp: 'page', 'page.url contains "/courses/"' %}
+{% for page in pages %}
+  <a href="{{page.url}}">{{page.title}}</a></br>  
+{% endfor %}
