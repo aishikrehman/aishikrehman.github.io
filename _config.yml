@@ -9,6 +9,7 @@ author:
   github:  aishikrehman
   phone: "+880 1601 6606 66"
   url: https://aishikrehman.com/about/
+  picture: /assets/images/Aishik Rehman_Mymensingh_2019.jpg
 
 #Social Media
 youtube_handle: "@aishikrehman"
@@ -19,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   I am Aishik Rehman, a Bengali computational linguist and developer with a background in computer science and engineering. My passion for language, technology and artificial intelligence has led me to explore the intersection of computer science and linguistics. Along with my studies, I am actively engaged in independent research and have contributed to several open-source projects.
   As an introvert, I am constantly looking for ways to express myself creatively, and scalable vector graphics art is one of my outlets. Additionally, I have a strong interest in curriculum development.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://aishikrehman.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Build settings
