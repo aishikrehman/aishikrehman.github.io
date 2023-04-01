@@ -32,6 +32,3 @@ plugins:
 
 # GLOBAL VARIABLES
 permalink: /:year/:month/{% if page.token %}{{ page.token }}{% elsif page.title %}{{ page.title | slugify }}{% else %}{{ page.name | slugify }}{% endif %}
-github_repo:
-  owner: "aishikrehman"
-  name: "aishikrehman.github.io"
