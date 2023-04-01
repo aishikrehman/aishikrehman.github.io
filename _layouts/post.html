@@ -16,5 +16,21 @@ layout: base
   {%- include disqus_comments.html -%}
   {%- endif -%}
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  {% if site.github_repo %}
+  {% capture repo_url %}https://api.github.com/repos/{{ site.github_repo.owner }}/{{ site.github_repo.name }}{% endcapture %}
+  {% assign authorized_collaborators = site.github | where: "login", site.github_repo.owner | map: "collaborators" | join: "," %}
+  {% capture edit_url %}https://github.com/{{ site.github_repo.owner }}/{{ site.github_repo.name }}/edit/main/{{ page.path }}{% endcapture %}
+  {% if site.github and page.path %}
+    {% assign authorized = false %}
+    {% for collaborator in authorized_collaborators %}
+      {% if collaborator == site.github.login %}
+        {% assign authorized = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if authorized %}
+      <a href="{{ edit_url }}" target="_blank">Edit post</a>
+    {% endif %}
+  {% endif %}
+{% endif %}
 </article>
