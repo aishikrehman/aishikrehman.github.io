@@ -4,25 +4,22 @@ title: Aishik Rehman
 author:
   name: Aishik Rehman
   email: hello@aishikrehman.com
-  gmail: aishikrehman@gmail.com
+  facebook: aishikrehman
+  linkedin: aishikrehman
+  github:  aishikrehman
   phone: "+880 1601 6606 66"
   url: https://aishikrehman.com/about/
-  
+
+#Social Media
+youtube_handle: "@aishikrehman"
+wikipedia_username: "Aishik Rehman"
+twitter_username: RehmanAishik  
 
 description: >- # this means to ignore newlines until "baseurl:"
   I am Aishik Rehman, a Bengali computational linguist and developer with a background in computer science and engineering. My passion for language, technology and artificial intelligence has led me to explore the intersection of computer science and linguistics. Along with my studies, I am actively engaged in independent research and have contributed to several open-source projects.
-  
   As an introvert, I am constantly looking for ways to express myself creatively, and scalable vector graphics art is one of my outlets. Additionally, I have a strong interest in curriculum development.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-
-#Social Media
-facebook_username: aishikrehman
-youtube_handle: "@aishikrehman"
-linkedin_username: aishikrehman
-wikipedia_username: "Aishik Rehman"
-twitter_username: RehmanAishik
-github_username:  aishikrehman
 
 
 # Build settings
@@ -31,3 +28,6 @@ github_username:  aishikrehman
 plugins:
   - jekyll-feed
   - jekyll-seo-tag #এটি নিষ্ক্রিয় করলে head.html থেকে seo ডিক্লুড করুন নয়তো ত্রুটি দেখাবে
+
+# GLOBAL VARIABLES
+permalink: /:year/:month/{% if page.token %}{{ page.token }}{% elsif page.title %}{{ page.title | slugify }}{% else %}{{ page.name | slugify }}{% endif %}
