@@ -16,6 +16,7 @@ layout: base
   {%- include disqus_comments.html -%}
   {%- endif -%}
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-  <a class="edit-url" href="{{ page.url | relative_url }}" hidden></a>
+  <a class="edit-url" href="https://github.com/{{site.github_repo.owner}}/{{site.github_repo.name}}/edit/{{site.github_repo.branch}}/{{ page.path }}" hidden></a>
+
+
 </article>
