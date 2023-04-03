@@ -38,3 +38,8 @@ github_repo:
 # fallback information
 og:
   image: /assets/images/Aishik Rehman-og-image.png
+  
+  
+exclude:
+   - Gemfile
+   - Gemfile.lock
