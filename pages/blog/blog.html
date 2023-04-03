@@ -1,0 +1,63 @@
+---
+layout: page
+title: /Blogs
+permalink: /blog/
+---
+
+<header class="post-header pb-5">
+  <h1 class="post-title">{{ page.title | escape }}</h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    {% for post in site.posts %}
+    <div class="col-md-12 col-sm-6">
+      <div class="post post-list">
+        <div class="thumb rounded" style="
+        background-image: url('{%- if post.image -%} {{ post.image }} {% else %} https://themeger.shop/html/katen/html/images/posts/latest-sm-1.jpg {%- endif -%}');
+        height: 210px;
+        width: 100%;
+        background-size: cover;">
+        </div>
+        <div class="details">
+          <ul class="meta list-inline mb-3">
+            <li class="list-inline-item">{{ post.date | date: "%B %d, %Y" }}</li>
+            <li class="list-inline-item">{{ post.categories }}</li>
+          </ul>
+          <h5 class="post-title"><a href="{{ post.url }}">{{ post.title | escape }}</a></h5>
+          {%- if site.show_excerpts -%}
+          <p class="excerpt mb-0">{{ post.content | strip_html | truncatewords: 50 }}</p>
+          {%- endif -%}
+          <div class="post-bottom d-flex align-items-center">
+            <div class="social-share me-auto">
+              <ul class="icons list-unstyled list-inline mb-0">
+
+                <li class="list-inline-item"><a class="social-share-link social-share-facebook"
+                    href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank"
+                    rel="noopener">
+                    <i class="fab fa-facebook-f"></i>
+                  </a></li>
+                <li class="list-inline-item"><a class="social-share-link social-share-twitter"
+                    href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}"
+                    target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                  </a></li>
+                <li class="list-inline-item"><a class="social-share-link social-share-linkedin"
+                    href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+                    target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a></li>
+                <li class="list-inline-item"><a class="social-share-link social-share-pinterest"
+                    href="https://www.pinterest.com/pin/create/button/?url={{ site.url }}{{ page.url }}&media={{ page.image }}&description={{ page.title }}"
+                    target="_blank" rel="noopener">
+                    <i class="fab fa-pinterest-p"></i>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,37 @@
+title: Aishik Rehman
+author:
+  name: Aishik Rehman
+  email: hello@aishikrehman.com
+  facebook: aishikrehman
+  linkedin: aishikrehman
+  github:  aishikrehman
+  phone: "+880 1601 6606 66"
+  url: https://aishikrehman.com/about/
+  picture: /assets/images/Aishik Rehman_Mymensingh_2019.jpg
+
+#Social Media
+youtube_handle: "@aishikrehman"
+wikipedia_username: "Aishik Rehman"
+twitter_username: RehmanAishik  
+
+description: >- # this means to ignore newlines until "baseurl:"
+  I am Aishik Rehman, a Bengali computational linguist and developer with a background in computer science and engineering. My passion for language, technology and artificial intelligence has led me to explore the intersection of computer science and linguistics. Along with my studies, I am actively engaged in independent research and have contributed to several open-source projects.
+  As an introvert, I am constantly looking for ways to express myself creatively, and scalable vector graphics art is one of my outlets. Additionally, I have a strong interest in curriculum development.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://aishikrehman.com" # the base hostname & protocol for your site, e.g. http://example.com
+show_excerpts: true
+
+# Build settings
+# থিম নিষ্ক্রিয় করা হয়েছে, অন্যান্য সেটিংস ধ্বংস করার ঝুঁকি থাকায় অনুগ্রহ করে এটি সক্রিয় করবেন না
+# theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+# - jekyll-sitemap
+
+permalink: /article/:title:output_ext
+github_repo:
+  owner: aishikrehman
+  name: aishikrehman.github.io
+  branch: main
