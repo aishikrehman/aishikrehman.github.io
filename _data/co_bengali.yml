@@ -1,0 +1,27 @@
+- unit: Introduction
+  lessons:
+    - name: one
+    - name: tg
+    - name: 1gfsdg
+    - name: fgdfg.4
+      exercises:
+        - name: 1.fgfdg.0
+          answer: ex 1.4.0
+    - name: 1.fdgdf
+- unit: Writing System
+  lessons:
+    - name: one
+    - name: fgdfg.4
+      exercises:
+        - name: 1.fgfdg.0
+          answer: ex 1.4.0
+    - name: 1.fdgdf
+- unit: বাংলার ইতিহাস
+  lessons:
+    - name: বাংলাদেশের ইতিহাস
+    - name: পশ্চিমবঙ্গের ইতিহাস
+      exercises:
+        - name: অনুশীলনী ১.১
+          answer: উত্তরমালা
+    - name: আধুনিক বাংলা ভাষা
+    - name: প্রাচীন বাংলার ইতিহাস
