@@ -1,0 +1,18 @@
+<script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
+            {% for crumb in crumbs offset: 1 %}
+              {
+                "@type": "ListItem",
+                "position": {{ forloop.index }},
+                "name": "{{ crumb | replace: '-', ' ' | remove: '.html' | capitalize }}",
+                "item": "{{ site.url }}{% for n in (1..forloop.index) %}/{{ crumbs[n] }}{% endfor %}"
+              }
+              {% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }
+</script>

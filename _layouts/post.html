@@ -1,0 +1,59 @@
+---
+layout: base
+---
+{% include seo/breadcrumbs.html %}
+
+<div class="post-hero" {%- if page.image -%} style=" background-image: url('{{ page.image }}');" {%- endif -%}>
+  <div class="wrapper py-5">
+    <header class="post-header container page-content">
+      <h1 class="post-title p-name">{{ page.title | escape }}</h1>
+      <h3>{% include plugins/reading-time.html %}</h3>
+      {% if page.lang == 'bn' %}
+        <h3>- {{ site.bn-author-name}}</h3>
+        {% assign date_parts = page.date | date: "%-d/%-m/%Y" | split: "/" %}
+        {% include plugins/bengali-date.html %}
+        {{ day }} {{ month }} {{ year }} তারিখে প্রকাশিত
+      {% else %}
+        <h3>- {{ site.author.name }}</h3>
+        Published on {{ page.date | date: "%B %-d, %Y" }}
+      {% endif %}<br>
+      <!-- categories: {{ page.categories }} -->
+      <div class="post-bottom d-flex align-items-center">
+        <div class="social-share me-auto">
+          <ul class="icons list-unstyled list-inline mb-0">
+
+            <li class="list-inline-item"><a class="social-share-link social-share-facebook"
+                href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank"
+                rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+              </a></li>
+            <li class="list-inline-item"><a class="social-share-link social-share-twitter"
+                href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}"
+                target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i>
+              </a></li>
+            <li class="list-inline-item"><a class="social-share-link social-share-linkedin"
+                href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+                target="_blank" rel="noopener">
+                <i class="fab fa-linkedin-in"></i>
+              </a></li>
+            <li class="list-inline-item"><a class="social-share-link social-share-pinterest"
+                href="https://www.pinterest.com/pin/create/button/?url={{ site.url }}{{ page.url }}&media={{ page.image }}&description={{ page.title }}"
+                target="_blank" rel="noopener">
+                <i class="fab fa-pinterest-p"></i>
+              </a></li>
+          </ul>
+        </div>
+    </header>
+  </div>
+</div>
+
+<article class="post h-entry container pt-50">
+  <div class="page-content e-content">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+</article>
