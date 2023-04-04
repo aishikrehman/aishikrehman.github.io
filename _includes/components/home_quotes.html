@@ -1,0 +1,37 @@
+<section class="container quotes banner">
+    <div class="row align-items-center justify-content-center section">
+        <div class="col-lg-6">
+            <div class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel" id="QuoteCarousel">
+                <div class="carousel-inner" style="min-height: 250px;">
+                    {% for quote in site.data.quotes %}
+                    <div class="{% if forloop.first %}carousel-item active {% else %}carousel-item {% endif %}">
+                        <div class="row d-flex justify-content-center">
+                            <div class="d-flex">
+                                <div class="flex-grow-1 ms-4 ps-3">
+                                    <figure>
+                                        <blockquote class="blockquote mb-4">{{ quote.q }}
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer">ঐশিক রেহমান</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%- endfor -%}
+                </div>
+                <div class="carousel-indicators">
+                    {% for quote in site.data.quotes %}
+                    <li data-bs-slide-to="{{ forloop.index0 }}" data-bs-target="#QuoteCarousel" type="button"  class="{% if forloop.first %}active{% endif %}"></li>
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ps-lg-5">
+                <img alt="উদ্ধৃতি ছবি" class="w-100" decoding="async" height="1600" id="Image1_img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Aishik_Rehman_abayab.svg/300px-Aishik_Rehman_abayab.svg.png"
+                    width="1412">
+
+            </div>
+        </div>
+    </div>
+</section>

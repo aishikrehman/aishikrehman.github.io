@@ -1,0 +1,24 @@
+<aside class="docs-sidebar">
+    <nav class="collapse docs-links py-md-4" id="docs-docs-nav" aria-label="Docs navigation">
+      <ul class="list-unstyled mb-0 py-3 pt-md-1">
+        {% for unit in site.data.co_bengali %}
+        <li class="mb-1">
+          <em class="btn d-inline-flex align-items-center" data-bs-toggle="collapse" data-bs-target='#{{ unit.unit | replace: " ", "-"}}-{{ forloop.index }}' aria-expanded="false" aria-current="false">{{ unit.unit }}</em>
+          <div class="collapse" id='{{ unit.unit | replace: " ", "-"}}-{{ forloop.index }}'>
+            <ul class="list-unstyled fw-normal pb-1 small">
+              {% for lesson in unit.lessons %}
+              <li>
+                <a href="{{ lesson.url | relative_url}}" class="d-inline-flex align-items-center rounded" {% if page.url contains lesson.url %} aria-current="page"{% endif %}>{{ lesson.name }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+        {% endfor %}
+        <li class="my-3 mx-4 border-top"></li>
+        <li>
+          <a href="#" class="d-inline-flex align-items-center rounded">Go back to All COURSES</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
