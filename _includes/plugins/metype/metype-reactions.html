@@ -1,0 +1,10 @@
+<div id="metype-page-reactions-container" data-metype-account-id='1002958' data-metype-host='https://www.metype.com/'>
+</div>
+<script>
+  talktype(function() {
+    const metypeReactionsContainer = document.getElementById("metype-page-reactions-container");
+    const page_url = metypeReactionsContainer.getAttribute("data-metype-page-url");
+    metypeReactionsContainer.setAttribute('data-metype-page-url', page_url || window.location.href);
+    talktype.pageReactionsIframe(metypeReactionsContainer);
+  })
+</script>
