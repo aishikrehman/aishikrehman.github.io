@@ -1,7 +1,0 @@
-{%- if post.lang == 'bn' -%}
-{%- assign date_parts = post.date | date: '%-d/%-m/%Y' | split: '/' -%}
-{%- include plugins/bengali-date.html -%}
-{{ day }} {{ month }} {{ year }}
-{%- else -%}
-{{ post.date | date: '%B %d, %Y' }}
-{%- endif-%}
