@@ -1,0 +1,24 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  
+  {%- seo -%} {%- comment-%}<!-- এটি সরিয়ে metadata.html ব্যবহার করতে চাইলে আগে কনফিগ থেকে প্লাগ-ইনটি নিষ্ক্রিয় করুন -->{%- endcomment -%}
+  {%- unless page.image -%}
+
+  <meta property="og:image" content="{{ site.og.image }}"><!-- Fallback og:image -->
+  {%- endunless -%}
+
+  <link rel="shortcut icon" type="image/x-icon" href="{{ "/assets/favicon.ico" | relative_url }}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "/assets/css/bootstrap.min.css" | relative_url}}">
+  <link rel="stylesheet" href="{{ "/assets/css/common.css" | relative_url}}">
+
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+  {%- include google-analytics.html -%}
+  {%- endif -%}
+</head>

@@ -1,0 +1,32 @@
+---
+layout: doc.single
+permalink: /c/bengali/
+title: Bengali Language Learning Materials
+footer: false
+---
+{% include components/nav.docs.html %}
+<div class="container-xxl docs-layout">
+  {% include components/aside.course.bengali.html %}
+  <main class="docs-main order-1 my-md-4">
+    <div class="row">
+      {% for unit in site.data.co_bengali %}
+      <div class="col-lg-6">
+        <h3><i class="fa-brands fa-readme"></i> {{ unit.unit }}</h3>
+        <ul>
+          {% for lesson in unit.lessons %}
+          <li><a href="{{ lesson.url }}">{{ lesson.name }}</a></li>
+          {% if lesson.exercises %}
+          <ul>
+            {% for exercise in lesson.exercises %}
+            <li>{{ exercise.name }} </li>
+            <li>{{ exercise.answer }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+</div>

@@ -1,0 +1,99 @@
+---
+layout: page
+title: All Blogs
+permalink: /blog/
+description: "Explore insightful articles on a variety of topics on my personal blog. I share my experiences and opinions on the latest trends and ideas. Stay up-to-date with my engaging content and discover new perspectives."
+---
+
+<header class="post-header pb-5">
+    <h1 class="page-title">{{ page.title | escape }}</h1>
+    <hr>
+</header>
+
+<div class="container">
+    <div class="row">
+        {% for post in site.posts %}
+        <div class="col-md-12 col-sm-6">
+            <div class="post post-list">
+                <div class="thumb rounded"
+                    style=" background-image: url('{%- if post.image -%} {{ post.image }} {% else %} {{site.og.image}} {%- endif -%}');">
+                </div>
+                <div class="details">
+                    <ul class="meta list-inline mb-3">
+                        <li class="list-inline-item">
+                            {% if post.lang == 'bn' %}
+                            {% assign date_parts = post.date | date: "%-d/%-m/%Y" | split: "/" %}
+                            {% include plugins/bengali-date.html %}
+                            {{ day }} {{ month }} {{ year }}
+                            {% else %}
+                            {{ post.date | date: "%B %d, %Y" }}
+                            {% endif %}</li>
+                        <li class="list-inline-item">
+                            {% if post.categories.size > 0 %}
+                            {% for category in post.categories %}
+                            {{ category }}
+                            {% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                            {% else %}
+                            ব্লগ
+                            {% endif %}
+                        </li>
+                        <li class="list-inline-item">
+                            {% assign lang = post.lang | default: site.lang %}
+                            {% capture words %}
+                            {{ post.content | number_of_words | minus: 180 }}
+                            {% endcapture %}
+
+                            {% case lang %}
+                            {% when "bn" %}
+                            {% unless words contains '-' %}
+                            {% assign minutes = words | divided_by: 180 %}
+                            পড়তে সময় লাগবে {{ minutes | replace: '0', '০' | replace: '1', '১' | replace: '2', '২' |
+                            replace: '3',
+                            '৩' | replace: '4', '৪' | replace: '5', '৫' | replace: '6', '৬' | replace: '7', '৭' |
+                            replace: '8', '৮' |
+                            replace: '9', '৯' }} মিনিট
+                            {% endunless %}
+                            {% else %}
+                            {% unless words contains '-' %}
+                            {{ words | plus: 180 | divided_by: 180 | append: ' minutes to read' }}
+                            {% endunless %}
+                            {% endcase %}
+                        </li>
+                    </ul>
+                    <h5 class="post-title fw-bold"><a href="{{ post.url }}">{{ post.title | escape }}</a></h5>
+                    {%- if site.show_excerpts -%}
+                    <p class="excerpt mb-0">{{ post.content | strip_html | truncatewords: 50 }}</p>
+                    {%- endif -%}
+                    <div class="post-bottom d-flex align-items-center">
+                        <div class="social-share me-auto">
+                            <ul class="icons list-unstyled list-inline mb-0">
+                                <li class="list-inline-item"><a class="social-share-link social-share-facebook"
+                                        href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}"
+                                        target="_blank" rel="noopener">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a></li>
+                                <li class="list-inline-item"><a class="social-share-link social-share-twitter"
+                                        href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}"
+                                        target="_blank" rel="noopener">
+                                        <i class="fab fa-twitter"></i>
+                                    </a></li>
+                                <li class="list-inline-item"><a class="social-share-link social-share-linkedin"
+                                        href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ post.url }}"
+                                        target="_blank" rel="noopener">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a></li>
+                                <li class="list-inline-item"><a class="social-share-link social-share-pinterest"
+                                        href="https://www.pinterest.com/pin/create/button/?url={{ site.url }}{{ post.url }}&media={{ post.image }}&description={{ post.title }}"
+                                        target="_blank" rel="noopener">
+                                        <i class="fab fa-pinterest-p"></i>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
