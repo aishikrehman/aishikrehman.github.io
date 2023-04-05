@@ -34,6 +34,7 @@ header: false
 <div class="container-xxl docs-layout">
     {% include components/aside.posts.html %}
     <div class="page-content py-5">
-        {% include_relative /blog.html exclude_front_matter=true %}
+        {% capture blog_content %}{% include_relative /blog.html %}{% endcapture %}
+        {{ blog_content | remove: '---' }}
     </div>
 </div>
