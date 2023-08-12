@@ -2,7 +2,7 @@
 layout: post
 permalink: /docs/dolil_path.html
 title: দলিলের ভাষা, দলিল পড়ার নিয়ম, দলিল লেখার নিয়ম
-footer: false
+lang: bn
 ---
  
 ## দলিলের মধ্যে বিভিন্ন নাম:
