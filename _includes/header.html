@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <h2><a rel="author" class="navbar-brand" href="{{"/" | relative_url }}">{{ site.title | escape }}</a></h2>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MainNavBar"
+      aria-controls="MainNavBar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="MainNavBar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/posts/">Posts</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/c/bengali/">Bengali Learning</a></li>
+            <li><a class="dropdown-item" href="/contact/">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+      <i class="fa fa-search"  type="button" data-bs-toggle="modal" data-bs-target="#SearchModal"></i>
+      <div class="modal fade" id="SearchModal" tabindex="-1" aria-labelledby="SearchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="form mb-3">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control form-input" id="search-input" placeholder="search...">
+              </div>
+              <ul class="p-3" id="results-container"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
