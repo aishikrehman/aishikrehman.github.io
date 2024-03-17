@@ -20,7 +20,7 @@
                 </div>
                 <div class="blog-end-column">
                     <p class="fs-sm">{{ .Summary | truncate 400 }} {{ if .Truncated }}
-                        <a href="{{ .RelPermalink }}">[Read More…]</a>{{ end }}</a>
+                        <a href="{{ .RelPermalink }}">[{{i18n "readmore"}}]</a>{{ end }}</a>
                     </p>
                 </div>
             </article>
