@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="container py-5 mb-lg-3">
+	<div class="row justify-content-center pt-lg-4 text-center">
+		<div class="col-lg-5 col-md-7 col-sm-9">
+			<img alt="404 Error" class="d-block mx-auto mb-5" src="https://cdn.pixabay.com/photo/2021/07/21/12/49/error-6482984_960_720.png" width="340">
+			<h1 class="h3">Oops!</h1>
+			<h3 class="h5 fw-normal mb-4">Error 404. The page you requested could not be found.</h3>
+			<p class="fs-md mb-4"><u>এছাড়াও আপনার জন্য সহায়ক কিছু পরামর্শ এখানে দেওয়া হল</u></p>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-xl-8 col-lg-10">
+			<div class="row">
+				<div class="col-sm-4 mb-3">
+					<a class="card h-100 border-0 shadow-sm" href="{{ .Site.BaseURL | relLangURL }}">
+						<div class="card-body">
+							<div class="d-flex align-items-center text-primary h4 mb-0">
+								<i class="bi bi-house"></i>
+								<div class="ps-3">
+									<h5 class="fs-sm mb-0">মূলপাতা</h5>
+									<span class="text-muted fs-ms">মূলপাতায় ফেরত যান</span>
+								</div>
+							</div>
+						</div>
+					</a></div>
+				<div class="col-sm-4 mb-3"><a class="card h-100 border-0 shadow-sm" href="/p/catalog.html">
+						<div class="card-body">
+							<div class="d-flex align-items-center"><i class="bi bi-list-check text-success h4 mb-0"></i>
+								<div class="ps-3">
+									<h5 class="fs-sm mb-0">ক্যাটালগ</h5>
+									<span class="text-muted fs-ms">ই-গ্রন্থাগারের সম্পূর্ণ ক্যাটালগ দেখুন</span>
+								</div>
+							</div>
+						</div>
+					</a></div>
+				<div class="col-sm-4 mb-3"><a class="card h-100 border-0 shadow-sm" href="/p/contact.html">
+						<div class="card-body">
+							<div class="d-flex align-items-center"><i
+									class="bi bi-envelope-at-fill text-info h4 mb-0"></i>
+								<div class="ps-3">
+									<h5 class="fs-sm mb-0">সাহায্য কেন্দ্র</h5><span
+										class="text-muted fs-ms">সাহায্যকেন্দ্রের মাধ্যমে সাহায্য নিন</span>
+								</div>
+							</div>
+						</div>
+					</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ end}}

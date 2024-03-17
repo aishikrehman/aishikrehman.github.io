@@ -1,0 +1,71 @@
+
+baseURL: "https://aishikrehman.com"
+DefaultContentLanguage: "bn"
+defaultContentLanguage: "bn"
+defaultContentLanguageInSubdir: "false"
+enableMissingTranslationPlaceholders: "false"
+
+languages:
+  bn:
+    disabled: false
+    contentDir: content/bn
+    languageCode: bn-BD
+    languageDirection: ltr
+    languageName: বাংলা
+    params:
+      subtitle: উইকিমিডিয়ান, লেক্সিকোগ্রাফার
+      author:
+        name: ঐশিক রেহমান
+    title: ঐশিক রেহমান
+    weight: 1
+  en:
+    disabled: false
+    contentDir: content/en
+    languageCode: en-US
+    languageDirection: ltr
+    languageName: English
+    params:
+      subtitle: Wikimedian and Lexicolgist and CSEr.
+      author:
+        name: ঐশিক রেহমান
+    title: Aishik Rehman
+    weight: 2
+    
+paginate: 10
+
+Params:
+  title_bn: "ঐশিক রেহমান"
+  author:
+    name: Aishik Rehman
+    bio: Wikimedian and Lexicolgist and CSEr.
+    url: "https://aishikrehman.com/about/bn/"
+    email: hello@aishikrehman.com
+    facebook: aishikrehman
+    linkedin: aishikrehman
+    youtube: "@aishikrehman"
+    github:  aishikrehman
+    phone: "+880 1601 6606 66"
+    url: https://aishikrehman.com/about/
+    picture: /assets/images/Aishik Rehman_Mymensingh_2019.jpg
+    wikipedia: "Aishik Rehman"
+    twitter: RehmanAishik 
+  github_repo:
+    owner: aishikrehman
+    name: aishikrehman.github.io
+    branch: main
+  og:
+    image: /assets/images/Aishik Rehman-og-image.png
+
+description: Aishik Rehman, a Bengali computational linguist and developer with a background in computer science and engineering. My passion for language, technology and artificial intelligence has led me to explore the intersection of computer science and linguistics. Along with my studies, I am actively engaged in independent research and have contributed to several open-source projects.
+  As an introvert, I am constantly looking for ways to express myself creatively, and scalable vector graphics art is one of my outlets. Additionally, I have a strong interest in curriculum development.
+taxonomies:
+  tag: tags
+
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+      hardWraps: true
+outputs:
+  home: [ "HTML", "RSS", "JSON"]

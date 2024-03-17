@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "searchIndex" slice -}}
+{{- range .Site.RegularPages -}}
+    {{- $.Scratch.Add "searchIndex" (dict "title" .Title "lyric" .Params.lyric "singer" .Params.singer "composer" .Params.composer "url" .Permalink "content" .Content ) -}}
+{{- end -}}
+{{- $.Scratch.Get "searchIndex" | jsonify -}}

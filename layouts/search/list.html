@@ -1,0 +1,96 @@
+{{ define "main" }}
+<div class="bg-accent pt-4 pb-5">
+	<div class="container pt-2 pb-3 pt-lg-3 pb-lg-4">
+		<h1 class="h3 text-light mb-0">{{ .Title }}</h1>
+	</div>
+</div>
+<div class="container pb-5 mb-2 mb-md-4">
+	<!-- Toolbar-->
+	<div class="bg-light shadow-lg rounded-3 p-4 mt-n5 mb-4">
+		<div class="row gy-3 gx-4 justify-content-between">
+			<div class="col-lg-3 col-md-4 col-sm-7 col-12">
+				<div class="d-flex align-items-center flex-shrink-0">
+					<label for="search-select"
+						class="form-label mb-0 me-2 pe-1 fw-normal text-nowrap d-sm-block d-none">অনুসন্ধানের
+						ধরন:</label>
+					<select id="search-select" class="form-select">
+						<option value="title">গানের শিরোনাম</option>
+						<option value="lyric">গীতকার অনুযায়ী</option>
+						<option value="composer">সুরকার অনুযায়ী</option>
+						<option value="content">যেকোনো লাইন/শব্দ অনুযায়ী</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md col-12">
+				<div class="input-group">
+					<input id="search-input" class="form-control pe-5 rounded" type="text" placeholder="লিখুন...">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="search-results" class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-sm-4 gy-3 pt-sm-3">
+	</div>
+</div>
+<script>
+	$(document).ready(function () {
+		const input = $("#search-input");
+		const select = $("#search-select");
+		const results = $("#search-results");
+	
+		let pages;
+	
+		// Load the index.json file
+		$.getJSON("/index.json", function (data) {
+			pages = data;
+			// Call searchPages after loading data
+			searchPages();
+		});
+	
+		// Event listener for input changes
+		input.on("input", function () {
+			searchPages();
+		});
+	
+		// Event listener for select changes
+		select.on("change", function () {
+			searchPages();
+		});
+	
+		// Function to search pages based on selected parameter
+		function searchPages() {
+			const query = input.val().toLowerCase().trim();
+			const selectedParam = select.val();
+	
+			// Clear previous search results
+			results.empty();
+	
+			if (query !== "") {
+				// Filter pages based on the selected parameter
+				const filteredPages = pages.filter(function (page) {
+					const value = page[selectedParam];
+					return value && typeof value === 'string' && value.toLowerCase().includes(query);
+				});
+				// Display search results
+				filteredPages.forEach(function (page) {
+					const lineBreak = document.createElement("br");
+					const divColMb2 = $("<div>").addClass("col mb-2");
+					const divCardh100 = $("<div>").addClass("card h-100 border-0 shadow");
+					const divCardBody = $("<div>").addClass("card-body");
+					const workTitleLink = $("<a>").addClass("d-block").attr("href", page.url);
+					const workTitle = $("<h4>").addClass("product-title mb-2").text(page.title);
+					const gitkar = $("<span>").addClass("product-title mb-2 fs-base").text("গীতিকার: " + page.lyric);
+					const gayok = $("<span>").addClass("product-title mb-2 fs-base").text("গায়ক: " + page.singer);
+					// const band = $("<span>").addClass("product-title mb-2 fs-base").text("ব্যান্ড: " + page.band);
+					workTitleLink.append(workTitle, lineBreak, gitkar, lineBreak, gayok);
+					divCardBody.append(workTitleLink);
+					divCardh100.append(divCardBody);
+					divColMb2.append(divCardh100);
+					results.append(divColMb2);
+				});
+			}
+		}
+	});
+	
+</script>
+{{ end}}

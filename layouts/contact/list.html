@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="container mb-5 py-5">
+    <div class="bg-light py-5">
+        <section class="col-lg-8 m-auto pt-2 pt-lg-4 pb-4 mb-3">
+            <div class="pt-2 px-4 pe-lg-0 ps-xl-5">
+                <h2 class="h6 border-bottom pb-3 mb-3">{{.Title }}</h2>
+                <div class="row pb-4 gx-4 gy-3">
+                    <div class="col-sm-6">
+                        <label class="form-label" for="mc-fn">First name <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" value="" id="mc-fn">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label" for="mc-ln">Last name <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" value="" id="mc-ln">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="mc-email">Email address <span
+                                class="text-danger">*</span></label>
+                        <input class="form-control" type="email" value="" id="mc-email">
+                    </div>
+                    <div class="col-sm-12">
+                        <label class="form-label" for="mc-company">Message</label>
+                        <textarea type="text" value="" id="mc-company" class="form-control" rows="10"></textarea>
+                    </div>
+
+                </div>
+                <button class="btn btn-sm btn-accent w-100" type="submit">Place order</button>
+                <div class="text-center mt-5">অথবা, ইমেইল করুন {{ .Site.Params.author.email }} ঠিকানায়।</div>
+            </div>
+        </section>
+    </div>
+</div>
+{{ end }}

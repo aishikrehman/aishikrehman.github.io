@@ -1,0 +1,19 @@
+body {
+    font-family: Noto Serif Bengali, Roboto, Helvetica, sans-serif;
+}
+
+/* Recent Books*/
+.book-item {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-right: 1px solid #eae8e4;
+    border-bottom: 1px solid #eae8e4;
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-toolbar {
+        width: 100%;
+    }
+}
+

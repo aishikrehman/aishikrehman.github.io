@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="">
+{{ partial "head.html" . }}
+<body>
+    {{ partial "header.html" . }}
+    <main class="page-wrapper" style="flex: 1 0 auto;" aria-label="Content">
+        {{ block "main" . }}{{ end }}
+    </main>
+</body>
+</html>
