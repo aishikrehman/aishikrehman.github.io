@@ -1,8 +1,9 @@
 --- 
-layout: post
 title: প্রুফ সংশোধনের নিয়ম
-permalink: /2022/09/proof-check-1_01244151556.html
-lang: bn
+aliases:
+- /2022/09/proof-check-1_01244151556.html
+tags: 
+- proofreading
 ---
 <img src='https://1.bp.blogspot.com/-VmG-Yv-zhLA/X76JRUmVK0I/AAAAAAAABAs/zQdKjeUE7OsqzxtHVp5fqRBQRLJKbUDGgCPcBGAYYCw/s600/%25E0%25A6%25AC%25E0%25A6%25BE%25E0%25A6%2582%25E0%25A6%25B2%25E0%25A6%25BE%2B%25E0%25A6%25AA%25E0%25A7%258D%25E0%25A6%25B0%25E0%25A7%2581%25E0%25A6%25AB%2B%25E0%25A6%25B8%25E0%25A6%2582%25E0%25A6%25B6%25E0%25A7%258B%25E0%25A6%25A7%25E0%25A6%25A8%2B%25E0%25A6%2589%25E0%25A6%25A6%25E0%25A6%25BE%25E0%25A6%25B9%25E0%25A6%25B0%25E0%25A6%25A3.webp'/>
 <div style="text-align: left;">প্রুফ সংশোধনে বেশকিছু চিহ্ন বা প্রতীক ব্যবহৃত হয়। নিচে সেগুলোরা ধারাবাহিক ব্যবহার এবং সর্বনিচে উদাহরণ ও প্রয়োগ দেখানো হয়েছে-</div><h3 style="text-align: left;">লাইন/অনুচ্ছেদ/অক্ষর/বর্ণ</h3><p>প্রুফ সংশােধনের চিহ্নের আন্তর্জাতিক কিছু স্ট্যান্ডার্ড মেনে চলা উচিত। সঙ্গে দেশের নিয়মও অল্প অল্প উল্লেখ করার চেষ্টা

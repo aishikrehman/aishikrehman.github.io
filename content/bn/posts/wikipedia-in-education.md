@@ -4,6 +4,8 @@ date: 2022-09-25
 image: https://wikimedia.org.bd/images/Wikipedia_banner12.jpg
 tags: 
 - wikipedia
+aliases:
+- /2022/09/stop-telling-students-not-to-use-wikipedia-instead-teach-them-how.html
 ---
 
 তৃতীয় শ্রেণী পর্যন্ত শিক্ষকরা আমাকে উইকিপিডিয়া এড়িয়ে চলতে বলেছিলেন কারণ এটি "অনির্ভরযোগ্য"। একথা কেবল আমি নয়, কমবেশি

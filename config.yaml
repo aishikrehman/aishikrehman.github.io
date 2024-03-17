@@ -22,10 +22,8 @@ languages:
       main:
         - name: পরিচিতি
           url: /about/
-        - name: ডক
-          url: /docs/
-        - name: ব্লগ
-          url: /blogs/
+        - name: পোস্ট
+          url: /posts/
         - name: ট্যাগ
           url: /tags/
   en:
@@ -44,6 +42,8 @@ languages:
       main:
         - name: About
           url: /en/about/
+        - name: Posts
+          url: /en/posts/
 
 paginate: 10
 
