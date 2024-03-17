@@ -1,7 +1,7 @@
 ---
 title: শালীন ভাষায় গালির চর্চা
 tags: 
-- language
+    - language
 date: 2022-12-05
 draft: true
 ---

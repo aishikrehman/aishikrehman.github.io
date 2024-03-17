@@ -19,7 +19,7 @@
     <div class="blog-start-column">
         <div class="d-flex align-items-center fs-sm pb-2 mb-1">
             {{ with .Params.date }}
-            <span class="blog-entry-meta-link">Published on {{ . | dateFormat "Jan 01" }}</span>
+            <span class="blog-entry-meta-link">{{ . | dateFormat "January 2, 2006" }}</span>
             {{ end }}
         </div>
         <h2 class="h5 blog-entry-title"><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>

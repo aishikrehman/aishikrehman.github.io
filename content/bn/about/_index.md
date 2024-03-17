@@ -1,5 +1,5 @@
 ---
-title: "About ME"
+title: "About me"
 ---
 Greetings! My name is Aishik Rehman, and I am a computer science engineer and computational linguist based in Bangladesh. I am currently pursuing my undergraduate degree in Computer Science and Engineering from Green University of Bangladesh.
 
