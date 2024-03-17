@@ -1,0 +1,24 @@
+{{ range .Paginator.Pages }}
+<article class="blog-list border-bottom pb-4 mb-5">
+    <div class="blog-start-column">
+        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+            {{ with .Params.date }}
+            <span class="blog-entry-meta-link">Published on {{ . | dateFormat "Jan 01" }}</span>
+            {{ end }}
+        </div>
+        <h2 class="h5 blog-entry-title"><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>
+        {{ if isset .Params "tags" }}
+        <div class="fs-sm text-muted pe-2 mb-2">{{ range .Params.tags }}<a class="btn-tag me-2 mb-2"
+                href="/tags/{{ . | urlize }}">#{{ . }}</a>{{ end }}
+        </div>
+        {{ end }}
+
+    </div>
+    <div class="blog-end-column">
+        <p class="fs-sm">{{ .Summary | truncate 400 }} {{ if .Truncated }}
+            <a href="{{ .RelPermalink }}">[{{i18n "readmore"}}]</a>{{ end }}</a>
+        </p>
+    </div>
+</article>
+{{ end }}
+{{ template "_internal/pagination.html" . }}
