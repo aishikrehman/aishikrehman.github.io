@@ -34,7 +34,6 @@ languages:
 paginate: 10
 
 Params:
-  title_bn: "ঐশিক রেহমান"
   author:
     name: Aishik Rehman
     bio: Wikimedian and Lexicolgist and CSEr.

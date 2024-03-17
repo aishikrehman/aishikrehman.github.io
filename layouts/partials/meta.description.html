@@ -1,0 +1,7 @@
+{{- if ne .Description "" -}}
+{{ .Description }}
+{{- else if isset .Params "snippet" -}}
+{{ .Params.snippet }} 
+{{- else -}}
+{{ .Summary }}
+{{- end -}}
