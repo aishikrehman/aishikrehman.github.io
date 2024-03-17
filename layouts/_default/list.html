@@ -1,4 +1,20 @@
 {{ define "main" }}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {{ range $index, $page := .Paginator.Pages }}
+        {{- if $index -}},{{- end -}}
+        {
+          "@type": "ListItem",
+          "position": {{ add $index 1 }},
+          "url": "{{ .Permalink }}"
+        }
+        {{- end -}}
+      ]
+    }
+</script>
 <div class="container">
     <div class="row justify-content-center pt-5 mt-2">
         <section class="col-lg-9">

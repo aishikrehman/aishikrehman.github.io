@@ -1,9 +1,9 @@
-<header class="bg-light shadow-sm">
+<header class="bg-light border-bottom">
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand me-4 order-lg-1" href="{{ .Site.BaseURL | relLangURL }}">
                 <div class="navbar-tool-text ms-n3 d-block position-relative">
-                    <span class="fw-bold">{{ .Site.Title }}</span>
+                    <span class="h5 fw-bold">{{ .Site.Title }}</span>
                     <span class="d-block">{{ .Site.Params.subtitle }}</span>
                     {{/* <span class="d-block badge text-bg-info w-100">{{ .Language.LanguageName }} সংস্করণ</span> */}}
                 </div>
@@ -14,7 +14,7 @@
 
             <div class="navbar-toolbar order-lg-3 navbar-toolbar d-flex align-items-center">
                 <div class="dropdown ps-6">
-                    <button class="btn" type="button" data-bs-toggle="dropdown"
+                    <button class="btn btn-outline-accent me-3" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false"><i class="bi bi-translate"></i> {{ .Language.LanguageName }}</button>
                     <ul class="dropdown-menu">
                         {{ range .Site.Languages }}
@@ -39,21 +39,6 @@
                         <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                     {{- end }}
-                    {{/*  <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                            data-bs-auto-close="outside">নোটবই</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">প্রাথমিক</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/textbooks/c1">১ম শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c2">২য় শ্রেণি</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/textbooks">সবগুলো একসঙ্গে</a></li>
-                        </ul>
-                    </li>  */}}
                 </ul>
             </div>
         </div>

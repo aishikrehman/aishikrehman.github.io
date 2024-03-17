@@ -3,5 +3,7 @@
 {{- else if isset .Params "snippet" -}}
 {{ .Params.snippet }} 
 {{- else -}}
-{{ .Summary }}
-{{- end -}}
+    {{- if eq .Kind "home"  }}{{.Site.Params.description }}
+    {{- else -}}{{ .Summary }}
+    {{ end -}}
+{{- end -}} 

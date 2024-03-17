@@ -18365,11 +18365,6 @@ a.nav-link:hover .media-tab-media {
         margin-left: -0.25rem
     }
 
-    .navbar-expand-sm .dropdown-menu>.dropdown:hover>.dropdown-menu {
-        -webkit-animation: fade-in .25s ease-in-out;
-        animation: fade-in .25s ease-in-out
-    }
-
     .navbar-expand-sm .dropdown-menu:not(.dropdown-menu-dark) {
         border-color: #fff;
         background-color: #fff;
@@ -18378,12 +18373,6 @@ a.nav-link:hover .media-tab-media {
 
     .navbar-expand-sm .dropdown-menu:not(.dropdown-menu-dark) .dropdown-menu {
         background-color: #fff
-    }
-
-    .navbar-expand-sm .dropdown:hover>.dropdown-menu {
-        display: block;
-        -webkit-animation: slide-up .25s ease-in-out;
-        animation: slide-up .25s ease-in-out
     }
 
     .navbar-expand-sm .navbar-tool-text {
@@ -18508,10 +18497,6 @@ a.nav-link:hover .media-tab-media {
         margin-left: -0.25rem
     }
 
-    .navbar-expand-md .dropdown-menu>.dropdown:hover>.dropdown-menu {
-        -webkit-animation: fade-in .25s ease-in-out;
-        animation: fade-in .25s ease-in-out
-    }
 
     .navbar-expand-md .dropdown-menu:not(.dropdown-menu-dark) {
         border-color: #fff;
@@ -18523,11 +18508,6 @@ a.nav-link:hover .media-tab-media {
         background-color: #fff
     }
 
-    .navbar-expand-md .dropdown:hover>.dropdown-menu {
-        display: block;
-        -webkit-animation: slide-up .25s ease-in-out;
-        animation: slide-up .25s ease-in-out
-    }
 
     .navbar-expand-md .navbar-tool-text {
         display: block
@@ -18608,10 +18588,6 @@ a.nav-link:hover .media-tab-media {
         right: 0
     }
 
-    .navbar-expand-lg .dropdown-menu.show {
-        display: none
-    }
-
     .navbar-expand-lg .dropdown-menu>.dropdown>.dropdown-toggle {
         position: relative;
         padding-right: 1.95rem
@@ -18651,10 +18627,6 @@ a.nav-link:hover .media-tab-media {
         margin-left: -0.25rem
     }
 
-    .navbar-expand-lg .dropdown-menu>.dropdown:hover>.dropdown-menu {
-        -webkit-animation: fade-in .25s ease-in-out;
-        animation: fade-in .25s ease-in-out
-    }
 
     .navbar-expand-lg .dropdown-menu:not(.dropdown-menu-dark) {
         border-color: #fff;
@@ -18666,11 +18638,6 @@ a.nav-link:hover .media-tab-media {
         background-color: #fff
     }
 
-    .navbar-expand-lg .dropdown:hover>.dropdown-menu {
-        display: block;
-        -webkit-animation: slide-up .25s ease-in-out;
-        animation: slide-up .25s ease-in-out
-    }
 
     .navbar-expand-lg .navbar-tool-text {
         display: block
@@ -18794,10 +18761,6 @@ a.nav-link:hover .media-tab-media {
         margin-left: -0.25rem
     }
 
-    .navbar-expand-xl .dropdown-menu>.dropdown:hover>.dropdown-menu {
-        -webkit-animation: fade-in .25s ease-in-out;
-        animation: fade-in .25s ease-in-out
-    }
 
     .navbar-expand-xl .dropdown-menu:not(.dropdown-menu-dark) {
         border-color: #fff;
@@ -18809,11 +18772,6 @@ a.nav-link:hover .media-tab-media {
         background-color: #fff
     }
 
-    .navbar-expand-xl .dropdown:hover>.dropdown-menu {
-        display: block;
-        -webkit-animation: slide-up .25s ease-in-out;
-        animation: slide-up .25s ease-in-out
-    }
 
     .navbar-expand-xl .navbar-tool-text {
         display: block
@@ -18937,10 +18895,6 @@ a.nav-link:hover .media-tab-media {
         margin-left: -0.25rem
     }
 
-    .navbar-expand-xxl .dropdown-menu>.dropdown:hover>.dropdown-menu {
-        -webkit-animation: fade-in .25s ease-in-out;
-        animation: fade-in .25s ease-in-out
-    }
 
     .navbar-expand-xxl .dropdown-menu:not(.dropdown-menu-dark) {
         border-color: #fff;
@@ -18952,11 +18906,6 @@ a.nav-link:hover .media-tab-media {
         background-color: #fff
     }
 
-    .navbar-expand-xxl .dropdown:hover>.dropdown-menu {
-        display: block;
-        -webkit-animation: slide-up .25s ease-in-out;
-        animation: slide-up .25s ease-in-out
-    }
 
     .navbar-expand-xxl .navbar-tool-text {
         display: block
@@ -19079,10 +19028,6 @@ a.nav-link:hover .media-tab-media {
     margin-left: -0.25rem
 }
 
-.navbar-expand .dropdown-menu>.dropdown:hover>.dropdown-menu {
-    -webkit-animation: fade-in .25s ease-in-out;
-    animation: fade-in .25s ease-in-out
-}
 
 .navbar-expand .dropdown-menu:not(.dropdown-menu-dark) {
     border-color: #fff;
@@ -19094,11 +19039,6 @@ a.nav-link:hover .media-tab-media {
     background-color: #fff
 }
 
-.navbar-expand .dropdown:hover>.dropdown-menu {
-    display: block;
-    -webkit-animation: slide-up .25s ease-in-out;
-    animation: slide-up .25s ease-in-out
-}
 
 .navbar-expand .navbar-tool-text {
     display: block
