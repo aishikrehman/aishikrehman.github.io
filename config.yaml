@@ -20,13 +20,13 @@ languages:
         name: ঐশিক রেহমান
     menu:
       main:
-        - name: About
+        - name: পরিচিতি
           url: /about/
-        - name: Docs
+        - name: ডক
           url: /docs/
-        - name: Blogs
+        - name: ব্লগ
           url: /blogs/
-        - name: Tags
+        - name: ট্যাগ
           url: /tags/
   en:
     disabled: false
@@ -44,13 +44,7 @@ languages:
       main:
         - name: About
           url: /en/about/
-        - name: Docs
-          url: /en/docs/
-        - name: Blogs
-          url: /en/blogs/
-        - name: Tags
-          url: /en/tags/
-          
+
 paginate: 10
 
 Params:
@@ -74,9 +68,7 @@ Params:
     branch: main
   og:
     image: /assets/images/Aishik Rehman-og-image.png
-
-description: Aishik Rehman, a Bengali computational linguist and developer with a background in computer science and engineering. My passion for language, technology and artificial intelligence has led me to explore the intersection of computer science and linguistics. Along with my studies, I am actively engaged in independent research and have contributed to several open-source projects.
-  As an introvert, I am constantly looking for ways to express myself creatively, and scalable vector graphics art is one of my outlets. Additionally, I have a strong interest in curriculum development.
+  description: Aishik Rehman, a Bengali computational linguist and developer with a background in computer science and engineering. My passion for language, technology and artificial intelligence has led me to explore the intersection of computer science and linguistics. Along with my studies, I am actively engaged in independent research and have contributed to several open-source projects. As an introvert, I am constantly looking for ways to express myself creatively, and scalable vector graphics art is one of my outlets. Additionally, I have a strong interest in curriculum development.
 taxonomies:
   tag: tags
 
