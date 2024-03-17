@@ -7070,21 +7070,18 @@ fieldset:disabled .btn {
 
 .carousel-indicators [data-bs-target] {
     box-sizing: content-box;
-    flex: 0 1 auto;
-    width: 30px;
-    height: 3px;
     padding: 0;
     margin-right: 3px;
     margin-left: 3px;
-    text-indent: -999px;
     cursor: pointer;
-    background-color: #fff;
     background-clip: padding-box;
     border: 0;
-    border-top: 10px solid rgba(0, 0, 0, 0);
-    border-bottom: 10px solid rgba(0, 0, 0, 0);
     opacity: .5;
-    transition: opacity .6s ease
+    transition: opacity .6s ease;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 @media(prefers-reduced-motion: reduce) {
