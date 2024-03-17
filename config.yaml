@@ -12,25 +12,45 @@ languages:
     languageCode: bn-BD
     languageDirection: ltr
     languageName: বাংলা
+    title: ঐশিক রেহমান
+    weight: 1
     params:
       subtitle: উইকিমিডিয়ান, লেক্সিকোগ্রাফার
       author:
         name: ঐশিক রেহমান
-    title: ঐশিক রেহমান
-    weight: 1
+    menu:
+      main:
+        - name: About
+          url: /about/
+        - name: Docs
+          url: /docs/
+        - name: Blogs
+          url: /blogs/
+        - name: Tags
+          url: /tags/
   en:
     disabled: false
     contentDir: content/en
     languageCode: en-US
     languageDirection: ltr
     languageName: English
+    title: Aishik Rehman
+    weight: 2
     params:
       subtitle: Wikimedian and Lexicolgist and CSEr.
       author:
         name: Aishik Rehman
-    title: Aishik Rehman
-    weight: 2
-    
+    menu:
+      main:
+        - name: About
+          url: /en/about/
+        - name: Docs
+          url: /en/docs/
+        - name: Blogs
+          url: /en/blogs/
+        - name: Tags
+          url: /en/tags/
+          
 paginate: 10
 
 Params:

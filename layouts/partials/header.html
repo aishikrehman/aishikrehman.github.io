@@ -29,13 +29,31 @@
                     <button class="input-group-text btn btn-accent btn-sm"><i class="bi bi-search"></i></button>
                 </form>
                 {{- end -}}
-                
             </div>
 
             <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
                 <hr class="my-3">
                 <ul class="navbar-nav">
-                    {{ partial "nav.topnav.html" . }}
+                    {{- range site.Menus.main }}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{- end }}
+                    {{/*  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside">নোটবই</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">প্রাথমিক</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/textbooks/c1">১ম শ্রেণি</a></li>
+                                    <li><a class="dropdown-item" href="/textbooks/c2">২য় শ্রেণি</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/textbooks">সবগুলো একসঙ্গে</a></li>
+                        </ul>
+                    </li>  */}}
                 </ul>
             </div>
         </div>
