@@ -16,4 +16,9 @@ body {
         width: 100%;
     }
 }
+@media screen and (max-width: 992px) {
+    .navbar-light .nav-item {
+        border-bottom: 1px solid lightgray;
+    }
+}
 

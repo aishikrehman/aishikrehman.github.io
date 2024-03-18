@@ -46,6 +46,7 @@ languages:
           url: /en/posts/
 
 paginate: 10
+googleAnalytics: "G-3NFDT41J8E"
 
 Params:
   author:
