@@ -1,0 +1,62 @@
+
+<div class="aishikrehman" itemtype="https://schema.org/ProfilePage" itemscope>
+    <meta itemprop="dateCreated" content="2019-12-23T12:34:00-05:00" />
+    <meta itemprop="dateModified" content="2019-12-26T14:53:00-05:00" />
+    <div itemprop="mainEntity" itemtype="https://schema.org/Person" itemscope>
+      <div class="page-title-overlap bg-accent pt-4">
+        <div class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center mb-2 pt-2">
+          <div class="d-flex align-items-center">
+            <div class="img-thumbnail" style="width: 6.375rem;">
+              <img itemprop="image" src="/uploads/Aishik_Rehman.svg" alt="@aishikrehman">
+            </div>
+            <div class="ps-3">
+              <h3 class="h5 mb-2 text-light" itemprop="name" id="real-name">{{ .Site.Title }}</h3>
+              <span class="d-block text-light fs-sm opacity-60" itemprop="description">{{.Site.Params.subtitle}}</span>
+            </div>
+          </div>
+          <div class="my-sm-0 my-3 text-sm-end pt-1">
+            <div class="d-flex align-items-center text-nowrap fs-sm">
+              <div class="mb-2 me-sm-3 me-2 text-muted">
+                <span class="fw-medium text-light">-</span>
+                <span class="text-white opacity-70">followers</span>
+              </div>
+              <div class="mb-2 ps-sm-3 ps-2 border-start border-light text-muted">
+                <span class="fw-medium text-light">-</span>
+                <span class="text-white opacity-70">following</span>
+              </div>
+            </div><a class="text-light" href="#">@aishikrehman</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mb-5 pb-3">
+        <div class="bg-light shadow-lg rounded-3 overflow-hidden">
+          <div class="row">
+            <aside class="col-lg-3 pe-xl-5">
+              <div class="d-block d-lg-none p-4">
+                <a class="btn btn-outline-accent d-block" href="#about-menu" data-bs-toggle="collapse">About menu</a>
+              </div>
+              <div class="h-100 border-end mb-2 pt-md-5">
+                <div class="d-lg-block collapse pt-md-5" id="about-menu">
+                  <ul class="list-unstyled">
+                    <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Intro</a></li>
+                    <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Works</a></li>
+                    <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Portfolio</a></li>
+                    <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Favorites</a></li>
+                    <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Papers</a></li>
+                  </ul>
+                </div>
+              </div>
+            </aside>
+            <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
+              <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                <h1 class="h3 mb-4 pt-2 text-center text-sm-start">{{ .Title }}</h1>
+                <div>
+                  {{ .Content}}
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

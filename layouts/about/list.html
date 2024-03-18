@@ -1,64 +1,48 @@
 {{ define "main" }}
-<div class="aishikrehman" itemtype="https://schema.org/ProfilePage" itemscope>
+<section class="aishikrehman" itemtype="https://schema.org/ProfilePage" itemscope>
   <meta itemprop="dateCreated" content="2019-12-23T12:34:00-05:00" />
   <meta itemprop="dateModified" content="2019-12-26T14:53:00-05:00" />
   <div itemprop="mainEntity" itemtype="https://schema.org/Person" itemscope>
-    <div class="page-title-overlap bg-accent pt-4">
-      <div
-        class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center mb-2 pt-2">
-        <div class="d-flex align-items-center">
-          <div class="img-thumbnail" style="width: 6.375rem;">
-            <img itemprop="image" src="/uploads/Aishik_Rehman.svg" alt="@aishikrehman">
-          </div>
-          <div class="ps-3">
-            <h3 class="h5 mb-2 text-light" itemprop="name" id="real-name">{{ .Site.Title }}</h3>
-            <span class="d-block text-light fs-sm opacity-60" itemprop="description">{{.Site.Params.subtitle}}</span>
-          </div>
-        </div>
-        <div class="my-sm-0 my-3 text-sm-end pt-1">
-          <div class="d-flex align-items-center text-nowrap fs-sm">
-            <div class="mb-2 me-sm-3 me-2 text-muted">
-              <span class="fw-medium text-light">-</span>
-              <span class="text-white opacity-70">followers</span>
-            </div>
-            <div class="mb-2 ps-sm-3 ps-2 border-start border-light text-muted">
-              <span class="fw-medium text-light">-</span>
-              <span class="text-white opacity-70">following</span>
-            </div>
-          </div><a class="text-light" href="#">@aishikrehman</a>
+    <div class="page-title-overlap bg-accent py-5">
+      <div class="container py-2 py-lg-4">
+        <div style="display: grid; place-items: center;">
+          {{ partial "meta.breadcrumb.html" . }}
+          <h3 class="text-light">{{ .Title }}</h3>
         </div>
       </div>
     </div>
-    <div class="container mb-5 pb-3">
-      <div class="bg-light shadow-lg rounded-3 overflow-hidden">
-        <div class="row">
-          <aside class="col-lg-3 pe-xl-5">
-            <div class="d-block d-lg-none p-4">
-              <a class="btn btn-outline-accent d-block" href="#about-menu" data-bs-toggle="collapse">About menu</a>
+
+    <div class="container mb-4">
+      <div class="mt-lg-2">
+        <img class="rounded-circle border border-3" itemprop="image" src="/uploads/Aishik_Rehman.svg"
+          alt="@aishikrehman" width="140" alt="{{.Site.Title}}" style="border-color: #ffffff !important;background:grey">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 pt-lg-4">
+          <div class="mb-4 pb-2">
+            <h3 class="mb-2 fs-lg fw-normal text-body" itemprop="name" id="real-name">{{ .Site.Title }}</h3>
+            <h5>@aishikrehman</h5>
+            <span class="d-block fs-sm mb-5" itemprop="jobTitle">{{.Site.Params.author.jobtitle}}</span>
+            {{/*  <span class="d-block fs-sm">{{.Site.Params.author.locality}}</span>  */}}
+            <span class="d-none fs-sm" href="mailto:{{.Site.Params.author.email}}" itemprop="email">{{.Site.Params.author.email}}</span>
+
+            <div class="mb-4 pb-2 fs-sm">
+              <h6 class="fs-md border-bottom">Short bio</h6>
+              <p class="mb-3">{{.Site.Params.description }}</p>
             </div>
-            <div class="h-100 border-end mb-2 pt-md-5">
-              <div class="d-lg-block collapse pt-md-5" id="about-menu">
-                <ul class="list-unstyled">
-                  <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Intro</a></li>
-                  <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Works</a></li>
-                  <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Portfolio</a></li>
-                  <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Favorites</a></li>
-                  <li class="border-bottom py-3"><a class="ps-5 py-3" href="#">Papers</a></li>
-                </ul>
-              </div>
+            <div class="mt-n2">
+              {{ range $name, $value := .Site.Params.author.social }}
+              <a class="btn-social me-2 mt-2" href="{{$value}}"><i class="bi bi-{{ $name }}"></i></a>
+              {{ end }}
             </div>
-          </aside>
-          <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
-            <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
-              <h1 class="h3 mb-4 pt-2 text-center text-sm-start">{{ .Title }}</h1>
-              <div>
-                {{ .Content}}
-              </div>
-            </div>
-          </section>
+          </div>
         </div>
+        <div class="col-lg-9 mt-lg-n5 mt-5 pt-lg-2 pt-3">{{ .Content }}</div>
       </div>
     </div>
   </div>
-</div>
+  </div>
+</section>
 {{ end }}

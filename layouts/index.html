@@ -1,36 +1,35 @@
 {{ define "main" }}
 <div class="home">
     <div class="container">
-        <section class="container quotes banner">
+        <section class="container">
             <div class="row align-items-center justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <div class="ps-lg-5">
-                        <img alt="উদ্ধৃতি ছবি" class="w-100"  src="/uploads/Aishik_Rehman.svg" width="1412">
+                        <img alt="উদ্ধৃতি ছবি" class="w-100" src="/uploads/Aishik_Rehman.svg">
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="carousel carousel-dark slide" data-interval="5000" data-bs-ride="carousel" id="QuoteCarousel">
-                        <div class="carousel-inner" style="min-height: 250px;">
+                <div class="col-lg-7">
+                    <div class="carousel carousel-dark slide" data-interval="5000" data-bs-ride="carousel"
+                        id="QuoteCarousel">
+                        <div class="carousel-indicators">
                             {{ $lang := .Site.Language.Lang }}
                             {{ $quotes := index .Site.Data.quotes $lang }}
-                                {{ range $index, $quote := $quotes }}
-                                    <div class="carousel-item{{ if eq $index 0 }} active{{ end }}">
-                                        <div class="row d-flex justify-content-center">
-                                            <div class="d-flex">
-                                                <div class="flex-grow-1 ms-4 ps-3">
-                                                    <h4 class="mb-4">{{ $quote }}</h4>
-                                                    <h6>--{{ i18n "aishik" }}</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {{ end }}
-                        </div>
-                        <div class="carousel-indicators">
                             {{ range $index, $quote := $quotes }}
-                                <button data-bs-slide-to="{{ $index }}" data-bs-target="#QuoteCarousel" class="{{ if eq $index 0 }}active{{ end }}"></button>
+                            <button data-bs-slide-to="{{ $index }}" data-bs-target="#QuoteCarousel"
+                                class="{{ if eq $index 0 }}active{{ end }}"></button>
                             {{ end }}
                         </div>
+                        <div class="carousel-inner">
+                            {{ range $index, $quote := $quotes }}
+                            <div class="carousel-item{{ if eq $index 0 }} active{{ end }}">
+                                <figure class="text-center text-md-start">
+                                    <blockquote class="blockquote">{{ $quote }}</blockquote>
+                                    <figcaption class="blockquote-footer">{{ i18n "aishik" }}</figcaption>
+                                </figure>
+                            </div>
+                            {{ end }}
+                        </div>
+
                     </div>
                 </div>
             </div>

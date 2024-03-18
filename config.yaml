@@ -51,25 +51,28 @@ googleAnalytics: "G-3NFDT41J8E"
 Params:
   author:
     name: Aishik Rehman
-    bio: Wikimedian and Lexicolgist and CSEr.
+    jobtitle: Wikimedian and Lexicolgist and CSEr.
     url: "https://aishikrehman.com/about/bn/"
     email: hello@aishikrehman.com
-    facebook: aishikrehman
-    linkedin: aishikrehman
-    youtube: "@aishikrehman"
-    github:  aishikrehman
+    locality: Mymensingh, Bangladesh
+    social: 
+      facebook: "https://facebook.com/aishikrehman"
+      linkedin: "https://linkedin.com/in/aishikrehman"
+      youtube: "https://youtube.com/@aishikrehman"
+      github:  "https://github.com/aishikrehman"
+      wikipedia: "https://bn.wikipedia.com/wiki/User:Aishik Rehman"
+    twitter: RehmanAishik 
     phone: "+880 1601 6606 66"
     url: https://aishikrehman.com/about/
     picture: /assets/images/Aishik Rehman_Mymensingh_2019.jpg
-    wikipedia: "Aishik Rehman"
-    twitter: RehmanAishik 
-  github_repo:
-    owner: aishikrehman
-    name: aishikrehman.github.io
+  github:
+    user: aishikrehman
+    repo: aishikrehman.github.io
     branch: main
   og:
     image: /assets/images/Aishik Rehman-og-image.png
-  description: Aishik Rehman, a Bengali computational linguist and developer with a background in computer science and engineering. My passion for language, technology and artificial intelligence has led me to explore the intersection of computer science and linguistics. Along with my studies, I am actively engaged in independent research and have contributed to several open-source projects. As an introvert, I am constantly looking for ways to express myself creatively, and scalable vector graphics art is one of my outlets. Additionally, I have a strong interest in curriculum development.
+  description: a Bengali computational linguist and developer with a background in computer science and engineering.
+
 taxonomies:
   tag: tags
 

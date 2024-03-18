@@ -3,43 +3,40 @@
         <div class="container">
             <a class="navbar-brand me-4 order-lg-1" href="{{ .Site.BaseURL | relLangURL }}">
                 <div class="navbar-tool-text ms-n3 d-block position-relative">
-                    <span class="h5 fw-bold">{{ .Site.Title }}</span>
-                    <span class="d-block">{{ .Site.Params.subtitle }}</span>
-                    {{/* <span class="d-block badge text-bg-info w-100">{{ .Language.LanguageName }} সংস্করণ</span> */}}
+                <span class="h5 fw-bold">{{ .Site.Title }}</span>
+                <span class="d-block ">{{ .Site.Params.subtitle }}</span>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="navbar-toolbar order-lg-3 navbar-toolbar d-flex align-items-center">
-                <div class="dropdown ps-6">
-                    <button class="btn btn-outline-accent me-3" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false"><i class="bi bi-translate"></i> {{ .Language.LanguageName }}</button>
-                    <ul class="dropdown-menu">
-                        {{ range .Site.Languages }}
-                        <li><a class="dropdown-item" href="/{{ .Lang }}/">{{ .LanguageName }}</a></li>
-                        {{ end }}
-                    </ul>
-                </div>
-                {{- if not (in .RelPermalink "/search/") -}}
-                <form action="{{ .Site.BaseURL}}search/" method="get" class="input-group">
-                    <input autocomplete="on" class="search-input form-control rounded-start" name="q"
-                        placeholder="{{ .Site.Params.searchText }}" type="text" value="">
-                    <button class="input-group-text btn btn-accent btn-sm"><i class="bi bi-search"></i></button>
-                </form>
-                {{- end -}}
-            </div>
-
             <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
-                <hr class="my-3">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav main-links ms-md-auto">
                     {{- range site.Menus.main }}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                     {{- end }}
                 </ul>
+                <div class="btn-group pt-3 pt-lg-0 ms-md-3 d-flex" role="group">
+                    <a type="button" class="btn btn-outline-primary" href="{{ .Site.BaseURL}}search/" method="get" class="input-group"><i class="bi bi-search"></i>
+                    </a>
+                    <a type="button" class="btn btn-outline-primary" href="{{ .Site.BaseURL}}contact/" method="get" class="input-group"><i class="bi bi-phone-vibrate"></i>
+                    </a>
+                    {{/*  <button type="button" id="themeToggleBtn" class="btn btn-outline-primary"> <span id="themeIcon"
+                            class="bi bi-moon"></span></button>  */}}
+                    <button type="button" class="btn btn-outline-primary dropdown">
+                        <span type="button" class="btn btn-link nav-link"  data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                            <i class="bi bi-translate"></i> {{.Language.LanguageName }}
+                        </span>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {{ range .Site.Languages }}
+                            <li><a class="dropdown-item" href="/{{ .Lang }}/">{{ .LanguageName }}</a></li>
+                            {{ end }}
+                        </ul>
+                    </button>
+                    
+                </div>
             </div>
         </div>
     </div>

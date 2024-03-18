@@ -7054,11 +7054,6 @@ fieldset:disabled .btn {
 }
 
 .carousel-indicators {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
     display: flex;
     justify-content: center;
     padding: 0;
@@ -16472,204 +16467,6 @@ input[type=search]::-webkit-search-results-decoration {
     border-color: rgba(0, 0, 0, 0)
 }
 
-.bs-facebook:hover {
-    background-color: #3b5998;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(59, 89, 152, .9)
-}
-
-.bs-facebook:hover.bs-light {
-    color: #3b5998
-}
-
-.bs-twitter:hover {
-    background-color: #1da1f2;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(29, 161, 242, .9)
-}
-
-.bs-twitter:hover.bs-light {
-    color: #1da1f2
-}
-
-.bs-instagram:hover {
-    background-color: #5851db;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(88, 81, 219, .9)
-}
-
-.bs-instagram:hover.bs-light {
-    color: #5851db
-}
-
-.bs-google:hover {
-    background-color: #ea4335;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(234, 67, 53, .9)
-}
-
-.bs-google:hover.bs-light {
-    color: #ea4335
-}
-
-.bs-linkedin:hover {
-    background-color: #0077b5;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(0, 119, 181, .9)
-}
-
-.bs-linkedin:hover.bs-light {
-    color: #0077b5
-}
-
-.bs-pinterest:hover {
-    background-color: #bd081c;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(189, 8, 28, .9)
-}
-
-.bs-pinterest:hover.bs-light {
-    color: #bd081c
-}
-
-.bs-tumblr:hover {
-    background-color: #35465c;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(53, 70, 92, .9)
-}
-
-.bs-tumblr:hover.bs-light {
-    color: #35465c
-}
-
-.bs-behance:hover {
-    background-color: #1769ff;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(23, 105, 255, .9)
-}
-
-.bs-behance:hover.bs-light {
-    color: #1769ff
-}
-
-.bs-dribbble:hover {
-    background-color: #ea4c89;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(234, 76, 137, .9)
-}
-
-.bs-dribbble:hover.bs-light {
-    color: #ea4c89
-}
-
-.bs-vk:hover {
-    background-color: #45668e;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(69, 102, 142, .9)
-}
-
-.bs-vk:hover.bs-light {
-    color: #45668e
-}
-
-.bs-odnoklassniki:hover {
-    background-color: #ed812b;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(237, 129, 43, .9)
-}
-
-.bs-odnoklassniki:hover.bs-light {
-    color: #ed812b
-}
-
-.bs-skype:hover {
-    background-color: #00aff0;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(0, 175, 240, .9)
-}
-
-.bs-skype:hover.bs-light {
-    color: #00aff0
-}
-
-.bs-hangouts:hover {
-    background-color: #0f9d58;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(15, 157, 88, .9)
-}
-
-.bs-hangouts:hover.bs-light {
-    color: #0f9d58
-}
-
-.bs-messenger:hover {
-    background-color: #0084ff;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(0, 132, 255, .9)
-}
-
-.bs-messenger:hover.bs-light {
-    color: #0084ff
-}
-
-.bs-viber:hover {
-    background-color: #59267c;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(89, 38, 124, .9)
-}
-
-.bs-viber:hover.bs-light {
-    color: #59267c
-}
-
-.bs-telegram:hover {
-    background-color: #08c;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(0, 136, 204, .9)
-}
-
-.bs-telegram:hover.bs-light {
-    color: #08c
-}
-
-.bs-youtube:hover {
-    background-color: red;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(255, 0, 0, .9)
-}
-
-.bs-youtube:hover.bs-light {
-    color: red
-}
-
-.bs-vimeo:hover {
-    background-color: #1ab7ea;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(26, 183, 234, .9)
-}
-
-.bs-vimeo:hover.bs-light {
-    color: #1ab7ea
-}
-
-.bs-wechat:hover {
-    background-color: #7bb32e;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(123, 179, 46, .9)
-}
-
-.bs-wechat:hover.bs-light {
-    color: #7bb32e
-}
-
-.bs-discord:hover {
-    background-color: #7289da;
-    box-shadow: 0 .5rem 1.125rem -0.5rem rgba(114, 137, 218, .9)
-}
-
-.bs-discord:hover.bs-light {
-    color: #7289da
-}
-
-.bs-tiktok:hover {
-    background-color: #25f4ee;
-    box-shadow: 0 .5rem 1.125rem -0.5rem #25f4ee
-}
-
-.bs-tiktok:hover.bs-light {
-    color: #25f4ee
-}
-
-.bs-whatsapp:hover {
-    background-color: #25d366;
-    box-shadow: 0 .5rem 1.125rem -0.5rem #25d366
-}
-
-.bs-whatsapp:hover.bs-light {
-    color: #25d366
-}
-
 .btn-share {
     display: inline-block;
     padding: .25rem .625rem;
@@ -19947,9 +19744,9 @@ html:not([dir=rtl]) .range-slider-ui.noUi-horizontal .noUi-handle {
     color: #fea569
 }
 
-.page-title-overlap {
+/* .page-title-overlap {
     padding-bottom: 6.375rem
-}
+} */
 
 .page-title-overlap+* {
     margin-top: -4.875rem
