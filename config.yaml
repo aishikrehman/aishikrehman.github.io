@@ -79,5 +79,6 @@ markup:
     renderer:
       unsafe: true
       hardWraps: true
+      
 outputs:
   home: [ "HTML", "RSS", "JSON"]

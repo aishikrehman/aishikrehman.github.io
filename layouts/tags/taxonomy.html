@@ -1,0 +1,75 @@
+{{ define "main" }}
+<div class="container">
+    <div class="row row-cols-sm-4 row-cols-1 gy-3 mt-5">
+        {{ if not (eq (len $.Data.Terms) 0) }}
+        {{ range .Data.Terms.Alphabetical }}
+        <a class="col" href="{{ .Page.Title | urlize}}">
+            <div class="card position-relative h-100">
+                <div class="card-body p-3">
+                    {{/* <img class="rounded-circle" src="img/team/03.jpg" width="96" alt="Jonathan Doe"> */}}
+                    <div class="ps-3">
+                        <h6 class="fs-base pt-1 mb-1">{{ .Page.Title | humanize }}</h6>
+                        <p class="fs-ms text-muted mb-0">{{ .Count }}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{ end}}
+        {{ end }}
+    </div>
+
+</div>
+
+{{/* <div class="container">
+    <div class="row justify-content-center pt-5 mt-2">
+        <section class="col-lg-9">
+            <ul>
+                {{ range .Paginator.Pages }}
+                <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+                {{ end }}
+            </ul>
+
+        </section>
+    </div>
+</div> */}}
+
+{{/* <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{ if not (eq (len $.Data.Terms) 0) }}
+            <div>
+                <div class="tagcloud03">
+                    <ul>
+                        {{ range .Data.Terms.Alphabetical }}
+                        <li>
+                            <a href="#{{ .Page.Title | urlize}}">{{ .Page.Title }}
+                                <span class="badge">{{ .Count }}</span>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div>
+                    {{ range .Data.Terms.Alphabetical }}
+                    <h3>
+                        <a name="{{ .Page.Title | urlize }}"></a>{{ .Page.Title}}
+                        <span>{{ .Count }}</span>
+                    </h3>
+                    <ul class="list-group striped-list">
+                        {{ range .Pages }}
+                        <li class="list-group-item">
+                            <a href="{{ .RelPermalink }}">
+                                {{ .Title }} {{ if .Params.subheadline }} ({{ .Params.subheadline }}){{ end }} -
+                                <small>{{ .PublishDate.Format "Jan 02, 2006" }}</small></a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div> */}}
+{{ end }}
