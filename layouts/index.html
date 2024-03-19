@@ -1,3 +1,23 @@
+{{ define "script" }}
+<script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "{{.Site.Title}}",
+      "alternateName": ["Oishik Rehman", "Aishik", "Dada Bhaie"],
+      "url" : "{{ absLangURL ""}}",
+      "potentialAction": [{
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ absLangURL ""}}/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }]
+    }
+</script>
+{{ end }}
+
 {{ define "main" }}
 <div class="home">
     <div class="container">
