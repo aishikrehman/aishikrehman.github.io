@@ -10,7 +10,7 @@
 <meta property="og:locale" content="{{ .Language.LanguageCode }}">
 <meta property="og:description" content='{{ partial "meta.description.html" .}}'>
 
-{{- if eq .Kind "page" }}
+{{- if eq .Type "posts" }}
 <meta property="og:type" content='article'>
 <meta property="article:author" content="{{ with .Params.author }}{{.}}{{ else }}{{ .Site.Params.author.name }}{{ end }}">
 {{ with .Params.date -}}

@@ -1,20 +1,20 @@
 ---
-title: "About me"
+title: "পরিচিতি"
 layout: about
 _build:
  list: never
 ---
-Greetings! My name is Aishik Rehman, and I am a computer science engineer and computational linguist based in Bangladesh. I am currently pursuing my undergraduate degree in Computer Science and Engineering from Green University of Bangladesh.
+আমার নাম ঐশিক রেহমান, এবং আমি একজন কম্পিউটার সায়েন্স ইঞ্জিনিয়ার এবং বাংলাদেশে অবস্থিত কম্পিউটেশনাল ভাষাবিদ। আমি বর্তমানে বাংলাদেশের গ্রীন ইউনিভার্সিটি থেকে কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ আমার স্নাতক ডিগ্রি অর্জন করছি।
 
-## Background and Interests
-My interest in computer science started at a very young age, and since then, I have been exploring various aspects of this field. However, I realized that I am most passionate about the intersection of human language and artificial intelligence. I find it fascinating how machines can be taught to understand and process natural language, and I am excited to contribute to this field.
+## পটভূমি এবং আগ্রহ
+কম্পিউটার বিজ্ঞানের প্রতি আমার আগ্রহ খুব অল্প বয়সে শুরু হয়েছিল এবং তারপর থেকে, আমি এই ক্ষেত্রের বিভিন্ন দিক অন্বেষণ করছি। যাইহোক, আমি বুঝতে পেরেছি যে আমি মানুষের ভাষা এবং কৃত্রিম বুদ্ধিমত্তার ছেদ সম্পর্কে সবচেয়ে উত্সাহী। আমি এটি আকর্ষণীয় মনে করি যে কীভাবে মেশিনগুলিকে প্রাকৃতিক ভাষা বুঝতে এবং প্রক্রিয়া করতে শেখানো যায়, এবং আমি এই ক্ষেত্রে অবদান রাখতে উত্তেজিত।
 
-Apart from my academic pursuits, I am an avid contributor to the Wikimedia community. I have been active in almost all multilingual Wikimedia projects, including Wiktionary, Wikipedia, and Wikidata. I am a skilled Scalable Vector Graphics artist, translator, and introvert. I have contributed to various Bengali translation projects and have served as an admin and interface admin on Bengali Wiktionary and interface admin on Bengali Wikibooks.
+আমার একাডেমিক সাধনা ছাড়াও, আমি উইকিমিডিয়া সম্প্রদায়ের একজন আগ্রহী অবদানকারী। আমি উইকিনারী, উইকিপিডিয়া এবং উইকিডাটা সহ প্রায় সকল বহুভাষিক উইকিমিডিয়া প্রকল্পে সক্রিয় রয়েছি। আমি একজন দক্ষ স্কেলেবল ভেক্টর গ্রাফিক্স শিল্পী, অনুবাদক এবং অন্তর্মুখী। আমি বিভিন্ন বাংলা অনুবাদ প্রকল্পে অবদান রেখেছি এবং বাংলা উইকিবই-এ প্রশাসক ও ইন্টারফেস প্রশাসক এবং বাংলা উইকিবুকের ইন্টারফেস অ্যাডমিন হিসেবে কাজ করেছি।
 
-## Curriculum and Education
-One of my key interests is in the study of curriculum across different countries, which has led me to explore and research education systems around the world. I have a particular fascination with the curriculums of countries in South Asia and have spent time studying and analyzing their approaches to education.
+## পাঠ্যক্রম এবং শিক্ষা
+আমার মূল আগ্রহগুলির মধ্যে একটি হল বিভিন্ন দেশের পাঠ্যক্রমের অধ্যয়ন, যা আমাকে সারা বিশ্বের শিক্ষা ব্যবস্থা অন্বেষণ এবং গবেষণা করতে পরিচালিত করেছে। দক্ষিণ এশিয়ার দেশগুলির পাঠ্যক্রমের প্রতি আমার বিশেষ আকর্ষণ রয়েছে এবং আমি তাদের শিক্ষার পদ্ধতিগুলি অধ্যয়ন এবং বিশ্লেষণ করতে সময় ব্যয় করেছি।
 
-In my research, I have found that while the educational systems of different countries may vary, there are certain common themes that emerge across cultures. For instance, many education systems emphasize the importance of critical thinking, problem-solving, and creativity. I believe that by studying the curriculums of different countries, we can gain valuable insights into what makes for effective education, and how we can design educational programs that meet the needs of diverse populations.
+আমার গবেষণায়, আমি দেখেছি যে বিভিন্ন দেশের শিক্ষাব্যবস্থা ভিন্ন হতে পারে, তবে কিছু সাধারণ থিম রয়েছে যা সংস্কৃতি জুড়ে আবির্ভূত হয়। উদাহরণস্বরূপ, অনেক শিক্ষা ব্যবস্থা সমালোচনামূলক চিন্তাভাবনা, সমস্যা সমাধান এবং সৃজনশীলতার গুরুত্বের উপর জোর দেয়। আমি বিশ্বাস করি যে বিভিন্ন দেশের পাঠ্যক্রম অধ্যয়ন করে, আমরা কার্যকর শিক্ষার জন্য কী করে এবং কীভাবে আমরা বিভিন্ন জনসংখ্যার চাহিদা পূরণ করে এমন শিক্ষামূলক প্রোগ্রামগুলি ডিজাইন করতে পারি সে সম্পর্কে মূল্যবান অন্তর্দৃষ্টি অর্জন করতে পারি।
 
-## Wikimedia Contributions
-As a passionate advocate for open knowledge and diversity, I have contributed to several feminist projects in the Wikimedia community. I served as the Main Coordinator for Wiki Loves Women South Asia 2021, where I successfully led an initiative to increase the representation of women on Wikipedia. I have also been a Regional Organizer for the Feminism and Folklore events in 2021, 2022, and 2023, where I developed effective strategies for promoting the representation of women and non-binary artists on Wikipedia.
+## উইকিমিডিয়া অবদান
+উন্মুক্ত জ্ঞান এবং বৈচিত্র্যের জন্য উত্সাহী উকিল হিসাবে, আমি উইকিমিডিয়া সম্প্রদায়ের বেশ কয়েকটি নারীবাদী প্রকল্পে অবদান রেখেছি। আমি উইকি লাভস উইমেন সাউথ এশিয়া 2021-এর প্রধান সমন্বয়কারী হিসেবে কাজ করেছি, যেখানে আমি উইকিপিডিয়াতে মহিলাদের প্রতিনিধিত্ব বাড়ানোর একটি উদ্যোগের নেতৃত্ব দিয়েছি। আমি 2021, 2022 এবং 2023 সালে নারীবাদ এবং লোককাহিনীর ইভেন্টগুলির জন্য আঞ্চলিক সংগঠকও ছিলাম, যেখানে আমি উইকিপিডিয়াতে নারী এবং অ-বাইনারি শিল্পীদের প্রতিনিধিত্ব প্রচারের জন্য কার্যকর কৌশল তৈরি করেছি।

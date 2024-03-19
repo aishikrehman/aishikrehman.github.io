@@ -3,8 +3,8 @@
         <div class="container">
             <a class="navbar-brand me-4 order-lg-1" href="{{ .Site.BaseURL | relLangURL }}">
                 <div class="navbar-tool-text ms-n3 d-block position-relative">
-                <span class="h5 fw-bold">{{ .Site.Title }}</span>
-                <span class="d-block ">{{ .Site.Params.subtitle }}</span>
+                    <span class="h5 fw-bold">{{ .Site.Title }}</span>
+                    <span class="d-block ">{{ .Site.Params.subtitle }}</span>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -12,20 +12,26 @@
             </button>
             <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
                 <ul class="navbar-nav main-links ms-md-auto">
-                    {{- range site.Menus.main }}
-                    <li class="nav-item">
+                    {{- $currentPage := . }}
+                    {{- range .Site.Menus.main }}
+                    <li class="nav-item {{ if eq .URL $currentPage.RelPermalink }}active{{ end }}">
                         <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                     {{- end }}
                 </ul>
                 <div class="btn-group pt-3 pt-lg-0 ms-md-3 d-flex" role="group">
-                    <a type="button" class="btn btn-outline-primary" href="{{ .Site.BaseURL}}search/" method="get" class="input-group"><i class="bi bi-search"></i>
+                    <a type="button" class="btn btn-outline-accent" href="{{ .Site.BaseURL}}search/">
+                        <i class="bi bi-search"></i> <span class="d-inline-block d-lg-none">Search</span>
                     </a>
-                    <a type="button" class="btn btn-outline-primary" href="{{ .Site.BaseURL}}contact/" method="get" class="input-group"><i class="bi bi-phone-vibrate"></i>
+                    <a type="button" class="btn btn-outline-accent " href="{{ .Site.BaseURL}}contact/">
+                        <i class="bi bi-phone"></i> <span class="d-inline-block d-lg-none">Contact</span>
                     </a>
-                    {{/*  <button type="button" id="themeToggleBtn" class="btn btn-outline-primary"> <span id="themeIcon"
-                            class="bi bi-moon"></span></button>  */}}
-                    <button type="button" class="btn btn-outline-primary dropdown">
+                    {{/*
+                    <button type="button" id="themeToggleBtn" class="btn btn-outline-accent">
+                        <span id="themeIcon" class="bi bi-moon"></span>
+                    </button>
+                    */}}
+                    <button type="button" class="btn btn-outline-accent dropdown">
                         <span data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                             <i class="bi bi-translate"></i> {{.Language.LanguageName }}
                         </span>
@@ -35,7 +41,6 @@
                             {{ end }}
                         </ul>
                     </button>
-                    
                 </div>
             </div>
         </div>
