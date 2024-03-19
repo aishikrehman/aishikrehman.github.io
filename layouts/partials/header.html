@@ -13,9 +13,12 @@
             <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
                 <ul class="navbar-nav main-links ms-md-auto">
                     {{- $currentPage := . }}
+                    {{- $defaultlang := .Site.Params.defaultLang }}
+                    {{- $currentlang := .Site.Language.Lang }}
                     {{- range .Site.Menus.main }}
                     <li class="nav-item {{ if eq .URL $currentPage.RelPermalink }}active{{ end }}">
-                        <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                        {{/*  <a class="nav-link" href='{{ if ne $currentlang $defaultlang }}{{ printf "/%s" $currentlang }}{{ end }}{{ .URL }}'>{{ .Name }}</a>  */}}
+                        <a class="nav-link" href='{{ .URL }}'>{{ .Name }}</a>
                     </li>
                     {{- end }}
                 </ul>

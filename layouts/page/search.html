@@ -1,5 +1,14 @@
 {{ define "script" }}
 <script async src="https://cse.google.com/cse.js?cx=458e08bf4d1094c8e"></script>
+<script>
+	$(document).ready(function() {
+		var url = window.location.href;
+		var searchParams = new URLSearchParams(new URL(url).search);
+		var qParamValue = searchParams.get("q");
+		var decodedQParamValue = decodeURIComponent(qParamValue);
+			$("#SearchInput").val(decodedQParamValue);
+	});
+</script>
 {{ end }}
 {{ define "style" }}
 	<style>
@@ -19,8 +28,8 @@
 		<div class="row gy-3 gx-4 justify-content-between">
 			<div class="d-flex align-items-center flex-shrink-0">
 				<form action="{{ .Site.BaseURL}}search/" method="get" class="input-group">
-					<input autocomplete="on" class="search-input form-control rounded-start" name="q"
-						placeholder="{{ .Site.Params.searchText }}" type="text" value="">
+					<input autocomplete="on" id="SearchInput" class="search-input form-control rounded-start" name="q"
+						placeholder="Search" type="text" value="">
 					<button class="input-group-text btn btn-accent btn-sm"><i class="bi bi-search"></i></button>
 				</form>
 			</div>
