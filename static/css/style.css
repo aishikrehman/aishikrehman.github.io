@@ -17,8 +17,14 @@ body {
     }
 }
 @media screen and (max-width: 992px) {
-    .navbar-light .nav-item {
+    .main-links .nav-item {
         border-bottom: 1px solid #ebebeb;
     }
 }
 
+[aria-current="true"] {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: black;
+  }

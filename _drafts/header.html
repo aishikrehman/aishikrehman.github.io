@@ -45,3 +45,28 @@
         </div>
     </div>
 </header>
+
+
+<div class="btn-group pt-3 pt-lg-0 ms-md-3 d-flex" role="group">
+    <a type="button" class="btn btn-outline-accent" href='{{  absLangURL "" }}search/'>
+        <i class="bi bi-search"></i> <span class="d-inline-block d-lg-none">Search </span>
+    </a>
+    <a type="button" class="btn btn-outline-accent " href='{{  absLangURL "" }}contact/'>
+        <i class="bi bi-phone"></i> <span class="d-inline-block d-lg-none">Contact</span>
+    </a>
+    {{/*
+    <button type="button" id="themeToggleBtn" class="btn btn-outline-accent">
+        <span id="themeIcon" class="bi bi-moon"></span>
+    </button>
+    */}}
+    <button type="button" class="btn btn-outline-accent dropdown">
+        <span data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <i class="bi bi-translate"></i> {{.Language.LanguageName }}
+        </span>
+        <ul class="dropdown-menu dropdown-menu-end">
+            {{ range .Site.Languages }}
+            <li><a class="dropdown-item" href="/{{ .Lang }}/">{{ .LanguageName }}</a></li>
+            {{ end }}
+        </ul>
+    </button>
+</div>

@@ -9,3 +9,14 @@
     </script>
     <script src='https://www.metype.com/quintype-metype/assets/metype.js'></script>
     */}}
+
+{{ if ne .Language.Lang .Site.Params.defaultLang }}/{{.Language.Lang}}{{ end }}
+
+{{- $defaultlang := .Site.Params.defaultLang }}
+{{- $currentlang := .Site.Language.Lang }}
+<a class="nav-link" href='{{ if ne $currentlang $defaultlang }}{{ printf "/%s" $currentlang }}{{ end }}{{ .URL }}'>{{ .Name }}</a>
+
+{{ if ne .Site.Language.Lang .Site.Params.defaultLang }}/{{.Site.Language.Lang }}{{ end }}search/
+{{  absLangURL "/" }}
+
+{{/*  <script async src="https://cse.google.com/cse.js?cx={{.Site.Params.cse}}"></script>  */}}

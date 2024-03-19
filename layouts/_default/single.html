@@ -7,12 +7,13 @@
                 <h3 class="text-light" itemprop="headline">{{ .Title }}</h3>
                 <div class="text-light" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="bi bi-person-fill-check pe-1"></i>
-                    <a class="text-white" itemprop="url" href="{{ if ne .File.Lang .Site.Params.defaultLang }}/{{.File.Lang}}{{ end }}/about/">
+                    <a class="text-white" itemprop="url"
+                        href="{{ if ne .File.Lang .Site.Params.defaultLang }}/{{.File.Lang}}{{ end }}/about/">
                         <span itemprop="name">{{ .Site.Params.author.name }}</span>
                     </a>
                 </div>
             </div>
-            
+
             <div class="d-flex mt-5 mt-lg-0">
                 <div class="text-sm-end me-5">
                     <div class="text-light fs-base">{{i18n "timetoread"}}</div>
@@ -37,8 +38,9 @@
                     <div class="d-flex flex-wrap justify-content-between pt-2 pb-4 mb-1">
                         <div class="mt-3 me-3">
                             {{ if isset .Params "tags" }}
-                            <div class="fs-sm text-muted pe-2 mb-2">{{ range .Params.tags }}<a class="btn-tag me-2 mb-2"
-                                    href="/tags/{{ . | urlize }}">#{{ . }}</a>{{ end }}
+                            <div class="fs-sm text-muted pe-2 mb-2">
+                                {{ range .Params.tags }}<a class="btn-tag me-2 mb-2" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ .}}</a>
+                                {{ end }}
                             </div>
                             {{ end }}
                         </div>
@@ -47,11 +49,11 @@
                         </div>
                     </div>
                     <nav class="entry-navigation" aria-label="Post navigation">
-                        {{ if .Prev }}<a class="entry-navigation-link" href="{{ .Prev.Permalink }}">« {{i18n "prevpost"}}<span
-                                class="d-none"> {{.Prev.Title}}</span></a>{{ end }}
-                        <a class="entry-navigation-link" href="/posts/">{{i18n "allposts"}}</a>
-                        {{ if .Next }}<a class="entry-navigation-link" href="{{ .Next.Permalink }}">{{i18n "nextpost"}} »<span
-                                class="d-none"> {{.Next.Title}}</span></a>{{ end }}
+                        {{ if .Prev }}<a class="entry-navigation-link" href="{{ .Prev.Permalink }}">« {{i18n
+                            "prevpost"}}<span class="d-none"> {{.Prev.Title}}</span></a>{{ end }}
+                        <a class="entry-navigation-link" href='{{absLangURL "/posts/"}}'>{{i18n "allposts"}}</a>
+                        {{ if .Next }}<a class="entry-navigation-link" href="{{ .Next.Permalink }}">{{i18n "nextpost"}}
+                            »<span class="d-none"> {{.Next.Title}}</span></a>{{ end }}
                     </nav>
                 </div>
             </div>

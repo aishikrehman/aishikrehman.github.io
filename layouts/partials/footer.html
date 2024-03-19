@@ -1,11 +1,22 @@
-<footer id="footer">
-	<div class="container mb-5  border-top">
-		<div class="row small">
-			<div id="footer-info" class="col-12 text-muted my-3">
-				<div class="pb-2">{{i18n "allrights"}}</div>
-				<div id="footer-info-copyright">{{i18n "copyright"}}
+<footer class="footer border-top">
+	<div class="container pt-5">
+		<div class="row pb-2">
+			<div class="col-md-6 text-center text-md-start mb-4">
+				<a class="h5 mb-4" href='{{absLangURL "/"}}'>{{.Site.Title}}</a>
+				{{/*  <ul class="list-inline fs-sm">
+					<li class="list-inline-item"><a href="#">Contact Me</a></li>
+					<li class="list-inline-item"><a href="#">About Me</a></li>
+				</ul>  */}}
+			</div>
+			<div class="col-md-6 text-center text-md-end mb-4">
+				<div class="social-links">
+					{{ range $name, $value := .Site.Params.author.social }}
+					<a class="btn-social me-2 mt-2" href="{{$value}}"><i class="bi bi-{{ $name }}"></i></a>
+					{{ end }}
 				</div>
+
 			</div>
 		</div>
+		<div class="pb-4 fs-sm opacity-50 text-center text-md-start">{{i18n "allrights"}} <br> {{i18n "copyright"}}</div>
 	</div>
 </footer>

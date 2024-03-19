@@ -5,9 +5,8 @@
 	}
 	</style>
 {{ end }}
-{{/*    */}}
+
 {{ define "script" }}
-{{/*  <script async src="https://cse.google.com/cse.js?cx={{.Site.Params.cse}}"></script>  */}}
 <script>
 	(function(opts_){
 	   'use strict';var f=this||self;function g(a){return a};var h;function k(a,b){this.h=a===l&&b||"";this.g=m}function n(a){return a instanceof k&&a.constructor===k&&a.g===m?a.h:"type_error:Const"}var m={},l={};function p(a,b){this.h=b===q?a:""}p.prototype.toString=function(){return this.h+""};function r(a){return a instanceof p&&a.constructor===p?a.h:"type_error:TrustedResourceUrl"}
@@ -94,7 +93,7 @@
 	});	
 </script>
 {{ end }}
-{{/*    */}}
+
 {{ define "main" }}
 <div class="bg-accent pt-4 pb-5">
 	<div class="container pt-2 pb-3 pt-lg-3 pb-lg-4">
@@ -105,7 +104,7 @@
 	<div class="bg-light shadow-lg rounded-3 p-4 mt-n5 mb-4">
 		<div class="row gy-3 gx-4 justify-content-between">
 			<div class="d-flex align-items-center flex-shrink-0">
-				<form action="{{ if ne .Language.Lang .Site.Params.defaultLang }}/{{.Language.Lang}}{{ end }}/search/" method="get" class="input-group">
+				<form action='{{ absLangURL "/search/" }}' method="get" class="input-group">
 					<input autocomplete="off" id="SearchInput" class="search-input form-control rounded-start" name="q"
 						placeholder='{{i18n "search"}}' type="text" value="">
 					<button class="input-group-text btn btn-accent btn-sm">

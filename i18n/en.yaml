@@ -20,3 +20,4 @@ orsentMessage: Or, <a href="mailto:{{ .Site.Params.author.email }}">sent mail di
 search: Write something to search...
 date: Date
 relevance: Relevance
+alter:  "{{ .alter }} ভাষায় দেখুন"

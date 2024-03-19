@@ -1,23 +1,19 @@
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="{{ .Site.BaseURL }}">
-                <span class="tex-light" itemprop="name"><i class="bi bi-house-up-fill"></i> {{i18n "home"}}</span>
-            </a>
-            <meta itemprop="position" content="1" />
-        </li>
-        {{ $segments := split .RelPermalink "/" }}
-        {{ $path := "/" }}
-        {{ range $index, $segment := $segments }}
-        {{ if and (ne $index 0) (ne $index (sub (len $segments) 1)) }}
-        {{ $path = printf "%s%s/" $path $segment }}
-        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="{{ $path }}">
-                <span itemprop="name">{{ $segment | humanize }}</span>
-            </a>
-            <meta itemprop="position" content="{{ add $index 1 }}" />
-        </li>
-        {{ end }}
-        {{ end }}
-    </ol>
-</nav>
+<ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    {{- $i := 1 }}
+    {{- range $index, $value := .Ancestors.Reverse }}
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{ .RelPermalink }}">
+            <span itemprop="name"> {{- if .IsHome }}{{ i18n "home" }}{{- else -}}{{ .Title }}{{ end -}}
+            </span>
+        </a>
+        <meta itemprop="position" content='{{ $i }}' />
+    </li>
+    {{ $i = add $i 1 }}
+    {{- end }}
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a aria-current="true" itemprop="item" href="{{ .RelPermalink }}">
+            <span itemprop="name">{{.Title}}</span>
+        </a>
+        <meta itemprop="position" content='{{ $i }}' />
+    </li>
+</ol>

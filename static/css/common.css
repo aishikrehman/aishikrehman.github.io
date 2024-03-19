@@ -4779,11 +4779,6 @@ fieldset:disabled .btn {
         position: absolute
     }
 
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: var(--bs-navbar-nav-link-padding-x);
-        padding-left: var(--bs-navbar-nav-link-padding-x)
-    }
-
     .navbar-expand-lg .navbar-nav-scroll {
         overflow: visible
     }
@@ -17403,12 +17398,6 @@ a.nav-link:hover .media-tab-media {
     }
 
     .navbar-expand-lg .navbar-nav .nav-item>.dropdown-menu>li>.dropdown-item {
-        font-weight: normal
-    }
-
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-top: 1.125rem;
-        padding-bottom: .875rem;
         font-weight: normal
     }
 

@@ -1,7 +1,7 @@
 <header class="bg-light border-bottom">
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand me-4 order-lg-1" href="{{ .Site.BaseURL | relLangURL }}">
+            <a class="navbar-brand me-4 order-lg-1" href='{{ absLangURL "" }}'>
                 <div class="navbar-tool-text ms-n3 d-block position-relative">
                     <span class="h5 fw-bold">{{ .Site.Title }}</span>
                     <span class="d-block ">{{ .Site.Params.subtitle }}</span>
@@ -10,41 +10,41 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
+            <div class="collapse navbar-collapse order-lg-2" id="navbarCollapse">
+                {{- if not (in .RelPermalink "/search/") -}}
+                <div class="me-auto px-3">
+                    <form action='{{ absLangURL "/search/"}}' method="get" class="input-group">
+                        <input autocomplete="off" class="search-input form-control" style="border-radius: 0px;" name="q"
+                            placeholder="{{ .Site.Params.searchText }}" type="text" value="">
+                        <button class="input-group-text btn btn-accent btn-sm" style="border-radius: 0px;"><i
+                                class="bi bi-search"></i></button>
+                    </form>
+                </div>
+                {{ end }}
                 <ul class="navbar-nav main-links ms-md-auto">
                     {{- $currentPage := . }}
-                    {{- $defaultlang := .Site.Params.defaultLang }}
-                    {{- $currentlang := .Site.Language.Lang }}
                     {{- range .Site.Menus.main }}
-                    <li class="nav-item {{ if eq .URL $currentPage.RelPermalink }}active{{ end }}">
-                        {{/*  <a class="nav-link" href='{{ if ne $currentlang $defaultlang }}{{ printf "/%s" $currentlang }}{{ end }}{{ .URL }}'>{{ .Name }}</a>  */}}
-                        <a class="nav-link" href='{{ .URL }}'>{{ .Name }}</a>
+                    {{- $relLangURL := relLangURL .URL }}
+                    <li class="nav-item {{ if eq $relLangURL $currentPage.RelPermalink }}active{{ end }}">
+                        <a class="nav-link" href='{{ $relLangURL }}'>{{ .Name }}</a>
                     </li>
                     {{- end }}
-                </ul>
-                <div class="btn-group pt-3 pt-lg-0 ms-md-3 d-flex" role="group">
-                    <a type="button" class="btn btn-outline-accent" href="{{ if ne .Language.Lang .Site.Params.defaultLang }}/{{.Language.Lang}}{{ end }}/search/">
-                        <i class="bi bi-search"></i> <span class="d-inline-block d-lg-none">Search </span>
-                    </a>
-                    <a type="button" class="btn btn-outline-accent " href="{{ if ne .Language.Lang .Site.Params.defaultLang }}/{{.Language.Lang}}{{ end }}/contact/">
-                        <i class="bi bi-phone"></i> <span class="d-inline-block d-lg-none">Contact</span>
-                    </a>
-                    {{/*
-                    <button type="button" id="themeToggleBtn" class="btn btn-outline-accent">
-                        <span id="themeIcon" class="bi bi-moon"></span>
-                    </button>
-                    */}}
-                    <button type="button" class="btn btn-outline-accent dropdown">
-                        <span data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                    <li class="nav-item dropdown border bg-secondary">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <i class="bi bi-translate"></i> {{.Language.LanguageName }}
-                        </span>
-                        <ul class="dropdown-menu dropdown-menu-end">
+                        </a>
+                        <ul class="dropdown-menu">
+                            {{- $currentlang := .Site.Language.Lang }}
                             {{ range .Site.Languages }}
-                            <li><a class="dropdown-item" href="/{{ .Lang }}/">{{ .LanguageName }}</a></li>
+                            <li>
+                                <a class="dropdown-item{{ if eq .Lang $currentlang }} active{{ end }}"
+                                    href="/{{ .Lang }}/">{{ .LanguageName }}</a>
+                                </li>
                             {{ end }}
                         </ul>
-                    </button>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

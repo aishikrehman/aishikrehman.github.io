@@ -1,6 +1,8 @@
 ---
 title: The poorest among us 
 date: 2001-01-01
+tags: 
+- philosophy
 ---
 Abundance shows up in many ways, but poverty doesn't. That's why it's hard to tell who's really the poorest among us.
 
