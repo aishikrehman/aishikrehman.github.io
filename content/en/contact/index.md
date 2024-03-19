@@ -1,5 +1,5 @@
 ---
-title: যোগাযোগ
+title: Contact
 layout: contact
 _build:
  list: never

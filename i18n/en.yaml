@@ -11,3 +11,12 @@ copyright: All image and video content on this site is released under the CC-BY-
 allrights: ©2023 Aishik Rehman. All rights reserved
 aishik : Aishik Rehman
 shortbio: Short bio
+contact: Contact
+name: Name
+email: EMail
+message: Message
+sentMessage: Sent Message
+orsentMessage: Or, <a href="mailto:{{ .Site.Params.author.email }}">sent mail directly</a>.
+search: Write something to search...
+date: Date
+relevance: Relevance

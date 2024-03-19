@@ -23,10 +23,10 @@
                     {{- end }}
                 </ul>
                 <div class="btn-group pt-3 pt-lg-0 ms-md-3 d-flex" role="group">
-                    <a type="button" class="btn btn-outline-accent" href="{{ .Site.BaseURL}}search/">
-                        <i class="bi bi-search"></i> <span class="d-inline-block d-lg-none">Search</span>
+                    <a type="button" class="btn btn-outline-accent" href="{{ if ne .Language.Lang .Site.Params.defaultLang }}/{{.Language.Lang}}{{ end }}/search/">
+                        <i class="bi bi-search"></i> <span class="d-inline-block d-lg-none">Search </span>
                     </a>
-                    <a type="button" class="btn btn-outline-accent " href="{{ .Site.BaseURL}}contact/">
+                    <a type="button" class="btn btn-outline-accent " href="{{ if ne .Language.Lang .Site.Params.defaultLang }}/{{.Language.Lang}}{{ end }}/contact/">
                         <i class="bi bi-phone"></i> <span class="d-inline-block d-lg-none">Contact</span>
                     </a>
                     {{/*
