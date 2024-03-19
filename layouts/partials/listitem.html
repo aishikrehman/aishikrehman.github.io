@@ -25,10 +25,9 @@
         <h2 class="h5 blog-entry-title"><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>
         {{ if isset .Params "tags" }}
         <div class="fs-sm text-muted pe-2 mb-2">{{ range .Params.tags }}<a class="btn-tag me-2 mb-2"
-                href='{{absLangURL ""}}tags/{{ . | urlize }}'>#{{ . }}</a>{{ end }}
+                href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>{{ end }}
         </div>
         {{ end }}
-
     </div>
     <div class="blog-end-column">
         <p class="fs-sm">{{ .Summary | truncate 400 }} {{ if .Truncated }}
