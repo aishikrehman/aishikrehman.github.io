@@ -22,7 +22,7 @@
       <span class="dateofpost">{{ . | dateFormat "January 2, 2006" }}</span>
       {{ end }}
     </div>
-    <h2 class="h5 blog-entry-title"><a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a></h2>
+    <h2 class="h5"><a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a></h2>
     {{ if isset .Params "tags" }}
     <div class="fs-sm text-muted pe-2 mb-2">{{ range .Params.tags }}<a class="btn-tag me-2 mb-2"
         href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>{{ end }}

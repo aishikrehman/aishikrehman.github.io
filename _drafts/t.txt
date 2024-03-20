@@ -104,3 +104,4 @@
       {{/*  {{ $translations := .Site.Data.tag_translations }}
       {{ $translated := index $translations .Title }}
       <h1 class="h3 mb-0">{{ if $translated }}{{ $translated }}{{ else }}{{ .Title }}{{ end }}</h1>  */}}
+      {{ i18n "findme" (dict "Link" $name )}}

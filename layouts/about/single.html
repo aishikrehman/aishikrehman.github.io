@@ -22,7 +22,7 @@
         <div class="col-lg-3 pt-lg-4">
           <div class="mx-4 text-center text-md-start">
             <h3 class="mb-2 fs-lg fw-normal text-body" itemprop="name" id="real-name">{{ .Site.Title }}</h3>
-            <h5>@aishikrehman</h5>
+            <span class="d-block h6">@aishikrehman</span>
             <span class="d-block fs-sm mb-5" itemprop="jobTitle">{{.Site.Params.author.jobtitle}}</span>
             {{/* <span class="d-block fs-sm">{{.Site.Params.author.locality}}</span> */}}
             <span class="d-none fs-sm" href="mailto:{{.Site.Params.author.email}}"
@@ -33,9 +33,7 @@
               <p class="mb-3">{{.Site.Params.description }}</p>
             </div>
             <div class="mt-n2">
-              {{ range $name, $value := .Site.Params.author.social }}
-              <a class="btn-social me-2 mt-2" href="{{$value}}"><i class="bi bi-{{ $name }}"></i></a>
-              {{ end }}
+              {{ partial "sociallinks.html" . }}
             </div>
           </div>
         </div>

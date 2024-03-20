@@ -9,11 +9,7 @@
 				</ul> */}}
 			</div>
 			<div class="col-md-6 text-center text-md-end mb-4">
-				<div class="social-links">
-					{{ range $name, $value := .Site.Params.author.social }}
-					<a class="btn-social me-2 mt-2" href="{{ $value }}" aria-label="Fine me at {{ $name }}"><i class="bi bi-{{ $name }}"></i></a>
-					{{ end }}
-				</div>
+				{{ partial "sociallinks.html" . }}
 			</div>
 		</div>
 		{{/*  {{ with .GitInfo }}<p class="fs-xs text-muted">The page is last edited on
