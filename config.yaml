@@ -61,6 +61,9 @@ googleAnalytics: "G-3NFDT41J8E"
 
 Params:
   defaultLang: bn
+  tagTranslations:
+    animal-rights: প্রাণী অধিকার
+    environment: পরিবেশ
   author:
     name: Aishik Rehman
     jobtitle: Wikimedian and Lexicolgist and CSEr.

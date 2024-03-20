@@ -11,12 +11,12 @@
 			<div class="col-md-6 text-center text-md-end mb-4">
 				<div class="social-links">
 					{{ range $name, $value := .Site.Params.author.social }}
-					<a class="btn-social me-2 mt-2" href="{{$value}}"><i class="bi bi-{{ $name }}"></i></a>
+					<a class="btn-social me-2 mt-2" href="{{ $value }}" aria-label="Fine me at {{ $name }}"><i class="bi bi-{{ $name }}"></i></a>
 					{{ end }}
 				</div>
 			</div>
 		</div>
-		<div class="pb-4 fs-sm opacity-50 text-center text-md-start">{{i18n "allrights"}} <br> {{i18n "copyright"}}
+		<div class="pb-4 fs-sm text-center text-md-start">{{i18n "allrights"}} <br> {{i18n "copyright"}}
 		</div>
 	</div>
 </footer>

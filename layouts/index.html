@@ -35,7 +35,7 @@
                             {{ $lang := .Site.Language.Lang }}
                             {{ $quotes := index .Site.Data.quotes $lang }}
                             {{ range $index, $quote := $quotes }}
-                            <button data-bs-slide-to="{{ $index }}" data-bs-target="#QuoteCarousel"
+                            <button id="Carousel{{ $index }}" data-bs-slide-to="{{ $index }}" data-bs-target="#QuoteCarousel"
                                 class="{{ if eq $index 0 }}active{{ end }}"></button>
                             {{ end }}
                         </div>

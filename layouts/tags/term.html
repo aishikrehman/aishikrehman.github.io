@@ -1,9 +1,28 @@
 {{ define "main" }}
-<div class="container">
-    <div class="row justify-content-center pt-5 mt-2">
-        <section class="col-lg-9">
-           {{ partial "listitem.html" . }}
-        </section>
+<div class="bg-secondary py-4">
+  <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+    <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+      {{ partial "meta.breadcrumb" . }}
     </div>
+    <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+      <h1 class="h3 mb-0">{{ .Title | humanize }}</h1>
+      {{/*  {{ $translations := .Site.Data.tag_translations }}
+      {{ $translated := index $translations .Title }}
+      <h1 class="h3 mb-0">{{ if $translated }}{{ $translated }}{{ else }}{{ .Title }}{{ end }}</h1>  */}}
+      {{- if .IsTranslated -}}
+      {{ range .Translations }}
+      <a href="{{ .Permalink }}">{{i18n "alter" (dict "alter" .Language.LanguageName
+        )}}</a>
+      {{- end -}}
+      {{ end }}
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center pt-5 mt-2">
+    <section class="col-lg-9">
+      {{ partial "listitem.html" . }}
+    </section>
+  </div>
 </div>
 {{ end }}
