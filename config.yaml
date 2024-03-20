@@ -3,6 +3,7 @@ baseURL: "https://aishikrehman.com/"
 DefaultContentLanguage: "bn"
 defaultContentLanguageInSubdir: "false"
 enableMissingTranslationPlaceholders: "false"
+timeZone: Asia/Dhaka
 
 languages:
   bn:
@@ -61,6 +62,7 @@ googleAnalytics: "G-3NFDT41J8E"
 
 Params:
   defaultLang: bn
+  enableGitInfo: true
   tagTranslations:
     animal-rights: প্রাণী অধিকার
     environment: পরিবেশ
