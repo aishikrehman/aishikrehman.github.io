@@ -22,3 +22,4 @@ search: অনুসন্ধান করার জন্য পছন্দস
 date: তারিখ
 relevance: প্রাসঙ্গিকতা
 alter:  "See in {{ .alter }}"
+tagDescription: "{{.Title}} ট্যাগের অধিভুক্ত সকল পোস্টসমূহ "

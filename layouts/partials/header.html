@@ -7,7 +7,7 @@
                     <span class="d-block ">{{ .Site.Params.subtitle }}</span>
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-labelledby="navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -15,9 +15,9 @@
                 <div class="me-auto px-3 py-3 py-lg-0">
                     <form action='{{ absLangURL "/search/"}}' method="get" class="input-group">
                         <input autocomplete="off" class="search-input form-control" style="border-radius: 0px;" name="q"
-                            placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-label="Search">
-                        <button id="SearchButton" class="input-group-text btn btn-accent btn-sm" style="border-radius: 0px;"><i
-                                class="bi bi-search"></i></button>
+                            placeholder="{{ .Site.Params.searchText }}" type="text" value="">
+                        <button id="SearchButton" class="input-group-text btn btn-accent btn-sm"
+                            style="border-radius: 0px;" aria-label="Search"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
                 {{ end }}
@@ -40,7 +40,7 @@
                             <li>
                                 <a class="dropdown-item{{ if eq .Lang $currentlang }} active{{ end }}"
                                     href="/{{ .Lang }}/">{{ .LanguageName }}</a>
-                                </li>
+                            </li>
                             {{ end }}
                         </ul>
                     </li>

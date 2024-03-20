@@ -13,17 +13,17 @@
             <div class="pt-2 px-4 pe-lg-0 ps-xl-5">
                 <div class="row pb-4 gx-4 gy-3">
                     <div class="col-12">
-                        <label class="form-label" for="mc-fn">{{i18n "name"}}<span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" value="">
+                        <label class="form-label" for="username">{{i18n "name"}}<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" id="username" value="">
                     </div>
                     <div class="col-12">
-                        <label class="form-label" for="mc-email">{{i18n "email"}}<span
+                        <label class="form-label" for="useremail">{{i18n "email"}}<span
                                 class="text-danger">*</span></label>
-                        <input class="form-control" type="email" value="">
+                        <input class="form-control" type="email" id="useremail" value="">
                     </div>
                     <div class="col-12">
-                        <label class="form-label" for="mc-company">{{i18n "message"}}</label>
-                        <textarea type="text" value="" class="form-control" rows="10"></textarea>
+                        <label class="form-label" for="usermessage">{{i18n "message"}}</label>
+                        <textarea type="text" value="" class="form-control" rows="10" id="usermessage"></textarea>
                     </div>
                 </div>
                 <button class="btn btn-sm btn-accent w-100" type="submit">{{i18n "sentMessage"}}</button>

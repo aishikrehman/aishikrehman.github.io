@@ -76,7 +76,7 @@ Params:
     social: 
       facebook: "https://facebook.com/aishikrehman"
       linkedin: "https://linkedin.com/in/aishikrehman"
-      youtube: "https://youtube.com/@aishikrehman"
+      #youtube: "https://youtube.com/@aishikrehman"
       github:  "https://github.com/aishikrehman"
       wikipedia: "https://bn.wikipedia.com/wiki/User:Aishik Rehman"
       ## twitter: RehmanAishik 

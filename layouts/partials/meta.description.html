@@ -4,6 +4,9 @@
 {{ .Params.snippet }} 
 {{- else -}}
     {{- if eq .Kind "home"  }}{{.Site.Params.description }}
-    {{- else -}}{{ .Summary }}
+    {{- else if eq .Kind "term" -}}
+    {{ i18n "tagDescription" (dict "Title" .Title ) }}
+    {{- else -}}
+    {{ .Summary }}
     {{ end -}}
 {{- end -}} 

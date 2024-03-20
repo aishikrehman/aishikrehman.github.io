@@ -31,14 +31,14 @@
                 <div class="col-lg-7">
                     <div class="carousel carousel-dark slide" data-interval="5000" data-bs-ride="carousel"
                         id="QuoteCarousel">
-                        <div class="carousel-indicators">
+                        <ul class="carousel-indicators">
                             {{ $lang := .Site.Language.Lang }}
                             {{ $quotes := index .Site.Data.quotes $lang }}
                             {{ range $index, $quote := $quotes }}
-                            <button id="Carousel{{ $index }}" data-bs-slide-to="{{ $index }}" data-bs-target="#QuoteCarousel"
-                                class="{{ if eq $index 0 }}active{{ end }}"></button>
+                            <li data-bs-slide-to="{{ $index }}" data-bs-target="#QuoteCarousel"
+                                class="{{ if eq $index 0 }}active{{ end }}"></li>
                             {{ end }}
-                        </div>
+                        </ul>
                         <div class="carousel-inner">
                             {{ range $index, $quote := $quotes }}
                             <div class="carousel-item{{ if eq $index 0 }} active{{ end }}">

@@ -6,15 +6,6 @@
     </div>
     <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
       <h1 class="h3 mb-0">{{ .Title | humanize }}</h1>
-      {{/*  {{ $translations := .Site.Data.tag_translations }}
-      {{ $translated := index $translations .Title }}
-      <h1 class="h3 mb-0">{{ if $translated }}{{ $translated }}{{ else }}{{ .Title }}{{ end }}</h1>  */}}
-      {{- if .IsTranslated -}}
-      {{ range .Translations }}
-      <a href="{{ .Permalink }}">{{i18n "alter" (dict "alter" .Language.LanguageName
-        )}}</a>
-      {{- end -}}
-      {{ end }}
     </div>
   </div>
 </div>
