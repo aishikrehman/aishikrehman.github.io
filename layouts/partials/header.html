@@ -10,9 +10,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse pt-5 pt-lg-0" id="navbarCollapse">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
                 {{- if not (in .RelPermalink "/search/") -}}
-                <div class="me-auto px-3">
+                <div class="me-auto px-3 py-3 py-lg-0">
                     <form action='{{ absLangURL "/search/"}}' method="get" class="input-group">
                         <input autocomplete="off" class="search-input form-control" style="border-radius: 0px;" name="q"
                             placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-label="Search">
