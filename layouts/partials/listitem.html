@@ -15,17 +15,21 @@
     }
 </script>
 {{ range .Paginator.Pages }}
-<article class="row border-bottom py-5">
+<article class="row border-bottom py-5 mx-1 mx-md-0">
   <div class="col-12 col-md-5">
-    <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+    <div class="d-flex align-items-center mb-2">
       {{ with .Params.date }}
       <span class="dateofpost">{{ . | dateFormat "January 2, 2006" }}</span>
       {{ end }}
     </div>
-    <h2 class="h5"><a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a></h2>
-    {{ if isset .Params "tags" }}
-    <div class="fs-sm text-muted pe-2 mb-2">{{ range .Params.tags }}<a class="btn-tag me-2 mb-2"
-        href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>{{ end }}
+    <h2 class="h5">
+      <a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a>
+    </h2>
+    {{ with .Params.tags }}
+    <div class="fs-sm text-muted pe-2 mb-2">
+      {{ range . }}
+      <a class="btn-tag me-2 mb-2" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
+        {{ end }}
     </div>
     {{ end }}
   </div>

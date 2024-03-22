@@ -5,6 +5,8 @@ defaultContentLanguageInSubdir: "false"
 enableMissingTranslationPlaceholders: "false"
 timeZone: Asia/Dhaka
 # enableGitInfo: true
+# googleAnalytics: "G-3NFDT41J8E"
+paginate: 10
 
 languages:
   bn:
@@ -58,12 +60,8 @@ languages:
         - name: Tags
           url: /tags/
 
-paginate: 10
-googleAnalytics: "G-3NFDT41J8E"
-
 Params:
   defaultLang: bn
-  
   tagTranslations:
     animal-rights: প্রাণী অধিকার
     environment: পরিবেশ
@@ -92,7 +90,6 @@ Params:
 
 taxonomies:
   tag: tags
-
 
 markup:
   goldmark:

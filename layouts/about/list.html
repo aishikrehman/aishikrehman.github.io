@@ -1,1 +1,44 @@
-{{ .Render "single"}}
+{{ define "main" }}
+<section itemtype="https://schema.org/ProfilePage" itemscope>
+  <meta itemprop="dateCreated" content="2019-12-23T12:34:00-05:00" />
+  <meta itemprop="dateModified" content="2019-12-26T14:53:00-05:00" />
+  <div itemprop="mainEntity" itemtype="https://schema.org/Person" itemscope>
+    <div class="page-title-overlap bg-accent py-5">
+      <div class="container py-2 py-lg-4">
+        <div class="block-center">
+          {{ partial "meta.breadcrumb.html" . }}
+          <h3 class="text-light pt-1">{{ .Title }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-4">
+      <div class="mt-4 mt-md-0 text-center text-md-start">
+        <img class="rounded-circle border border-3" itemprop="image" src="/uploads/Aishik_Rehman.svg" style="border-color: #ffffff !important;
+        background:rgb(230, 230, 230)" alt="@aishikrehman" width="140" alt="{{.Site.Title}}">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 pt-lg-4">
+          <div class="mx-4 text-center text-md-start">
+            <h3 class="mb-2 fs-lg fw-normal text-body" itemprop="name" id="real-name">{{ .Site.Title }}</h3>
+            <span class="d-block h6">@aishikrehman</span>
+            <span class="d-block fs-sm mb-5" itemprop="jobTitle">{{.Site.Params.author.jobtitle}}</span>
+            <span class="d-none fs-sm" href="mailto:{{.Site.Params.author.email}}"
+              itemprop="email">{{.Site.Params.author.email}}</span>
+
+            <div class="mb-4 pb-2 fs-sm">
+              <h6 class="fs-md border-bottom">{{i18n "shortbio"}}</h6>
+              <p class="mb-3">{{.Site.Params.description }}</p>
+            </div>
+            <div class="mt-n2">
+              {{ partial "sociallinks.html" . }}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 ms-auto mt-lg-n5 mt-5 px-4">{{ .Content }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
