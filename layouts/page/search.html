@@ -8,12 +8,18 @@
 
 {{ define "script" }}
 <script>
-	(function(opts_){
+	(function(opts_){/*
+
+		Copyright The Closure Library Authors.
+		SPDX-License-Identifier: Apache-2.0
+	   */
 	   'use strict';var f=this||self;function g(a){return a};var h;function k(a,b){this.h=a===l&&b||"";this.g=m}function n(a){return a instanceof k&&a.constructor===k&&a.g===m?a.h:"type_error:Const"}var m={},l={};function p(a,b){this.h=b===q?a:""}p.prototype.toString=function(){return this.h+""};function r(a){return a instanceof p&&a.constructor===p?a.h:"type_error:TrustedResourceUrl"}
 	   function u(a,b){var c=n(a);if(!v.test(c))throw Error("Invalid TrustedResourceUrl format: "+c);a=c.replace(w,function(d,e){if(!Object.prototype.hasOwnProperty.call(b,e))throw Error('Found marker, "'+e+'", in format string, "'+c+'", but no valid label mapping found in args: '+JSON.stringify(b));d=b[e];return d instanceof k?n(d):encodeURIComponent(String(d))});return x(a)}var w=/%{(\w+)}/g,v=RegExp("^((https:)?//[0-9a-z.:[\\]-]+/|/[^/\\\\]|[^:/\\\\%]+/|[^:/\\\\%]*[?#]|about:blank#)","i"),y=/^([^?#]*)(\?[^#]*)?(#[\s\S]*)?/;
 	   function z(a){var b=A;a=u(B,a);a=y.exec(r(a).toString());var c=a[3]||"";return x(a[1]+C("?",a[2]||"",b)+C("#",c))}var q={};function x(a){if(void 0===h){var b=null;var c=f.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:g,createScript:g,createScriptURL:g})}catch(d){f.console&&f.console.error(d.message)}h=b}else h=b}a=(b=h)?b.createScriptURL(a):a;return new p(a,q)}
-	   function C(a,b,c){if(null==c)return b;if("string"===typeof c)return c?a+encodeURIComponent(c):"";for(var d in c)if(Object.prototype.hasOwnProperty.call(c,d)){var e=c[d];e=Array.isArray(e)?e:[e];for(var t=0;t<e.length;t++){var D=e[t];null!=D&&(b||(b=a),b+=(b.length>a.length?"&":"")+encodeURIComponent(d)+"="+encodeURIComponent(String(D)))}}return b};function E(a,b){this.g=b===F?a:""}E.prototype.toString=function(){return this.g.toString()};var F={}; 
-
+	   function C(a,b,c){if(null==c)return b;if("string"===typeof c)return c?a+encodeURIComponent(c):"";for(var d in c)if(Object.prototype.hasOwnProperty.call(c,d)){var e=c[d];e=Array.isArray(e)?e:[e];for(var t=0;t<e.length;t++){var D=e[t];null!=D&&(b||(b=a),b+=(b.length>a.length?"&":"")+encodeURIComponent(d)+"="+encodeURIComponent(String(D)))}}return b};function E(a,b){this.g=b===F?a:""}E.prototype.toString=function(){return this.g.toString()};var F={};/*
+	   
+		SPDX-License-Identifier: Apache-2.0
+	   */
 	   var G;try{new URL("s://g"),G=!0}catch(a){G=!1}var H=G;var I="alternate author bookmark canonical cite help icon license next prefetch dns-prefetch prerender preconnect preload prev search subresource".split(" ");var J=new k(l,"https://www.google.com/cse/static/style/look/%{versionDir}%{versionSlash}%{theme}.css"),K=new k(l,"https://www.google.com/cse/static/element/%{versionDir}%{versionSlash}default%{experiment}+%{lang}.css"),B=new k(l,"https://www.google.com/cse/static/element/%{versionDir}%{versionSlash}cse_element__%{lang}.js"),L=new k(l,"/");window.__gcse=window.__gcse||{};window.__gcse.ct=Date.now();
 	   window.__gcse.scb=function(){var a=window.__gcse;M()||delete opts_.rawCss;var b=N(a.initializationCallback||a.callback);google.search.cse.element.init(opts_)&&("explicit"!==a.parsetags?"complete"===document.readyState||"interactive"===document.readyState?(google.search.cse.element.go(),null==b||b()):google.setOnLoadCallback(function(){google.search.cse.element.go();null==b||b()},!0):null==b||b())};
 	   function N(a){if("function"===typeof a)return a;if("string"!==typeof a)return null;a=window[a];return"function"!==typeof a?null:a}function M(){var a;return!(null==(a=window.__gcse)?0:a.plainStyle)}
@@ -31,7 +37,7 @@
 		   "enableImageSearch": true,
 		   "imageSearchLayout": "popup",
 		   "resultSetSize": "filtered_cse",
-		   "enableOrderBy": false,
+		   "enableOrderBy": true,
 		   "orderByOptions": [{
 			 "label": '{{i18n "relevance"}}',
 			 "key": ""
@@ -65,19 +71,20 @@
 		   "enableHistory": false,
 		   "numTopRefinements": -1,
 		   "enableRichSnippets": false,
-		   "hideElementBranding": true,
+		   "hideElementBranding": false,
 		   "cssThemeVersion": 4,
 		   "isSafeSearchActive": false,
 		   "autoCompleteSource": "partner-generic",
-		   "numTopAds": 0
+		   "numTopAds": 3
 		 },
 		 "protocol": "https",
-		 "cse_token": "AB-tC_4pyN6sBO48WYXiLQ4Plikd:1710867311592",
-		 "isHostedPage": true,
+		 "rawCss": ".gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}",
+		 "cse_token": "AB-tC_68F0NcriD6fRgjL8EBq3S-:1711144305213",
+		 "isHostedPage": false,
 		 "exp": ["cc"],
 		 "cselibVersion": "8435450f13508ca1",
 		 "usqp": "CAI\u003d",
-		 "fexp": [72519161, 72519164]
+		 "fexp": [72519171, 72519168]
 	   });
 </script>
 <script>

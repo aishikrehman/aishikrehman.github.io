@@ -1,0 +1,7 @@
+<nav class="entry-navigation" aria-label="Post navigation">
+    {{ if .Prev }}<a class="entry-navigation-link" href="{{ .Prev.Permalink }}">« {{i18n
+        "prevpost"}}<span class="d-none"> {{.Prev.Title}}</span></a>{{ end }}
+    <a class="entry-navigation-link" href='{{absLangURL "/posts/"}}'>{{i18n "allposts"}}</a>
+    {{ if .Next }}<a class="entry-navigation-link" href="{{ .Next.Permalink }}">{{i18n "nextpost"}}
+        »<span class="d-none"> {{.Next.Title}}</span></a>{{ end }}
+</nav>
