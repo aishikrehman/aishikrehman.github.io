@@ -1,10 +1,10 @@
-<header class="bg-light border-bottom">
+<header class="border-bottom">
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand me-4" href='{{ absLangURL "" }}'>
                 <div class="navbar-tool-text ms-n3 d-block position-relative">
                     <span class="h5 fw-bold">{{ .Site.Title }}</span>
-                    <span class="d-block ">{{ .Site.Params.subtitle }}</span>
+                    <span class="d-block fs-6">{{ .Site.Params.subtitle }}</span>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-labelledby="navbarCollapse">
@@ -14,14 +14,12 @@
                 {{- if not (in .RelPermalink "/search/") -}}
                 <div class="me-auto p-2 py-lg-0">
                     <form action='{{ absLangURL "/search/"}}' method="get" class="input-group">
-                        <input autocomplete="off" class="search-input form-control" style="border-radius: 0px;" name="q"
-                            placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-label="Search">
-                        <button id="searchbutton" class="input-group-text btn btn-accent btn-sm"
-                            style="border-radius: 0px;" aria-label="SearchButton"><i class="bi bi-search"></i></button>
+                        <input autocomplete="off" class="form-control" name="q" placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-describedby="searchbutton">
+                        <button id="searchbutton" class="input-group-text btn btn-primary" aria-label="SearchButton" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
                 {{ end }}
-                <ul class="navbar-nav main-links ms-md-auto">
+                <ul class="navbar-nav main-links m-1 m-md-0 ms-md-auto">
                     {{- $currentPage := . }}
                     {{- range .Site.Menus.main }}
                     {{- $relLangURL := relLangURL .URL }}
@@ -29,21 +27,56 @@
                         <a class="nav-link" href='{{ $relLangURL }}'>{{ .Name }}</a>
                     </li>
                     {{- end }}
-                    <li class="nav-item dropdown border bg-secondary">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="bi bi-translate"></i> {{.Language.LanguageName }}
-                        </a>
-                        <ul class="dropdown-menu">
-                            {{- $currentlang := .Site.Language.Lang }}
+                    
+                    {{/* Languages -- Only for Multiligual Site*/}}
+                    {{ if .Site.IsMultiLingual }}
+                    <li class="vl px-1"></li>
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                            <i class="me-1 bi-translate"></i> <span class="ms-2">{{ .Language.LanguageName }}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {{ $sitelang := .Site.Language.Lang }}
                             {{ range .Site.Languages }}
                             <li>
-                                <a class="dropdown-item{{ if eq .Lang $currentlang }} active{{ end }}"
-                                    href="/{{ .Lang }}/">{{ .LanguageName }}</a>
+                                <a class="dropdown-item{{ if eq .Lang $sitelang }} active{{ end }}" {{ if eq .Lang $sitelang }} aria-current="true" {{ end }} href="/{{ .Lang }}/">{{ .LanguageName }}</a>
                             </li>
                             {{ end }}
                         </ul>
                     </li>
+                    {{ end }}
+                    {{/* Light and Dark Mode */}}
+                    {{ if .Site.Params.activateColorModeToogler }}
+                    <li class="vl px-1"></li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-link nav-link" id="bd-theme" type="button" aria-expanded="true"
+                            data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
+                            <i id="theme-icon-active" class="bi-sun"></i>
+                            <span class="d-lg-none ms-2" id="bd-theme-text">{{i18n "toogleTheme"}}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center active"
+                                    data-bs-theme-value="light" aria-pressed="true">
+                                    <i id="theme-icon" class="bi-sun me-1"></i> {{i18n "themeLight"}}
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center"
+                                    data-bs-theme-value="dark" aria-pressed="false">
+                                    <i id="theme-icon" class="me-1 bi-moon"></i> {{i18n "themeDark"}}
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center"
+                                    data-bs-theme-value="auto" aria-pressed="false">
+                                    <i id="theme-icon" class="me-1 bi-circle-half"></i> {{i18n "themeAuto"}}
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    {{ end }}
                 </ul>
             </div>
         </div>

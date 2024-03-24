@@ -59,8 +59,10 @@ languages:
           url: /contact/
         - name: Tags
           url: /tags/
-
 Params:
+  defaultColorMode: "light"
+  activateColorModeToogler: true
+  useBootstrap5.3.Mod: true
   defaultLang: bn
   tagTranslations:
     animal-rights: প্রাণী অধিকার

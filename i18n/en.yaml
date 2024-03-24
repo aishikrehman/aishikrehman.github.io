@@ -23,3 +23,7 @@ relevance: Relevance
 alter:  "{{ .alter }} ভাষায় দেখুন"
 tagDescription: "All posts under {{.Title}} tags"
 findme: "Find me at {{ .Link }}"
+toogleTheme: Toggle theme
+themeLight: Light
+themeDark: Dark
+themeAuto: Auto

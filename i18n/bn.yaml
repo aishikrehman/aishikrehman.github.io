@@ -24,3 +24,7 @@ relevance: প্রাসঙ্গিকতা
 alter:  "See in {{ .alter }}"
 tagDescription: "{{.Title}} ট্যাগের অধিভুক্ত সকল পোস্টসমূহ "
 findme: "আমাকে {{ .Link }} লিংকে পাবেন"
+toogleTheme: থিম পরিবর্তন
+themeLight: আলো
+themeDark: আঁধার
+themeAuto: স্বয়ংক্রিয়
