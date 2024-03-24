@@ -14,8 +14,8 @@
                 {{- if not (in .RelPermalink "/search/") -}}
                 <div class="me-auto p-2 py-lg-0">
                     <form action='{{ absLangURL "/search/"}}' method="get" class="input-group">
-                        <input autocomplete="off" class="form-control" name="q" placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-describedby="searchbutton">
-                        <button id="searchbutton" class="input-group-text btn btn-primary" aria-label="SearchButton" type="submit"><i class="bi bi-search"></i></button>
+                        <input aria-label="SearchInput" autocomplete="off" class="form-control" name="q" placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-describedby="searchbutton">
+                        <button id="searchbutton" class="input-group-text btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
                 {{ end }}
