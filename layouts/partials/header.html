@@ -2,20 +2,18 @@
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand me-4" href='{{ absLangURL "" }}'>
-                <div class="navbar-tool-text ms-n3 d-block position-relative">
-                    <span class="h5 fw-bold">{{ .Site.Title }}</span>
+                    <h5 class="mb-0 fw-bold">{{ .Site.Title }}</h5>
                     <span class="d-block fs-6">{{ .Site.Params.subtitle }}</span>
-                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-labelledby="navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 {{- if not (in .RelPermalink "/search/") -}}
-                <div class="me-auto p-2 py-lg-0">
+                <div class="me-auto py-2 py-lg-0">
                     <form action='{{ absLangURL "/search/"}}' method="get" class="input-group">
-                        <input aria-label="SearchInput" autocomplete="off" class="form-control" name="q" placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-describedby="searchbutton">
-                        <button id="searchbutton" class="input-group-text btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                        <input autocomplete="off" class="form-control" name="q" placeholder="{{ .Site.Params.searchText }}" type="text" value="" aria-describedby="searchbutton" aria-label="SearchInput">
+                        <button id="searchbutton" class="input-group-text btn btn-primary" aria-label="SearchButton" type="submit"><i class="bi-search"></i></button>
                     </form>
                 </div>
                 {{ end }}
@@ -59,7 +57,7 @@
                             <li>
                                 <button type="button" class="dropdown-item d-flex align-items-center active"
                                     data-bs-theme-value="light" aria-pressed="true">
-                                    <i id="theme-icon" class="bi-sun me-1"></i> {{i18n "themeLight"}}
+                                    <i id="theme-icon" class="me-1 bi-sun"></i> {{i18n "themeLight"}}
                                 </button>
                             </li>
                             <li>
@@ -68,12 +66,12 @@
                                     <i id="theme-icon" class="me-1 bi-moon"></i> {{i18n "themeDark"}}
                                 </button>
                             </li>
-                            <li>
+                            {{/*  <li>
                                 <button type="button" class="dropdown-item d-flex align-items-center"
                                     data-bs-theme-value="auto" aria-pressed="false">
                                     <i id="theme-icon" class="me-1 bi-circle-half"></i> {{i18n "themeAuto"}}
                                 </button>
-                            </li>
+                            </li>  */}}
                         </ul>
                     </li>
                     {{ end }}
