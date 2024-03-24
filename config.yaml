@@ -3,7 +3,7 @@ baseURL: "https://aishikrehman.com/"
 DefaultContentLanguage: "bn"
 defaultContentLanguageInSubdir: "false"
 enableMissingTranslationPlaceholders: "false"
-timeZone: Asia/Dhaka
+timeZone: "Asia/Dhaka"
 # enableGitInfo: true
 # googleAnalytics: "G-3NFDT41J8E"
 paginate: 10
@@ -60,12 +60,13 @@ languages:
         - name: Tags
           url: /tags/
 Params:
-  defaultColorMode: "light" 
+  defaultColorMode: "light" #Change this require some changes to colormode.js script, Otherwise it won't work
   activateColorModeToogler: true #To activate color mode dark/light/auto
-  useBootstrapMod: true #Mod of 5.3.3
+  useBootstrapMod: true #Mod of Bootsrap 5.3.3, If you don't want to use the mod, set the BootstrapCDNVersion
   useBootstrapIcons: true  # To use Botstrap Icons. Recommended is "true" 
-  BootstrapCDNVersion: "5.3.3" #Doesnt work if useBootstrapMod is "true"
-  defaultLang: bn
+  BootstrapCDNVersion: "5.3.3" #Doesnt work if useBootstrapMod is "true", To apply this, set useBootstrapMod to false 
+  defaultLang: bn #Set it the value of same as DefaultContentLanguage, use to chekck 
+  activatejQuery: true
   # tagTranslations:
   #   animal-rights: প্রাণী অধিকার
   #   environment: পরিবেশ
