@@ -60,13 +60,15 @@ languages:
         - name: Tags
           url: /tags/
 Params:
-  defaultColorMode: "light"
-  activateColorModeToogler: true
-  useBootstrap5.3.Mod: true
+  defaultColorMode: "light" 
+  activateColorModeToogler: true #To activate color mode dark/light/auto
+  useBootstrapMod: true #Mod of 5.3.3
+  useBootstrapIcons: true  # To use Botstrap Icons. Recommended is "true" 
+  BootstrapCDNVersion: "5.3.3" #Doesnt work if useBootstrapMod is "true"
   defaultLang: bn
-  tagTranslations:
-    animal-rights: প্রাণী অধিকার
-    environment: পরিবেশ
+  # tagTranslations:
+  #   animal-rights: প্রাণী অধিকার
+  #   environment: পরিবেশ
   author:
     name: Aishik Rehman
     jobtitle: Wikimedian and Lexicolgist and CSEr.
