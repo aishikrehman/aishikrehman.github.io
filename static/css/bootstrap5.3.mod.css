@@ -3938,8 +3938,7 @@ fieldset:disabled .btn {
     background-color: var(--bs-dropdown-bg);
     background-clip: padding-box;
     border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
-    border-radius: var(--bs-dropdown-border-radius);
-    box-shadow: var(--bs-box-shadow);
+    /* box-shadow: var(--bs-box-shadow); */
 }
 
 .dropdown-menu[data-bs-popper] {
@@ -4175,7 +4174,7 @@ fieldset:disabled .btn {
     white-space: nowrap;
     background-color: transparent;
     border: 0;
-    border-radius: var(--bs-dropdown-item-border-radius, .25rem)
+    /* border-radius: var(--bs-dropdown-item-border-radius, .25rem) */
 }
 
 .dropdown-item:focus,
