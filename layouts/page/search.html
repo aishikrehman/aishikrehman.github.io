@@ -10,7 +10,6 @@
 			$("#SearchInput").val(decodedQParamValue);
 		}
 	});
-
 </script>
 <script>
 
@@ -120,8 +119,8 @@
 		<div class="row gy-3 gx-4 justify-content-between">
 			<div class="d-flex align-items-center flex-shrink-0">
 				<form action='{{ absLangURL "/search/" }}' method="get" class="input-group">
-					<input id="SearchInput" autocomplete="off" class="form-control" name="q" placeholder='{{i18n "search"}}' type="text"
-						value="" aria-describedby="searchbutton">
+					<input id="SearchInput" autocomplete="off" class="form-control" name="q"
+						placeholder='{{i18n "search"}}' type="text" value="" aria-describedby="searchbutton">
 
 					<button id="searchbutton" class="input-group-text btn btn-primary" aria-label="SearchButton"
 						type="submit"><i class="bi bi-search"></i></button>
