@@ -60,7 +60,9 @@
 .text-justify {
     text-align: justify;
 }
-
+.border-left{
+    border-left: 1px solid #adadad;
+}
 @media screen and (min-width: 768px) {
     .vl {
         border-left: 1px solid #adadad;

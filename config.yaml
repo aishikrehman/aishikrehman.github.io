@@ -26,6 +26,9 @@ languages:
       cse: 458e08bf4d1094c8e
     menu:
       main:
+        - name: "[নীড়]"
+          url: /
+          weight: 1
         - name: পরিচিতি
           url: /about/
         - name: যোগাযোগ

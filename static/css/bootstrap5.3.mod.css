@@ -9,7 +9,7 @@
 :root,
 [data-bs-theme=light] {
     /* Custom var's set by Aishik Rehman */
-    --paragraph-font-size: 1.2rem;
+    --paragraph-font-size: 1.1rem;
 
     /*  Bootstrap 5.3.3 Global Variables */
     --bs-black: #000;
@@ -25,7 +25,7 @@
     --bs-gray-700: #495057;
     --bs-gray-800: #343a40;
     --bs-gray-900: #212529;
-    --bs-primary: #4e54c8;
+    --bs-primary: #103b2b;
     --bs-primary-rgb: 13, 110, 253;
     --bs-secondary: #6c757d;
     --bs-secondary-rgb: 108, 117, 125;
@@ -84,8 +84,8 @@
     --bs-tertiary-bg: #f8f9fa;
     --bs-tertiary-bg-rgb: 248, 249, 250;
     --bs-heading-color: inherit;
-    --bs-link-color: #003b92;
-    --bs-link-color-rgb: 13, 110, 253;
+    --bs-link-color: #007348;
+    --bs-link-color-rgb: 0, 115, 72;
     --bs-link-hover-color: #0a58ca;
     --bs-link-hover-color-rgb: 10, 88, 202;
     --bs-primary-text-emphasis: #052c65;
@@ -142,9 +142,9 @@
     --bs-tertiary-bg: #2b3035;
     --bs-tertiary-bg-rgb: 43, 48, 53;
     --bs-heading-color: inherit;
-    --bs-link-color: #6ea8fe;
+    --bs-link-color: #009b53;
+    --bs-link-color-rgb: 0, 155, 83;
     --bs-link-hover-color: #8bb9fe;
-    --bs-link-color-rgb: 110, 168, 254;
     --bs-link-hover-color-rgb: 139, 185, 254;
     --bs-primary-text-emphasis: #6ea8fe;
     --bs-secondary-text-emphasis: #a7acb1;
@@ -837,7 +837,7 @@ progress {
     .container-md,
     .container-sm,
     .container-xl {
-        max-width: 1100px
+        max-width: 1000px
     }
 }
 
@@ -4507,7 +4507,7 @@ fieldset:disabled .btn {
 
 .navbar {
     --bs-navbar-padding-x: 0;
-    --bs-navbar-padding-y: 0.5rem;
+    /* --bs-navbar-padding-y: 0.5rem; */
     --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
     --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
     --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);

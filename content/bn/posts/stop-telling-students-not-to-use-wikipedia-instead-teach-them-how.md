@@ -26,7 +26,8 @@ aliases:
 জ্ঞান আগের যেকোন সময়ের চেয়ে আজ আরও বেশি সহজলভ্য। এক মুহুর্তের মাঝে কেউ তার নখদর্পণে লক্ষ লক্ষ বিট তথ্যে অ্যাক্সেস করতে পারে - গত শতাব্দীতে একটি বিশ্বকোষ পড়ার জন্য লাইব্রেরি পরিদর্শন করতে যে সফর করতে হ তার থেকে অনেক এগিয়ে এখন। সম্ভবত আমরা দুই দশক পরে, তাৎক্ষণিক জ্ঞানের ভিত্তি নিয়ে আত্মতুষ্টিতে ভুগছি। হয়তো আমর বুঝতে পারি না যে আমাদের পূর্বপুরুষদের এমন কিছু খুঁজে পাওয়ার জন্য কী পরিমাণ ঝঞ্জাটের মধ্য দিয়ে যেতে হয়েছিল য আমরা তাৎক্ষণিকভাবে খুঁজে নিতে পারছি। সর্বোপরি যত যাই হোক না কেন, তা মানবতার কাছে উইকিপিডিয়ার মানকে পরিবর্তন করে না আমাদের শিক্ষার্থীদেরকে এটি এড়ানোর পরিবর্তে কীভাবে ব্যবহার করতে হয় তা শেখানোর সময় এসেছে। এখন পর্যন্ত সবচেয়ে বেশ তথ্যসম্বলিত উৎসের সাথে একসাথে বসবাস করতে আমরা  ভাগ্যবান; এটাকে উপেক্ষা করা মানে এটাকে নষ্ট করা।
 
 
-<div style="text-align: left;"><span style="font-size: x-small;">মূল লেখক:<b> বব নফট (Bobb Knauft) </b><br />মূল
-    শিরোনাম: Stop telling students not to use Wikipedia. Instead, teach them how.,<br />উৎস: 
-    https://www.newsrecord.org/opinion-stop-telling-students-not-to-use-wikipedia-instead-teach-them-how/article_2bee0204-2931-11ed-8016-9fc1b82b2492.html</span><br />
-</div>
+<small>
+মূল লেখক: বব নফট (Bobb Knauft)<br />
+মূল শিরোনাম: Stop telling students not to use Wikipedia. Instead, teach them how.,<br />
+উৎস:  https://www.newsrecord.org opinion-stop-telling-students-not-to-use-wikipedia-instead-teach-them-how article_2bee0204-2931-11ed-8016-9fc1b82b2492.html<br />
+</small>

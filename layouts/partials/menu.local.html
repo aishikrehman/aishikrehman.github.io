@@ -1,0 +1,24 @@
+<div class="navbar navbar-expand-lg">
+    <div class="container">
+        <div class="collapse navbar-collapse py-2" id="navbarCollapse">
+            {{- if not (in .RelPermalink "/search/") -}}
+            <form action='{{ absLangURL "/search/"}}' method="get" class="d-flex order-sm-1">
+                <input autocomplete="off" class="form-control" name="q" placeholder="{{ .Site.Params.searchText }}"
+                    type="text" value="" aria-describedby="searchbutton" aria-label="SearchInput">
+                <button id="searchbutton" class="input-group-text btn btn-primary" aria-label="SearchButton"
+                    type="submit"><i class="bi-search"></i></button>
+            </form>
+            {{ end }}
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {{- $currentPage := . }}
+                {{- range .Site.Menus.main }}
+                {{- $relLangURL := relLangURL .URL }}
+                <li class="nav-item {{ if eq $relLangURL $currentPage.RelPermalink }}active{{ end }}">
+                    <a class="nav-link" href='{{ $relLangURL }}'>{{ .Name }}</a>
+                </li>
+                {{- end }}
+            </ul>
+
+        </div>
+    </div>
+</div>
