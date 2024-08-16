@@ -1,0 +1,30 @@
+home: "Home"
+mintues: "minutes"
+timetoread: "Time to Read"
+pubon: Published On
+recentPosts: Recent Posts
+allposts: All posts
+nextpost: Next Post
+prevpost: Previos Post
+readmore: Read More
+copyright: All image and video content on this site is released under the CC-BY-SA 4.0 license unless a separate license is specified in the respective content. However, all textual content of this site shall be considered intellectual property.
+allrights: ©2023 Aishik Rehman. All rights reserved
+aishik : Aishik Rehman
+shortbio: Short bio
+contact: Contact
+name: Name
+email: EMail
+message: Message
+sentMessage: Sent Message
+orsentMessage: Or, <a href="mailto:{{ .Site.Params.author.email }}">sent mail directly</a>.
+search: Write something to search...
+date: Date
+relevance: Relevance
+alter:  "{{ .alter }} ভাষায় দেখুন"
+tagDescription: "All posts under {{.Title}} tags"
+findme: "Find me at {{ .Link }}"
+toogleTheme: Toggle theme
+themeLight: Light
+themeDark: Dark
+themeAuto: Auto
+sharethispost: Share

@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="page-title-overlap bg-primary py-5">
+    <div class="container pb-5 px-lg-5">
+        <div style="display: grid; place-items: center;">
+            {{ partial "meta.breadcrumb.html" . }}
+            <h3 class="text-light pt-1">{{ .Title }}</h3>
+        </div>
+    </div>
+</div>
+<div class="container mb-5">
+    <div class="bg-body py-5">
+        <section class="col-lg-8 m-auto pt-2 pt-lg-4 pb-4 mb-3">
+            <form class="pt-2 px-4 pe-lg-0 ps-xl-5" id="contact-form">
+                <div class="row pb-4 gx-4 gy-3">
+                    <div class="col-12">
+                        <label class="form-label" for="name">{{i18n "name"}}</label>
+                        <input class="form-control" type="text" name="name" id="name" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="email">{{i18n "email"}}</label>
+                        <input class="form-control" type="email" name="email" id="email" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="message">{{i18n "message"}}</label>
+                        <textarea type="text" name="message" id="message" value="" class="form-control" rows="10" required></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-sm btn-primary w-100" type="submit">{{i18n "sentMessage"}}</button>
+                <div class="text-center mt-5">{{i18n "orsentMessage" | safeHTML}}
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{{ end }}
