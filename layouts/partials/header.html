@@ -1,0 +1,84 @@
+<header class="border-bottom" id="ai_header">
+    <nav class="navbar navbar-expand-lg border-bottom">
+        <div class="container py-1 py-sm-2">
+            <a class="navbar-brand me-4" href='{{ absLangURL "" }}'>
+                <h5 class="mb-0 fw-bold">{{ .Site.Title }}</h5>
+                <span class="d-block fs-6">{{ .Site.Params.subtitle }}</span>
+            </a>
+            <div class="d-flex row-center" id="accessibilityMenu">
+                {{/* Global Menu Button */}}
+                {{ if .Site.Params.activateGlobalMenu }}
+                <div class="border-right" id="globalMenu">
+                    <button type="button" class="btn nav-link pe-2" data-bs-toggle="collapse"
+                        data-bs-target="#GlobalMenu" aria-expanded="false" aria-controls="GlobalMenu">
+                        <i class="bi bi-menu-up"></i> 
+                        <span class="d-none d-lg-inline-block ms-2 fw-bold">{{i18n "termMenu"}}</span>
+                    </button>
+                </div>
+                {{ end }}
+
+                {{/* Languages -- Only for Multiligual Site*/}}
+                {{ if hugo.IsMultilingual }}
+                <div class="dropdown border-right" id="langSwitcher">
+                    <button type="button" class="btn nav-link px-2" data-bs-toggle="dropdown" aria-expanded="false"
+                        data-bs-display="static">
+                        <i class="bi-translate"></i>
+                        <span class="d-none d-lg-inline-block ms-2 fw-bold">{{.Language.LanguageName }}</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        {{ $sitelang := .Site.Language.Lang }}
+                        {{ range .Site.Languages }}
+                        <li>
+                            <a class="dropdown-item{{ if eq .Lang $sitelang }} active{{ end }}" {{ if eq .Lang
+                                $sitelang}} aria-current="true" {{ end }} href="/{{ .Lang }}/">{{ .LanguageName}}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+
+                {{/* Theme (Dark/Light) Switcher */}}
+                {{ if .Site.Params.activateColorModeToogler }}
+                <div class="dropdown" id="colorModeToogler">
+                    <button type="button" class="btn nav-link px-2" id="colorModeTooglerBtn" aria-expanded="true"
+                        data-bs-toggle="dropdown" data-bs-display="static">
+                        <i id="theme-icon-active" class="bi-sun"></i>
+                        <span class="d-none d-lg-inline-block ms-2 fw-bold" id="colorModeTooglerBtnText">{{i18n "toogleTheme"}}</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center active"
+                                data-bs-theme-value="light" aria-pressed="true">
+                                <i id="theme-icon" class="me-1 bi-sun"></i>
+                                <span>
+                                    {{i18n "themeLight"}}
+                                </span> 
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center"
+                                data-bs-theme-value="dark" aria-pressed="false">
+                                <i id="theme-icon" class="me-1 bi-moon"></i>
+                                <span>{{i18n "themeDark"}}</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                {{ end }}
+
+                {{/*  Local Menu Navigation Toogler */}}
+                <div id="LocalNavigationToogleIcon">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#LocalNavigationMenu" aria-labelledby="LocalNavigationMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    {{ partial "menu.local.html" . }}
+    {{ if .Site.Params.activateGlobalMenu }}
+    {{ partial "menu.global.html" . }}
+    {{ end }}
+</header>

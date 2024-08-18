@@ -1,0 +1,42 @@
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {{ range $index, $page := .Paginator.Pages }}
+        {{- if $index -}},{{- end -}}
+        {
+          "@type": "ListItem",
+          "position": {{ add $index 1 }},
+          "url": "{{ .Permalink }}"
+        }
+        {{- end -}}
+      ]
+    }
+</script>
+{{ range .Paginator.Pages }}
+<article class="row border-bottom py-5">
+  <div class="col-12 col-md-5">
+    <div class="d-flex align-items-center mb-2">
+      {{ with .Params.date }}
+      <span class="dateofpost">{{ . | dateFormat "January 2, 2006" }}</span>
+      {{ end }}
+    </div>
+    <h2 class="h5">
+      <a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a>
+    </h2>
+    {{ with .Params.tags }}
+    <div class="fs-sm text-muted pe-2 mb-2">
+      {{ range . }}
+      <a class="btn-tag me-2 mb-2" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <div class="col-12 col-md-7 text-justify">
+    {{ .Summary | truncate 400 }}
+    {{ if .Truncated }}<a class="ai_readmore" href="{{ .RelPermalink }}">[{{i18n "readmore"}}]</a>{{ end }}
+  </div>
+</article>
+{{ end }}
+<div class="d-flex row-center py-3">{{ template "_internal/pagination.html" . }}</div>
