@@ -1,6 +1,7 @@
 :root {
     --ai-green-3: #02a358;
 }
+
 [data-bs-theme=dark] .svg-invert {
     filter: invert(1);
 }
@@ -163,10 +164,35 @@
 .nav-item.active a::before {
     content: "⟪ "
 }
+
 .nav-item.active a::after {
     content: " ⟫"
 }
 
+[class*="-only"] {
+    display: none;
+}
+
+@media only screen and (max-width: 576px) {
+    .mobile-only { display: block; }
+    .mobile-only-flex { display: flex; }
+    .mobile-only-inline { display: inline; }
+    .mobile-only-inline-block { display: inline-block; }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .tab-only { display: block; }
+    .tab-only-flex { display: flex; }
+    .tab-only-inline { display: inline; }
+    .tab-only-inline-block { display: inline-block; }
+}
+
+@media only screen and (min-width: 992px) {
+    .desktop-only { display: block; }
+    .desktop-only-flex { display: flex; }
+    .desktop-only-inline { display: inline; }
+    .desktop-only-inline-block { display: inline-block; }
+}
 
 
 /* #endcustomcss */

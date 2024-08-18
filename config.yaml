@@ -70,7 +70,7 @@ Params:
   defaultColorMode: "light" #Changing this require some changes to colormode.js script, Otherwise it won't work
   activateColorModeToogler: true #To activate color mode dark/light toogler
   activatejQuery: false #In case we need jQuery
-  activateGlobalMenu: true #If you want to use Global Menu in case
+  activateGlobalMenu: false #If you want to use Global Menu in case
   useBootstrapMod: true #Mod of Bootsrap 5.3.3, If you don't want to use the mod, set the BootstrapCDNVersion
   useBootstrapIcons: true  # To use Botstrap Icons. Recommended is "true" 
   userBootstrapBundleJS: true #Bootstarp Bundle Js
