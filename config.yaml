@@ -70,17 +70,14 @@ Params:
   defaultColorMode: "light" #Changing this require some changes to colormode.js script, Otherwise it won't work
   activateColorModeToogler: true #To activate color mode dark/light toogler
   activatejQuery: false #In case we need jQuery
-  activateGlobalMenu: false #If you want to use Global Menu in case
-  useBootstrapMod: true #Mod of Bootsrap 5.3.3, If you don't want to use the mod, set the BootstrapCDNVersion
-  useBootstrapIcons: true  # To use Botstrap Icons. Recommended is "true" 
+  activateGlobalMenu: false #If we want to use Global Menu in case
+  useBootstrapMod: true #Mod of Bootsrap 5.3.3, If we don't want to use the mod, we need to set the BootstrapCDNVersion
+  useBootstrapIcons: true  #To use Botstrap Icons. Recommended is "true" 
   userBootstrapBundleJS: true #Bootstarp Bundle Js
-  BootstrapCDNVersion: "5.3.3" #Doesnt work if useBootstrapMod is "true", To apply this, set useBootstrapMod to false 
+  BootstrapCDNVersion: "5.3.3" #Doesnt work if useBootstrapMod is "true", To apply this, we must set useBootstrapMod to false 
   defaultLang: bn #Set it the value of same as DefaultContentLanguage, use to check
   google_site_verification: "0J8IfuFx-q_dRuc9I1q0tcVBKAMOTAN3gr27m5OwKzQ"
   fb_app_id: "" #Facebook Application ID
-  # tagTranslations:
-  #   animal-rights: প্রাণী অধিকার
-  #   environment: পরিবেশ
   meta:
     name: Aishik Rehman
     alternateName: ""

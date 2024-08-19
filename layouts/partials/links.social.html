@@ -1,6 +1,6 @@
 <div class="social-links">
     {{ range $name, $value := .Site.Params.author.social }}
-    <a type="button" class="btn btn-outline-secondary rounded-1" href="{{ $value }}" aria-label='Find me at $name'><i
+    <a type="button" class="btn btn-outline-secondary mt-1" href="{{ $value }}" aria-label='Find me at $name'><i
             class="bi bi-{{ $name }}"></i></a>
     {{ end }}
 </div>

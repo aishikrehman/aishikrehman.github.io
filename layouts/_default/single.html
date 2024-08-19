@@ -1,11 +1,11 @@
 {{ define "main" }}
 <div class="page-title-overlap bg-primary py-md-5" itemscope itemtype="https://schema.org/Article">
-    <div class="container py-5">
+    <div class="container py-5 text-light">
         <div class="py-md-5 row">
-            <div class="col-12 col-md-8 text-center text-md-start">
-                <div class="mb-2 d-none d-lg-block">{{ partial "meta.breadcrumb.html" . }}</div>
-                <h3 class="text-light" itemprop="headline">{{ .Title }}</h3>
-                <div class="text-light" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <div class="col-12 col-md-7 text-center text-md-start">
+                <div class="mb-2 desktop-only">{{ partial "meta.breadcrumb.html" . }}</div>
+                <h3 itemprop="headline">{{ .Title }}</h3>
+                <div itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="bi bi-person-fill-check pe-1"></i>
                     <a class="text-white" itemprop="url"
                         href="{{ if ne .File.Lang .Site.Params.defaultLang }}/{{.File.Lang}}{{ end }}/about/">
@@ -13,14 +13,14 @@
                     </a>
                 </div>
             </div>
-            <div class="col-12 col-md-4 mt-5 mt-md-0">
+            <div class="col-12 col-md-5 mt-5 mt-md-0">
                 <div class="d-flex justify-content-evenly text-light">
                     <div class="text-center text-sm-end">
                         <div>{{i18n "timetoread"}}</div>
                         <span>{{ .ReadingTime }} {{i18n "mintues"}}</span>
                     </div>
                     {{ with .Params.date }}
-                    <div class="text-sm-end">
+                    <div class="text-center text-sm-end">
                         <div>{{i18n "pubon"}}</div>
                         <span>{{ . | dateFormat "January 02, 2006" }} </span>
                     </div>

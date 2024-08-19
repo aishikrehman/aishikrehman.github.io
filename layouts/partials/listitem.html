@@ -22,20 +22,20 @@
       <span class="dateofpost">{{ . | dateFormat "January 2, 2006" }}</span>
       {{ end }}
     </div>
-    <h2 class="h5">
+    <h5>
       <a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a>
-    </h2>
+    </h5>
     {{ with .Params.tags }}
-    <div class="fs-sm text-muted pe-2 mb-2">
+    <div class="fs-6 pe-2 mb-2">
       {{ range . }}
-      <a class="btn-tag me-2 mb-2" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
+      <a class="text-muted border px-2" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
       {{ end }}
     </div>
     {{ end }}
   </div>
   <div class="col-12 col-md-7 text-justify">
     {{ .Summary | truncate 400 }}
-    {{ if .Truncated }}<a class="ai_readmore" href="{{ .RelPermalink }}">[{{i18n "readmore"}}]</a>{{ end }}
+    {{ if .Truncated }}<a class="text-muted" href="{{ .RelPermalink }}">[{{i18n "readmore"}}]</a>{{ end }}
   </div>
 </article>
 {{ end }}

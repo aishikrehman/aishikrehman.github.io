@@ -9,7 +9,7 @@
 
 <body>
     {{ partial "header.html" . }}
-    <main class="{{.Kind}}" id="{{ path.Base .Permalink}}" style="flex: 1 0 auto;">
+    <main class="{{.Kind}} full-height" id="{{ path.Base .Permalink}}">
         {{ block "main" . }}{{ end }}
     </main>
     

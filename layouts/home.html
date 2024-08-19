@@ -43,7 +43,7 @@
                         {{ range $index, $quote := $quotes }}
                         <div class="carousel-item{{ if eq $index 0 }} active{{ end }}">
                             <figure class="text-center text-md-start">
-                                <blockquote class="blockquote">{{ $quote }}</blockquote>
+                                <blockquote class="blockquote fs-4 fw-bold">{{ $quote }}</blockquote>
                                 <figcaption class="blockquote-footer">{{ i18n "aishik" }}</figcaption>
                             </figure>
                         </div>
