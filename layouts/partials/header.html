@@ -29,8 +29,7 @@
                         {{ $sitelang := .Site.Language.Lang }}
                         {{ range .Site.Languages }}
                         <li>
-                            <a class="dropdown-item{{ if eq .Lang $sitelang }} active{{ end }}" {{ if eq .Lang
-                                $sitelang}} aria-current="true" {{ end }} href="/{{ .Lang }}/">{{ .LanguageName}}</a>
+                            <a class="dropdown-item{{ if eq .Lang $sitelang }} active{{ end }}" href="/{{ .Lang }}/">{{ .LanguageName}}</a>
                         </li>
                         {{ end }}
                     </ul>
@@ -40,14 +39,14 @@
                 {{/* Theme (Dark/Light) Switcher */}}
                 {{ if .Site.Params.activateColorModeToogler }}
                 <div class="dropdown" id="colorModeToogler">
-                    <button type="button" class="btn nav-link px-2" id="colorModeTooglerBtn" aria-expanded="true"
+                    <button type="button" class="btn nav-link px-2" id="colorModeTooglerBtn" aria-expanded="false"
                         data-bs-toggle="dropdown" data-bs-display="static">
                         <i id="theme-icon-active" class="bi-sun"></i>
                         <span class="desktop-only-inline" id="colorModeTooglerBtnText">{{i18n "toogleTheme"}}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li type="button" class="dropdown-item d-flex align-items-center active"
-                            data-bs-theme-value="light" aria-pressed="true">
+                            data-bs-theme-value="light">
                             <i id="theme-icon" class="me-1 bi-sun"></i>
                             <span>{{i18n "themeLight"}}</span>
                         </li>

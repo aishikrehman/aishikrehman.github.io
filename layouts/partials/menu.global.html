@@ -1,37 +1,21 @@
 <div class="collapse menu_global border-top" id="GlobalMenu">
     <div class="container">
         <div class="row py-3 py-md-5">
-            <div class="col-12 col-md-4">
+            <div class="col-md-8">
                 <h4 class="mb-2">সেবা ও তথ্য</h4>
-                <ul class="list-unstyled">
-                    <li><a href="#">বাংলাদেশ</a>
+                <ul class="list-unstyled li-col-2">
+                    {{ range .Site.Menus.global }}
+                    <li>
+                        <a href="#">⟫ {{ .Name }}</a>
+                        {{ with .Params.label}}
+                        <span class="d-block fs-6 ps-3">{{.}}...</span>
+                        {{ end}}
                     </li>
-                    <li><a href="#">জন্ম, মৃত্যু, বিবাহ ও সংশ্লিষ্ট পরিসেবা</a>
-                    </li>
-                    <li><a href="#">পেনশন, ভাতা ও অন্যান্য</a></li>
-                    <li><a href="#">ব্যবসায় ও বাণিজ্য</a>
-                    </li>
-                    <li><a href="#">জাতীয় পরিচয়পত্র ও নাগরিকত্ব</a>
-                    </li>
-                    <li><a href="#">আইন, অপরাধ ও বিচার</a>
-                    </li>
-                    <li><a href="/services/education">শিক্ষা ও বৃত্তি</a></li>
-                    <li><a href="#">গ্রাম ও কুটির শিল্প</a></li>
-                    <li><a href="#">নগর</a></li>
-                    <li><a href="#">সমাজ ও সংস্কৃতি</a></li>
+                    {{ end}}
                 </ul>
             </div>
-            <div class="col-12 col-md-4">
-                <ul class="list-unstyled">
-                    <li><a href="#">শ্রম ও কর্মসংস্থান</a></li>
-                    <li><a href="#">প্রবাস ও রেমিট্যান্স</a></li>
-                    <li><a href="#">অর্থ ও কর</a></li>
-                    <li><a href="#">গৃহায়ন ও স্থানীয় পরিসেবা</a></li>
-                    <li><a href="#">পাসপোর্ট, বৈদেশিক প্রমাণ</a></li>
-                    <li><a href="#">ভিসা ও ইমিগ্রেশন</a></li>
-                </ul>
-            </div>
-            <div class="col-12 col-md-4">
+
+            <div class="col-md-4">
                 <h4 class="mb-2">রাষ্ট্রীয় কার্যক্রম</h4>
                 <ul class="list-unstyled">
                     <li>
@@ -57,23 +41,6 @@
                     <li>
                         <a href="#">স্বচ্ছতা</a>
                         <span class="d-block fs-6">তথ্য, তথ্য প্রকাশের স্বাধীনতা এবং কর্পোরেট রিপোর্ট</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-12 border-top-red">
-                <h4 class="my-2">অন্যান্য</h4>
-                <ul class="list-unstyled d-flex">
-                    <li class="me-3">
-                        <a href="/organizations/">ক্যারিয়ার/নিয়োগ</a>
-                    </li>
-                    <li class="me-3">
-                        <a href="#">পোল</a>
-                    </li>
-                    <li class="me-3">
-                        <a href="#">অভিযোগ</a>
-                    </li>
-                    <li class="me-3">
-                        <a href="#">হেল্প লাইন</a>
                     </li>
                 </ul>
             </div>

@@ -19,10 +19,9 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="homepage">
-    <section class="hero_homepage" id="hero_homepage">
-        <div class="container">
-            <div class="row row-center">
+<section id="homeHero">
+    <div class="container">
+        <div class="row row-center">
             <div class="col-md-5">
                 <div class="px-md-5 py-5">
                     <img alt="উদ্ধৃতি ছবি" class="w-100 svg-invert" src="/uploads/Aishik_Rehman.svg">
@@ -52,14 +51,13 @@
                 </div>
             </div>
         </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="col-lg-9 m-auto py-5">
-            <h2 class="text-center py-3">{{i18n "recentPosts"}}</h2>
-            {{ partial "listitem.html" . }}
-        </div>
     </div>
-</div>
+</section>
+
+<section class="container" id="bodyContent">
+    <div class="col-lg-9 m-auto py-5">
+        <h2 class="text-center py-3">{{i18n "recentPosts"}}</h2>
+        {{ partial "listitem.html" . }}
+    </div>
+</section>
 {{ end }}

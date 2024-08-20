@@ -192,6 +192,11 @@
     .tab-only-inline-block {
         display: inline-block;
     }
+    .li-col-2 {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    }
 }
 
 /* Desktop Only */
@@ -210,5 +215,10 @@
 
     .desktop-only-inline-block {
         display: inline-block;
+    }
+    .li-col-2 {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
     }
 }

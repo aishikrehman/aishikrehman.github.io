@@ -1,3 +1,4 @@
+{{ $currentPage := . }}
 <div class="navbar navbar-expand-lg">
     <div class="container">
         <div class="collapse navbar-collapse py-2" id="LocalNavigationMenu">
@@ -12,13 +13,32 @@
             </form>
             {{ end }}
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                {{- $currentPage := . }}
-                {{- range .Site.Menus.main }}
+                {{ range .Site.Menus.main }}
                 {{- $relLangURL := relLangURL .URL }}
-                <li class="nav-item {{ if eq $relLangURL $currentPage.RelPermalink }}active{{ end }}">
-                    <a class="nav-link" href='{{ $relLangURL }}'>{{ .Name }}</a>
+                <li
+                    class="nav-item {{ if .HasChildren }}dropdown{{end}} {{ if eq $relLangURL $currentPage.RelPermalink }}active{{ end }}">
+                    {{ if .HasChildren }}
+                    <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle">
+                        {{ .Name }}
+                    </a>
+                    <ul class="dropdown-menu" id="{{ .Name | urlize}}" class="list pa0 ma0">
+                        <li class="nav-item "></li>
+                        {{ range .Children }}
+                        {{- $relLangURL := relLangURL .URL }}
+                        <li class="nav-item">
+                            <a class="dropdown-item {{ if eq $relLangURL $currentPage.RelPermalink }}active{{ end }}"
+                                href='{{ $relLangURL }}'>{{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ else }}
+                    <a href="{{.URL}}" class="nav-link">
+                        {{ .Name }}
+                    </a>
+                    {{end}}
                 </li>
-                {{- end }}
+                {{end}}
+
             </ul>
         </div>
     </div>

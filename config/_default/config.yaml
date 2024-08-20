@@ -24,19 +24,6 @@ languages:
         jobtitle: উইকিমিডিয়ান ও অভিধানকার (বিসিএসই)
       description: একজন বাংলা কম্পিউটেশনাল ভাষাবিদ এবং কম্পিউটার সায়েন্স এবং ইঞ্জিনিয়ারিং এর পটভূমি সহ বিকাশকারী।
       cse: 458e08bf4d1094c8e
-    menu:
-      main:
-        - name: নীড়
-          url: /
-          weight: 1
-        - name: পরিচিতি
-          url: /about/
-        - name: যোগাযোগ
-          url: /contact/
-        - name: পোস্ট
-          url: /posts/
-        - name: ট্যাগ
-          url: /tags/
   en:
     disabled: false
     contentDir: content/en/
@@ -52,19 +39,6 @@ languages:
         jobtitle: Wikimedian and Lexicolgist (BCSE)
       description: a Bengali computational linguist and developer with a background in computer science and engineering.
       cse: 02da3ac110b6e40d1
-    menu:
-      main:
-        - name: Home
-          url: /
-          weight: 1
-        - name: About
-          url: /about/
-        - name: Posts
-          url: /posts/
-        - name: Contact
-          url: /contact/
-        - name: Tags
-          url: /tags/
 
 Params:
   defaultColorMode: "light" #Changing this require some changes to colormode.js script, Otherwise it won't work
@@ -72,9 +46,9 @@ Params:
   activatejQuery: false #In case we need jQuery
   activateGlobalMenu: false #If we want to use Global Menu in case
   useBootstrapMod: true #Mod of Bootsrap 5.3.3, If we don't want to use the mod, we need to set the BootstrapCDNVersion
-  useBootstrapIcons: true  #To use Botstrap Icons. Recommended is "true" 
+  useBootstrapIcons: true #To use Botstrap Icons. Recommended is "true"
   userBootstrapBundleJS: true #Bootstarp Bundle Js
-  BootstrapCDNVersion: "5.3.3" #Doesnt work if useBootstrapMod is "true", To apply this, we must set useBootstrapMod to false 
+  BootstrapCDNVersion: "5.3.3" #Doesnt work if useBootstrapMod is "true", To apply this, we must set useBootstrapMod to false
   defaultLang: bn #Set it the value of same as DefaultContentLanguage, use to check
   google_site_verification: "0J8IfuFx-q_dRuc9I1q0tcVBKAMOTAN3gr27m5OwKzQ"
   fb_app_id: "" #Facebook Application ID
@@ -84,18 +58,17 @@ Params:
   author:
     name: Aishik Rehman
     jobtitle: Wikimedian and Lexicolgist and CSEr.
-    url: "https://aishikrehman.com/about/bn/"
+    url: "https://aishikrehman.com/about/"
     email: hello@aishikrehman.com
     locality: Mymensingh, Bangladesh
-    social: 
+    social:
       facebook: "https://facebook.com/aishikrehman"
       linkedin: "https://linkedin.com/in/aishikrehman"
       # youtube: "https://youtube.com/@aishikrehman"
-      github:  "https://github.com/aishikrehman"
+      github: "https://github.com/aishikrehman"
       wikipedia: "https://bn.wikipedia.com/wiki/User:Aishik Rehman"
-      #twitter: RehmanAishik 
+      #twitter: RehmanAishik
     phone: "+880 1601660666"
-    url: https://aishikrehman.com/about/
     picture: /assets/images/Aishik Rehman_Mymensingh_2019.jpg
   github:
     user: aishikrehman
@@ -112,6 +85,6 @@ markup:
     renderer:
       unsafe: true
       hardWraps: true
-      
+
 outputs:
-  home: [ "HTML", "RSS", "JSON"]
+  home: ["HTML", "RSS", "JSON"]
