@@ -1,0 +1,7 @@
+<div class="d-flex border justify-content-between p-3" aria-label="Post navigation">
+    {{ if .Prev }}<a class="nav-link" href="{{ .Prev.Permalink }}">« {{i18n
+        "prevpost"}}<span class="d-none"> {{.Prev.Title}}</span></a>{{ end }}
+    <a class="nav-link" href='{{absLangURL "/posts/"}}'>{{i18n "allposts"}}</a>
+    {{ if .Next }}<a class="nav-link" href="{{ .Next.Permalink }}">{{i18n "nextpost"}}
+        »<span class="d-none"> {{.Next.Title}}</span></a>{{ end }}
+</div>

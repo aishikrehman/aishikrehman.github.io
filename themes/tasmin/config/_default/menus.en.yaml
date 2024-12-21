@@ -1,0 +1,40 @@
+global: 
+  - name: "বাংলা লার্নিং মডিউল"
+    url: /learn/bengali/
+    params:
+      label: অবাংলাভাষীদের জন্য বাংলা শিক্ষণ সামগ্রী
+  - name: "পরিষদ বাংলা অভিধান"
+    url: /read/parisad-bengali-dictionary/
+    params:
+      label: বাংলা ভাষার সর্বাধুনিক, সর্ববৃহৎ ও সমৃদ্ধ বাংলা অভিধান
+  - name: "পরিষদ লোকজ শব্দকোষ"
+    url: /read/lokajashobdokosh/
+    params:
+      label: ময়মনসিংহে অঞ্চলের আঞ্চলিক ভাষা অভিধান
+  - name: "পরিষদ সমার্থক শব্দকোষ"
+    url: /read/lokajashobdokosh/
+    params:
+      label: ময়মনসিংহে অঞ্চলের আঞ্চলিক ভাষা অভিধান
+  - name: "বাংলা প্রবাদ সংগ্রহ"
+    url: /read/lokajashobdokosh/
+    params:
+      label: ময়মনসিংহে অঞ্চলের আঞ্চলিক ভাষা অভিধান
+  - name: "বাঙালির যা যা"
+    url: /read/bangalir-ja-ja/
+    params:
+      label: বাঙালির ভাষা, প্রযুক্তি, সংস্কৃতি সমস্ত কিছু নিয়ে গ্রন্থ
+  - name: "Discrete Mathematics in Bengali"
+    url: /read/discrete-mathematics/
+    params:
+      label: বাঙালির ভাষা, প্রযুক্তি, সংস্কৃতি সমস্ত কিছু নিয়ে গ্রন্থ
+globallinks:
+  - name: "AISHIK IT CENTER"
+    url: https://itc.aishikrehman.com/
+    params:
+      label: লক্ষীগঞ্জ বাজার, ঈশ্বরগঞ্জ, ময়মনসিংহ
+  - name: "AISHIK LEARNING CENTER"
+    url: https://learn.aishikrehman.com/
+    params:
+      label: লক্ষীগঞ্জ বাজার, ঈশ্বরগঞ্জ, ময়মনসিংহ
+  - name: "BENGALI COUNCIL"
+    url: https://bengalicouncil.github.io/

@@ -1,0 +1,27 @@
+main:
+  - name: Home
+    url: /
+    weight: 1
+  - name: Intro
+    url: /about/
+    parent: MEE
+  - name: Paper's
+    url: #
+    parent: MEE
+  - name: Wikimedia
+    url: /about/wikimedia/
+    parent: MEE
+  - name: Resume
+    url: /about/resume/
+    parent: MEE
+  - name: Gallery
+    url: /about/gallery/
+    parent: MEE
+  - name: Posts/Blogs
+    url: /posts/
+    weight: 3
+  # - name: যোগাযোগ
+  #   url: /contact/
+  #   weight: 4
+  - name: Tags
+    url: /tags/

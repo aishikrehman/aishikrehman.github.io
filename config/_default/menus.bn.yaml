@@ -1,0 +1,31 @@
+main:
+  - name: নীড়
+    url: /
+    weight: 1
+  - name: পরিচিতি
+    weight: 1
+    url: /about/
+    parent: আমিত্ব
+  - name: প্রকাশনা/সন্দর্ভ
+    url: /about/
+    parent: আমিত্ব
+  - name: উইকিমিডিয়া
+    url: /about/wikimedia/
+    parent: আমিত্ব
+  - name: রেজিউমে
+    url: /about/
+    parent: আমিত্ব
+  - name: খেড়োখাতা
+    url: /about/kherokhata/
+    parent: আমিত্ব
+  - name: ছবিটবি
+    url: /about/gallery/
+    parent: আমিত্ব
+  - name: পোস্ট
+    url: /posts/
+    weight: 3
+  - name: যোগাযোগ
+    url: /contact/
+    parent: আমিত্ব
+  - name: ট্যাগ
+    url: /tags/

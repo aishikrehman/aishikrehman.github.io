@@ -1,0 +1,53 @@
+{{ define "script" }}
+<script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "{{.Site.Params.meta.name}}",
+      "alternateName" : ["ঐশিক", "ঐশিক রেহমান", "Aishik", "Oishik Rehman", "Oishik"],
+      "url" : "{{ absLangURL ""}}",
+      "potentialAction": [{
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ absLangURL ""}}/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }]
+    }
+</script>
+{{ end }}
+
+{{ define "main" }}
+<section class="bg-green-5 position-relative overflow-hidden" id="homeHero">
+    <div class="container py-10">
+        <div class="carousel carousel-dark slide" data-interval="5000" data-bs-ride="carousel" id="QuoteCarousel">
+            <ul class="carousel-indicators">
+                {{ $lang := .Site.Language.Lang }}
+                {{ $quotes := index .Site.Data.quotes $lang }}
+                {{ range $index, $quote := $quotes }}
+                <li data-bs-slide-to="{{ $index }}" data-bs-target="#QuoteCarousel"
+                    class="{{ if eq $index 0 }}active{{ end }}"></li>
+                {{ end }}
+            </ul>
+            <div class="carousel-inner">
+                {{ range $index, $quote := $quotes }}
+                <div class="carousel-item{{ if eq $index 0 }} active{{ end }}">
+                    <figure class="text-center">
+                        <blockquote class="blockquote fs-3 fw-bold">{{ $quote }}</blockquote>
+                        <figcaption class="blockquote-footer text-light">{{ i18n "aishik" }}</figcaption>
+                    </figure>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="bodyContent">
+    <div class="col-lg-9 m-auto py-5">
+        <h2 class="text-center py-3">{{i18n "recentPosts"}}</h2>
+        {{ partial "listitem.html" . }}
+    </div>
+</section>
+{{ end }}
