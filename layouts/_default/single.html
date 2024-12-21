@@ -14,14 +14,14 @@
         </div>
         <div class="list-inline">
           {{ if isset .Params "tags" }}
-          <i class="bi bi-tag-fill p-1"></i>
+          <i class="bi bi-tag-fill pe-1"></i>
           {{ range .Params.tags }}
           <a class="fs-6" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>{{ .}}</a>
           {{ end }}
           {{ end }}
         </div>
         <div class="list-inline">
-          <span class="fs-6"><i class="bi bi-alarm-fill me-2"></i>{{i18n "timetoread"}}: {{ .ReadingTime }} {{i18n
+          <span class="fs-6"><i class="bi bi-alarm-fill pe-2"></i>{{i18n "timetoread"}}: {{ .ReadingTime }} {{i18n
             "mintues"}}</span>
           {{ with .Params.date }}<span class="fs-6 p-1"><i class="bi bi-calendar-week-fill me-2"></i>{{i18n "pubon"}}:
             {{ . | dateFormat "January 02, 2006"
@@ -39,40 +39,38 @@
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <div>
+          {{ $i := 0 }}
           {{ $related := .Site.RegularPages.Related . | first 5 }}
           {{ with $related }}
+          {{ $i = add $i 1 }}
           <h4>একই রকম অন্যান্য</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled mb-4">
             {{ range . }}
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                href="{{ .Permalink }}">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <rect width="100%" height="100%" fill="#777"></rect>
-                </svg>
-                <div class="col-lg-8">
+            <li class="py-4 border-top">
+              <a class="row" href="{{ .Permalink }}">
+                <div class="fs-2 col-3">{{ $i }}</div>
+                <div class="col-9">
                   <h6 class="mb-0">{{ .LinkTitle }}</h6>
-                  {{ with .Params.date }}<small class="text-body-secondary">{{ . | dateFormat "January 2, 2006" }}</small>{{ end }}
+                  {{ with .Params.date }}<small class="text-body-secondary">{{ . | dateFormat "January 2, 2006"
+                    }}</small>{{ end }}
                 </div>
               </a>
             </li>
             {{ end }}
           </ul>
           {{ end }}
-          <h4>সাম্প্রতিক পোস্টসমূহ</h4>
+          <h4>{{i18n "recentposts"}}</h4>
           <ul class="list-unstyled">
+            {{ $i := 0 }}
             {{ range ( first 3 ( where .Site.Pages "Type" "posts" ).ByDate ) }}
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                href="{{ .Permalink }}">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <rect width="100%" height="100%" fill="#777"></rect>
-                </svg>
-                <div class="col-lg-8">
+            {{ $i = add $i 1 }}
+            <li class="py-3 border-top">
+              <a class="row" href="{{ .Permalink }}">
+                <div class="fs-2 col-3">{{ $i }}</div>
+                <div class="col-9">
                   <h6 class="mb-0">{{ .LinkTitle }}</h6>
-                  {{ with .Params.date }}<small class="text-body-secondary">{{ . | dateFormat "January 2, 2006" }}</small>{{ end }}
+                  {{ with .Params.date }}<small class="text-body-secondary">{{ . | dateFormat "January 2, 2006"
+                    }}</small>{{ end }}
                 </div>
               </a>
             </li>
@@ -99,7 +97,7 @@
         </div> */}}
         <hr>
         <div class="py-4">
-          {{/*  <h4>শেয়ার করুন</h4>  */}}
+          {{/* <h4>শেয়ার করুন</h4> */}}
           {{ partial "posts.share.html" . }}
         </div>
       </div>
