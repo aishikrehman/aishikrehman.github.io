@@ -1,40 +1,40 @@
 {{ define "main" }}
-<article class="container" itemscope itemtype="https://schema.org/Article">
-  {{/* Article MetaData */}}
-  <div class="mt-5" id="articleMetaData">
-    <div>{{ partial "meta.breadcrumb.html" . }}</div>
-    <h3 itemprop="headline">{{ .Title }}</h3>
-    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-      <i class="bi bi-person-fill-check pe-1"></i>
-      <a itemprop="url" href="{{ if ne .File.Lang .Site.Params.defaultLang }}/{{.File.Lang}}{{ end }}/about/">
-        <span itemprop="name">{{ .Site.Params.author.name }}</span>
-      </a>
-    </div>
-    <div class="list-inline">
-      {{ if isset .Params "tags" }}
-      <i class="bi bi-tag-fill pe-1"></i>
-      {{ range .Params.tags }}
-      <a class="fs-6" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>{{ .}}</a>
-      {{ end }}
-      {{ end }}
-    </div>
-    <div class="list-inline">
-      <span class="fs-6"><i class="bi bi-alarm-fill pe-2"></i>{{i18n "timetoread"}}: {{ .ReadingTime }} {{i18n
-        "mintues"}}</span>
-      {{ with .Params.date }}<span class="fs-6 p-1"><i class="bi bi-calendar-week-fill me-2"></i>{{i18n "pubon"}}:
-        {{ . | dateFormat "January 02, 2006"
-        }}</span>{{end}}
-    </div>
-  </div>
-  <hr>
+<div class="container">
   <div class="row g-5 my-3">
-    <div class="col-md-8">
+    <article class="col-md-8" itemscope itemtype="https://schema.org/Article">
+      {{/* Article MetaData */}}
+      <div class="mb-5" id="articleMetaData">
+        <div>{{ partial "meta.breadcrumb.html" . }}</div>
+        <h3 itemprop="headline">{{ .Title }}</h3>
+        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <i class="bi bi-person-fill-check pe-1"></i>
+          <a itemprop="url" href="{{ if ne .File.Lang .Site.Params.defaultLang }}/{{.File.Lang}}{{ end }}/about/">
+            <span itemprop="name">{{ .Site.Params.author.name }}</span>
+          </a>
+        </div>
+        <div class="list-inline">
+          {{ if isset .Params "tags" }}
+          <i class="bi bi-tag-fill pe-1"></i>
+          {{ range .Params.tags }}
+          <a class="fs-6" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>{{ .}}</a>
+          {{ end }}
+          {{ end }}
+        </div>
+        <div class="list-inline">
+          <span class="fs-6"><i class="bi bi-alarm-fill pe-2"></i>{{i18n "timetoread"}}: {{ .ReadingTime }} {{i18n
+            "mintues"}}</span>
+          {{ with .Params.date }}<span class="fs-6 p-1"><i class="bi bi-calendar-week-fill me-2"></i>{{i18n "pubon"}}:
+            {{ . | dateFormat "January 02, 2006"
+            }}</span>{{end}}
+        </div>
+      </div>
+      <hr>
       {{/* Article Body */}}
       <div class="text-justify" itemprop="articleBody" id="articleBody">{{.Content}}
         <hr class="mt-5">
         {{ partial "posts.navigation.html" . }}
       </div>
-    </div>
+    </article>
     {{/* Right Sidebar */}}
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
@@ -104,5 +104,6 @@
       </div>
     </div>
   </div>
-</article>
+</div>
+</div>
 {{ end }}

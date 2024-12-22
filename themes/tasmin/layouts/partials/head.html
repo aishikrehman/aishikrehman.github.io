@@ -4,6 +4,10 @@
 {{ printf `
 <link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
+
 {{ if .Site.Params.useBootstrapMod -}}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap5.3.mod.css">
 {{ else }}
