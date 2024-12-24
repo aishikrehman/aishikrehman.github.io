@@ -1,32 +1,54 @@
 {{ define "main" }}
-<section class="container py-5">
-  {{ $type := .Type }}
-  {{ $.Scratch.Set "count" 1 }}
+<div id="termsSchema" class="bg-primary py-5">
+  <div class="container d-lg-flex justify-content-between  py-2 py-lg-4">
+    <div id="breadcrumb" class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+      {{ partial "meta.breadcrumb" . }}
+    </div>
+    <h1 class="h3 mb-0 text-light">{{ .Title }}</h1>
+  </div>
+</div>
+<div id="termsGrid" class="container">
+  <div id="articleGrid" class="row g-5 my-3">
+    <div id="termsContent" class="row justify-content-center pt-5 mt-2">
+      {{/* Left Sidebar */}}
+      <div id="termsSidebar" class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          {{/* Recent Posts */}}
+          {{ partial "widget.recentPosts.html" . }}
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      {{/* Terms Body */}}
+      <div id="termsBody" class="col-md-7">
+        {{ $type := .Type }}
+        {{ $.Scratch.Set "count" 1 }}
+        {{ range (.Site.RegularPages.GroupByDate "2006") }}
+        {{ if and (gt .Key 1) (gt (where .Pages "Type" $type) 0) }}
 
-  {{ range (.Site.RegularPages.GroupByDate "2006") }}
-    {{ if and (gt .Key 1) (gt (where .Pages "Type" $type) 0) }}
-
-      {{ range (where .Pages "Type" $type) }}
+        {{ range (where .Pages "Type" $type) }}
         {{ if (eq ($.Scratch.Get "count") 1) }}
-          {{ $.Scratch.Set "count" 0 }}
-          <h3>{{ .Date.Format "2006" }}</h3>
+        {{ $.Scratch.Set "count" 0 }}
+        <h3>{{ .Date.Format "2006" }}</h3>
         {{ end }}
-      {{ end }}
+        {{ end }}
 
-      {{ $.Scratch.Set "count" 1 }}
+        {{ $.Scratch.Set "count" 1 }}
 
-      <ul class="list mb-5">
-      {{ range (where .Pages "Type" $type) }}
-        {{ if (ne .Params.hidden true) }}
+        <ul class="list mb-5">
+          {{ range (where .Pages "Type" $type) }}
+          {{ if (ne .Params.hidden true) }}
           <li>
             <a href="{{ .RelPermalink }}">
               <span>{{ .Date.Format "02 Jan" }}</span> — {{ .Title }}
             </a>
           </li>
+          {{ end }}
+          {{ end }}
+        </ul>
         {{ end }}
-      {{ end }}
-      </ul>
-    {{ end }}
-  {{ end }}
-</section>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
 {{ end }}

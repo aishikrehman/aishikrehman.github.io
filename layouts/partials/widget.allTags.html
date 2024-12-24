@@ -1,0 +1,10 @@
+<div id="allTags">
+    <h4>All Tags</h4>
+    <ul class="list-unstyled">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <li class="border-bottom d-flex justify-content-between mt-2">
+        <a href="/tags/{{ $name | urlize }}">{{ $name | humanize }}</a> ({{ len $taxonomy }})
+      </li>
+  {{ end }}
+    </ul>
+</div>

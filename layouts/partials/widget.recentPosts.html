@@ -1,0 +1,19 @@
+<div id="recentPosts">
+    <h4>{{i18n "recentposts"}}</h4>
+    <ul class="list-unstyled">
+      {{ $i := 0 }}
+      {{ range ( first 3 ( where .Site.Pages "Type" "posts" ).ByDate ) }}
+      {{ $i = add $i 1 }}
+      <li class="py-3 border-top">
+        <a class="d-flex align-items-center" href="{{ .Permalink }}">
+          <div class="fs-2 me-3 text-secondary">0{{ $i }}</div>
+          <div>
+            <h6 class="mb-0">{{ .LinkTitle }}</h6>
+            {{ with .Params.date }}<small class="d-block text-body-secondary">{{ . | dateFormat "January 2, 2006"}}</small>{{ end }}
+           <small class="d-block text-body-secondary">{{i18n "timetoread"}} {{ .ReadingTime }} {{i18n "mintues"}}</small>
+          </div>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>

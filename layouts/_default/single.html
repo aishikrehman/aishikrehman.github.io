@@ -15,7 +15,7 @@
       <i class="bi bi-tag-fill pe-1"></i>
       {{ range $index, $tag := .Params.tags }}
       {{ if $index }}▪{{ end }}
-      <a class="fs-6" href="{{ absLangURL " /tags/" }}{{ $tag | urlize }}">{{ $tag }}</a>{{- end -}}
+      <a class="fs-6" href="{{ absLangURL "/tags/" }}{{ $tag | urlize }}">{{ $tag }}</a>{{- end -}}
       {{ end }}
     </span>
     <span id="articleReadingTime" class="fs-6">
@@ -32,55 +32,21 @@
     {{/* Article Body */}}
     <div id="articleContent" class="col-md-8 text-justify">
       <div id="articleBody" itemprop="articleBody">{{.Content}}</div>
-      <hr class="mt-5">
-      <div id="articleNavigation">{{ partial "posts.navigation.html" . }}</div>
+      <div id="articleShare" class="border-top border-bottom py-2">
+        {{/* <h4>শেয়ার করুন</h4> */}}
+        {{ partial "posts.share.html" . }}
+      </div>
+      <div id="articleNavigation" class="mt-5">{{ partial "posts.navigation.html" . }}</div>
     </div>
     {{/* Right Sidebar */}}
     <div id="articleSidebar" class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         {{/* relatedPosts */}}
-        {{ $i := 0 }}
-        {{ $related := .Site.RegularPages.Related . | first 5 }}
-        {{ with $related }}
-        <div id="relatedPosts">
-          {{ $i = add $i 1 }}
-          <h4>একই রকম অন্যান্য</h4>
-          <ul class="list-unstyled mb-4">
-            {{ range . }}
-            <li class="py-4 border-top">
-              <a class="d-flex align-items-center" href="{{ .Permalink }}">
-                <div class="fs-2 me-3 text-secondary">0{{ $i }}</div>
-                <div>
-                  <h6 class="mb-0">{{ .LinkTitle }}</h6>
-                  {{ with .Params.date }}<small class="text-body-secondary">{{ . | dateFormat "January 2, 2006"}}</small>{{ end }}
-                  <small class="text-body-secondary">{{i18n "timetoread"}} {{ .ReadingTime }} {{i18n "mintues"}}</small>
-                </div>
-              </a>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ end }}
+        <span class="d-block my-3"></span>
+        {{ partial "widget.relatedPosts.html" . }}
         {{/* recentPosts */}}
-        <div id="recentPosts">
-          <h4>{{i18n "recentposts"}}</h4>
-          <ul class="list-unstyled">
-            {{ $i := 0 }}
-            {{ range ( first 3 ( where .Site.Pages "Type" "posts" ).ByDate ) }}
-            {{ $i = add $i 1 }}
-            <li class="py-3 border-top">
-              <a class="d-flex align-items-center" href="{{ .Permalink }}">
-                <div class="fs-2 me-3 text-secondary">0{{ $i }}</div>
-                <div>
-                  <h6 class="mb-0">{{ .LinkTitle }}</h6>
-                  {{ with .Params.date }}<small class="text-body-secondary">{{ . | dateFormat "January 2, 2006"}}</small>{{ end }}
-                 <small class="text-body-secondary">{{i18n "timetoread"}} {{ .ReadingTime }} {{i18n "mintues"}}</small>
-                </div>
-              </a>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
+        <span class="d-block my-3"></span>
+        {{ partial "widget.recentPosts.html" . }}
         {{/* <div id="articleArchive">
           <h4>সংগ্রহশালা</h4>
           <ol class="list-unstyled">
@@ -99,10 +65,8 @@
           </ol>
         </div> */}}
         <hr class="py-3">
-        <div id="articleShare">
-          {{/* <h4>শেয়ার করুন</h4> */}}
-          {{ partial "posts.share.html" . }}
-        </div>
+        {{/*  All Tags  */}}
+        {{ partial "widget.allTags.html" . }}
       </div>
     </div>
   </div>

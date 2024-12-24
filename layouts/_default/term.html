@@ -1,19 +1,90 @@
+{{ define "head" }}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {{ range $index, $page := .Paginator.Pages }}
+      {{- if $index -}},{{- end -}}
+      {
+        "@type": "ListItem",
+        "position": {{ add $index 1 }},
+        "url": "{{ .Permalink }}"
+      }
+      {{- end -}}
+    ]
+  }
+</script>
+{{ end }}
 {{ define "main" }}
-<div class="bg-primary py-5">
+<div id="termsSchema" class="bg-primary py-5">
   <div class="container d-lg-flex justify-content-between  py-2 py-lg-4">
-    <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+    <div id="breadcrumb" class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
       {{ partial "meta.breadcrumb" . }}
     </div>
-    <div class="order-lg-1">
-      <h1 class="h3 mb-0 text-light">{{ .Title | humanize }}</h1>
-    </div>
+    <h1 class="h3 mb-0 text-light">{{ .Title | humanize }}</h1>
   </div>
 </div>
-<div class="container">
-  <div class="row justify-content-center pt-5 mt-2">
-    <section class="col-lg-9">
-      {{ partial "listitem.html" . }}
-    </section>
+<div id="termsGrid" class="container">
+  <div id="articleGrid" class="row g-5 my-3">
+    <div id="termsContent" class="row justify-content-center pt-5 mt-2">
+      {{/* Left Sidebar */}}
+      <div id="termsSidebar" class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          {{/* All Tags */}}
+          {{ partial "widget.allTags.html" . }}
+          {{/* Recent Posts */}}
+          <div class="d-block my-3">...</div>
+          {{ partial "widget.recentPosts.html" . }}
+          {{/*  Archive  */}}
+          {{/* <div id="articleArchive">
+            <h4>সংগ্রহশালা</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2021</a></li>
+              <li><a href="#">February 2021</a></li>
+              <li><a href="#">January 2021</a></li>
+              <li><a href="#">December 2020</a></li>
+              <li><a href="#">November 2020</a></li>
+              <li><a href="#">October 2020</a></li>
+              <li><a href="#">September 2020</a></li>
+              <li><a href="#">August 2020</a></li>
+              <li><a href="#">July 2020</a></li>
+              <li><a href="#">June 2020</a></li>
+              <li><a href="#">May 2020</a></li>
+              <li><a href="#">April 2020</a></li>
+            </ol>
+          </div> */}}
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      {{/* Terms Body */}}
+      <div id="termsBody" class="col-md-7">
+        {{ range .Paginator.Pages }}
+        <article class="border-bottom py-5">
+          <div>
+            <div class="d-flex align-items-center mb-2">
+              {{ with .Params.date }}
+              <span class="dateofpost">{{ . | dateFormat "January 2, 2006" }}</span>
+              {{ end }}
+            </div>
+            <h5><a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a></h5>
+            {{ with .Params.tags }}
+            <div class="fs-6 pe-2 mb-2">
+              {{ range . }}
+              <a class="badge text-bg-dark" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          <div class="text-justify">
+            {{ .Summary | truncate 400 }}
+            {{ if .Truncated }}<a class="text-muted" href="{{ .RelPermalink }}">[{{i18n "readmore"}}]</a>{{ end }}
+          </div>
+        </article>
+        {{ end }}
+        <div class="d-flex row-center py-3">{{ template "_internal/pagination.html" . }}</div>
+      </div>
+    </div>
   </div>
 </div>
 {{ end }}
