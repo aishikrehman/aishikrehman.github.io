@@ -7,7 +7,7 @@ theme: "tasmin"
 # enableGitInfo: true
 # googleAnalytics: "G-3NFDT41J8E"
 
-paginate: 10
+paginate: 5
 
 languages:
   bn:
@@ -55,7 +55,7 @@ Params:
   fb_app_id: "" #Facebook Application ID
   meta:
     name: Aishik Rehman
-    alternateName: ""
+    alternateName: "Oishik Rehman"
   author:
     name: Aishik Rehman
     jobtitle: Wikimedian and Lexicolgist and CSEr.

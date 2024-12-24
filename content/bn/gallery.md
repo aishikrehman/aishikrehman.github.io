@@ -1,6 +1,8 @@
 ---
 title: ছবিটবি
-hideavatar: true
+layout: gallery
+url: /about/gallery/
+description: "ব্যক্তিগত ছবির রাজ্য, যেখানে আটকে গেছে জীবনের বিশেষ মুহূর্ত, আনন্দের স্মৃতি আর গল্পগুলো।"
 ---
 <div class="row">
 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">

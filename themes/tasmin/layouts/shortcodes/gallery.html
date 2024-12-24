@@ -1,4 +1,9 @@
-<figure class="w-100 rounded mb-4">
-    <img src="{{ index .Params 0 }}" alt="{{ index .Params 1 }}" class="rounded"/>
-    <figcaption>{{ index .Params 1 }}</figcaption>
+<figure class="w-100 rounded mb-4" itemscope itemtype="https://schema.org/ImageObject">
+    <img class="rounded" src="{{ index .Params 0 }}" alt="{{ index .Params 1 }}" itemprop="contentUrl" />
+    <figcaption class="mt-2" itemprop="name">{{ index .Params 1 }}</figcaption>
+    <span class="d-none" itemprop="license">CC BY-SA 4.0 Attribution-ShareAlike 4.0 International</span>
+    <span class="d-none" itemprop="acquireLicensePage">https://creativecommons.org/licenses/by-sa/4.0/</span>
+    <span class="d-none" itemprop="creator" itemtype="https://schema.org/Person" itemscope>
+        <meta itemprop="name" content="{{.Site.Params.author.name}}" />
+    </span>
 </figure>

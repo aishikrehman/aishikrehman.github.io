@@ -1,6 +1,8 @@
 ---
 title: ছবিটবি
-hideavatar: true
+layout: gallery
+url: /en/about/gallery/
+description: "Discover Aishik Rehman's personal photo gallery, capturing cherished memories, moments of joy, and milestones."
 ---
 <div class="row">
 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
