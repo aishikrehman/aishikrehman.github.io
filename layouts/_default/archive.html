@@ -33,7 +33,6 @@
         {{ end }}
 
         {{ $.Scratch.Set "count" 1 }}
-
         <ul class="list mb-5">
           {{ range (where .Pages "Type" $type) }}
           {{ if (ne .Params.hidden true) }}

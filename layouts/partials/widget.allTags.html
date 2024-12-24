@@ -1,10 +1,12 @@
-<div id="allTags">
-    <h4>All Tags</h4>
+<div id="allTags" class="widget">
+  <h4 class="widget__title">{{i18n "allTags"}}</h4>
+  <div class="widget__content">
     <ul class="list-unstyled">
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <li class="border-bottom d-flex justify-content-between mt-2">
-        <a href="/tags/{{ $name | urlize }}">{{ $name | humanize }}</a> ({{ len $taxonomy }})
+      <li class="border-top d-flex justify-content-between py-1">
+        <a href="/tags/{{ $name | urlize }}">{{ partial "fn.title.html" $name }}</a> ({{ .Count }})
       </li>
-  {{ end }}
+      {{ end }}
     </ul>
+  </div>
 </div>

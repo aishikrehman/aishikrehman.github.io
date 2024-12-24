@@ -22,19 +22,19 @@
     <div id="breadcrumb" class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
       {{ partial "meta.breadcrumb" . }}
     </div>
-    <h1 class="h3 mb-0 text-light">{{ .Title | humanize }}</h1>
+    <h1 class="h3 mb-0 text-light">{{ partial "fn.title.html" .Title }}</h1>    
   </div>
 </div>
 <div id="termsGrid" class="container">
-  <div id="articleGrid" class="row g-5 my-3">
-    <div id="termsContent" class="row justify-content-center pt-5 mt-2">
+  <div id="termsGrid" class="row g-5 my-3">
+    <div id="termsContent" class="row justify-content-center py-5">
       {{/* Left Sidebar */}}
       <div id="termsSidebar" class="col-md-4">
-        <div class="position-sticky" style="top: 2rem;">
+        <div class="position-sticky pt-4" style="top: 2rem;">
           {{/* All Tags */}}
           {{ partial "widget.allTags.html" . }}
           {{/* Recent Posts */}}
-          <div class="d-block my-3">...</div>
+          <span class="d-block py-2"></span>
           {{ partial "widget.recentPosts.html" . }}
           {{/*  Archive  */}}
           {{/* <div id="articleArchive">
@@ -60,7 +60,7 @@
       {{/* Terms Body */}}
       <div id="termsBody" class="col-md-7">
         {{ range .Paginator.Pages }}
-        <article class="border-bottom py-5">
+        <article class="border-bottom py-4">
           <div>
             <div class="d-flex align-items-center mb-2">
               {{ with .Params.date }}

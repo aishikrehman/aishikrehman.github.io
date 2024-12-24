@@ -21,7 +21,7 @@
 {{ define "main" }}
 <section class="bg-green-5 position-relative overflow-hidden" id="homeHero">
     <div class="container py-10">
-        <div class="carousel carousel-dark slide" data-interval="5000" data-bs-ride="carousel" id="QuoteCarousel">
+        <div class="carousel slide" data-interval="5000" data-bs-ride="carousel" id="QuoteCarousel">
             <ul class="carousel-indicators">
                 {{ $lang := .Site.Language.Lang }}
                 {{ $quotes := index .Site.Data.quotes $lang }}
@@ -51,17 +51,16 @@
         {{ range $paginatedPages.Pages }}
         <article class="row border-bottom py-5">
             <div class="col-12 col-md-5">
-                <h5 class="mb-0"><a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a></h5>
+                <h4 class="mb-0"><a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a></h4>
                 {{ with .Params.date }}
-                <small class="d-block dateofpost">{{ . | dateFormat "January 2, 2006" }}</small>
+                <span class="d-block fs-6 text-muted">{{ . | dateFormat "January 2, 2006" }}</span>
                 {{ end }}
-                <small class="text-body-secondary">{{i18n "timetoread"}}: {{ .ReadingTime }} {{i18n "mintues"}}</small>
+                <span class="d-block fs-6 text-muted">{{i18n "timetoread"}}: {{ .ReadingTime }} {{i18n "mintues"}}</span>
                 {{ with .Params.tags }}
-                <div class="fs-6 pe-2 mb-2">
-                    {{ range . }}
-                    <a class="badge text-bg-dark" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
-                    {{ end }}
-                </div>
+                {{ range $index, $tag := . }}
+                {{ if $index }},{{ end }}
+                <a class="fs-6" href="{{ absLangURL "/tags/" }}{{ $tag | urlize }}">{{ partial "fn.title.html" $tag }}</a>
+                {{- end -}}
                 {{ end }}
             </div>
             <div class="col-12 col-md-7 text-justify">
@@ -73,4 +72,23 @@
         <div class="d-flex row-center py-3">{{ template "_internal/pagination.html" . }}</div>
     </div>
 </section>
+<div class="container">
+    <div class="row my-5">
+        <div class="col-lg-4 col-md-6">
+            <div class="section-title pt-4">
+                <h1>{{i18n "allTags"}}»</h1>
+                <p>»all tags</p>
+            </div>
+        </div>
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <div class="col-lg-4 col-md-6 service-item">
+            <a class="text-black" href="/tags/{{ .Page.Title | urlize }}">
+                <div class="block"> <span class="colored-box text-center h3 mb-4">{{ .Count }}</span>
+                    <h3 class="mb-3 service-title">{{ partial "fn.title.html" $name }}</h3>
+                </div>
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</div>
 {{ end }}

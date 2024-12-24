@@ -5,6 +5,16 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@font-face {
+    font-family: 'Bengali';
+    src: local("Kalpurush");
+    unicode-range: U+0980-09FF;
+}
+
+@font-face {
+    font-family: 'English';
+    src: local("Arial");
+}
 
 :root,
 [data-bs-theme=light] {
@@ -73,7 +83,7 @@
     --bs-dark-border-subtle: #adb5bd;
     --bs-white-rgb: 255, 255, 255;
     --bs-black-rgb: 0, 0, 0;
-    --bs-font-sans-serif: Noto Serif Bengali, Arial, Roboto, Helvetica, sans-serif;
+    --bs-font-sans-serif: 'Bengali', English, Kalpurush, Roboto, Helvetica, sans-serif, 'Siyam Rupali' !important;;
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     --bs-body-font-family: var(--bs-font-sans-serif);
@@ -195,7 +205,9 @@
         scroll-behavior: smooth
     }
 }
-html, body {
+
+html,
+body {
     height: 100%;
 }
 
@@ -3950,9 +3962,11 @@ fieldset:disabled .btn {
     left: 0;
     margin-top: var(--bs-dropdown-spacer)
 }
-.dropdown-menu li+li{
+
+.dropdown-menu li+li {
     margin-top: 0.125rem
 }
+
 .dropdown-menu-start {
     --bs-position: start
 }
@@ -5374,6 +5388,7 @@ fieldset:disabled .btn {
     background-color: var(--bs-breadcrumb-bg);
     border-radius: var(--bs-breadcrumb-border-radius)
 }
+
 .breadcrumb-item a {
     color: var(--bs-secondary);
 }
@@ -5409,8 +5424,8 @@ fieldset:disabled .btn {
     --bs-pagination-focus-bg: var(--bs-secondary-bg);
     --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     --bs-pagination-active-color: #fff;
-    --bs-pagination-active-bg: #0d6efd;
-    --bs-pagination-active-border-color: #0d6efd;
+    --bs-pagination-active-bg: var(--bd-green-5);
+    --bs-pagination-active-border-color: var(--bd-green-5);
     --bs-pagination-disabled-color: var(--bs-secondary-color);
     --bs-pagination-disabled-bg: var(--bs-secondary-bg);
     --bs-pagination-disabled-border-color: var(--bs-border-color);
@@ -9824,12 +9839,12 @@ fieldset:disabled .btn {
 
 .bg-body-secondary {
     --bs-bg-opacity: 1;
-    background-color: var(--bs-secondary-bg)!important
+    background-color: var(--bs-secondary-bg) !important
 }
 
 .bg-body-tertiary {
     --bs-bg-opacity: 1;
-    background-color: var(--bs-tertiary-bg)!important
+    background-color: var(--bs-tertiary-bg) !important
 }
 
 .bg-opacity-10 {

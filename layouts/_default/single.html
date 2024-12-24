@@ -11,11 +11,12 @@
       </a>
     </div>
     <span id="articleTags" class="d-block">
-      {{ if isset .Params "tags" }}
+      {{ with .Params.tags }}
       <i class="bi bi-tag-fill pe-1"></i>
-      {{ range $index, $tag := .Params.tags }}
+      {{ range $index, $tag := . }}
       {{ if $index }}▪{{ end }}
-      <a class="fs-6" href="{{ absLangURL "/tags/" }}{{ $tag | urlize }}">{{ $tag }}</a>{{- end -}}
+      <a class="fs-6" href="{{ absLangURL "/tags/" }}{{ $tag | urlize }}">{{ partial "fn.title.html" $tag }}</a>
+      {{- end -}}
       {{ end }}
     </span>
     <span id="articleReadingTime" class="fs-6">
@@ -42,10 +43,9 @@
     <div id="articleSidebar" class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         {{/* relatedPosts */}}
-        <span class="d-block my-3"></span>
         {{ partial "widget.relatedPosts.html" . }}
         {{/* recentPosts */}}
-        <span class="d-block my-3"></span>
+        <span class="d-block py-2"></span>
         {{ partial "widget.recentPosts.html" . }}
         {{/* <div id="articleArchive">
           <h4>সংগ্রহশালা</h4>
@@ -64,7 +64,7 @@
             <li><a href="#">April 2020</a></li>
           </ol>
         </div> */}}
-        <hr class="py-3">
+        <span class="d-block py-2"></span>
         {{/*  All Tags  */}}
         {{ partial "widget.allTags.html" . }}
       </div>
