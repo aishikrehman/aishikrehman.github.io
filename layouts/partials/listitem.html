@@ -28,7 +28,7 @@
     {{ with .Params.tags }}
     <div class="fs-6 pe-2 mb-2">
       {{ range . }}
-      <a class="text-muted border px-2 py-1" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
+      <a class="badge text-bg-dark" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
       {{ end }}
     </div>
     {{ end }}

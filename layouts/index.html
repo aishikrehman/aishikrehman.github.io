@@ -44,25 +44,22 @@
     </div>
 </section>
 
-<section class="container" id="bodyContent">
+<section id="homeContent" class="container">
     <div class="col-lg-9 m-auto py-5">
         <h2 class="text-center py-3">{{i18n "recentPosts"}}</h2>
         {{ $paginatedPages := .Paginate (where .Site.RegularPages "Type" "posts") }}
         {{ range $paginatedPages.Pages }}
         <article class="row border-bottom py-5">
             <div class="col-12 col-md-5">
-                <div class="d-flex align-items-center mb-2">
-                    {{ with .Params.date }}
-                    <span class="dateofpost">{{ . | dateFormat "January 2, 2006" }}</span>
-                    {{ end }}
-                </div>
-                <h5>
-                    <a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a>
-                </h5>
+                <h5 class="mb-0"><a class="fw-bold" href="{{.RelPermalink}}">{{ .Title }}</a></h5>
+                {{ with .Params.date }}
+                <small class="d-block dateofpost">{{ . | dateFormat "January 2, 2006" }}</small>
+                {{ end }}
+                <small class="text-body-secondary">{{i18n "timetoread"}}: {{ .ReadingTime }} {{i18n "mintues"}}</small>
                 {{ with .Params.tags }}
                 <div class="fs-6 pe-2 mb-2">
                     {{ range . }}
-                    <a class="text-muted border px-2 py-1" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
+                    <a class="badge text-bg-dark" href='{{absLangURL "/tags/"}}{{ . | urlize }}'>#{{ . }}</a>
                     {{ end }}
                 </div>
                 {{ end }}
