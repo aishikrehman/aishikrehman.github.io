@@ -16,23 +16,6 @@
       }]
     }
 </script>
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {{ range $index, $page := where .Site.RegularPages "Type" "posts" }}
-        {{- if $index -}},{{- end -}}
-        {
-          "@type": "ListItem",
-          "position": {{ add $index 1 }},
-          "item": "{{ .Permalink }}",
-          "name": "{{.Title}}"
-        }
-        {{- end -}}
-      ]
-    }
-</script>
 {{ end }}
 
 {{ define "main" }}

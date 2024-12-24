@@ -1,15 +1,14 @@
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
+      "@type": "ItemList",
       "itemListElement": [
         {{ range $index, $page := .Paginator.Pages }}
         {{- if $index -}},{{- end -}}
         {
           "@type": "ListItem",
           "position": {{ add $index 1 }},
-          "item": "{{ .Permalink }}",
-          "name": "{{.Title}}"
+          "url": "{{ .Permalink }}"
         }
         {{- end -}}
       ]
