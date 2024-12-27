@@ -1,0 +1,668 @@
+---
+title:
+---
+<div id="ptx-content" class="ptx-content"><section class="section" id="sec_intro-statements"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">0.2</span><span class="space"> </span><span class="title">Mathematical Statements</span>
+</h2>
+<section class="introduction" id="sec_intro-statements-2"><article class="project-like" id="sec_intro-statements-2-1"><h6 class="heading">
+<span class="type">Investigate!</span> </h6> <div class="para" id="sec_intro-statements-2-1-3">While walking through a fictional forest, you encounter three trolls guarding a bridge. Each is either a <em class="emphasis">knight</em>, who always tells the truth, or a <em class="emphasis">knave</em>, who always lies. The trolls will not let you pass until you correctly identify each as either a knight or a knave. Each troll makes a single statement:</div> <blockquote class="blockquote" id="sec_intro-statements-2-1-4">
+<div class="para" id="sec_intro-statements-2-1-4-1">Troll 1: If I am a knave, then there are exactly two knights here.</div> <div class="para" id="sec_intro-statements-2-1-4-2">Troll 2: Troll 1 is lying.</div> <div class="para" id="sec_intro-statements-2-1-4-3">Troll 3: Either we are all knaves or at least one of us is a knight.</div>
+</blockquote> <div class="para" id="sec_intro-statements-2-1-5">Which troll is which? </div></article> <div class="para" id="sec_intro-statements-2-2">In order to <em class="emphasis">do</em> mathematics, we must be able to <em class="emphasis">talk</em> and <em class="emphasis">write</em> about mathematics. Perhaps your experience with mathematics so far has mostly involved finding answers to problems. As we embark towards more advanced and abstract mathematics, writing will play a more prominent role in the mathematical process.</div> <div class="para" id="sec_intro-statements-2-3">Communication in mathematics requires more precision than many other subjects, and thus we should take a few pages here to consider the basic building blocks: <em class="emphasis">mathematical statements</em>.</div></section><section class="subsection" id="atomic-molecular-statements"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Atomic and Molecular Statements</span>
+</h3>
+<div class="para" id="atomic-molecular-statements-2"> A <dfn class="terminology">statement</dfn> is any declarative sentence which is either true or false. A statement is <dfn class="terminology">atomic</dfn> if it cannot be divided into smaller statements, otherwise it is called <dfn class="terminology">molecular</dfn>.</div>
+<article class="example example-like" id="atomic-molecular-statements-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="atomic-molecular-statements-3-1-1">
+<div class="para">These are statements (in fact, <em class="emphasis">atomic</em> statements):</div>
+<ul class="disc" id="atomic-molecular-statements-3-1-1-2">
+<li id="atomic-molecular-statements-3-1-1-2-1"><div class="para" id="atomic-molecular-statements-3-1-1-2-1-1">Telephone numbers in the USA have 10 digits.</div></li>
+<li id="atomic-molecular-statements-3-1-1-2-2"><div class="para" id="atomic-molecular-statements-3-1-1-2-2-1">The moon is made of cheese.</div></li>
+<li id="atomic-molecular-statements-3-1-1-2-3"><div class="para" id="atomic-molecular-statements-3-1-1-2-3-1">42 is a perfect square.</div></li>
+<li id="atomic-molecular-statements-3-1-1-2-4"><div class="para" id="atomic-molecular-statements-3-1-1-2-4-1">Every even number greater than 2 can be expressed as the sum of two primes.</div></li>
+<li id="atomic-molecular-statements-3-1-1-2-5"><div class="para" id="atomic-molecular-statements-3-1-1-2-5-1"><span class="process-math">\(\displaystyle 3+7 = 12\)</span></div></li>
+</ul>
+<div class="para">And these are not statements:</div>
+<ul class="disc" id="atomic-molecular-statements-3-1-1-3">
+<li id="atomic-molecular-statements-3-1-1-3-1"><div class="para" id="atomic-molecular-statements-3-1-1-3-1-1">Would you like some cake?</div></li>
+<li id="atomic-molecular-statements-3-1-1-3-2"><div class="para" id="atomic-molecular-statements-3-1-1-3-2-1">The sum of two squares.</div></li>
+<li id="atomic-molecular-statements-3-1-1-3-3"><div class="para" id="p-derived-atomic-molecular-statements-3-1-1-3-3"><span class="process-math">\(1+3+5+7+\cdots+2n+1\text{.}\)</span></div></li>
+<li id="atomic-molecular-statements-3-1-1-3-4"><div class="para" id="atomic-molecular-statements-3-1-1-3-4-1">Go to your room!</div></li>
+<li id="atomic-molecular-statements-3-1-1-3-5"><div class="para" id="atomic-molecular-statements-3-1-1-3-5-1"><span class="process-math">\(\displaystyle 3+x = 12\)</span></div></li>
+</ul>
+</div></article><div class="para" id="atomic-molecular-statements-4"> The reason the sentence “<span class="process-math">\(3 + x = 12\)</span>” is not a statement is that it contains a variable. Depending on what <span class="process-math">\(x\)</span> is, the sentence is either true or false, but right now it is neither. One way to make the <em class="emphasis">sentence</em> into a <em class="emphasis">statement</em> is to specify the value of the variable in some way. This could be done by specifying a specific substitution, for example, “<span class="process-math">\(3+x = 12\)</span> where <span class="process-math">\(x = 9\text{,}\)</span>” which is a true statement. Or you could <em class="emphasis">capture</em> the free variable by <em class="emphasis">quantifying</em> over it, as in, “for all values of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(3+x = 12\text{,}\)</span>” which is false. We will discuss quantifiers in more detail at the end of this section.</div>
+<div class="para" id="atomic-molecular-statements-5"> You can build more complicated (molecular) statements out of simpler (atomic or molecular) ones using <dfn class="terminology">logical connectives</dfn>. For example, this is a molecular statement:</div>
+<blockquote class="blockquote" id="atomic-molecular-statements-6"><div class="para" id="atomic-molecular-statements-6-1">Telephone numbers in the USA have 10 digits and 42 is a perfect square.</div></blockquote>
+<div class="para" id="atomic-molecular-statements-7"> Note that we can break this down into two smaller statements. The two shorter statements are <em class="emphasis">connected</em> by an “and.” We will consider 5 connectives: “and” (Sam is a man and Chris is a woman), “or” (Sam is a man or Chris is a woman), “if…, then…” (if Sam is a man, then Chris is a woman), “if and only if” (Sam is a man if and only if Chris is a woman), and “not” (Sam is not a man). The first four are called <dfn class="terminology">binary connectives</dfn> (because they connect two statements) while “not” is an example of a <dfn class="terminology">unary connective</dfn> (since it applies to a single statement).</div>
+<div class="para" id="atomic-molecular-statements-8"> These molecular statements are of course still statements, so they must be either true or false. The absolutely key observation here is that which <dfn class="terminology">truth value</dfn> the molecular statement achieves is completely determined by the type of connective and the truth values of the parts. We do not need to know what the parts actually say, only whether those parts are true or false. So to analyze logical connectives, it is enough to consider <dfn class="terminology">propositional variables</dfn> (sometimes called <em class="emphasis">sentential</em> variables), usually capital letters in the middle of the alphabet: <span class="process-math">\(P, Q, R, S, \ldots\text{.}\)</span> We think of these as standing in for (usually atomic) statements, but there are only two <em class="emphasis">values</em> the variables can achieve: true or false.<details class="ptx-footnote" aria-live="polite" id="atomic-molecular-statements-8-11"><summary class="ptx-footnote__number" title="Footnote 0.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="atomic-molecular-statements-8-11">In computer programming, we should call such variables <dfn class="terminology">Boolean variables</dfn>.</div></details> We also have symbols for the logical connectives: <span class="process-math">\(\wedge\text{,}\)</span> <span class="process-math">\(\vee\text{,}\)</span> <span class="process-math">\(\imp\text{,}\)</span> <span class="process-math">\(\iff\text{,}\)</span> <span class="process-math">\(\neg\text{.}\)</span>
+</div>
+<article class="assemblage assemblage-like" id="atomic-molecular-statements-9"><h4 class="heading"><span class="title">Logical Connectives.</span></h4>
+<div class="para logical" id="atomic-molecular-statements-9-4"><ul class="disc" id="atomic-molecular-statements-9-4-1">
+<li id="atomic-molecular-statements-9-4-1-1"><div class="para" id="p-derived-atomic-molecular-statements-9-4-1-1">
+<span class="process-math">\(P \wedge Q\)</span> is read “<span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span>” and called a <dfn class="terminology">conjunction</dfn>. </div></li>
+<li id="atomic-molecular-statements-9-4-1-2"><div class="para" id="p-derived-atomic-molecular-statements-9-4-1-2"> <span class="process-math">\(P \vee Q\)</span> is read “<span class="process-math">\(P\)</span> or <span class="process-math">\(Q\text{,}\)</span>” and called a <dfn class="terminology">disjunction</dfn>. </div></li>
+<li id="atomic-molecular-statements-9-4-1-3"><div class="para" id="p-derived-atomic-molecular-statements-9-4-1-3">
+<span class="process-math">\(P \imp Q\)</span> is read “if <span class="process-math">\(P\)</span> then <span class="process-math">\(Q\text{,}\)</span>” and called an <dfn class="terminology">implication</dfn> or <dfn class="terminology">conditional</dfn>. </div></li>
+<li id="atomic-molecular-statements-9-4-1-4"><div class="para" id="p-derived-atomic-molecular-statements-9-4-1-4">
+<span class="process-math">\(P \iff Q\)</span> is read “<span class="process-math">\(P\)</span> if and only if <span class="process-math">\(Q\text{,}\)</span>” and called a <dfn class="terminology">biconditional</dfn>. </div></li>
+<li id="atomic-molecular-statements-9-4-1-5"><div class="para" id="p-derived-atomic-molecular-statements-9-4-1-5">
+<span class="process-math">\(\neg P\)</span> is read “not <span class="process-math">\(P\text{,}\)</span>” and called a <dfn class="terminology">negation</dfn>. </div></li>
+</ul></div></article><div class="para" id="atomic-molecular-statements-10"> The <dfn class="terminology">truth value</dfn> of a statement is determined by the truth value(s) of its part(s), depending on the connectives:</div>
+<article class="assemblage assemblage-like" id="atomic-molecular-statements-11"><h4 class="heading"><span class="title">Truth Conditions for Connectives.</span></h4>
+<div class="para logical" id="atomic-molecular-statements-11-3"><ul class="disc" id="atomic-molecular-statements-11-3-1">
+<li id="atomic-molecular-statements-11-3-1-1"><div class="para" id="p-derived-atomic-molecular-statements-11-3-1-1">
+<span class="process-math">\(P \wedge Q\)</span> is true when both <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are true. </div></li>
+<li id="atomic-molecular-statements-11-3-1-2"><div class="para" id="p-derived-atomic-molecular-statements-11-3-1-2">
+<span class="process-math">\(P \vee Q\)</span> is true when <span class="process-math">\(P\)</span> or <span class="process-math">\(Q\)</span> or both are true. </div></li>
+<li id="atomic-molecular-statements-11-3-1-3"><div class="para" id="p-derived-atomic-molecular-statements-11-3-1-3">
+<span class="process-math">\(P \imp Q\)</span> is true when <span class="process-math">\(P\)</span> is false or <span class="process-math">\(Q\)</span> is true or both. </div></li>
+<li id="atomic-molecular-statements-11-3-1-4"><div class="para" id="p-derived-atomic-molecular-statements-11-3-1-4">
+<span class="process-math">\(P \iff Q\)</span> is true when <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are both true, or both false. </div></li>
+<li id="atomic-molecular-statements-11-3-1-5"><div class="para" id="p-derived-atomic-molecular-statements-11-3-1-5">
+<span class="process-math">\(\neg P\)</span> is true when <span class="process-math">\(P\)</span> is false. </div></li>
+</ul></div></article><div class="para" id="atomic-molecular-statements-12"> Note that for us, <em class="emphasis">or</em> is the <dfn class="terminology">inclusive or</dfn> (and not the sometimes used <em class="emphasis">exclusive or</em>) meaning that <span class="process-math">\(P \vee Q\)</span> is in fact true when both <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are true. As for the other connectives, “and” behaves as you would expect, as does negation. The biconditional (if and only if) might seem a little strange, but you should think of this as saying the two parts of the statements are <em class="emphasis">equivalent</em> in that they have the same truth value. This leaves only the conditional <span class="process-math">\(P \imp Q\)</span> which has a slightly different meaning in mathematics than it does in ordinary usage. However, implications are so common and useful in mathematics, that we must develop fluency with their use, and as such, they deserve their own subsection.</div></section><section class="subsection" id="subsec_implications"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Implications</span>
+</h3>
+<article class="assemblage assemblage-like" id="subsec_implications-2"><h4 class="heading"><span class="title">Implications.</span></h4>
+<div class="para logical" id="subsec_implications-2-8">
+<div class="para">An <dfn class="terminology">implication</dfn> or <dfn class="terminology">conditional</dfn> is a molecular statement of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P \imp Q
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are statements. We say that</div>
+<ul class="disc" id="subsec_implications-2-8-6">
+<li id="subsec_implications-2-8-6-1"><div class="para" id="p-derived-subsec_implications-2-8-6-1">
+<span class="process-math">\(P\)</span> is the <dfn class="terminology">hypothesis</dfn> (or <dfn class="terminology">antecedent</dfn>).</div></li>
+<li id="subsec_implications-2-8-6-2"><div class="para" id="p-derived-subsec_implications-2-8-6-2">
+<span class="process-math">\(Q\)</span> is the <dfn class="terminology">conclusion</dfn> (or <dfn class="terminology">consequent</dfn>).</div></li>
+</ul>
+</div>
+<div class="para" id="subsec_implications-2-9">An implication is <em class="emphasis">true</em> provided <span class="process-math">\(P\)</span> is false or <span class="process-math">\(Q\)</span> is true (or both), and <em class="emphasis">false</em> otherwise. In particular, the only way for <span class="process-math">\(P \imp Q\)</span> to be false is for <span class="process-math">\(P\)</span> to be true <em class="emphasis">and</em> <span class="process-math">\(Q\)</span> to be false.</div></article><div class="para" id="subsec_implications-3"> Easily the most common type of statement in mathematics is the implication. Even statements that do not at first look like they have this form conceal an implication at their heart. Consider the <em class="emphasis">Pythagorean Theorem</em>. Many a college freshman would quote this theorem as “<span class="process-math">\(a^2 + b^2 = c^2\text{.}\)</span>” This is absolutely not correct. For one thing, that is not a statement since it has three variables in it. Perhaps they imply that this should be true for any values of the variables? So <span class="process-math">\(1^2 + 5^2 = 2^2\text{???}\)</span> How can we fix this? Well, the equation is true as long as <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are the legs of a right triangle and <span class="process-math">\(c\)</span> is the hypotenuse. In other words:</div>
+<blockquote class="blockquote" id="subsec_implications-4"><div class="para" id="subsec_implications-4-1">
+<em class="emphasis">If</em> <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are the legs of a right triangle with hypotenuse <span class="process-math">\(c\text{,}\)</span> <em class="emphasis">then</em> <span class="process-math">\(a^2 + b^2 = c^2\text{.}\)</span>
+</div></blockquote>
+<div class="para" id="subsec_implications-5">This is a reasonable way to think about implications: our claim is that the conclusion (“then” part) is true, but on the assumption that the hypothesis (“if” part) is true. We make no claim about the conclusion in situations when the hypothesis is false.<details class="ptx-footnote" aria-live="polite" id="subsec_implications-5-3"><summary class="ptx-footnote__number" title="Footnote 0.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="subsec_implications-5-3">However, note that in the case of the Pythagorean Theorem, it is also the case that <em class="emphasis">if</em> <span class="process-math">\(a^2 + b^2 = c^2\text{,}\)</span> <em class="emphasis">then</em> <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are the legs of a right triangle with hypotenuse <span class="process-math">\(c\text{.}\)</span> So we could have also expressed this theorem as a biconditional: “<span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are the legs of a right triangle with hypotenuse <span class="process-math">\(c\)</span> <em class="emphasis">if and only if</em> <span class="process-math">\(a^2 + b^2 = c^2\text{.}\)</span>”</div></details>
+</div>
+<div class="para" id="subsec_implications-6">Still, it is important to remember that an implication is a statement, and therefore is either true or false. The truth value of the implication is determined by the truth values of its two parts. To agree with the usage above, we say that an implication is true either when the hypothesis is false, or when the conclusion is true. This leaves only one way for an implication to be false: when the hypothesis is true and the conclusion is false.</div>
+<article class="example example-like" id="subsec_implications-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_implications-7-1-1">Consider the statement:</div> <blockquote class="blockquote" id="subsec_implications-7-1-2"><div class="para" id="subsec_implications-7-1-2-1">If Bob gets a 90 on the final, then Bob will pass the class.</div></blockquote> <div class="para" id="subsec_implications-7-1-3">This is definitely an implication: <span class="process-math">\(P\)</span> is the statement “Bob gets a 90 on the final,” and <span class="process-math">\(Q\)</span> is the statement “Bob will pass the class.”</div> <div class="para" id="subsec_implications-7-1-4">Suppose I made that statement to Bob. In what circumstances would it be fair to call me a liar? What if Bob really did get a 90 on the final, and he did pass the class? Then I have not lied; my statement is true. However, if Bob did get a 90 on the final and did not pass the class, then I lied, making the statement false. The tricky case is this: what if Bob did not get a 90 on the final? Maybe he passes the class, maybe he doesn’t. Did I lie in either case? I think not. In these last two cases, <span class="process-math">\(P\)</span> was false, and the statement <span class="process-math">\(P \imp Q\)</span> was true. In the first case, <span class="process-math">\(Q\)</span> was true, and so was <span class="process-math">\(P \imp Q\text{.}\)</span> So <span class="process-math">\(P \imp Q\)</span> is true when either <span class="process-math">\(P\)</span> is false or <span class="process-math">\(Q\)</span> is true.</div></article><div class="para" id="subsec_implications-8">Just to be clear, although we sometimes read <span class="process-math">\(P \imp Q\)</span> as “<span class="process-math">\(P\)</span> <em class="emphasis">implies</em> <span class="process-math">\(Q\)</span>”, we are not insisting that there is some causal relationship between the statements <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{.}\)</span> In particular, if you claim that <span class="process-math">\(P \imp Q\)</span> is <em class="emphasis">false</em>, you are not saying that <span class="process-math">\(P\)</span> does not imply <span class="process-math">\(Q\text{,}\)</span> but rather that <span class="process-math">\(P\)</span> is true and <span class="process-math">\(Q\)</span> is false.</div>
+<article class="example example-like" id="subsec_implications-9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec_implications-9-1-1">
+<div class="para">Decide which of the following statements are true and which are false. Briefly explain.</div>
+<ol class="decimal" id="subsec_implications-9-1-1-1">
+<li id="subsec_implications-9-1-1-1-1"><div class="para" id="subsec_implications-9-1-1-1-1-1">If <span class="process-math">\(1=1\text{,}\)</span> then most horses have 4 legs.</div></li>
+<li id="subsec_implications-9-1-1-1-2"><div class="para" id="subsec_implications-9-1-1-1-2-1">If <span class="process-math">\(0=1\text{,}\)</span> then <span class="process-math">\(1=1\text{.}\)</span>
+</div></li>
+<li id="subsec_implications-9-1-1-1-3"><div class="para" id="subsec_implications-9-1-1-1-3-1">If 8 is a prime number, then the 7624th digit of <span class="process-math">\(\pi\)</span> is an 8.</div></li>
+<li id="subsec_implications-9-1-1-1-4"><div class="para" id="subsec_implications-9-1-1-1-4-1">If the 7624th digit of <span class="process-math">\(\pi\)</span> is an 8, then <span class="process-math">\(2+2 = 4\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="subsec_implications-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec_implications-9-2-1">
+<div class="para">All four of the statements are true. Remember, the only way for an implication to be false is for the <em class="emphasis">if</em> part to be true and the <em class="emphasis">then</em> part to be false.</div>
+<ol class="decimal" id="subsec_implications-9-2-1-3">
+<li id="subsec_implications-9-2-1-3-1"><div class="para" id="subsec_implications-9-2-1-3-1-1">Here both the hypothesis and the conclusion are true, so the implication is true. It does not matter that there is no meaningful connection between the true mathematical fact and the fact about horses.</div></li>
+<li id="subsec_implications-9-2-1-3-2"><div class="para" id="subsec_implications-9-2-1-3-2-1">Here the hypothesis is false and the conclusion is true, so the implication is true.</div></li>
+<li id="subsec_implications-9-2-1-3-3"><div class="para" id="subsec_implications-9-2-1-3-3-1">I have no idea what the 7624th digit of <span class="process-math">\(\pi\)</span> is, but this does not matter. Since the hypothesis is false, the implication is automatically true.</div></li>
+<li id="subsec_implications-9-2-1-3-4"><div class="para" id="subsec_implications-9-2-1-3-4-1">Similarly here, regardless of the truth value of the hypothesis, the conclusion is true, making the implication true.</div></li>
+</ol>
+</div></div></details></div></article><div class="para" id="subsec_implications-10">It is important to understand the conditions under which an implication is true not only to decide whether a mathematical statement is true, but in order to <em class="emphasis">prove</em> that it is. Proofs might seem scary (especially if you have had a bad high school geometry experience) but all we are really doing is explaining (very carefully) why a statement is true. If you understand the truth conditions for an implication, you already have the outline for a proof.</div>
+<article class="assemblage assemblage-like" id="subsec_implications-11"><h4 class="heading"><span class="title">Direct Proofs of Implications.</span></h4>
+<div class="para" id="subsec_implications-11-4">To prove an implication <span class="process-math">\(P \imp Q\text{,}\)</span> it is enough to assume <span class="process-math">\(P\text{,}\)</span> and from it, deduce <span class="process-math">\(Q\text{.}\)</span>
+</div></article><div class="para" id="subsec_implications-12">Perhaps a better way to say this is that to prove a statement of the form <span class="process-math">\(P \imp Q\)</span> directly, you must explain why <span class="process-math">\(Q\)</span> is true, but you <em class="emphasis">get to</em> assume <span class="process-math">\(P\)</span> is true first. After all, you only care about whether <span class="process-math">\(Q\)</span> is true in the case that <span class="process-math">\(P\)</span> is as well.</div>
+<div class="para" id="subsec_implications-13">There are other techniques to prove statements (implications and others) that we will encounter throughout our studies, and new proof techniques are discovered all the time. Direct proof is the easiest and most elegant style of proof and has the advantage that such a proof often does a great job of explaining <em class="emphasis">why</em> the statement is true.</div>
+<article class="example example-like" id="subsec_implications-14"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_implications-14-1-1">Prove: If two numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are even, then their sum <span class="process-math">\(a+b\)</span> is even.</div>
+<div class="solutions"><details id="subsec_implications-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<article class="proof" id="subsec_implications-14-2-1"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para" id="subsec_implications-14-2-1-1">Suppose the numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are even. This means that <span class="process-math">\(a = 2k\)</span> and <span class="process-math">\(b=2j\)</span> for some integers <span class="process-math">\(k\)</span> and <span class="process-math">\(j\text{.}\)</span> The sum is then <span class="process-math">\(a+b = 2k+2j = 2(k+j)\text{.}\)</span> Since <span class="process-math">\(k+j\)</span> is an integer, this means that <span class="process-math">\(a+b\)</span> is even.</div></article> <div class="para" id="subsec_implications-14-2-2">Notice that since we get to assume the hypothesis of the implication, we immediately have a place to start. The proof proceeds essentially by repeatedly asking and answering, “what does that mean?” Eventually, we conclude that it means the conclusion.</div>
+</div></details></div></article><div class="para" id="subsec_implications-15">This sort of argument shows up outside of math as well. If you ever found yourself starting an argument with “hypothetically, let’s assume …,” then you have attempted a direct proof of your desired conclusion.</div>
+<div class="para" id="subsec_implications-16">An implication is a way of expressing a relationship between two statements. It is often interesting to ask whether there are other relationships between the statements. Here we introduce some common language to address this question.</div>
+<article class="assemblage assemblage-like" id="subsec_implications-17"><h4 class="heading"><span class="title">Converse and Contrapositive.</span></h4>
+<div class="para logical" id="subsec_implications-17-2"><ul class="disc" id="subsec_implications-17-2-1">
+<li id="subsec_implications-17-2-1-1"><div class="para" id="subsec_implications-17-2-1-1-1">The <dfn class="terminology">converse</dfn>  of an implication <span class="process-math">\(P \imp Q\)</span> is the implication <span class="process-math">\(Q \imp P\text{.}\)</span> The converse is NOT logically equivalent to the original implication. That is, whether the converse of an implication is true is independent of the truth of the implication.</div></li>
+<li id="subsec_implications-17-2-1-2"><div class="para" id="subsec_implications-17-2-1-2-1">The <dfn class="terminology">contrapositive</dfn>  of an implication <span class="process-math">\(P \imp Q\)</span> is the statement <span class="process-math">\(\neg Q \imp \neg P\text{.}\)</span> An implication and its contrapositive are logically equivalent (they are either both true or both false).</div></li>
+</ul></div></article><div class="para" id="subsec_implications-18">Mathematics is overflowing with examples of true implications which have a false converse. If a number greater than 2 is prime, then that number is odd. However, just because a number is odd does not mean it is prime. If a shape is a square, then it is a rectangle. But it is false that if a shape is a rectangle, then it is a square.</div>
+<div class="para" id="subsec_implications-19">However, sometimes the converse of a true statement is also true. For example, the Pythagorean theorem has a true converse: if <span class="process-math">\(a^2 + b^2 = c^2\text{,}\)</span> then the triangle with sides <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> is a <em class="emphasis">right</em> triangle. Whenever you encounter an implication in mathematics, it is always reasonable to ask whether the converse is true.</div>
+<div class="para" id="subsec_implications-20">The contrapositive, on the other hand, always has the same truth value as its original implication. This can be very helpful in deciding whether an implication is true: often it is easier to analyze the contrapositive.</div>
+<article class="example example-like" id="subsec_implications-21"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_implications-21-1-1">True or false: If you draw any nine playing cards from a regular deck, then you will have at least three cards all of the same suit. Is the converse true?</div>
+<div class="solutions"><details id="subsec_implications-21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec_implications-21-2-1">True. The original implication is a little hard to analyze because there are so many different combinations of nine cards. But consider the contrapositive: If you <em class="emphasis">don’t</em> have at least three cards all of the same suit, then you don’t have nine cards. It is easy to see why this is true: you can at most have two cards of each of the four suits, for a total of eight cards (or fewer).</div> <div class="para" id="subsec_implications-21-2-2">The converse: If you have at least three cards all of the same suit, then you have nine cards. This is false. You could have three spades and nothing else. Note that to demonstrate that the converse (an implication) is false, we provided an example where the hypothesis is true (you do have three cards of the same suit), but where the conclusion is false (you do not have nine cards).</div>
+</div></details></div></article><div class="para" id="subsec_implications-22">Understanding converses and contrapositives can help understand implications and their truth values:</div>
+<article class="example example-like" id="subsec_implications-23"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_implications-23-1-1">Suppose I tell Sue that if she gets a 93% on her final, then she will get an A in the class. Assuming that what I said is true, what can you conclude in the following cases:</div> <div class="para logical" id="subsec_implications-23-1-2"><ol class="decimal" id="subsec_implications-23-1-2-1">
+<li id="subsec_implications-23-1-2-1-1"><div class="para" id="subsec_implications-23-1-2-1-1-1">Sue gets a 93% on her final.</div></li>
+<li id="subsec_implications-23-1-2-1-2"><div class="para" id="subsec_implications-23-1-2-1-2-1">Sue gets an A in the class.</div></li>
+<li id="subsec_implications-23-1-2-1-3"><div class="para" id="subsec_implications-23-1-2-1-3-1">Sue does not get a 93% on her final.</div></li>
+<li id="subsec_implications-23-1-2-1-4"><div class="para" id="subsec_implications-23-1-2-1-4-1">Sue does not get an A in the class.</div></li>
+</ol></div>
+<div class="solutions"><details id="subsec_implications-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec_implications-23-2-1">Note first that whenever <span class="process-math">\(P \imp Q\)</span> and <span class="process-math">\(P\)</span> are both true statements, <span class="process-math">\(Q\)</span> must be true as well. For this problem, take <span class="process-math">\(P\)</span> to mean “Sue gets a 93% on her final” and <span class="process-math">\(Q\)</span> to mean “Sue will get an A in the class.”</div> <div class="para logical" id="subsec_implications-23-2-2"><ol class="decimal" id="subsec_implications-23-2-2-1">
+<li id="subsec_implications-23-2-2-1-1"><div class="para" id="subsec_implications-23-2-2-1-1-1">We have <span class="process-math">\(P \imp Q\)</span> and <span class="process-math">\(P\text{,}\)</span> so <span class="process-math">\(Q\)</span> follows. Sue gets an A.</div></li>
+<li id="subsec_implications-23-2-2-1-2"><div class="para" id="subsec_implications-23-2-2-1-2-1">You cannot conclude anything. Sue could have gotten the A because she did extra credit for example. Notice that we do not know that if Sue gets an <span class="process-math">\(A\text{,}\)</span> then she gets a 93% on her final. That is the converse of the original implication, so it might or might not be true.</div></li>
+<li id="subsec_implications-23-2-2-1-3"><div class="para" id="subsec_implications-23-2-2-1-3-1">The contrapositive of the converse of <span class="process-math">\(P \imp Q\)</span> is <span class="process-math">\(\neg P \imp \neg Q\text{,}\)</span> which states that if Sue does not get a 93% on the final, then she will not get an A in the class. But this does not follow from the original implication. Again, we can conclude nothing. Sue could have done extra credit.</div></li>
+<li id="subsec_implications-23-2-2-1-4"><div class="para" id="subsec_implications-23-2-2-1-4-1">What would happen if Sue does not get an A but <em class="emphasis">did</em> get a 93% on the final? Then <span class="process-math">\(P\)</span> would be true and <span class="process-math">\(Q\)</span> would be false. This makes the implication <span class="process-math">\(P \imp Q\)</span> false! It must be that Sue did not get a 93% on the final. Notice now we have the implication <span class="process-math">\(\neg Q \imp \neg P\)</span> which is the contrapositive of <span class="process-math">\(P \imp Q\text{.}\)</span> Since <span class="process-math">\(P \imp Q\)</span> is assumed to be true, we know <span class="process-math">\(\neg Q \imp \neg P\)</span> is true as well.</div></li>
+</ol></div>
+</div></details></div></article><div class="para" id="subsec_implications-24">As we said above, an implication is not logically equivalent to its converse, but it is possible that both the implication and its converse are true. In this case, when both <span class="process-math">\(P \imp Q\)</span> and <span class="process-math">\(Q \imp P\)</span> are true, we say that <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are equivalent and write <span class="process-math">\(P \iff Q\text{.}\)</span> This is the biconditional we mentioned earlier.</div>
+<article class="assemblage assemblage-like" id="subsec_implications-25"><h4 class="heading"><span class="title">If and only if.</span></h4>
+<blockquote class="blockquote" id="subsec_implications-25-4"><div class="para" id="subsec_implications-25-4-1">
+<span class="process-math">\(P \iff Q\)</span> is logically equivalent to <span class="process-math">\((P \imp Q) \wedge (Q \imp P)\text{.}\)</span>
+</div></blockquote>
+<div class="para" id="subsec_implications-25-5">Example: Given an integer <span class="process-math">\(n\text{,}\)</span> it is true that <span class="process-math">\(n\)</span> is even if and only if <span class="process-math">\(n^2\)</span> is even. That is, if <span class="process-math">\(n\)</span> is even, then <span class="process-math">\(n^2\)</span> is even, as well as the converse: if <span class="process-math">\(n^2\)</span> is even, then <span class="process-math">\(n\)</span> is even.</div></article><div class="para" id="subsec_implications-26">You can think of “if and only if” statements as having two parts: an implication and its converse. We might say one is the “if” part, and the other is the “only if” part. We also sometimes say that “if and only if” statements have two directions: a forward direction <span class="process-math">\((P \imp Q)\)</span> and a backwards direction (<span class="process-math">\(P \leftarrow Q\text{,}\)</span> which is really just sloppy notation for <span class="process-math">\(Q \imp P\)</span>).</div>
+<div class="para" id="subsec_implications-27">Let’s think a little about which part is which. Is <span class="process-math">\(P \imp Q\)</span> the “if” part or the “only if” part? Consider an example.</div>
+<article class="example example-like" id="subsec_implications-28"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_implications-28-1-1">Suppose it is true that I sing if and only if I’m in the shower. We know this means both that if I sing, then I’m in the shower, and also the converse, that if I’m in the shower, then I sing. Let <span class="process-math">\(P\)</span> be the statement, “I sing,” and <span class="process-math">\(Q\)</span> be, “I’m in the shower.” So <span class="process-math">\(P \imp Q\)</span> is the statement “if I sing, then I’m in the shower.” Which part of the if and only if statement is this?</div> <div class="para" id="subsec_implications-28-1-2">What we are really asking for is the meaning of “I sing <em class="emphasis">if</em> I’m in the shower” and “I sing <em class="emphasis">only if</em> I’m in the shower.” When is the first one (the “if” part) <em class="emphasis">false</em>? When I am in the shower but not singing. That is the same condition on being false as the statement “if I’m in the shower, then I sing.” So the “if” part is <span class="process-math">\(Q \imp P\text{.}\)</span> On the other hand, to say, “I sing only if I’m in the shower” is equivalent to saying “if I sing, then I’m in the shower,” so the “only if” part is <span class="process-math">\(P \imp Q\text{.}\)</span>
+</div></article><div class="para" id="subsec_implications-29">It is not terribly important to know which part is the “if” or “only if” part, but this does illustrate something very, very important: <em class="emphasis">there are many ways to state an implication!</em>
+</div>
+<article class="example example-like" id="subsec_implications-30"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_implications-30-1-1">Rephrase the implication, “if I dream, then I am asleep” in as many different ways as possible. Then do the same for the converse.</div>
+<div class="solutions"><details id="subsec_implications-30-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec_implications-30-2-1">
+<div class="para">The following are all equivalent to the original implication:</div>
+<ol class="decimal" id="subsec_implications-30-2-1-1">
+<li id="subsec_implications-30-2-1-1-1"><div class="para" id="subsec_implications-30-2-1-1-1-1">I am asleep if I dream.</div></li>
+<li id="subsec_implications-30-2-1-1-2"><div class="para" id="subsec_implications-30-2-1-1-2-1">I dream only if I am asleep.</div></li>
+<li id="subsec_implications-30-2-1-1-3"><div class="para" id="subsec_implications-30-2-1-1-3-1">In order to dream, I must be asleep.</div></li>
+<li id="subsec_implications-30-2-1-1-4"><div class="para" id="subsec_implications-30-2-1-1-4-1">To dream, it is necessary that I am asleep.</div></li>
+<li id="subsec_implications-30-2-1-1-5"><div class="para" id="subsec_implications-30-2-1-1-5-1">To be asleep, it is sufficient to dream.</div></li>
+<li id="subsec_implications-30-2-1-1-6"><div class="para" id="subsec_implications-30-2-1-1-6-1">I am not dreaming unless I am asleep.</div></li>
+</ol>
+<div class="para">The following are equivalent to the converse (if I am asleep, then I dream):</div>
+<ol class="decimal" id="subsec_implications-30-2-1-2">
+<li id="subsec_implications-30-2-1-2-1"><div class="para" id="subsec_implications-30-2-1-2-1-1">I dream if I am asleep.</div></li>
+<li id="subsec_implications-30-2-1-2-2"><div class="para" id="subsec_implications-30-2-1-2-2-1">I am asleep only if I dream.</div></li>
+<li id="subsec_implications-30-2-1-2-3"><div class="para" id="subsec_implications-30-2-1-2-3-1">It is necessary that I dream in order to be asleep.</div></li>
+<li id="subsec_implications-30-2-1-2-4"><div class="para" id="subsec_implications-30-2-1-2-4-1">It is sufficient that I be asleep in order to dream.</div></li>
+<li id="subsec_implications-30-2-1-2-5"><div class="para" id="subsec_implications-30-2-1-2-5-1">If I don’t dream, then I’m not asleep.</div></li>
+</ol>
+</div></div></details></div></article><div class="para" id="subsec_implications-31">Hopefully you agree with the above example. We include the “necessary and sufficient” versions because those are common when discussing mathematics. In fact, let’s agree once and for all what they mean.</div>
+<article class="assemblage assemblage-like" id="subsec_implications-32"><h4 class="heading"><span class="title">Necessary and Sufficient.</span></h4>
+<div class="para logical" id="subsec_implications-32-4"><ul class="disc" id="subsec_implications-32-4-1">
+<li id="subsec_implications-32-4-1-1"><div class="para" id="p-derived-subsec_implications-32-4-1-1">“<span class="process-math">\(P\)</span> is necessary for <span class="process-math">\(Q\)</span>” means <span class="process-math">\(Q \imp P\text{.}\)</span>
+</div></li>
+<li id="subsec_implications-32-4-1-2"><div class="para" id="p-derived-subsec_implications-32-4-1-2">“<span class="process-math">\(P\)</span> is sufficient for <span class="process-math">\(Q\)</span>” means <span class="process-math">\(P \imp Q\text{.}\)</span>
+</div></li>
+<li id="subsec_implications-32-4-1-3"><div class="para" id="subsec_implications-32-4-1-3-1">If <span class="process-math">\(P\)</span> is necessary and sufficient for <span class="process-math">\(Q\text{,}\)</span> then <span class="process-math">\(P \iff Q\text{.}\)</span>
+</div></li>
+</ul></div></article><div class="para" id="subsec_implications-33">To be honest, I have trouble with these if I’m not very careful. I find it helps to keep a standard example for reference.</div>
+<article class="example example-like" id="subsec_implications-34"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_implications-34-1-1">Recall from calculus, if a function is differentiable at a point <span class="process-math">\(c\text{,}\)</span> then it is continuous at <span class="process-math">\(c\text{,}\)</span> but that the converse of this statement is not true (for example, <span class="process-math">\(f(x) = |x|\)</span> at the point 0). Restate this fact using “necessary and sufficient” language.</div>
+<div class="solutions"><details id="subsec_implications-34-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec_implications-34-2-1">It is true that in order for a function to be differentiable at a point <span class="process-math">\(c\text{,}\)</span> it is necessary for the function to be continuous at <span class="process-math">\(c\text{.}\)</span> However, it is not necessary that a function be differentiable at <span class="process-math">\(c\)</span> for it to be continuous at <span class="process-math">\(c\text{.}\)</span>
+</div> <div class="para" id="subsec_implications-34-2-2">It is true that to be continuous at a point <span class="process-math">\(c\text{,}\)</span> it is sufficient that the function be differentiable at <span class="process-math">\(c\text{.}\)</span> However, it is not the case that being continuous at <span class="process-math">\(c\)</span> is sufficient for a function to be differentiable at <span class="process-math">\(c\text{.}\)</span>
+</div>
+</div></details></div></article><div class="para" id="subsec_implications-35">Thinking about the necessity and sufficiency of conditions can also help when writing proofs and justifying conclusions. If you want to establish some mathematical fact, it is helpful to think what other facts would <em class="emphasis">be enough</em> (be sufficient) to prove your fact. If you have an assumption, think about what must also be necessary if that hypothesis is true.</div></section><section class="subsection" id="subsec_quantifiers"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Predicates and Quantifiers</span>
+</h3>
+<article class="project-like" id="subsec_quantifiers-2"><h6 class="heading">
+<span class="type">Investigate!</span> </h6>
+<div class="para" id="subsec_quantifiers-2-1">Consider the statements below. Decide whether any are equivalent to each other, or whether any imply any others.</div> <div class="para logical" id="subsec_quantifiers-2-2"><ol class="decimal" id="subsec_quantifiers-2-2-1">
+<li id="subsec_quantifiers-2-2-1-1"><div class="para" id="subsec_quantifiers-2-2-1-1-1">You can fool some people all of the time.</div></li>
+<li id="subsec_quantifiers-2-2-1-2"><div class="para" id="subsec_quantifiers-2-2-1-2-1">You can fool everyone some of the time.</div></li>
+<li id="subsec_quantifiers-2-2-1-3"><div class="para" id="subsec_quantifiers-2-2-1-3-1">You can always fool some people.</div></li>
+<li id="subsec_quantifiers-2-2-1-4"><div class="para" id="subsec_quantifiers-2-2-1-4-1">Sometimes you can fool everyone.</div></li>
+</ol></div></article><div class="para logical" id="subsec_quantifiers-3">
+<div class="para"> It would be nice to use variables in our mathematical sentences. For example, suppose we wanted to claim that if <span class="process-math">\(n\)</span> is prime, then <span class="process-math">\(n+7\)</span> is not prime. This looks like an implication. I would like to write something like</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(n) \imp \neg P(n+7)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(P(n)\)</span> means “<span class="process-math">\(n\)</span> is prime.” But this is not quite right. For one thing, because this sentence has a <dfn class="terminology">free variable</dfn> (that is, a variable that we have not specified anything about), it is not a statement.  A sentence that contains variables is called a <dfn class="terminology">predicate</dfn>.</div>
+</div>
+<div class="para" id="subsec_quantifiers-4">Now, if we plug in a specific value for <span class="process-math">\(n\text{,}\)</span> we do get a statement. In fact, it turns out that no matter what value we plug in for <span class="process-math">\(n\text{,}\)</span> we get a true implication in this case. What we really want to say is that <em class="emphasis">for all</em> values of <span class="process-math">\(n\text{,}\)</span> if <span class="process-math">\(n\)</span> is prime, then <span class="process-math">\(n+7\)</span> is not. We need to <em class="emphasis">quantify</em> the variable.</div>
+<div class="para" id="subsec_quantifiers-5">Although there are many types of <em class="emphasis">quantifiers</em> in English (e.g., many, few, most, etc.) in mathematics we, for the most part, stick to two: existential and universal.</div>
+<article class="assemblage assemblage-like" id="subsec_quantifiers-6"><h4 class="heading"><span class="title">Universal and Existential Quantifiers.</span></h4>
+<div class="para logical" id="subsec_quantifiers-6-3">
+<div class="para">The existential quantifier is <span class="process-math">\(\exists\)</span> and is read “there exists” or “there is.” For example, </div>
+<div class="displaymath process-math">
+\begin{equation*}
+\exists x (x \lt 0)
+\end{equation*}
+</div>
+<div class="para">asserts that there is a number less than 0.</div>
+</div>
+<div class="para logical" id="subsec_quantifiers-6-4">
+<div class="para">The universal quantifier is <span class="process-math">\(\forall\)</span> and is read “for all” or “every.” For example, </div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall x (x \ge 0)
+\end{equation*}
+</div>
+<div class="para">asserts that every number is greater than or equal to 0.</div>
+</div></article><div class="para logical" id="subsec_quantifiers-7">
+<div class="para">As with all mathematical statements, we would like to decide whether quantified statements are true or false. Consider the statement</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall x \exists y (y \lt x)\text{.}
+\end{equation*}
+</div>
+<div class="para">You would read this, “for every <span class="process-math">\(x\)</span> there is some <span class="process-math">\(y\)</span> such that <span class="process-math">\(y\)</span> is less than <span class="process-math">\(x\text{.}\)</span>” Is this true? The answer depends on what our <em class="emphasis">domain of discourse</em> is: when we say “for all” <span class="process-math">\(x\text{,}\)</span> do we mean all positive integers or all real numbers or all elements of some other set? Usually this information is implied. In discrete mathematics, we almost always quantify over the <em class="emphasis">natural numbers</em>, 0, 1, 2, …, so let’s take that for our domain of discourse here.</div>
+</div>
+<div class="para logical" id="subsec_quantifiers-8">
+<div class="para">For the statement to be true, we need it to be the case that no matter what natural number we select, there is always some natural number that is strictly smaller. Perhaps we could let <span class="process-math">\(y\)</span> be <span class="process-math">\(x-1\text{?}\)</span> But here is the problem: what if <span class="process-math">\(x = 0\text{?}\)</span> Then <span class="process-math">\(y = -1\)</span> and that is <em class="emphasis">not a number!</em> (in our domain of discourse). Thus we see that the statement is false because there is a number which is less than or equal to all other numbers. In symbols,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\exists x \forall y (y \ge x)\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec_quantifiers-9">To show that the original statement is false, we proved that the <em class="emphasis">negation</em> was true. Notice how the negation and original statement compare. This is typical.</div>
+<article class="assemblage assemblage-like" id="subsec_quantifiers-10"><h4 class="heading"><span class="title">Quantifiers and Negation.</span></h4>
+<blockquote class="blockquote" id="subsec_quantifiers-10-4">
+<div class="para" id="subsec_quantifiers-10-4-1">
+<span class="process-math">\(\neg \forall x P(x)\)</span> is equivalent to <span class="process-math">\(\exists x \neg P(x)\text{.}\)</span>
+</div> <div class="para" id="subsec_quantifiers-10-4-2">
+<span class="process-math">\(\neg \exists x P(x)\)</span> is equivalent to <span class="process-math">\(\forall x \neg P(x)
+\text{.}\)</span>
+</div>
+</blockquote></article><div class="para" id="subsec_quantifiers-11">Essentially, we can pass the negation symbol over a quantifier, but that causes the quantifier to switch type. This should not be surprising: if not everything has a property, then something doesn’t have that property. And if there is not something with a property, then everything doesn’t have that property.</div>
+<section class="paragraphs" id="pars-implicituantifiers"><h4 class="heading"><span class="title">Implicit Quantifiers.</span></h4>  <div class="para" id="pars-implicituantifiers-4">It is always a good idea to be precise in mathematics.  Sometimes though, we can relax a little bit, as long as we all agree on a convention.  An example of such a convention is to assume that sentences containing predicates with free variables are intended as statements, where the variables are universally quantified.</div> <div class="para logical" id="pars-implicituantifiers-5">
+<div class="para">For example, do you believe that if a shape is a square, then it is a rectangle?  But how can that be true if it is not a statement?  To be a little more precise, we have two predicates: <span class="process-math">\(S(x)\)</span> standing for “<span class="process-math">\(x\)</span> is a square” and <span class="process-math">\(R(x)\)</span> standing for “<span class="process-math">\(x\)</span> is a rectangle”.  The <em class="emphasis">sentence</em> we are looking at is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S(x) \imp R(x)\text{.}
+\end{equation*}
+</div>
+<div class="para">This is neither true nor false, as it is not a statement.  But come on!  We all know that we meant to consider the statement,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall x (S(x) \imp R(x))\text{,}
+\end{equation*}
+</div>
+<div class="para">and this is what our convention tells us to consider.</div>
+</div> <div class="para" id="pars-implicituantifiers-6">Similarly, we will often be a bit sloppy about the distinction between a predicate and a statement.  For example, we might write, <em class="emphasis">let <span class="process-math">\(P(n)\)</span> be the <em class="emphasis">statement</em>, “<span class="process-math">\(n\)</span> is prime,”</em> which is technically incorrect.  It is implicit that we mean that we are defining <span class="process-math">\(P(n)\)</span> to be a predicate, which for each <span class="process-math">\(n\)</span> becomes the statement, <span class="process-math">\(n\)</span> is prime.</div></section></section><section class="exercises" id="exercises_intro-statements"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ww-statements-classify"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div id="webwork-3" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="3" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-3')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-3-1-1-1">For each sentence below, decide whether it is an atomic statement, a molecular statement, or not a statement at all.</div> <div class="para logical" id="extracted-webwork-3-1-1-2"><ol class="lower-alpha" id="extracted-webwork-3-1-1-2-1">
+<li id="extracted-webwork-3-1-1-2-1-1"><div class="para" id="extracted-webwork-3-1-1-2-1-1-1">Eat your vegetables!</div></li>
+<li id="extracted-webwork-3-1-1-2-1-2"><div class="para" id="extracted-webwork-3-1-1-2-1-2-1">Sally ate her vegetables.</div></li>
+<li id="extracted-webwork-3-1-1-2-1-3"><div class="para" id="extracted-webwork-3-1-1-2-1-3-1">Sally ate her vegetables and got a cookie.</div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-statements-classify-type"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div id="webwork-4" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="4" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_2.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-4')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-4-1-1-1">Classify each of the sentences below as an atomic statement, a molecular statement, or not a statement at all. If the statement is molecular, say what kind it is (conjuction, disjunction, conditional, biconditional, negation).</div> <div class="para logical" id="extracted-webwork-4-1-1-2"><ol class="lower-alpha" id="extracted-webwork-4-1-1-2-1">
+<li id="extracted-webwork-4-1-1-2-1-1"><div class="para" id="extracted-webwork-4-1-1-2-1-1-1">Everybody can be fooled sometimes.</div></li>
+<li id="extracted-webwork-4-1-1-2-1-2"><div class="para" id="extracted-webwork-4-1-1-2-1-2-1">The Broncos will win the Super Bowl or I’ll eat my hat.</div></li>
+<li id="extracted-webwork-4-1-1-2-1-3"><div class="para" id="extracted-webwork-4-1-1-2-1-3-1">If a set contains three elements, then the sum of those elements is at least 6.</div></li>
+<li id="extracted-webwork-4-1-1-2-1-4"><div class="para" id="extracted-webwork-4-1-1-2-1-4-1">Every even number is divisible by 2</div></li>
+<li id="extracted-webwork-4-1-1-2-1-5"><div class="para" id="extracted-webwork-4-1-1-2-1-5-1">Every natural number greater than 1 is either prime or composite.</div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_intro-statements-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-4-1-1">
+<div class="para">Suppose <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are the statements: <span class="process-math">\(P\text{:}\)</span> Jack passed math. <span class="process-math">\(Q\text{:}\)</span> Jill passed math.</div>
+<ol class="lower-alpha" id="exercises_intro-statements-4-1-1-5">
+<li id="exercises_intro-statements-4-1-1-5-1"><div class="para" id="exercises_intro-statements-4-1-1-5-1-1">Translate “Jack and Jill both passed math” into symbols.</div></li>
+<li id="exercises_intro-statements-4-1-1-5-2"><div class="para" id="exercises_intro-statements-4-1-1-5-2-1">Translate “If Jack passed math, then Jill did not” into symbols.</div></li>
+<li id="exercises_intro-statements-4-1-1-5-3"><div class="para" id="exercises_intro-statements-4-1-1-5-3-1">Translate “<span class="process-math">\(P \vee Q\)</span>” into English.</div></li>
+<li id="exercises_intro-statements-4-1-1-5-4"><div class="para" id="exercises_intro-statements-4-1-1-5-4-1">Translate “<span class="process-math">\(\neg(P \wedge Q) \imp Q\)</span>” into English.</div></li>
+<li id="exercises_intro-statements-4-1-1-5-5"><div class="para logical" id="exercises_intro-statements-4-1-1-5-5-1">
+<div class="para">Suppose you know that if Jack passed math, then so did Jill. What can you conclude if you know that:</div>
+<ol class="lower-roman" id="exercises_intro-statements-4-1-1-5-5-1-1">
+<li id="exercises_intro-statements-4-1-1-5-5-1-1-1"><div class="para" id="p-derived-exercises_intro-statements-4-1-1-5-5-1-1-1">Jill passed math?</div></li>
+<li id="exercises_intro-statements-4-1-1-5-5-1-1-2"><div class="para" id="p-derived-exercises_intro-statements-4-1-1-5-5-1-1-2">Jill did not pass math?</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_intro-statements-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_intro-statements-4-2-1"><ol class="lower-alpha" id="exercises_intro-statements-4-2-1-1">
+<li id="exercises_intro-statements-4-2-1-1-1"><div class="para" id="p-derived-exercises_intro-statements-4-2-1-1-1"><span class="process-math">\(P
+\wedge Q\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-4-2-1-1-2"><div class="para" id="p-derived-exercises_intro-statements-4-2-1-1-2"><span class="process-math">\(P \imp \neg Q\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-4-2-1-1-3"><div class="para" id="exercises_intro-statements-4-2-1-1-3-1">Jack passed math or Jill passed math (or both).</div></li>
+<li id="exercises_intro-statements-4-2-1-1-4"><div class="para" id="exercises_intro-statements-4-2-1-1-4-1">If Jack and Jill did not both pass math, then Jill did.</div></li>
+<li id="exercises_intro-statements-4-2-1-1-5"><div class="para logical" id="exercises_intro-statements-4-2-1-1-5-1"><ol class="lower-roman" id="exercises_intro-statements-4-2-1-1-5-1-1">
+<li id="exercises_intro-statements-4-2-1-1-5-1-1-1"><div class="para" id="p-derived-exercises_intro-statements-4-2-1-1-5-1-1-1">Nothing else.</div></li>
+<li id="exercises_intro-statements-4-2-1-1-5-1-1-2"><div class="para" id="p-derived-exercises_intro-statements-4-2-1-1-5-1-1-2">Jack did not pass math either.</div></li>
+</ol></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="ww-statements-favnum"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div id="webwork-5" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="5" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_4.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-5')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-5-1-1-1">Determine whether each molecular statement below is true or false, or whether it is impossible to determine.  Assume you do not know what my favorite number is (but you do know which numbers are prime).</div> <div class="para logical" id="extracted-webwork-5-1-1-2"><ol class="lower-alpha" id="extracted-webwork-5-1-1-2-1">
+<li id="extracted-webwork-5-1-1-2-1-1"><div class="para" id="extracted-webwork-5-1-1-2-1-1-1">7 is prime and 16 is not prime</div></li>
+<li id="extracted-webwork-5-1-1-2-1-2"><div class="para" id="extracted-webwork-5-1-1-2-1-2-1">If 7 is not prime, then 7 is my favorite number.</div></li>
+<li id="extracted-webwork-5-1-1-2-1-3"><div class="para" id="extracted-webwork-5-1-1-2-1-3-1">If 16 is my favorite number, then <span class="process-math">\(16+1\)</span> is my favorite number</div></li>
+<li id="extracted-webwork-5-1-1-2-1-4"><div class="para" id="extracted-webwork-5-1-1-2-1-4-1">16 is prime or 7 is prime</div></li>
+<li id="extracted-webwork-5-1-1-2-1-5"><div class="para" id="extracted-webwork-5-1-1-2-1-5-1">17 is my favorite number and 16 is not prime.</div></li>
+<li id="extracted-webwork-5-1-1-2-1-6"><div class="para" id="extracted-webwork-5-1-1-2-1-6-1">If 16 is not prime, then 16 is my favorite number.</div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-statements-shape-color"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div id="webwork-6" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="6" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_5.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-6')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-6-1-1-1">In my safe is a sheet of paper with two shapes drawn on it in colored crayon.  One is a square, and the other is a circle.  Each shape is drawn in a single color.  Suppose you believe me when I tell you that,</div> <div class="para" id="extracted-webwork-6-1-1-2">if the square is yellow, then the circle is purple.</div> <div class="para" id="extracted-webwork-6-1-1-3">What do you therefore know about the truth value of the following statements?</div> <div class="para logical" id="extracted-webwork-6-1-1-4"><ol class="lower-alpha" id="extracted-webwork-6-1-1-4-1">
+<li id="extracted-webwork-6-1-1-4-1-1"><div class="para" id="extracted-webwork-6-1-1-4-1-1-1">If the circle is purple, then the square is yellow.</div></li>
+<li id="extracted-webwork-6-1-1-4-1-2"><div class="para" id="extracted-webwork-6-1-1-4-1-2-1">The square is not yellow or the circle is purple.</div></li>
+<li id="extracted-webwork-6-1-1-4-1-3"><div class="para" id="extracted-webwork-6-1-1-4-1-3-1">The square the circle are both purple.</div></li>
+<li id="extracted-webwork-6-1-1-4-1-4"><div class="para" id="extracted-webwork-6-1-1-4-1-4-1">The square and the circle are both yellow.</div></li>
+<li id="extracted-webwork-6-1-1-4-1-5"><div class="para" id="extracted-webwork-6-1-1-4-1-5-1">If the circle is not purple, then the square is not yellow.</div></li>
+</ol></div>
+<div class="solutions"><details id="extracted-webwork-6-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-6-1-2-1">The main thing to realize is that we do not know the colors of these two shapes, but we do know that we are in one of three cases: We could have a yellow square and purple circle.  We could have a square that was not yellow but a purple circle.  Or we could have a square that was not yellow and a circle that was not purple.  The case in which the square is yellow but the circle is not purple cannot occur, as that would make the statement false.</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-statements-shape-color-f-conv"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div id="webwork-7" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="7" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_6.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-7')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-7-1-1-1">Suppose the statement, <em class="emphasis">"if the diamond is purple, then the circle is blue,"</em> is true.  Assume also that the converse is false.  Classify each statement below as true or false (if possible).</div> <div class="para logical" id="extracted-webwork-7-1-1-2"><ol class="lower-alpha" id="extracted-webwork-7-1-1-2-1">
+<li id="extracted-webwork-7-1-1-2-1-1"><div class="para" id="extracted-webwork-7-1-1-2-1-1-1">The diamond is purple if and only if the circle is blue.</div></li>
+<li id="extracted-webwork-7-1-1-2-1-2"><div class="para" id="extracted-webwork-7-1-1-2-1-2-1">The diamond is purple.</div></li>
+<li id="extracted-webwork-7-1-1-2-1-3"><div class="para" id="extracted-webwork-7-1-1-2-1-3-1">The circle is blue.</div></li>
+<li id="extracted-webwork-7-1-1-2-1-4"><div class="para" id="extracted-webwork-7-1-1-2-1-4-1">The diamond is purple if and only if the circle is not blue.</div></li>
+</ol></div>
+<div class="solutions"><details id="extracted-webwork-7-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-7-1-2-1">The only way for an implication <span class="process-math">\(P\rightarrow Q\)</span> to be true but its converse to be false is for <span class="process-math">\(Q\)</span> to be true and <span class="process-math">\(P\)</span> to be false. Thus we know that circle is blue and that diamond is not purple.</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-statements-conv-cont"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div id="webwork-8" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="8" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_7.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-8')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-8-1-1-1">Consider the statement, <em class="emphasis">"If you will give me a cow, then I will give you magic beans."</em> Decide whether each statement below is the converse, the contrapositive, or neither.</div> <div class="para logical" id="extracted-webwork-8-1-1-2"><ol class="lower-alpha" id="extracted-webwork-8-1-1-2-1">
+<li id="extracted-webwork-8-1-1-2-1-1"><div class="para" id="extracted-webwork-8-1-1-2-1-1-1">If you will not give me a cow, then I will not give you magic beans.</div></li>
+<li id="extracted-webwork-8-1-1-2-1-2"><div class="para" id="extracted-webwork-8-1-1-2-1-2-1">If you will give me a cow, then I will not give you magic beans.</div></li>
+<li id="extracted-webwork-8-1-1-2-1-3"><div class="para" id="extracted-webwork-8-1-1-2-1-3-1">If I will give you magic beans, then you will not give me a cow.</div></li>
+<li id="extracted-webwork-8-1-1-2-1-4"><div class="para" id="extracted-webwork-8-1-1-2-1-4-1">If I will give you magic beans, then you will give me a cow.</div></li>
+<li id="extracted-webwork-8-1-1-2-1-5"><div class="para" id="extracted-webwork-8-1-1-2-1-5-1">You will give me a cow and I will not give you magic beans.</div></li>
+<li id="extracted-webwork-8-1-1-2-1-6"><div class="para" id="extracted-webwork-8-1-1-2-1-6-1">If I will not give you magic beans, then you will not give me a cow.</div></li>
+</ol></div>
+<div class="solutions"><details id="extracted-webwork-8-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-8-1-2-1">The converse is "If I will give you magic beans, then you will give me a cow." The contrapositive is "If I will not give you magic beans, then you will not give me a cow." All the other statements are neither the converse nor contrapositive.</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_intro-statements-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-9-1-1">
+<div class="para">Consider the statement “If Oscar eats Chinese food, then he drinks milk.”</div>
+<ol class="lower-alpha" id="exercises_intro-statements-9-1-1-2">
+<li id="exercises_intro-statements-9-1-1-2-1"><div class="para" id="exercises_intro-statements-9-1-1-2-1-1">Write the converse of the statement.</div></li>
+<li id="exercises_intro-statements-9-1-1-2-2"><div class="para" id="exercises_intro-statements-9-1-1-2-2-1">Write the contrapositive of the statement.</div></li>
+<li id="exercises_intro-statements-9-1-1-2-3"><div class="para" id="exercises_intro-statements-9-1-1-2-3-1">Is it possible for the contrapositive to be false? If it was, what would that tell you?</div></li>
+<li id="exercises_intro-statements-9-1-1-2-4"><div class="para" id="exercises_intro-statements-9-1-1-2-4-1">Suppose the original statement is true, and that Oscar drinks milk. Can you conclude anything (about his eating Chinese food)? Explain.</div></li>
+<li id="exercises_intro-statements-9-1-1-2-5"><div class="para" id="exercises_intro-statements-9-1-1-2-5-1">Suppose the original statement is true, and that Oscar does not drink milk. Can you conclude anything (about his eating Chinese food)? Explain.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="ww-statements-rephrase"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div id="webwork-9" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="9" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_9.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-9')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-9-1-1-1">You have discovered an old paper on graph theory that discusses the <em class="emphasis">viscosity</em> of a graph (which for all you know, is something completely made up by the author). A theorem in the paper claims that “if a graph satisfies <em class="emphasis">condition (V)</em>, then the graph is <em class="emphasis">viscous</em>.” Which of the following are equivalent ways of stating this claim? Which are equivalent to the <em class="emphasis">converse</em> of the claim?</div> <div class="para logical" id="extracted-webwork-9-1-1-2"><ol class="lower-alpha" id="extracted-webwork-9-1-1-2-1">
+<li id="extracted-webwork-9-1-1-2-1-1"><div class="para" id="extracted-webwork-9-1-1-2-1-1-1">Only viscous graphs satisfy condition (V).</div></li>
+<li id="extracted-webwork-9-1-1-2-1-2"><div class="para" id="extracted-webwork-9-1-1-2-1-2-1">Satisfying condition (V) is a sufficient condition for a graph to be viscous.</div></li>
+<li id="extracted-webwork-9-1-1-2-1-3"><div class="para" id="extracted-webwork-9-1-1-2-1-3-1">A graph is viscous only if it satisfies condition (V).</div></li>
+<li id="extracted-webwork-9-1-1-2-1-4"><div class="para" id="extracted-webwork-9-1-1-2-1-4-1">Every viscous graph satisfies condition (V).</div></li>
+<li id="extracted-webwork-9-1-1-2-1-5"><div class="para" id="extracted-webwork-9-1-1-2-1-5-1">Satisfying condition (V) is a necessary condition for a graph to be viscous.</div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_intro-statements-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-11-1-1">
+<div class="para">Write each of the following statements in the form, “if …, then ….” Careful, some of the statements might be false (which is alright for the purposes of this question).</div>
+<ol class="lower-alpha" id="exercises_intro-statements-11-1-1-2">
+<li id="exercises_intro-statements-11-1-1-2-1"><div class="para" id="exercises_intro-statements-11-1-1-2-1-1">To lose weight, you must exercise.</div></li>
+<li id="exercises_intro-statements-11-1-1-2-2"><div class="para" id="exercises_intro-statements-11-1-1-2-2-1">To lose weight, all you need to do is exercise.</div></li>
+<li id="exercises_intro-statements-11-1-1-2-3"><div class="para" id="exercises_intro-statements-11-1-1-2-3-1">Every American is patriotic.</div></li>
+<li id="exercises_intro-statements-11-1-1-2-4"><div class="para" id="exercises_intro-statements-11-1-1-2-4-1">You are patriotic only if you are American.</div></li>
+<li id="exercises_intro-statements-11-1-1-2-5"><div class="para" id="exercises_intro-statements-11-1-1-2-5-1">The set of rational numbers is a subset of the real numbers.</div></li>
+<li id="exercises_intro-statements-11-1-1-2-6"><div class="para" id="exercises_intro-statements-11-1-1-2-6-1">A number is prime if it is not even.</div></li>
+<li id="exercises_intro-statements-11-1-1-2-7"><div class="para" id="exercises_intro-statements-11-1-1-2-7-1">Either the Broncos will win the Super Bowl, or they won’t play in the Super Bowl.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_intro-statements-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_intro-statements-11-2-1"><ol class="lower-alpha" id="exercises_intro-statements-11-2-1-1">
+<li id="exercises_intro-statements-11-2-1-1-1"><div class="para" id="exercises_intro-statements-11-2-1-1-1-1">If you have lost weight, then you exercised.</div></li>
+<li id="exercises_intro-statements-11-2-1-1-2"><div class="para" id="exercises_intro-statements-11-2-1-1-2-1">If you exercise, then you will lose weight.</div></li>
+<li id="exercises_intro-statements-11-2-1-1-3"><div class="para" id="exercises_intro-statements-11-2-1-1-3-1">If you are American, then you are patriotic.</div></li>
+<li id="exercises_intro-statements-11-2-1-1-4"><div class="para" id="exercises_intro-statements-11-2-1-1-4-1">If you are patriotic, then you are American.</div></li>
+<li id="exercises_intro-statements-11-2-1-1-5"><div class="para" id="exercises_intro-statements-11-2-1-1-5-1">If a number is rational, then it is real.</div></li>
+<li id="exercises_intro-statements-11-2-1-1-6"><div class="para" id="exercises_intro-statements-11-2-1-1-6-1">If a number is not even, then it is prime. (Or the contrapositive: if a number is not prime, then it is even.)</div></li>
+<li id="exercises_intro-statements-11-2-1-1-7"><div class="para" id="exercises_intro-statements-11-2-1-1-7-1">If the Broncos don’t win the Super Bowl, then they didn’t play in the Super Bowl. Alternatively, if the Broncos play in the Super Bowl, then they will win the Super Bowl.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="ww-statements-rephrase2"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div id="webwork-10" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="10" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_11.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-10')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-10-1-1-1">Which of the following statements are equivalent to the implication, "<em class="emphasis">if you win the lottery, then you will be rich,</em>" and which are equivalent to the converse of the implication?</div> <div class="para logical" id="extracted-webwork-10-1-1-2"><ol class="lower-alpha" id="extracted-webwork-10-1-1-2-1">
+<li id="extracted-webwork-10-1-1-2-1-1"><div class="para" id="extracted-webwork-10-1-1-2-1-1-1">You will be rich only if you win the lottery.</div></li>
+<li id="extracted-webwork-10-1-1-2-1-2"><div class="para" id="extracted-webwork-10-1-1-2-1-2-1">You will be rich if you win the lottery.</div></li>
+<li id="extracted-webwork-10-1-1-2-1-3"><div class="para" id="extracted-webwork-10-1-1-2-1-3-1">Either you win the lottery or else you are not rich.</div></li>
+<li id="extracted-webwork-10-1-1-2-1-4"><div class="para" id="extracted-webwork-10-1-1-2-1-4-1">If you are rich, you must have won the lottery.</div></li>
+<li id="extracted-webwork-10-1-1-2-1-5"><div class="para" id="extracted-webwork-10-1-1-2-1-5-1">You will win the lottery if you are rich.</div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-statements-quant1"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div id="webwork-11" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="11" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_12.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-11')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-11-1-1-1">
+<div class="para">Let <span class="process-math">\(P(x)\)</span> be the predicate, “<span class="process-math">\(17x+1\)</span> is even.”</div>
+<ol class="lower-alpha" id="extracted-webwork-11-1-1-1-5">
+<li id="extracted-webwork-11-1-1-1-5-1"><div class="para logical" id="extracted-webwork-11-1-1-1-5-1-1">
+<div class="para">Is <span class="process-math">\(P(15)\)</span> true or false?</div>
+<ul class="square" id="extracted-webwork-11-1-1-1-5-1-1-2">
+<li id="extracted-webwork-11-1-1-1-5-1-1-2-1"><div class="para" id="extracted-webwork-11-1-1-1-5-1-1-2-1-1">True</div></li>
+<li id="extracted-webwork-11-1-1-1-5-1-1-2-2"><div class="para" id="extracted-webwork-11-1-1-1-5-1-1-2-2-1">False</div></li>
+<li id="extracted-webwork-11-1-1-1-5-1-1-2-3"><div class="para" id="extracted-webwork-11-1-1-1-5-1-1-2-3-1">Neither (not a statement)</div></li>
+</ul>
+</div></li>
+<li id="extracted-webwork-11-1-1-1-5-2">
+<div class="para" id="extracted-webwork-11-1-1-1-5-2-1">What, if anything, can you conclude about <span class="process-math">\(\exists x P(x)\)</span> from the truth value of <span class="process-math">\(P(15)\text{?}\)</span>
+</div>
+<div class="para logical" id="extracted-webwork-11-1-1-1-5-2-2"><ul class="circle" id="extracted-webwork-11-1-1-1-5-2-2-1">
+<li id="extracted-webwork-11-1-1-1-5-2-2-1-1"><div class="para" id="extracted-webwork-11-1-1-1-5-2-2-1-1-1">
+<span class="process-math">\(\exists x P(x)\)</span> must be true.</div></li>
+<li id="extracted-webwork-11-1-1-1-5-2-2-1-2"><div class="para" id="extracted-webwork-11-1-1-1-5-2-2-1-2-1">
+<span class="process-math">\(\exists x P(x)\)</span> must be false.</div></li>
+<li id="extracted-webwork-11-1-1-1-5-2-2-1-3"><div class="para" id="extracted-webwork-11-1-1-1-5-2-2-1-3-1">
+<span class="process-math">\(\exists x P(x)\)</span> could be true or could be false.</div></li>
+</ul></div>
+</li>
+<li id="extracted-webwork-11-1-1-1-5-3">
+<div class="para" id="extracted-webwork-11-1-1-1-5-3-1">What, if anything, can you conclude about <span class="process-math">\(\forall x P(x)\)</span> from the truth value of <span class="process-math">\(P(15)\text{?}\)</span>
+</div>
+<div class="para logical" id="extracted-webwork-11-1-1-1-5-3-2"><ul class="circle" id="extracted-webwork-11-1-1-1-5-3-2-1">
+<li id="extracted-webwork-11-1-1-1-5-3-2-1-1"><div class="para" id="extracted-webwork-11-1-1-1-5-3-2-1-1-1">
+<span class="process-math">\(\forall x P(x)\)</span> must be true.</div></li>
+<li id="extracted-webwork-11-1-1-1-5-3-2-1-2"><div class="para" id="extracted-webwork-11-1-1-1-5-3-2-1-2-1">
+<span class="process-math">\(\forall x P(x)\)</span> must be false.</div></li>
+<li id="extracted-webwork-11-1-1-1-5-3-2-1-3"><div class="para" id="extracted-webwork-11-1-1-1-5-3-2-1-3-1">
+<span class="process-math">\(\forall x P(x)\)</span> could be true or could be false.</div></li>
+</ul></div>
+</li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-11-1-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-11-1-5-1">
+<span class="process-math">\(P(15)\)</span> is the statement “<span class="process-math">\(17\cdot 15 + 1\)</span> is even”, which is true. Thus the statement <span class="process-math">\(\exists x P(x)\)</span> is true (for example, 15 is such an <span class="process-math">\(x\)</span>). However, we cannot tell anything about <span class="process-math">\(\forall x P(x)\)</span> since we do not know the truth value of <span class="process-math">\(P(x)\)</span> for <em class="emphasis">all</em> elements of the domain of discourse. In this case, <span class="process-math">\(\forall x P(x)\)</span> happens to be false (since <span class="process-math">\(P(4)\)</span> is false, for example).</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-statements-quant2"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div id="webwork-12" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="12" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_13.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-12')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-12-1-1-1">
+<div class="para">Let <span class="process-math">\(P(x)\)</span> be the predicate, “<span class="process-math">\(18x+1\)</span> is even.”</div>
+<ol class="lower-alpha" id="extracted-webwork-12-1-1-1-5">
+<li id="extracted-webwork-12-1-1-1-5-1"><div class="para logical" id="extracted-webwork-12-1-1-1-5-1-1">
+<div class="para">Is <span class="process-math">\(P(15)\)</span> true or false?</div>
+<ul class="square" id="extracted-webwork-12-1-1-1-5-1-1-2">
+<li id="extracted-webwork-12-1-1-1-5-1-1-2-1"><div class="para" id="extracted-webwork-12-1-1-1-5-1-1-2-1-1">True</div></li>
+<li id="extracted-webwork-12-1-1-1-5-1-1-2-2"><div class="para" id="extracted-webwork-12-1-1-1-5-1-1-2-2-1">False</div></li>
+<li id="extracted-webwork-12-1-1-1-5-1-1-2-3"><div class="para" id="extracted-webwork-12-1-1-1-5-1-1-2-3-1">Neither (not a statement)</div></li>
+</ul>
+</div></li>
+<li id="extracted-webwork-12-1-1-1-5-2">
+<div class="para" id="extracted-webwork-12-1-1-1-5-2-1">What, if anything, can you conclude about <span class="process-math">\(\exists x P(x)\)</span> from the truth value of <span class="process-math">\(P(15)\text{?}\)</span>
+</div>
+<div class="para logical" id="extracted-webwork-12-1-1-1-5-2-2"><ul class="circle" id="extracted-webwork-12-1-1-1-5-2-2-1">
+<li id="extracted-webwork-12-1-1-1-5-2-2-1-1"><div class="para" id="extracted-webwork-12-1-1-1-5-2-2-1-1-1">
+<span class="process-math">\(\exists x P(x)\)</span> must be true.</div></li>
+<li id="extracted-webwork-12-1-1-1-5-2-2-1-2"><div class="para" id="extracted-webwork-12-1-1-1-5-2-2-1-2-1">
+<span class="process-math">\(\exists x P(x)\)</span> must be false.</div></li>
+<li id="extracted-webwork-12-1-1-1-5-2-2-1-3"><div class="para" id="extracted-webwork-12-1-1-1-5-2-2-1-3-1">
+<span class="process-math">\(\exists x P(x)\)</span> could be true or could be false.</div></li>
+</ul></div>
+</li>
+<li id="extracted-webwork-12-1-1-1-5-3">
+<div class="para" id="extracted-webwork-12-1-1-1-5-3-1">What, if anything, can you conclude about <span class="process-math">\(\forall x P(x)\)</span> from the truth value of <span class="process-math">\(P(15)\text{?}\)</span>
+</div>
+<div class="para logical" id="extracted-webwork-12-1-1-1-5-3-2"><ul class="circle" id="extracted-webwork-12-1-1-1-5-3-2-1">
+<li id="extracted-webwork-12-1-1-1-5-3-2-1-1"><div class="para" id="extracted-webwork-12-1-1-1-5-3-2-1-1-1">
+<span class="process-math">\(\forall x P(x)\)</span> must be true.</div></li>
+<li id="extracted-webwork-12-1-1-1-5-3-2-1-2"><div class="para" id="extracted-webwork-12-1-1-1-5-3-2-1-2-1">
+<span class="process-math">\(\forall x P(x)\)</span> must be false.</div></li>
+<li id="extracted-webwork-12-1-1-1-5-3-2-1-3"><div class="para" id="extracted-webwork-12-1-1-1-5-3-2-1-3-1">
+<span class="process-math">\(\forall x P(x)\)</span> could be true or could be false.</div></li>
+</ul></div>
+</li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-12-1-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-12-1-5-1">
+<span class="process-math">\(P(15)\)</span> is the statement “<span class="process-math">\(18\cdot 15 + 1\)</span> is even”, which is false. Thus the statement <span class="process-math">\(\forall x P(x)\)</span> is false (for example, 15 is a counterexample). However, we cannot tell anything about <span class="process-math">\(\exists x P(x)\)</span> since we do not know the truth value of <span class="process-math">\(P(x)\)</span> for other elements of the domain of discourse. In this case, <span class="process-math">\(\exists x P(x)\)</span> happens to be true (since <span class="process-math">\(P(1)\)</span> is true, for example).</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_intro-statements-15"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-15-1-1">
+<div class="para">For a given predicate <span class="process-math">\(P(x)\text{,}\)</span> you might believe that the statements <span class="process-math">\(\forall x P(x)\)</span> or <span class="process-math">\(\exists x P(x)\)</span> are either true or false. How would you decide if you were correct in each case? You have four choices: you could give an example of an element <span class="process-math">\(n\)</span> in the domain for which <span class="process-math">\(P(n)\)</span> is true or for which <span class="process-math">\(P(n)\)</span> if false, or you could argue that no matter what <span class="process-math">\(n\)</span> is, <span class="process-math">\(P(n)\)</span> is true or is false.</div>
+<ol class="lower-alpha" id="exercises_intro-statements-15-1-1-9">
+<li id="exercises_intro-statements-15-1-1-9-1"><div class="para" id="exercises_intro-statements-15-1-1-9-1-1">What would you need to do to prove <span class="process-math">\(\forall
+x P(x)\)</span> is true?</div></li>
+<li id="exercises_intro-statements-15-1-1-9-2"><div class="para" id="exercises_intro-statements-15-1-1-9-2-1">What would you need to do to prove <span class="process-math">\(\forall x P(x)\)</span> is false?</div></li>
+<li id="exercises_intro-statements-15-1-1-9-3"><div class="para" id="exercises_intro-statements-15-1-1-9-3-1">What would you need to do to prove <span class="process-math">\(\exists x P(x)\)</span> is true?</div></li>
+<li id="exercises_intro-statements-15-1-1-9-4"><div class="para" id="exercises_intro-statements-15-1-1-9-4-1">What would you need to do to prove <span class="process-math">\(\exists x P(x)\)</span> is false?</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_intro-statements-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_intro-statements-15-2-1"><ol class="lower-alpha" id="exercises_intro-statements-15-2-1-1">
+<li id="exercises_intro-statements-15-2-1-1-1"><div class="para" id="exercises_intro-statements-15-2-1-1-1-1">The claim that <span class="process-math">\(\forall x P(x)\)</span> means that <span class="process-math">\(P(n)\)</span> is true no matter what <span class="process-math">\(n\)</span> you consider in the domain of discourse. Thus the only way to prove that <span class="process-math">\(\forall x
+P(x)\)</span> is true is to check or otherwise argue that <span class="process-math">\(P(n)\)</span> is true for all <span class="process-math">\(n\)</span> in the domain.</div></li>
+<li id="exercises_intro-statements-15-2-1-1-2"><div class="para" id="exercises_intro-statements-15-2-1-1-2-1">To prove <span class="process-math">\(\forall x P(x)\)</span> is false all you need is one example of an element in the domain for which <span class="process-math">\(P(n)\)</span> is false. This is often called a <dfn class="terminology">counterexample</dfn>.</div></li>
+<li id="exercises_intro-statements-15-2-1-1-3"><div class="para" id="exercises_intro-statements-15-2-1-1-3-1">We are simply claiming that there is some element <span class="process-math">\(n\)</span> in the domain of discourse for which <span class="process-math">\(P(n)\)</span> is true. If you can find one such element, you have verified the claim.</div></li>
+<li id="exercises_intro-statements-15-2-1-1-4"><div class="para" id="exercises_intro-statements-15-2-1-1-4-1">Here we are claiming that no element we find will make <span class="process-math">\(P(n)\)</span> true. The only way to be sure of this is to verify that <em class="emphasis">every</em> element of the domain makes <span class="process-math">\(P(n)\)</span> false. Note that the level of proof needed for this statement is the same as to prove that <span class="process-math">\(\forall x P(x)\)</span> is true.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="ww-statements-binary-pred"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div id="webwork-13" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="13" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/0-Introduction_and_Preliminaries/0_2-Mathematical_Statements/0_2_15.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-13')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-13-1-1-1">Suppose <span class="process-math">\(P(x,y)\)</span> is some binary predicate defined on a very small domain of discourse: just the integers 1, 2, 3, and 4. For each of the 16 pairs of these numbers, <span class="process-math">\(P(x,y)\)</span> is either true or false, according to the following table (<span class="process-math">\(x\)</span> values are rows, <span class="process-math">\(y\)</span> values are columns).</div> <div class="tabular-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="r t b1 r1 l0 t0 lines"></th>
+<th scope="col" class="c t b1 r0 l0 t0 lines">1</th>
+<th scope="col" class="c t b1 r0 l0 t0 lines">2</th>
+<th scope="col" class="c t b1 r0 l0 t0 lines">3</th>
+<th scope="col" class="c t b1 r0 l0 t0 lines">4</th>
+</tr>
+<tr>
+<td class="r t b0 r1 l0 t0 lines">1</td>
+<td class="c t b0 r0 l0 t0 lines">T</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+</tr>
+<tr>
+<td class="r t b0 r1 l0 t0 lines">2</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+<td class="c t b0 r0 l0 t0 lines">T</td>
+<td class="c t b0 r0 l0 t0 lines">T</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+</tr>
+<tr>
+<td class="r t b0 r1 l0 t0 lines">3</td>
+<td class="c t b0 r0 l0 t0 lines">T</td>
+<td class="c t b0 r0 l0 t0 lines">T</td>
+<td class="c t b0 r0 l0 t0 lines">T</td>
+<td class="c t b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="r t b0 r1 l0 t0 lines">4</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+<td class="c t b0 r0 l0 t0 lines">F</td>
+</tr>
+</table></div> <div class="para" id="extracted-webwork-13-1-1-3">For example, <span class="process-math">\(P(1,3)\)</span> is false, as indicated by the F in the first row, third column.</div> <div class="para" id="extracted-webwork-13-1-1-4">Use the table to decide whether the following statements are true or false.</div> <div class="para logical" id="extracted-webwork-13-1-1-5"><ol class="lower-alpha" id="extracted-webwork-13-1-1-5-1">
+<li id="extracted-webwork-13-1-1-5-1-1"><div class="para" id="extracted-webwork-13-1-1-5-1-1-1"><span class="process-math">\(\displaystyle \exists x \forall y P(x,y)\text{.}\)</span></div></li>
+<li id="extracted-webwork-13-1-1-5-1-2"><div class="para" id="extracted-webwork-13-1-1-5-1-2-1"><span class="process-math">\(\displaystyle \exists y \forall x P(x,y)\text{.}\)</span></div></li>
+<li id="extracted-webwork-13-1-1-5-1-3"><div class="para" id="extracted-webwork-13-1-1-5-1-3-1"><span class="process-math">\(\displaystyle \forall x \exists y P(x,y)\text{.}\)</span></div></li>
+<li id="extracted-webwork-13-1-1-5-1-4"><div class="para" id="extracted-webwork-13-1-1-5-1-4-1"><span class="process-math">\(\displaystyle \forall y \exists x P(x,y)\text{.}\)</span></div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_intro-statements-17"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-17-1-1">
+<div class="para">Translate into symbols. Use <span class="process-math">\(E(x)\)</span> for “<span class="process-math">\(x\)</span> is even” and <span class="process-math">\(O(x)\)</span> for “<span class="process-math">\(x\)</span> is odd.”</div>
+<ol class="lower-alpha" id="exercises_intro-statements-17-1-1-5">
+<li id="exercises_intro-statements-17-1-1-5-1"><div class="para" id="exercises_intro-statements-17-1-1-5-1-1">No number is both even and odd.</div></li>
+<li id="exercises_intro-statements-17-1-1-5-2"><div class="para" id="exercises_intro-statements-17-1-1-5-2-1">One more than any even number is an odd number.</div></li>
+<li id="exercises_intro-statements-17-1-1-5-3"><div class="para" id="exercises_intro-statements-17-1-1-5-3-1">There is prime number that is even.</div></li>
+<li id="exercises_intro-statements-17-1-1-5-4"><div class="para" id="exercises_intro-statements-17-1-1-5-4-1">Between any two numbers there is a third number.</div></li>
+<li id="exercises_intro-statements-17-1-1-5-5"><div class="para" id="exercises_intro-statements-17-1-1-5-5-1">There is no number between a number and one more than that number.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_intro-statements-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_intro-statements-17-2-1"><ol class="lower-alpha" id="exercises_intro-statements-17-2-1-1">
+<li id="exercises_intro-statements-17-2-1-1-1"><div class="para" id="p-derived-exercises_intro-statements-17-2-1-1-1"><span class="process-math">\(\neg
+\exists x (E(x) \wedge O(x))\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-17-2-1-1-2"><div class="para" id="p-derived-exercises_intro-statements-17-2-1-1-2"><span class="process-math">\(\forall x (E(x) \imp O(x+1))\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-17-2-1-1-3"><div class="para" id="p-derived-exercises_intro-statements-17-2-1-1-3">
+<span class="process-math">\(\exists
+x(P(x) \wedge E(x))\)</span> (where <span class="process-math">\(P(x)\)</span> means “<span class="process-math">\(x\)</span> is prime”).</div></li>
+<li id="exercises_intro-statements-17-2-1-1-4"><div class="para" id="p-derived-exercises_intro-statements-17-2-1-1-4"><span class="process-math">\(\forall x
+\forall y \exists z(x \lt z \lt y \vee y \lt z \lt x)\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-17-2-1-1-5"><div class="para" id="p-derived-exercises_intro-statements-17-2-1-1-5"><span class="process-math">\(\forall x \neg \exists
+y
+(x \lt y \lt x+1)\text{.}\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises_intro-statements-18"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-18-1-1">
+<div class="para">Translate into English:</div>
+<ol class="lower-alpha" id="exercises_intro-statements-18-1-1-1">
+<li id="exercises_intro-statements-18-1-1-1-1"><div class="para" id="p-derived-exercises_intro-statements-18-1-1-1-1"><span class="process-math">\(\forall x (E(x) \imp E(x +2))\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-18-1-1-1-2"><div class="para" id="p-derived-exercises_intro-statements-18-1-1-1-2"><span class="process-math">\(\forall x \exists y (\sin(x)
+= y)\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-18-1-1-1-3"><div class="para" id="p-derived-exercises_intro-statements-18-1-1-1-3"><span class="process-math">\(\forall
+y \exists x (\sin(x) = y)\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-18-1-1-1-4"><div class="para" id="p-derived-exercises_intro-statements-18-1-1-1-4"><span class="process-math">\(\forall x \forall y (x^3 = y^3 \imp x = y)\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_intro-statements-18-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_intro-statements-18-2-1"><ol class="lower-alpha" id="exercises_intro-statements-18-2-1-1">
+<li id="exercises_intro-statements-18-2-1-1-1"><div class="para" id="exercises_intro-statements-18-2-1-1-1-1">Any even number plus 2 is an even number.</div></li>
+<li id="exercises_intro-statements-18-2-1-1-2"><div class="para" id="exercises_intro-statements-18-2-1-1-2-1">For any <span class="process-math">\(x\)</span> there is a <span class="process-math">\(y\)</span> such that <span class="process-math">\(\sin(x) = y\text{.}\)</span> In other words, every number <span class="process-math">\(x\)</span> is in the domain of sine.</div></li>
+<li id="exercises_intro-statements-18-2-1-1-3"><div class="para" id="exercises_intro-statements-18-2-1-1-3-1">For every <span class="process-math">\(y\)</span> there is an <span class="process-math">\(x\)</span> such that <span class="process-math">\(\sin(x) = y\text{.}\)</span> In other words, every number <span class="process-math">\(y\)</span> is in the range of sine (which is false).</div></li>
+<li id="exercises_intro-statements-18-2-1-1-4"><div class="para" id="exercises_intro-statements-18-2-1-1-4-1">For any numbers, if the cubes of two numbers are equal, then the numbers are equal.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises_intro-statements-19"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<div class="para" id="exercises_intro-statements-19-1-1">Suppose <span class="process-math">\(P(x)\)</span> is some predicate for which the statement <span class="process-math">\(\forall x P(x)\)</span> is true. Is it also the case that <span class="process-math">\(\exists x P(x)\)</span> is true? In other words, is the statement <span class="process-math">\(\forall x
+P(x) \imp \exists x P(x)\)</span> always true? Is the converse always true? Assume the domain of discourse is non-empty.</div>
+<div class="solutions"><details id="exercises_intro-statements-19-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_intro-statements-19-2-1">Try an example. What if <span class="process-math">\(P(x)\)</span> was the predicate, “<span class="process-math">\(x\)</span> is prime”? What if it was “if <span class="process-math">\(x\)</span> is divisible by 4, then it is even”? Of course examples are not enough to prove something in general, but that is entirely the point of this question.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_intro-statements-20"><h4 class="heading"><span class="codenumber">19<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-20-1-1">
+<div class="para">For each of the statements below, give a domain of discourse for which the statement is true, and a domain for which the statement is false.</div>
+<ol class="lower-alpha" id="exercises_intro-statements-20-1-1-1">
+<li id="exercises_intro-statements-20-1-1-1-1"><div class="para" id="p-derived-exercises_intro-statements-20-1-1-1-1"><span class="process-math">\(\forall x \exists y (y^2 = x)\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-20-1-1-1-2"><div class="para" id="p-derived-exercises_intro-statements-20-1-1-1-2"><span class="process-math">\(\forall x \forall y (x \lt y \imp \exists z
+(x \lt z \lt y))\text{.}\)</span></div></li>
+<li id="exercises_intro-statements-20-1-1-1-3"><div class="para" id="p-derived-exercises_intro-statements-20-1-1-1-3"><span class="process-math">\(\exists x \forall y \forall z (y \lt z \imp y \le x \le z)\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_intro-statements-20-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_intro-statements-20-2-1">First figure out what each statement is saying. For part (c), you don’t need to assume the domain is an infinite set.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_intro-statements-21"><h4 class="heading"><span class="codenumber">20<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_intro-statements-21-2-1">
+<div class="para">Consider the statement, “For all natural numbers <span class="process-math">\(n\text{,}\)</span> if <span class="process-math">\(n\)</span> is prime, then <span class="process-math">\(n\)</span> is solitary.” You do not need to know what <em class="emphasis">solitary</em> means for this problem, just that it is a property that some numbers have and others do not.</div>
+<ol class="lower-alpha" id="exercises_intro-statements-21-2-1-3">
+<li id="exercises_intro-statements-21-2-1-3-1"><div class="para" id="exercises_intro-statements-21-2-1-3-1-1">Write the converse and the contrapositive of the statement, saying which is which. Note: the original statement claims that an implication is true for all <span class="process-math">\(n\text{,}\)</span> and it is that implication that we are taking the converse and contrapositive of.</div></li>
+<li id="exercises_intro-statements-21-2-1-3-2"><div class="para" id="exercises_intro-statements-21-2-1-3-2-1">Write the negation of the original statement. What would you need to show to prove that the statement is false?</div></li>
+<li id="exercises_intro-statements-21-2-1-3-3"><div class="para" id="exercises_intro-statements-21-2-1-3-3-1">Even though you don’t know whether 10 is solitary (in fact, nobody knows this), is the statement “if 10 is prime, then 10 is solitary” true or false? Explain.</div></li>
+<li id="exercises_intro-statements-21-2-1-3-4"><div class="para" id="exercises_intro-statements-21-2-1-3-4-1">It turns out that 8 is solitary. Does this tell you anything about the truth or falsity of the original statement, its converse or its contrapositive? Explain.</div></li>
+<li id="exercises_intro-statements-21-2-1-3-5"><div class="para" id="exercises_intro-statements-21-2-1-3-5-1">Assuming that the original statement is true, what can you say about the relationship between the <em class="emphasis">set</em> <span class="process-math">\(P\)</span> of prime numbers and the <em class="emphasis">set</em> <span class="process-math">\(S\)</span> of solitary numbers. Explain.</div></li>
+</ol>
+</div></article></section></section></div>
+

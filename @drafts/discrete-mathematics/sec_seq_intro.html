@@ -1,0 +1,473 @@
+---
+title:
+---
+<div id="ptx-content" class="ptx-content"><section class="section" id="sec_seq_intro"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Describing Sequences</span>
+</h2>
+<article class="project-like" id="sec_seq_intro-2"><h6 class="heading">
+<span class="type">Investigate!</span> </h6> <div class="para logical" id="sec_seq_intro-2-2">
+<div class="para">You have a large collection of <span class="process-math">\(1\times 1\)</span> squares and <span class="process-math">\(1\times 2\)</span> dominoes. You want to arrange these to make a <span class="process-math">\(1 \times 15\)</span> strip. How many ways can you do this?</div>
+<ol class="decimal" id="sec_seq_intro-2-2-4">
+<li id="sec_seq_intro-2-2-4-1"><div class="para" id="sec_seq_intro-2-2-4-1-1">Start by collecting data. How many length <span class="process-math">\(1\times 1\)</span> strips can you make? How many <span class="process-math">\(1\times 2\)</span> strips? How many <span class="process-math">\(1\times 3\)</span> strips? And so on.</div></li>
+<li id="sec_seq_intro-2-2-4-2"><div class="para" id="sec_seq_intro-2-2-4-2-1">How are the <span class="process-math">\(1\times 3\)</span> and <span class="process-math">\(1 \times 4\)</span> strips related to the <span class="process-math">\(1\times 5\)</span> strips?</div></li>
+<li id="sec_seq_intro-2-2-4-3"><div class="para" id="sec_seq_intro-2-2-4-3-1">How many <span class="process-math">\(1\times 15\)</span> strips can you make?</div></li>
+<li id="sec_seq_intro-2-2-4-4"><div class="para" id="sec_seq_intro-2-2-4-4-1">What if I asked you to find the number of <span class="process-math">\(1\times 1000\)</span> strips? Would the method you used to calculate the number fo <span class="process-math">\(1 \times 15\)</span> strips be helpful?</div></li>
+</ol>
+</div></article><div class="para logical" id="sec_seq_intro-3">
+<div class="para">A <dfn class="terminology">sequence</dfn>  is simply an ordered list of numbers. For example, here is a sequence: 0, 1, 2, 3, 4, 5, …. This is different from the set <span class="process-math">\(\N\)</span> because, while the sequence is a complete list of every element in the set of natural numbers, in the sequence we very much care what order the numbers come in. For this reason, when we use variables to represent terms in a sequence they will look like this:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_0, a_1, a_2, a_3, \ldots\text{.}
+\end{equation*}
+</div>
+<div class="para">To refer to the <em class="emphasis">entire</em> sequence at once, we will write <span class="process-math">\((a_n)_{n\in\N}\)</span> or <span class="process-math">\((a_n)_{n\ge 0}\text{,}\)</span> or sometimes if we are being sloppy, just <span class="process-math">\((a_n)\)</span> (in which case we assume we start the sequence with <span class="process-math">\(a_0\)</span>). </div>
+</div>
+<div class="para" id="sec_seq_intro-4">We might replace the <span class="process-math">\(a\)</span> with another letter, and sometimes we omit <span class="process-math">\(a_0\text{,}\)</span> starting with <span class="process-math">\(a_1\text{,}\)</span> in which case we would use <span class="process-math">\((a_n)_{n \ge 1}\)</span> to refer to the sequence as a whole. The numbers in the subscripts are called <dfn class="terminology">indices</dfn> (the plural of <dfn class="terminology">index</dfn>).</div>
+<div class="para" id="sec_seq_intro-5"> While we often just think of a sequence as an ordered list of numbers, it is really a type of function. Specifically, the sequence <span class="process-math">\((a_n)_{n\ge 0}\)</span> is a function with domain <span class="process-math">\(\N\)</span> where <span class="process-math">\(a_n\)</span> is the image of the natural number <span class="process-math">\(n\text{.}\)</span> Later we will manipulate sequences in much the same way you have manipulated functions in algebra or calculus. We can shift a sequence up or down, add two sequences, or ask for the rate of change of a sequence. These are done exactly as you would for functions.</div>
+<div class="para" id="sec_seq_intro-6">That said, while keeping the rigorous mathematical definition in mind is helpful, we often describe sequences by writing out the first few terms.</div>
+<article class="example example-like" id="sec_seq_intro-7"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_seq_intro-7-1-1">Can you find the next term in the following sequences?</div> <div class="para logical" id="sec_seq_intro-7-1-2"><ol class="decimal" id="sec_seq_intro-7-1-2-1">
+<li id="sec_seq_intro-7-1-2-1-1"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-1"><span class="process-math">\(\displaystyle 7,7,7,7,7, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-2"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-2"><span class="process-math">\(\displaystyle 3, -3, 3, -3, 3, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-3"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-3"><span class="process-math">\(\displaystyle 1, 5, 2, 10, 3, 15, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-4"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-4"><span class="process-math">\(\displaystyle 1, 2, 4, 8, 16, 32, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-5"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-5"><span class="process-math">\(\displaystyle 1, 4, 9, 16, 25, 36, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-6"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-6"><span class="process-math">\(\displaystyle 1, 2, 3, 5, 8, 13, 21, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-7"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-7"><span class="process-math">\(\displaystyle 1, 3, 6, 10, 15, 21, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-8"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-8"><span class="process-math">\(\displaystyle 2, 3, 5, 7, 11, 13, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-9"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-9"><span class="process-math">\(\displaystyle 3, 2, 1, 0, -1, \ldots\)</span></div></li>
+<li id="sec_seq_intro-7-1-2-1-10"><div class="para" id="p-derived-sec_seq_intro-7-1-2-1-10"><span class="process-math">\(\displaystyle 1, 1, 2, 6, \ldots\)</span></div></li>
+</ol></div>
+<div class="solutions"><details id="sec_seq_intro-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec_seq_intro-7-2-1">No you cannot. You might guess that the next terms are:</div> <div class="para logical" id="sec_seq_intro-7-2-2"><ol class="decimal cols4" id="sec_seq_intro-7-2-2-1">
+<li id="sec_seq_intro-7-2-2-1-1"><div class="para" id="p-derived-sec_seq_intro-7-2-2-1-1"><span class="process-math">\(\displaystyle 7\)</span></div></li>
+<li id="sec_seq_intro-7-2-2-1-2"><div class="para" id="p-derived-sec_seq_intro-7-2-2-1-2"><span class="process-math">\(\displaystyle -3\)</span></div></li>
+<li id="sec_seq_intro-7-2-2-1-3"><div class="para" id="p-derived-sec_seq_intro-7-2-2-1-3"><span class="process-math">\(\displaystyle 4\)</span></div></li>
+<li id="sec_seq_intro-7-2-2-1-4"><div class="para" id="sec_seq_intro-7-2-2-1-4-1">64</div></li>
+<li id="sec_seq_intro-7-2-2-1-5"><div class="para" id="sec_seq_intro-7-2-2-1-5-1">49</div></li>
+<li id="sec_seq_intro-7-2-2-1-6"><div class="para" id="sec_seq_intro-7-2-2-1-6-1">34</div></li>
+<li id="sec_seq_intro-7-2-2-1-7"><div class="para" id="sec_seq_intro-7-2-2-1-7-1">28</div></li>
+<li id="sec_seq_intro-7-2-2-1-8"><div class="para" id="sec_seq_intro-7-2-2-1-8-1">17</div></li>
+<li id="sec_seq_intro-7-2-2-1-9"><div class="para" id="p-derived-sec_seq_intro-7-2-2-1-9"><span class="process-math">\(\displaystyle -2\)</span></div></li>
+<li id="sec_seq_intro-7-2-2-1-10"><div class="para" id="p-derived-sec_seq_intro-7-2-2-1-10"><span class="process-math">\(\displaystyle 24\)</span></div></li>
+</ol></div> <div class="para" id="sec_seq_intro-7-2-3">In fact, those are the next terms of the sequences I had in mind when I made up the example, but there is no way to be sure they are correct.</div> <div class="para" id="sec_seq_intro-7-2-4">Still, we will often do this. Given the first few terms of a sequence, we can ask what the pattern in the sequence suggests the next terms are.</div>
+</div></details></div></article><div class="para" id="sec_seq_intro-8">Given that no number of initial terms in a sequence is enough to say for certain which sequence we are dealing with, we need to find another way to specify a sequence. We consider two ways to do this:</div>
+<article class="assemblage assemblage-like" id="sec_seq_intro-9"><h3 class="heading"><span class="title">Closed formula.</span></h3>
+<div class="para" id="sec_seq_intro-9-2">A <dfn class="terminology">closed formula</dfn>  for a sequence <span class="process-math">\((a_n)_{n\in\N}\)</span> is a formula for <span class="process-math">\(a_n\)</span> using a fixed finite number of operations on <span class="process-math">\(n\text{.}\)</span> This is what you normally think of as a formula in <span class="process-math">\(n\text{,}\)</span> just as if you were defining a function in terms of <span class="process-math">\(n\)</span> (because that is exactly what you are doing).</div></article><article class="assemblage assemblage-like" id="sec_seq_intro-10"><h3 class="heading"><span class="title">Recursive definition.</span></h3>
+<div class="para" id="sec_seq_intro-10-2">A <dfn class="terminology">recursive definition</dfn>  (sometimes called an <dfn class="terminology">inductive definition</dfn>) for a sequence <span class="process-math">\((a_n)_{n\in\N}\)</span> consists of a <dfn class="terminology">recurrence relation</dfn>  : an equation relating a term of the sequence to previous terms (terms with smaller index) and an <dfn class="terminology">initial condition</dfn>:  a list of a few terms of the sequence (one less than the number of terms in the recurrence relation).</div></article><div class="para" id="sec_seq_intro-11">It is easier to understand what is going on here with an example:</div>
+<article class="example example-like" id="sec_seq_intro-12"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec_seq_intro-12-1-1">
+<div class="para">Here are a few closed formulas for sequences: </div>
+<ul class="disc" id="sec_seq_intro-12-1-1-2">
+<li id="sec_seq_intro-12-1-1-2-1"><div class="para" id="p-derived-sec_seq_intro-12-1-1-2-1"><span class="process-math">\(a_n = n^2\text{.}\)</span></div></li>
+<li id="sec_seq_intro-12-1-1-2-2"><div class="para" id="p-derived-sec_seq_intro-12-1-1-2-2"><span class="process-math">\(\d a_n = \frac{n(n+1)}{2}\text{.}\)</span></div></li>
+<li id="sec_seq_intro-12-1-1-2-3"><div class="para" id="p-derived-sec_seq_intro-12-1-1-2-3"><span class="process-math">\(\d a_n = \frac{\left(\frac{1 + \sqrt 5}{2}\right)^n - \left(\frac{1 - \sqrt 5}{2}\right)^{-n}}{\sqrt{5}}\text{.}\)</span></div></li>
+</ul>
+</div> <div class="para" id="sec_seq_intro-12-1-2">Note in each formula, if you are given <span class="process-math">\(n\text{,}\)</span> you can calculate <span class="process-math">\(a_n\)</span> directly: just plug in <span class="process-math">\(n\text{.}\)</span> For example, to find <span class="process-math">\(a_3\)</span> in the second sequence, just compute <span class="process-math">\(a_3 = \frac{3(3+1)}{2} = 6\text{.}\)</span>
+</div> <div class="para logical" id="sec_seq_intro-12-1-3">
+<div class="para">Here are a few recursive definitions for sequences: </div>
+<ul class="disc" id="sec_seq_intro-12-1-3-2">
+<li id="sec_seq_intro-12-1-3-2-1"><div class="para" id="p-derived-sec_seq_intro-12-1-3-2-1">
+<span class="process-math">\(a_n = 2a_{n-1}\)</span> with <span class="process-math">\(a_0 = 1\text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-12-1-3-2-2"><div class="para" id="p-derived-sec_seq_intro-12-1-3-2-2">
+<span class="process-math">\(a_n = 2a_{n-1}\)</span> with <span class="process-math">\(a_0 = 27\text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-12-1-3-2-3"><div class="para" id="p-derived-sec_seq_intro-12-1-3-2-3">
+<span class="process-math">\(a_n = a_{n-1} + a_{n-2}\)</span> with <span class="process-math">\(a_0 = 0\)</span> and <span class="process-math">\(a_1 = 1\text{.}\)</span>
+</div></li>
+</ul>
+</div> <div class="para" id="sec_seq_intro-12-1-4">In these formulas, if you are given <span class="process-math">\(n\text{,}\)</span> you cannot calculate <span class="process-math">\(a_n\)</span> directly, you first need to find <span class="process-math">\(a_{n-1}\)</span> (or <span class="process-math">\(a_{n-1}\)</span> and <span class="process-math">\(a_{n-2}\)</span>). In the second sequence, to find <span class="process-math">\(a_3\)</span> you would take <span class="process-math">\(2a_2\text{,}\)</span> but to find <span class="process-math">\(a_2 = 2a_1\)</span> we would need to know <span class="process-math">\(a_1 = 2a_0\text{.}\)</span> We do know this, so we could trace back through these equations to find <span class="process-math">\(a_1 = 54\text{,}\)</span> <span class="process-math">\(a_2 = 108\)</span> and finally <span class="process-math">\(a_3 = 216\text{.}\)</span> </div></article><div class="para" id="sec_seq_intro-13">You might wonder why we would bother with recursive definitions for sequences. After all, it is harder to find <span class="process-math">\(a_n\)</span> with a recursive definition than with a closed formula. This is true, but it is also harder to find a closed formula for a sequence than it is to find a recursive definition. So to find a useful closed formula, we might first find the recursive definition, then use that to find the closed formula.</div>
+<div class="para" id="sec_seq_intro-14">This is not to say that recursive definitions aren’t useful in finding <span class="process-math">\(a_n\text{.}\)</span> You can always calculate <span class="process-math">\(a_n\)</span> given a recursive definition, it might just take a while.</div>
+<article class="example example-like" id="sec_seq_intro-15"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_seq_intro-15-1-1">Find <span class="process-math">\(a_6\)</span> in the sequence defined by <span class="process-math">\(a_n = 2a_{n-1} - a_{n-2}\)</span> with <span class="process-math">\(a_0 = 3\)</span> and <span class="process-math">\(a_1 = 4\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_seq_intro-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_seq_intro-15-2-1">
+<div class="para">We know that <span class="process-math">\(a_6 = 2a_5 - a_4\text{.}\)</span> So to find <span class="process-math">\(a_6\)</span> we need to find <span class="process-math">\(a_5\)</span> and <span class="process-math">\(a_4\text{.}\)</span> Well</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_5 = 2a_4 - a_3 \qquad \text{and} \qquad a_4 = 2a_3 - a_2\text{,}
+\end{equation*}
+</div>
+<div class="para">so if we can only find <span class="process-math">\(a_3\)</span> and <span class="process-math">\(a_2\)</span> we would be set. Of course</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_3 = 2a_2 - a_1 \qquad \text{and} \qquad a_2 = 2a_1 - a_0\text{,}
+\end{equation*}
+</div>
+<div class="para">so we only need to find <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_0\text{.}\)</span> But we are given these. Thus</div>
+<div class="displaymath process-math" id="sec_seq_intro-15-2-1-11">
+\begin{align*}
+a_0 \amp = 3\\
+a_1 \amp = 4\\
+a_2 \amp = 2\cdot 4 - 3 = 5\\
+a_3 \amp = 2\cdot 5 - 4 = 6\\
+a_4 \amp = 2\cdot 6 - 5 = 7\\
+a_5 \amp = 2\cdot 7 - 6 = 8\\
+a_6 \amp = 2\cdot 8 - 7 = 9\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec_seq_intro-15-2-2">
+<div class="para">Note that now we can guess a closed formula for the <span class="process-math">\(n\)</span>th term of the sequence: <span class="process-math">\(a_n = n+3\text{.}\)</span> To be sure this will always work, we could plug in this formula into the recurrence relation:</div>
+<div class="displaymath process-math" id="sec_seq_intro-15-2-2-3">
+\begin{align*}
+2a_{n-1} - a_{n-2} \amp = 2((n-1) + 3) - ((n-2) + 3)\\
+\amp = 2n + 4 - n - 1\\
+\amp = n + 3\\
+\amp = a_n\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="sec_seq_intro-15-2-3">That is not quite enough though, since there can be multiple closed formulas that satisfy the same recurrence relation; we must also check that our closed formula agrees on the initial terms of the sequence. Since <span class="process-math">\(a_0 = 0 + 3 = 3\)</span> and <span class="process-math">\(a_1 = 1+3 = 4\)</span> are the correct initial conditions, we can now conclude we have the correct closed formula.</div>
+</div></details></div></article><div class="para" id="sec_seq_intro-16">Finding closed formulas, or even recursive definitions, for sequences is not trivial. There is no one method for doing this. Just as in evaluating integrals or solving differential equations, it is useful to have a bag of tricks you can apply, but sometimes there is no easy answer.</div>
+<div class="para" id="sec_seq_intro-17">One useful method is to relate a given sequence to another sequence for which we already know the closed formula.  To do this, we need a few “known sequences” to compare mystery sequences to.  Here are a few that are good to know.  We will verify the formulas for these in the coming sections.</div>
+<article class="assemblage assemblage-like" id="assemblage-commonsequences"><h3 class="heading"><span class="title">Common Sequences.</span></h3>
+<div class="para logical" id="assemblage-commonsequences-6"><dl class="description-list">
+<dt id="assemblage-commonsequences-6-1-1"><span class="process-math">\(1, 4, 9, 16, 25, \ldots\)</span></dt>
+<dd><div class="para" id="assemblage-commonsequences-6-1-1-2">The <dfn class="terminology">square numbers</dfn>.  The sequence <span class="process-math">\((s_n)_{n \ge 1}\)</span> has closed formula <span class="process-math">\(s_n = n^2\)</span>
+</div></dd>
+<dt id="assemblage-commonsequences-6-1-2"><span class="process-math">\(1, 3, 6, 10, 15, 21, \ldots\)</span></dt>
+<dd><div class="para" id="assemblage-commonsequences-6-1-2-2">The <dfn class="terminology">triangular numbers</dfn>.  The sequence <span class="process-math">\((T_n)_{n \ge 1}\)</span> has closed formula <span class="process-math">\(T_n = \frac{n(n+1)}{2}\text{.}\)</span>
+</div></dd>
+<dt id="assemblage-commonsequences-6-1-3"><span class="process-math">\(1, 2, 4, 8, 16, 32,\ldots\)</span></dt>
+<dd><div class="para" id="assemblage-commonsequences-6-1-3-2">The <dfn class="terminology">powers of 2</dfn>.  The sequence <span class="process-math">\((a_n)_{n \ge 0}\)</span> with closed formula <span class="process-math">\(a_n = 2^n\text{.}\)</span>
+</div></dd>
+<dt id="assemblage-commonsequences-6-1-4"><span class="process-math">\(1, 1, 2, 3, 5, 8, 13, \ldots\)</span></dt>
+<dd><div class="para" id="assemblage-commonsequences-6-1-4-2">The <dfn class="terminology">Fibonacci numbers</dfn> (or Fibonacci sequence), defined recursively by <span class="process-math">\(F_n = F_{n-1} + F_{n-2}\)</span> with <span class="process-math">\(F_1 = F_2 = 1\text{.}\)</span>
+</div></dd>
+</dl></div></article><article class="example example-like" id="sec_seq_intro-19"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec_seq_intro-19-1-1">
+<div class="para">Use the formulas <span class="process-math">\(T_n = \frac{n(n+1)}{2}\)</span> and <span class="process-math">\(a_n = 2^n\)</span> to find closed formulas that agree with the following sequences.  Assume each first term corresponds to <span class="process-math">\(n=0\text{.}\)</span>
+</div>
+<ol class="decimal" id="sec_seq_intro-19-1-1-4">
+<li id="sec_seq_intro-19-1-1-4-1"><div class="para" id="sec_seq_intro-19-1-1-4-1-1">
+<span class="process-math">\((b_n)\text{:}\)</span> <span class="process-math">\(1, 2, 4, 7, 11, 16, 22, \ldots \text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-1-1-4-2"><div class="para" id="sec_seq_intro-19-1-1-4-2-1">
+<span class="process-math">\((c_n)\text{:}\)</span> <span class="process-math">\(3, 5, 9, 17, 33,\ldots \text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-1-1-4-3"><div class="para" id="sec_seq_intro-19-1-1-4-3-1">
+<span class="process-math">\((d_n)\text{:}\)</span> <span class="process-math">\(0, 2, 6, 12, 20, 30, 42,\ldots \text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-1-1-4-4"><div class="para" id="sec_seq_intro-19-1-1-4-4-1">
+<span class="process-math">\((e_n)\text{:}\)</span> <span class="process-math">\(3, 6, 10, 15, 21, 28, \ldots\text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-1-1-4-5"><div class="para" id="sec_seq_intro-19-1-1-4-5-1">
+<span class="process-math">\((f_n)\text{:}\)</span> <span class="process-math">\(0, 1, 3, 7, 15, 31, \ldots \text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-1-1-4-6"><div class="para" id="sec_seq_intro-19-1-1-4-6-1">
+<span class="process-math">\((g_n)\)</span> <span class="process-math">\(3, 6, 12, 24, 48, \ldots \text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-1-1-4-7"><div class="para" id="sec_seq_intro-19-1-1-4-7-1">
+<span class="process-math">\((h_n)\text{:}\)</span> <span class="process-math">\(6, 10, 18, 34, 66, \ldots \text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-1-1-4-8"><div class="para" id="sec_seq_intro-19-1-1-4-8-1">
+<span class="process-math">\((j_n)\text{:}\)</span> <span class="process-math">\(15, 33, 57, 87, 123, \ldots\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="sec_seq_intro-19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec_seq_intro-19-2-1">
+<div class="para"> We wish to compare these sequences to the triangular numbers <span class="process-math">\((0, 1, 3, 6, 10, 15, 21,\ldots)\text{,}\)</span> when we start with <span class="process-math">\(n=0\text{,}\)</span> and the powers of 2: <span class="process-math">\((1, 2, 4, 8, 16, \ldots)\text{.}\)</span>
+</div>
+<ol class="decimal" id="sec_seq_intro-19-2-1-6">
+<li id="sec_seq_intro-19-2-1-6-1"><div class="para" id="sec_seq_intro-19-2-1-6-1-1">
+<span class="process-math">\((1, 2, 4, 7, 11, 16, 22, \ldots)\text{.}\)</span> Note that if subtract 1 from each term, we get the sequence <span class="process-math">\((T_n)\text{.}\)</span> So we have <span class="process-math">\(b_n = T_n + 1\text{.}\)</span> Therefore a closed formula is <span class="process-math">\(b_n = \frac{n(n+1)}{2} + 1\text{.}\)</span> A quick check of the first few <span class="process-math">\(n\)</span> confirms we have it right.</div></li>
+<li id="sec_seq_intro-19-2-1-6-2"><div class="para" id="sec_seq_intro-19-2-1-6-2-1">
+<span class="process-math">\((3, 5, 9, 17, 33, \ldots )\text{.}\)</span> Each term in this sequence is one more than a power of 2, so we might guess the closed formula is <span class="process-math">\(c_n = a_n+1 = 2^n + 1\text{.}\)</span> If we try this though, we get <span class="process-math">\(c_0 = 2^0 + 1 = 2\)</span> and <span class="process-math">\(c_1 = 2^1 + 1 = 3\text{.}\)</span> We are off because the indices are shifted. What we really want is <span class="process-math">\(c_n = a_{n+1}+1\)</span> giving <span class="process-math">\(c_n = 2^{n+1} + 1\text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-2-1-6-3"><div class="para" id="sec_seq_intro-19-2-1-6-3-1">(<span class="process-math">\(0, 2, 6, 12, 20, 30, 42,\ldots \)</span>). Notice that all these terms are even. What happens if we factor out a 2? We get <span class="process-math">\((T_n)\text{!}\)</span> More precisely, we find that <span class="process-math">\(d_n/2 = T_n\text{,}\)</span> so this sequence has closed formula <span class="process-math">\(d_n = n(n+1)\text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-2-1-6-4"><div class="para" id="sec_seq_intro-19-2-1-6-4-1">
+<span class="process-math">\((3, 6, 10, 15, 21, 28, \ldots)\text{.}\)</span> These are all triangular numbers. However, we are starting with 3 as our initial term instead of as our third term. So if we could plug in 2 instead of 0 into the formula for <span class="process-math">\(T_n\text{,}\)</span> we would be set. Therefore the closed formula is <span class="process-math">\(e_n = \frac{(n+2)(n+3)}{2}\)</span> (where <span class="process-math">\(n+3\)</span> came from <span class="process-math">\((n+2)+1\)</span>). Thinking about sequences as functions, we are doing a horizontal shift by 2: <span class="process-math">\(e_n = T_{n+2}\)</span> which would cause the graph to shift 2 units to the left.</div></li>
+<li id="sec_seq_intro-19-2-1-6-5"><div class="para" id="sec_seq_intro-19-2-1-6-5-1">
+<span class="process-math">\((0, 1, 3, 7, 15, 31, \ldots )\text{.}\)</span> Try adding 1 to each term and we get powers of 2. You might guess this because each term is a little more than twice the previous term (the powers of 2 are <em class="emphasis">exactly</em> twice the previous term). Closed formula: <span class="process-math">\(f_n = 2^{n} - 1\text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-2-1-6-6"><div class="para" id="sec_seq_intro-19-2-1-6-6-1">
+<span class="process-math">\((3, 6, 12, 24, 48, \ldots )\text{.}\)</span> These numbers are also doubling each time, but are also all multiples of 3. Dividing each by 3 gives 1, 2, 4, 8, …. Aha. We get the closed formula <span class="process-math">\(g_n = 3\cdot 2^{n}\text{.}\)</span>
+</div></li>
+<li id="sec_seq_intro-19-2-1-6-7"><div class="para" id="sec_seq_intro-19-2-1-6-7-1">
+<span class="process-math">\((6, 10, 18, 34, 66, \ldots )\text{.}\)</span> To get from one term to the next, we almost double each term. So maybe we can relate this back to <span class="process-math">\(2^n\text{.}\)</span> Yes, each term is 2 more than a power of 2. So we get <span class="process-math">\(h_n = 2^{n+2} + 2\)</span> (the <span class="process-math">\(n+2\)</span> is because the first term is 2 more than <span class="process-math">\(2^2\text{,}\)</span> not <span class="process-math">\(2^0\)</span>). Alternatively, we could have related this sequence to the second sequence in this example: starting with 3, 5, 9, 17, … we see that this sequence is twice the terms from that sequence. That sequence had closed formula <span class="process-math">\(c_n = 2^{n+1} + 1\text{.}\)</span> Our sequence here would be twice this, so <span class="process-math">\(h_n = 2(2^n + 1)\text{,}\)</span> which is the same as we got before.</div></li>
+<li id="sec_seq_intro-19-2-1-6-8"><div class="para" id="sec_seq_intro-19-2-1-6-8-1">
+<span class="process-math">\((15, 33, 57, 87, 123, \ldots)\text{.}\)</span> Try dividing each term by 3. That gives the sequence <span class="process-math">\(5, 11, 19, 29, 41,\ldots\text{.}\)</span> Now add 1 to each term: <span class="process-math">\(6, 12, 20, 30, 42, \ldots\text{,}\)</span> which is <span class="process-math">\((d_n)\)</span> in this example, except starting with 6 instead of 0. So let’s start with the formula <span class="process-math">\(d_n= n(n+1)\text{.}\)</span> To start with the 6, we shift: <span class="process-math">\((n+2)(n+3)\text{.}\)</span> But this is one too many, so subtract 1: <span class="process-math">\((n+2)(n+3) - 1\text{.}\)</span> That gives us our sequence, but divided by 3. So we want <span class="process-math">\(j_n = 3((n+2)(n+3) - 1)\text{.}\)</span>
+</div></li>
+</ol>
+</div></div></details></div></article><section class="paragraphs" id="sec_seq_intro-20"><h3 class="heading"><span class="title">Partial sums.</span></h3> <div class="para" id="sec_seq_intro-20-2">Some sequences naturally arise as the sum of terms of another sequence.</div> <article class="example example-like" id="ex-first-partial-sums"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ex-first-partial-sums-1-1">
+<div class="para">Sam keeps track of how many push-ups she does each day of her “do lots of push-ups challenge.”  Let <span class="process-math">\((a_n)_{n \ge 1}\)</span> be the sequence that describes the number of push-ups done on the <span class="process-math">\(n\)</span>th day of the challenge.  The sequence starts</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3, 5, 6, 10, 9, 0, 12, \ldots\text{.}
+\end{equation*}
+</div>
+<div class="para">Describe a sequence <span class="process-math">\((b_n)_{n \ge 1}\)</span> that describes the total number of push-ups done by Sam after the <span class="process-math">\(n\)</span>th day.</div>
+</div>
+<div class="solutions"><details id="ex-first-partial-sums-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-first-partial-sums-2-1">
+<div class="para">We can find the terms of this sequence easily enough.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3, 8, 14, 24, 33, 33, 45,\ldots\text{.}
+\end{equation*}
+</div>
+<div class="para">Here <span class="process-math">\(b_1\)</span> is just <span class="process-math">\(a_1\text{,}\)</span> but then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_2 = 3+5 = a_1 + a_2\text{,}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_3 = 3+5+6 = a_1 + a_2 + a_3\text{,}
+\end{equation*}
+</div>
+<div class="para">and so on.</div>
+</div> <div class="para logical" id="ex-first-partial-sums-2-2">
+<div class="para">There are a few ways we might describe <span class="process-math">\(b_n\)</span> in general.  We could do so recursively as,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_n = b_{n-1} + a_n\text{,}
+\end{equation*}
+</div>
+<div class="para">since the total number of push-ups done after <span class="process-math">\(n\)</span> days will be the number done after <span class="process-math">\(n-1\)</span> days, plus the number done on day <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="ex-first-partial-sums-2-3">
+<div class="para">For something closer to a closed formula, we could write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_n = a_1 + a_2 + a_3 + \cdots + a_n\text{,}
+\end{equation*}
+</div>
+<div class="para">or the same thing using <em class="emphasis">summation notation</em>:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_n = \sum_{i=1}^n a_i\text{.}
+\end{equation*}
+</div>
+<div class="para"> However, note that these are not really closed formulas since even if we had a formula for <span class="process-math">\(a_n\text{,}\)</span> we would still have an increasing number of computations to do as <span class="process-math">\(n\)</span> increases.</div>
+</div>
+</div></details></div></article> <div class="para logical" id="sec_seq_intro-20-4">
+<div class="para">Given any sequence <span class="process-math">\((a_n)_{n \in \N}\text{,}\)</span> we can always form a new sequence <span class="process-math">\((b_n)_{n \in \N}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_n = a_0 + a_1 + a_2 + \cdots + a_n\text{.}
+\end{equation*}
+</div>
+<div class="para">Since the terms of <span class="process-math">\((b_n)\)</span> are the sums of the initial part of the sequence <span class="process-math">\((a_n)\)</span> ways call <span class="process-math">\((b_n)\)</span> the <dfn class="terminology">sequence of partial sums of <span class="process-math">\((a_n)\)</span></dfn>.  Soon we will see that it is sometimes possible to find a closed formula for <span class="process-math">\((b_n)\)</span> from the closed formula for <span class="process-math">\((a_n)\text{.}\)</span>
+</div>
+</div> <div class="para" id="sec_seq_intro-20-5">To simplify writing out these sums, we will often use notation like <span class="process-math">\(\d\sum_{k=1}^n a_k\text{.}\)</span> This means add up the <span class="process-math">\(a_k\)</span>’s where <span class="process-math">\(k\)</span> changes from 1 to <span class="process-math">\(n\text{.}\)</span> </div> <article class="example example-like" id="sec_seq_intro-20-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec_seq_intro-20-6-1-1">Use <span class="process-math">\(\sum\)</span> notation to rewrite the sums:</div> <div class="para logical" id="sec_seq_intro-20-6-1-2"><ol class="decimal" id="sec_seq_intro-20-6-1-2-1">
+<li id="sec_seq_intro-20-6-1-2-1-1"><div class="para" id="p-derived-sec_seq_intro-20-6-1-2-1-1"><span class="process-math">\(\displaystyle 1 + 2 + 3 + 4 + \cdots + 100\)</span></div></li>
+<li id="sec_seq_intro-20-6-1-2-1-2"><div class="para" id="p-derived-sec_seq_intro-20-6-1-2-1-2"><span class="process-math">\(\displaystyle 1 + 2 + 4 + 8 + \cdots + 2^{50}\)</span></div></li>
+<li id="sec_seq_intro-20-6-1-2-1-3"><div class="para" id="p-derived-sec_seq_intro-20-6-1-2-1-3"><span class="process-math">\(6 + 10 + 14 + \cdots + (4n - 2)\text{.}\)</span></div></li>
+</ol></div>
+<div class="solutions"><details id="sec_seq_intro-20-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec_seq_intro-20-6-2-1"><ol class="decimal cols3" id="sec_seq_intro-20-6-2-1-1">
+<li id="sec_seq_intro-20-6-2-1-1-1"><div class="para" id="p-derived-sec_seq_intro-20-6-2-1-1-1"><span class="process-math">\(\displaystyle \d\sum_{k=1}^{100} k\)</span></div></li>
+<li id="sec_seq_intro-20-6-2-1-1-2"><div class="para" id="p-derived-sec_seq_intro-20-6-2-1-1-2"><span class="process-math">\(\displaystyle \d\sum_{k=0}^{50} 2^k\)</span></div></li>
+<li id="sec_seq_intro-20-6-2-1-1-3"><div class="para" id="p-derived-sec_seq_intro-20-6-2-1-1-3"><span class="process-math">\(\displaystyle \d\sum_{k=2}^{n} (4k -2)\)</span></div></li>
+</ol></div></div></details></div></article> <div class="para" id="sec_seq_intro-20-7">If we want to multiply the <span class="process-math">\(a_k\)</span> instead, we could write <span class="process-math">\(\d\prod_{k=1}^n a_k\text{.}\)</span> For example, <span class="process-math">\(\d\prod_{k=1}^n k = n!\text{.}\)</span> </div></section><section class="exercises" id="exercises_seq_basics"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ww-seqintro-related"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div id="webwork-104" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="104" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_1-Describing_Sequences/2_1_1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-104')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-104-1-1-1">
+<div class="para">Find the closed formula for each of the following sequences <span class="process-math">\((a_n)_{n\ge 1}\)</span> by relating them to a well known sequence. Assume the first term given is <span class="process-math">\(a_1\text{.}\)</span>
+</div>
+<ol class="lower-alpha" id="extracted-webwork-104-1-1-1-3">
+<li id="extracted-webwork-104-1-1-1-3-1">
+<div class="para" id="extracted-webwork-104-1-1-1-3-1-1"><span class="process-math">\(4, 6, 9, 13, 18, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-104-1-1-1-3-1-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+<li id="extracted-webwork-104-1-1-1-3-2">
+<div class="para" id="extracted-webwork-104-1-1-1-3-2-1"><span class="process-math">\(3, 6, 11, 18, 27, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-104-1-1-1-3-2-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+<li id="extracted-webwork-104-1-1-1-3-3">
+<div class="para" id="extracted-webwork-104-1-1-1-3-3-1"><span class="process-math">\(-1, 0, 3, 8, 15, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-104-1-1-1-3-3-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+<li id="extracted-webwork-104-1-1-1-3-4">
+<div class="para" id="extracted-webwork-104-1-1-1-3-4-1"><span class="process-math">\(1, 5, 23, 119, 719, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-104-1-1-1-3-4-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-104-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="extracted-webwork-104-1-2-1">Try adding or subtracting the same small number from each term to see if you recognize the sequence.</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-seqintro-related2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div id="webwork-105" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="105" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_1-Describing_Sequences/2_1_2.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-105')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-105-1-1-1">
+<div class="para">For each sequence given below, find a closed formula for <span class="process-math">\(a_n\text{,}\)</span> the <span class="process-math">\(n\)</span>th term of the sequence (assume the first terms here are always <span class="process-math">\(a_0\)</span>) by relating it to another sequence for which you already kno the formula.</div>
+<ol class="lower-alpha" id="extracted-webwork-105-1-1-1-4">
+<li id="extracted-webwork-105-1-1-1-4-1">
+<div class="para" id="extracted-webwork-105-1-1-1-4-1-1"><span class="process-math">\(-2, -1, 6, 25, 62, 123, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-105-1-1-1-4-1-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+<li id="extracted-webwork-105-1-1-1-4-2">
+<div class="para" id="extracted-webwork-105-1-1-1-4-2-1"><span class="process-math">\(0, 10, 30, 60, 100, 150, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-105-1-1-1-4-2-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+<li id="extracted-webwork-105-1-1-1-4-3">
+<div class="para" id="extracted-webwork-105-1-1-1-4-3-1"><span class="process-math">\(-1, 0, 2, 6, 14, 30, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-105-1-1-1-4-3-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+<li id="extracted-webwork-105-1-1-1-4-4">
+<div class="para" id="extracted-webwork-105-1-1-1-4-4-1"><span class="process-math">\(0, 2, 12, 36, 80, 150, \ldots\)</span></div>
+<div class="para" id="extracted-webwork-105-1-1-1-4-4-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+</li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-105-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="extracted-webwork-105-1-2-1">Try adding, subtracting, or dividing each term by a constant to make the sequence more recognizable.</div> <div class="para" id="extracted-webwork-105-1-2-2">For part (d), try expressing the sequence as the sum of two well known sequences.</div>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_seq_basics-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_seq_basics-3-1-1">
+<div class="para">Consider the sequence <span class="process-math">\((a_n)_{n \ge 1}\)</span> that starts <span class="process-math">\(1, 3, 5, 7, 9, \ldots\)</span> (i.e., the odd numbers in order).</div>
+<ol class="lower-alpha" id="exercises_seq_basics-3-1-1-3">
+<li id="exercises_seq_basics-3-1-1-3-1"><div class="para" id="exercises_seq_basics-3-1-1-3-1-1">Give a recursive definition and closed formula for the sequence.</div></li>
+<li id="exercises_seq_basics-3-1-1-3-2"><div class="para" id="exercises_seq_basics-3-1-1-3-2-1">Write out the sequence <span class="process-math">\((b_n)_{n \ge 2}\)</span> of partial sums of <span class="process-math">\((a_n)\text{.}\)</span>  Write down the recursive definition for <span class="process-math">\((b_n)\)</span> and guess at the closed formula.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_seq_basics-3-2-1"><ol class="lower-alpha" id="exercises_seq_basics-3-2-1-1">
+<li id="exercises_seq_basics-3-2-1-1-1"><div class="para" id="exercises_seq_basics-3-2-1-1-1-1">The recursive definition is <span class="process-math">\(a_n = a_{n-1} + 2\)</span> with <span class="process-math">\(a_1 = 1\text{.}\)</span>  A closed formula is <span class="process-math">\(a_n = 2n-1\text{.}\)</span>
+</div></li>
+<li id="exercises_seq_basics-3-2-1-1-2"><div class="para" id="exercises_seq_basics-3-2-1-1-2-1">The sequence of partial sums is <span class="process-math">\(1, 4, 9, 16, 25, 36, \ldots\text{.}\)</span>  A recursive definition is (as always) <span class="process-math">\(b_n = b_{n-1} + a_n\)</span> which in this case is <span class="process-math">\(b_n = b_{n-1} + 2n-1\text{.}\)</span>  It appears that the closed formula is <span class="process-math">\(b_n = n^2\)</span>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4> <div class="para logical" id="exercises_seq_basics-4-2-2">
+<div class="para">The Fibonacci sequence is <span class="process-math">\(0, 1, 1, 2, 3, 5, 8, 13, \ldots\)</span> (where <span class="process-math">\(F_0 = 0\)</span>).</div>
+<ol class="lower-alpha" id="exercises_seq_basics-4-2-2-3">
+<li id="exercises_seq_basics-4-2-2-3-1"><div class="para" id="exercises_seq_basics-4-2-2-3-1-1">Write out the first few terms of the sequence of partial sums: <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(0+1\text{,}\)</span> <span class="process-math">\(0+1+1\text{,}\)</span>…</div></li>
+<li id="exercises_seq_basics-4-2-2-3-2"><div class="para" id="exercises_seq_basics-4-2-2-3-2-1">Guess a formula for the sequence of partial sums expressed in terms of a single Fibonacci number.  For example, you might say <span class="process-math">\(F_0 + F_1 + \cdots + F_n = 3F_{n-1}^2 + n\text{,}\)</span> although that is definitely not correct. </div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_seq_basics-4-3-1"><ol class="lower-alpha" id="exercises_seq_basics-4-3-1-1">
+<li id="exercises_seq_basics-4-3-1-1-1"><div class="para" id="p-derived-exercises_seq_basics-4-3-1-1-1"><span class="process-math">\(0, 1, 2, 4, 7, 12, 20, \ldots\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-4-3-1-1-2"><div class="para" id="p-derived-exercises_seq_basics-4-3-1-1-2"><span class="process-math">\(F_0 + F_1 + \cdots + F_n = F_{n+2} - 1\text{.}\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_seq_basics-5-1-1">
+<div class="para">Consider the three sequences below. For each, find a recursive definition. How are these sequences related?</div>
+<ol class="lower-alpha" id="exercises_seq_basics-5-1-1-1">
+<li id="exercises_seq_basics-5-1-1-1-1"><div class="para" id="p-derived-exercises_seq_basics-5-1-1-1-1"><span class="process-math">\(2, 4, 6, 10, 16, 26, 42, \ldots\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-5-1-1-1-2"><div class="para" id="p-derived-exercises_seq_basics-5-1-1-1-2"><span class="process-math">\(5, 6, 11, 17, 28, 45, 73, \ldots\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-5-1-1-1-3"><div class="para" id="p-derived-exercises_seq_basics-5-1-1-1-3"><span class="process-math">\(0, 0 , 0 , 0 , 0 , 0 , 0 ,\ldots\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq_basics-5-2-1">The sequences all have the same recurrence relation: <span class="process-math">\(a_n = a_{n-1} + a_{n-2}\)</span> (the same as the Fibonacci numbers). The only difference is the initial conditions.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-6-1-1">Write out the first few terms of the sequence given by <span class="process-math">\(a_1 = 3\text{;}\)</span> <span class="process-math">\(a_n = 2a_{n-1} + 4\text{.}\)</span> Then find a recursive definition for the sequence <span class="process-math">\(10, 24, 52, 108, \ldots\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq_basics-6-2-1">
+<span class="process-math">\(3, 10, 24, 52, 108,\ldots\text{.}\)</span> The recursive definition for <span class="process-math">\(10, 24, 52, \ldots\)</span> is <span class="process-math">\(a_n = 2a_{n-1} + 4\)</span> with <span class="process-math">\(a_1 = 10\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-7-1-1">Write out the first few terms of the sequence given by <span class="process-math">\(a_n = n^2 - 3n + 1\text{.}\)</span> Then find a closed formula for the sequence (starting with <span class="process-math">\(a_1\)</span>) <span class="process-math">\(0, 2, 6, 12, 20, \ldots\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq_basics-7-2-1">
+<span class="process-math">\(-1, -1, 1, 5, 11, 19,\ldots\)</span> Thus the sequence <span class="process-math">\(0, 2, 6, 12, 20,\ldots\)</span> has closed formula <span class="process-math">\(a_n = (n+1)^2 - 3(n+1) + 2\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-8-1-1">Show that <span class="process-math">\(a_n = 3\cdot 2^n + 7\cdot 5^n\)</span> is a solution to the recurrence relation <span class="process-math">\(a_n = 7a_{n-1} - 10a_{n-2}\text{.}\)</span> What would the initial conditions need to be for this to be the closed formula for the sequence?</div>
+<div class="solutions"><details id="exercises_seq_basics-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_seq_basics-8-2-1">
+<div class="para">This closed formula would have <span class="process-math">\(a_{n-1} = 3\cdot 2^{n-1} + 7 \cdot 5^{n-1}\)</span> and <span class="process-math">\(a_{n-2} = 3\cdot 2^{n-2} + 7 \cdot 5^{n-2}\text{.}\)</span> Then we would have</div>
+<div class="displaymath process-math" id="exercises_seq_basics-8-2-1-3">
+\begin{align*}
+7a_{n-1} - 10a_{n-2} = \amp 7(3\cdot 2^{n-1} + 7 \cdot 5^{n-1}) - 10(3\cdot 2^{n-2} + 7 \cdot 5^{n-2})\\
+= \amp 21\cdot 2^{n-1} + 49 \cdot 5^{n-1} - 30\cdot 2^{n-2} - 70 \cdot 5^{n-2})\\
+= \amp 21\cdot 2^{n-1} + 49 \cdot 5^{n-1} - 15\cdot 2^{n-1} - 14 \cdot 5^{n-1})\\
+= \amp 6\cdot 2^{n-1} + 35 \cdot 5^{n-1}\\
+= \amp 3\cdot 2^{n} + 7 \cdot 5^{n} = a_n\text{.}
+\end{align*}
+</div>
+<div class="para">So the closed formula agrees with the recurrence relation. The closed formula has initial terms <span class="process-math">\(a_0 = 10\)</span> and <span class="process-math">\(a_1 = 41\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-9-1-1">Show that <span class="process-math">\(a_n = 2^n - 5^n\)</span> is also a solution to the recurrence relation <span class="process-math">\(a_n = 7a_{n-1} - 10a_{n-2}\text{.}\)</span> What would the initial conditions need to be for this to be the closed formula for the sequence?</div></article><article class="exercise exercise-like" id="exercises_seq_basics-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-10-1-1">Find a closed formula for the sequence with recursive definition <span class="process-math">\(a_n = 2a_{n-1} - a_{n-2}\)</span> with <span class="process-math">\(a_1 = 1\)</span> and <span class="process-math">\(a_2 = 2\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-10-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_seq_basics-10-2-1">You will want to write out the sequence, guess a closed formula, and then verify that you are correct.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-11-1-1">Give two different recursive definitions for the sequence with closed formula <span class="process-math">\(a_n = 3 + 2n\text{.}\)</span>  Prove you are correct. At least one of the recursive definitions should makes use of two previous terms and no constants.</div>
+<div class="solutions"><details id="exercises_seq_basics-11-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_seq_basics-11-2-1">Write out the sequence, guess a recursive definition, and verify that the closed formula is a solution to that recursive definition.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_seq_basics-12-3-1">
+<div class="para">Use summation (<span class="process-math">\(\sum\)</span>) or product (<span class="process-math">\(\prod\)</span>) notation to rewrite the following.</div>
+<ol class="lower-alpha cols2" id="exercises_seq_basics-12-3-1-3">
+<li id="exercises_seq_basics-12-3-1-3-1"><div class="para" id="p-derived-exercises_seq_basics-12-3-1-3-1"><span class="process-math">\(2 + 4 + 6 + 8 + \cdots + 2n\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-3-1-3-2"><div class="para" id="p-derived-exercises_seq_basics-12-3-1-3-2"><span class="process-math">\(1 + 5 + 9 + 13 + \cdots + 425\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-3-1-3-3"><div class="para" id="p-derived-exercises_seq_basics-12-3-1-3-3"><span class="process-math">\(1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots + \frac{1}{50}\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-3-1-3-4"><div class="para" id="p-derived-exercises_seq_basics-12-3-1-3-4"><span class="process-math">\(2 \cdot 4 \cdot 6 \cdot \cdots \cdot 2n\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-3-1-3-5"><div class="para" id="p-derived-exercises_seq_basics-12-3-1-3-5"><span class="process-math">\((\frac{1}{2})(\frac{2}{3})(\frac{3}{4})\cdots(\frac{100}{101})\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-12-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_seq_basics-12-4-1"><ol class="lower-alpha cols2" id="exercises_seq_basics-12-4-1-1">
+<li id="exercises_seq_basics-12-4-1-1-1"><div class="para" id="p-derived-exercises_seq_basics-12-4-1-1-1"><span class="process-math">\(\d\sum_{k=1}^n 2k\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-4-1-1-2"><div class="para" id="p-derived-exercises_seq_basics-12-4-1-1-2"><span class="process-math">\(\d\sum_{k=1}^{107} (1 + 4(k-1))\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-4-1-1-3"><div class="para" id="p-derived-exercises_seq_basics-12-4-1-1-3"><span class="process-math">\(\d\sum_{k=1}^{50} \frac{1}{k}\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-4-1-1-4"><div class="para" id="p-derived-exercises_seq_basics-12-4-1-1-4"><span class="process-math">\(\d\prod_{k=1}^n 2k\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-12-4-1-1-5"><div class="para" id="p-derived-exercises_seq_basics-12-4-1-1-5"><span class="process-math">\(\d\prod_{k=1}^{100} \frac{k}{k+1}\text{.}\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_seq_basics-13-3-1">
+<div class="para">Expand the following sums and products. That is, write them out the long way.</div>
+<ol class="lower-alpha cols2" id="exercises_seq_basics-13-3-1-1">
+<li id="exercises_seq_basics-13-3-1-1-1"><div class="para" id="p-derived-exercises_seq_basics-13-3-1-1-1"><span class="process-math">\(\d\sum_{k=1}^{100} (3+4k)\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-3-1-1-2"><div class="para" id="p-derived-exercises_seq_basics-13-3-1-1-2"><span class="process-math">\(\d\sum_{k=0}^n 2^k\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-3-1-1-3"><div class="para" id="p-derived-exercises_seq_basics-13-3-1-1-3"><span class="process-math">\(\d\sum_{k=2}^{50}\frac{1}{(k^2 - 1)}\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-3-1-1-4"><div class="para" id="p-derived-exercises_seq_basics-13-3-1-1-4"><span class="process-math">\(\d\prod_{k=2}^{100}\frac{k^2}{(k^2-1)}\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-3-1-1-5"><div class="para" id="p-derived-exercises_seq_basics-13-3-1-1-5"><span class="process-math">\(\d\prod_{k=0}^n (2+3k)\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-13-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises_seq_basics-13-4-1"><ol class="lower-alpha" id="exercises_seq_basics-13-4-1-1">
+<li id="exercises_seq_basics-13-4-1-1-1"><div class="para" id="p-derived-exercises_seq_basics-13-4-1-1-1"><span class="process-math">\(\d\sum_{k=1}^{100} (3+4k) = 7 + 11 + 15 + \cdots + 403\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-4-1-1-2"><div class="para" id="p-derived-exercises_seq_basics-13-4-1-1-2"><span class="process-math">\(\d\sum_{k=0}^n 2^k = 1 + 2 + 4 + 8 + \cdots + 2^n\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-4-1-1-3"><div class="para" id="p-derived-exercises_seq_basics-13-4-1-1-3"><span class="process-math">\(\d\sum_{k=2}^{50}\frac{1}{(k^2 - 1)} = 1 + \frac{1}{3} + \frac{1}{8} + \frac{1}{15} + \cdots + \frac{1}{2499}\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-4-1-1-4"><div class="para" id="p-derived-exercises_seq_basics-13-4-1-1-4"><span class="process-math">\(\d\prod_{k=2}^{100}\frac{k^2}{(k^2-1)} = \frac{4}{3}\cdot\frac{9}{8}\cdot\frac{16}{15}\cdots\frac{10000}{9999}\text{.}\)</span></div></li>
+<li id="exercises_seq_basics-13-4-1-1-5"><div class="para" id="p-derived-exercises_seq_basics-13-4-1-1-5"><span class="process-math">\(\d\prod_{k=0}^n (2+3k) = (2)(5)(8)(11)(14)\cdots(2+3n)\text{.}\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-14"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-14-1-1">Suppose you draw <span class="process-math">\(n\)</span> lines in the plane so that every pair of lines cross (no lines are parallel) and no three lines cross at the same point.  This will create some number of regions in the plane, including some unbounded regions.  Call the number of regions <span class="process-math">\(R_n\text{.}\)</span>  Find a recursive formula for the number of regions created by <span class="process-math">\(n\)</span> lines, and justify why your recursion is correct.</div>
+<div class="solutions"><details id="exercises_seq_basics-14-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_seq_basics-14-2-1">Try an example: when you draw the 4th line, it will cross three other lines, so will be divided into four segments, two of which are infinite.  Each segment will divide a previous region into two.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-15"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-15-3-1">A <dfn class="terminology">ternary</dfn> string is a sequence of 0’s, 1’s and 2’s.  Just like a bit string, but with three symbols.</div> <div class="para" id="exercises_seq_basics-15-3-2">Let’s call a ternary string <em class="emphasis">good</em> provided it never contains a 2 followed immediately by a 0.  Let <span class="process-math">\(G_n\)</span> be the number of good strings of length <span class="process-math">\(n\text{.}\)</span>  For example, <span class="process-math">\(G_1 = 3\text{,}\)</span> and <span class="process-math">\(G_2 = 8\)</span> (since of the 9 ternary strings of length 2, only one is not good).</div> <div class="para" id="exercises_seq_basics-15-3-3">Find, with justification, a recursive formula for <span class="process-math">\(G_n\text{,}\)</span> and use it to compute <span class="process-math">\(G_5\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises_seq_basics-15-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_seq_basics-15-4-1">Consider three cases: the last digit is a 0, a 1, or a 2.  Two of these should be easy to count, but strings ending in 0 cannot be proceeded by a 2, so require a little more work.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-16"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_seq_basics-16-2-1">
+<div class="para">Consider bit strings with length <span class="process-math">\(l\)</span> and weight <span class="process-math">\(k\)</span> (so strings of <span class="process-math">\(l\)</span> 0’s and 1’s, including <span class="process-math">\(k\)</span> 1’s). We know how to count the number of these for a fixed <span class="process-math">\(l\)</span> and <span class="process-math">\(k\text{.}\)</span> Now, we will count the number of strings for which the <em class="emphasis">sum</em> of the length and the weight is fixed. For example, let’s count all the bit strings for which <span class="process-math">\(l+k = 11\text{.}\)</span>
+</div>
+<ol class="lower-alpha" id="exercises_seq_basics-16-2-1-9">
+<li id="exercises_seq_basics-16-2-1-9-1"><div class="para" id="exercises_seq_basics-16-2-1-9-1-1">Find examples of these strings of different lengths. What is the longest string possible? What is the shortest?</div></li>
+<li id="exercises_seq_basics-16-2-1-9-2"><div class="para" id="exercises_seq_basics-16-2-1-9-2-1">How many strings are there of each of these lengths. Use this to count the total number of strings (with sum 11).</div></li>
+<li id="exercises_seq_basics-16-2-1-9-3"><div class="para" id="exercises_seq_basics-16-2-1-9-3-1">The other approach: Let <span class="process-math">\(n = l+k\)</span> vary. How many strings have sum <span class="process-math">\(n = 1\text{?}\)</span> How many have sum <span class="process-math">\(n = 2\text{?}\)</span> And so on. Find and explain a recurrence relation for the sequence <span class="process-math">\((a_n)\)</span> which gives the number of strings with sum <span class="process-math">\(n\text{.}\)</span>
+</div></li>
+<li id="exercises_seq_basics-16-2-1-9-4"><div class="para" id="exercises_seq_basics-16-2-1-9-4-1">Describe what you have found above in terms of Pascal’s Triangle. What pattern have you discovered?</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercises_seq_basics-17"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-17-1-1">When bees play chess, they use a hexagonal board like the one shown below. The queen bee can move one space at a time either directly to the right or angled up-right or down-right (but can never move leftwards). How many different paths can the queen take from the top left hexagon to the bottom right hexagon? Explain your answer, and this relates to the previous question. (As an example, there are three paths to get to the second hexagon on the bottom row.)</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/bee-chess.svg" role="img" class="contained"></div></div></div>
+<div class="solutions"><details id="exercises_seq_basics-17-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_seq_basics-17-2-1">Think recursively, like you did in Pascal’s triangle.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq_basics-18"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq_basics-18-3-1">Let <span class="process-math">\(t_n\)</span> denote the number of ways to tile a <span class="process-math">\(2\times n\)</span> chessboard using <span class="process-math">\(1\times 2\)</span> dominoes.  Write out the first few terms of the sequence <span class="process-math">\((t_n)_{n \ge 1}\)</span> and then give a recursive definition.  Explain why your recursive formula is correct.</div>
+<div class="solutions"><details id="exercises_seq_basics-18-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_seq_basics-18-4-1">There is only one way to tile a <span class="process-math">\(2 \times 1\)</span> board, and two ways to tile a <span class="process-math">\(2\times 2\)</span> board (you can orient the dominoes in two ways).  In general, consider the two ways the domino covering the top left corner could be oriented.</div></div></details></div></article></section></section></div>
+

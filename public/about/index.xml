@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>পরিচিতি on ঐশিক রেহমান</title>
+    <link>https://aishikrehman.com/about/</link>
+    <description>Recent content in পরিচিতি on ঐশিক রেহমান</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>bn-BD</language>
+    <managingEditor>hello@aishikrehman.com (ঐশিক রেহমান)</managingEditor>
+    <webMaster>hello@aishikrehman.com (ঐশিক রেহমান)</webMaster>
+    <atom:link href="https://aishikrehman.com/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>খেড়োখাতা</title>
+      <link>https://aishikrehman.com/about/kherokhata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hello@aishikrehman.com (ঐশিক রেহমান)</author>
+      <guid>https://aishikrehman.com/about/kherokhata/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

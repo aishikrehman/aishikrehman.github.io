@@ -1,0 +1,266 @@
+---
+title:
+---
+<div id="ptx-content" class="ptx-content"><section class="section" id="sec_polyfit"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Polynomial Fitting</span>
+</h2>
+<section class="introduction" id="sec_polyfit-3"><article class="project-like" id="sec_polyfit-3-1"><h6 class="heading">
+<span class="type">Investigate!</span> </h6>
+<div class="para" id="sec_polyfit-3-1-1">A standard <span class="process-math">\(8 \times 8\)</span> chessboard contains 64 squares. Actually, this is just the number of unit squares. How many squares of all sizes are there on a chessboard? Start with smaller boards: <span class="process-math">\(1\times 1\text{,}\)</span> <span class="process-math">\(2 \times 2\text{,}\)</span> <span class="process-math">\(3\times 3\text{,}\)</span> etc. Find a formula for the total number of squares in an <span class="process-math">\(n\times n\)</span> board.</div></article> <div class="para" id="sec_polyfit-3-2">So far we have seen methods for finding the closed formulas for arithmetic and geometric sequences. Since we know how to compute the sum of the first <span class="process-math">\(n\)</span> terms of arithmetic and geometric sequences, we can compute the closed formulas for sequences which have an arithmetic (or geometric) sequence of differences between terms. But what if we consider a sequence which is the sum of the first <span class="process-math">\(n\)</span> terms of a sequence which is itself the sum of an arithmetic sequence?</div> <div class="para logical" id="sec_polyfit-3-3">
+<div class="para"> Before we get too carried away, let’s consider an example: How many squares (of all sizes) are there on a chessboard? A chessboard consists of <span class="process-math">\(64\)</span> squares, but we also want to consider squares of longer side length. Even though we are only considering an <span class="process-math">\(8 \times 8\)</span> board, there is already a lot to count. So instead, let us build a sequence: the first term will be the number of squares on a <span class="process-math">\(1 \times 1\)</span> board, the second term will be the number of squares on a <span class="process-math">\(2 \times 2\)</span> board, and so on. After a little thought, we arrive at the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1,5,14,30, 55,\ldots\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_polyfit-3-4">
+<div class="para">This sequence is not arithmetic (or geometric for that matter), but perhaps it’s sequence of differences is. For differences we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4, 9, 16, 25, \ldots\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_polyfit-3-5">
+<div class="para">Not a huge surprise: one way to count the number of squares in a <span class="process-math">\(4 \times 4\)</span> chessboard is to notice that there are <span class="process-math">\(16\)</span> squares with side length 1, 9 with side length 2, 4 with side length 3 and 1 with side length 4. So the original sequence is just the sum of squares. Now this sequence of differences is not arithmetic since it’s sequence of differences (the differences of the differences of the original sequence) is not constant. In fact, this sequence of <dfn class="terminology">second differences</dfn> is </div>
+<div class="displaymath process-math">
+\begin{equation*}
+5, 7, 9, \ldots\text{,}
+\end{equation*}
+</div>
+<div class="para">which <em class="emphasis">is</em> an arithmetic sequence (with constant difference 2). Notice that our original sequence had <dfn class="terminology">third differences</dfn> (that is, differences of differences of differences of the original) constant. We will call such a sequence <span class="process-math">\(\Delta^3\)</span>-constant. The sequence <span class="process-math">\(1, 4, 9, 16, \ldots\)</span> has second differences constant, so it will be a <span class="process-math">\(\Delta^2\)</span>-constant sequence. In general, we will say a sequence is a <dfn class="terminology"><span class="process-math">\(\Delta^k\)</span>-constant</dfn>  sequence if the <span class="process-math">\(k\)</span>th differences are constant.</div>
+</div> <article class="example example-like" id="example-deltak"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="example-deltak-1-1">
+<div class="para">Which of the following sequences are <span class="process-math">\(\Delta^k\)</span>-constant for some value of <span class="process-math">\(k\text{?}\)</span>
+</div>
+<ol class="decimal" id="example-deltak-1-1-3">
+<li id="example-deltak-1-1-3-1"><div class="para" id="p-derived-example-deltak-1-1-3-1"><span class="process-math">\(2, 3, 7, 14, 24, 37,\ldots\text{.}\)</span></div></li>
+<li id="example-deltak-1-1-3-2"><div class="para" id="p-derived-example-deltak-1-1-3-2"><span class="process-math">\(1, 8, 27, 64, 125, 216, \ldots\text{.}\)</span></div></li>
+<li id="example-deltak-1-1-3-3"><div class="para" id="p-derived-example-deltak-1-1-3-3"><span class="process-math">\(1,2,4,8,16,32,64,\ldots\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="example-deltak-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="example-deltak-2-1"><ol class="decimal" id="example-deltak-2-1-1">
+<li id="example-deltak-2-1-1-1"><div class="para" id="p-derived-example-deltak-2-1-1-1">This is the sequence from <a href="sec_seq-arithgeom.html#example-sum-of-arithmetic" class="xref" data-knowl="./knowl/xref/example-sum-of-arithmetic.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.6">Example 2.2.6</a>, in which we found a closed formula by recognizing the sequence as the sequence of partial sums of an arithmetic sequence. Indeed, the sequence of first differences is <span class="process-math">\(1,4,7, 10, 13,\ldots\text{,}\)</span> which itself has differences <span class="process-math">\(3,3,3,3,\ldots\text{.}\)</span> Thus <span class="process-math">\(2, 3, 7, 14, 24, 37,\ldots\)</span> is a <span class="process-math">\(\Delta^2\)</span>-constant sequence.</div></li>
+<li id="example-deltak-2-1-1-2"><div class="para" id="p-derived-example-deltak-2-1-1-2">These are the perfect cubes. The sequence of first differences is <span class="process-math">\(7, 19, 37, 61, 91, \ldots\text{;}\)</span> the sequence of second differences is <span class="process-math">\(12, 18, 24, 30,\ldots\text{;}\)</span> the sequence of third differences is constant: <span class="process-math">\(6,6,6,\ldots\text{.}\)</span> Thus the perfect cubes are a <span class="process-math">\(\Delta^3\)</span>-constant sequence.</div></li>
+<li id="example-deltak-2-1-1-3"><div class="para" id="p-derived-example-deltak-2-1-1-3">If we take first differences we get <span class="process-math">\(1,2,4,8,16,\ldots\text{.}\)</span> Wait, what? That’s the sequence we started with. So taking second differences will give us the same sequence again. No matter how many times we repeat this we will always have the same sequence, which in particular means no finite number of differences will be constant. Thus this sequence is not <span class="process-math">\(\Delta^k\)</span>-constant for any <span class="process-math">\(k\text{.}\)</span>
+</div></li>
+</ol></div></div></details></div></article> <div class="para" id="sec_polyfit-3-7">The <span class="process-math">\(\Delta^0\)</span>-constant sequences are themselves constant, so a closed formula for them is easy to compute (it’s just the constant). The <span class="process-math">\(\Delta^1\)</span>-constant sequences are arithmetic and we have a method for finding closed formulas for them as well. Every <span class="process-math">\(\Delta^2\)</span>-constant sequence is the sum of an arithmetic sequence so we can find formulas for these as well. But notice that the format of the closed formula for a <span class="process-math">\(\Delta^2\)</span>-constant sequence is always quadratic. For example, the square numbers are <span class="process-math">\(\Delta^2\)</span>-constant with closed formula <span class="process-math">\(a_n= n^2\text{.}\)</span> The triangular numbers (also <span class="process-math">\(\Delta^2\)</span>-constant) have closed formula <span class="process-math">\(a_n = \frac{n(n+1)}{2}\text{,}\)</span> which when multiplied out gives you an <span class="process-math">\(n^2\)</span> term as well. It appears that every time we increase the complexity of the sequence, that is, increase the number of differences before we get constants, we also increase the degree of the polynomial used for the closed formula. We go from constant to linear to quadratic. The sequence of differences between terms tells us something about the rate of growth of the sequence. If a sequence is growing at a constant rate, then the formula for the sequence will be linear. If the sequence is growing at a rate which itself is growing at a constant rate, then the formula is quadratic. You have seen this elsewhere: if a function has a constant second derivative (rate of change) then the function must be quadratic.</div> <div class="para" id="sec_polyfit-3-8">This works in general:</div> <article class="assemblage assemblage-like" id="sec_polyfit-3-9"><h3 class="heading"><span class="title">Finite Differences.</span></h3>
+<div class="para" id="sec_polyfit-3-9-2"> The closed formula for a sequence will be a degree <span class="process-math">\(k\)</span> polynomial if and only if the sequence is <span class="process-math">\(\Delta^k\)</span>-constant (i.e., the <span class="process-math">\(k\)</span>th sequence of differences is constant).</div></article> <div class="para" id="sec_polyfit-3-10">This tells us that the sequence of numbers of squares on a chessboard, <span class="process-math">\(1, 5, 14, 30, 55, \ldots\text{,}\)</span> which we saw to be <span class="process-math">\(\Delta^3\)</span>-constant, will have a cubic (degree 3 polynomial) for its closed formula.</div> <div class="para" id="sec_polyfit-3-11">Now once we know what format the closed formula for a sequence will take, it is much easier to actually find the closed formula. In the case that the closed formula is a degree <span class="process-math">\(k\)</span> polynomial, we just need <span class="process-math">\(k+1\)</span> data points to “fit” the polynomial to the data.</div> <article class="example example-like" id="sec_polyfit-3-12"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_polyfit-3-12-1-1">Find a formula for the sequence <span class="process-math">\(3, 7, 14, 24,\ldots\text{.}\)</span> Assume <span class="process-math">\(a_1 = 3\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_polyfit-3-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_polyfit-3-12-2-1">
+<div class="para">First, check to see if the formula has constant differences at some level. The sequence of first differences is <span class="process-math">\(4, 7, 10, \ldots\)</span> which is arithmetic, so the sequence of second differences is constant. The sequence is <span class="process-math">\(\Delta^2\)</span>-constant, so the formula for <span class="process-math">\(a_n\)</span> will be a degree 2 polynomial. That is, we know that for some constants <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = an^2 + bn + c\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_polyfit-3-12-2-2">
+<div class="para">Now to find <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\text{.}\)</span> First, it would be nice to know what <span class="process-math">\(a_0\)</span> is, since plugging in <span class="process-math">\(n = 0\)</span> simplifies the above formula greatly. In this case, <span class="process-math">\(a_0 = 2\)</span> (work backwards from the sequence of constant differences). Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_0 = 2 = a\cdot 0^2 + b \cdot 0 + c\text{,}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(c = 2\text{.}\)</span> Now plug in <span class="process-math">\(n =1\)</span> and <span class="process-math">\(n = 2\text{.}\)</span> We get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_1 = 3 = a + b + 2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_2 = 7 = a4 + b 2 + 2\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="sec_polyfit-3-12-2-3">At this point we have two (linear) equations and two unknowns, so we can solve the system for <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> (using substitution or elimination or even matrices). We find <span class="process-math">\(a = \frac{3}{2}\)</span> and <span class="process-math">\(b = \frac{-1}{2}\text{,}\)</span> so <span class="process-math">\(a_n = \frac{3}{2} n^2 - \frac{1}{2}n + 2\text{.}\)</span>
+</div>
+</div></details></div></article> <article class="example example-like" id="sec_polyfit-3-13"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_polyfit-3-13-1-1">Find a closed formula for the number of squares on an <span class="process-math">\(n \times n\)</span> chessboard.</div>
+<div class="solutions"><details id="sec_polyfit-3-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_polyfit-3-13-2-1">
+<div class="para">We have seen that the sequence <span class="process-math">\(1, 5, 14, 30, 55, \ldots\)</span> is <span class="process-math">\(\Delta^3\)</span>-constant, so we are looking for a degree 3 polynomial. That is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = an^3 + bn^2 + cn + d\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_polyfit-3-13-2-2">
+<div class="para">We can find <span class="process-math">\(d\)</span> if we know what <span class="process-math">\(a_0\)</span> is. Working backwards from the third differences, we find <span class="process-math">\(a_0 = 0\)</span> (unsurprisingly, since there are no squares on a <span class="process-math">\(0\times 0\)</span> chessboard). Thus <span class="process-math">\(d = 0\text{.}\)</span> Now plug in <span class="process-math">\(n = 1\text{,}\)</span> <span class="process-math">\(n =2\text{,}\)</span> and <span class="process-math">\(n =3\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec_polyfit-3-13-2-2-9">
+\begin{align*}
+1 = \amp a + b + c\\
+5 = \amp 8a + 4b + 2c\\
+14 = \amp 27a + 9b + 3c\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="sec_polyfit-3-13-2-3">If we solve this system of equations we get <span class="process-math">\(a = \frac{1}{3}\text{,}\)</span> <span class="process-math">\(b = \frac{1}{2}\)</span> and <span class="process-math">\(c = \frac{1}{6}\text{.}\)</span> Therefore the number of squares on an <span class="process-math">\(n \times n\)</span> chessboard is <span class="process-math">\(a_n = \frac{1}{3}n^3 + \frac{1}{2}n^2 + \frac{1}{6}n = \frac{1}{6}n(n+1)(2n+1)\text{.}\)</span>
+</div>
+</div></details></div></article> <div class="para" id="sec_polyfit-3-14">Note: Since the squares-on-a-chessboard problem is really asking for the sum of squares, we now have a nice formula for <span class="process-math">\(\d\sum_{k=1}^n k^2\text{.}\)</span>
+</div> <div class="para" id="sec_polyfit-3-15">Not all sequences will have polynomials as their closed formula. We can use the theory of finite differences to identify these.</div> <article class="example example-like" id="sec_polyfit-3-16"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec_polyfit-3-16-1-1">
+<div class="para">Determine whether the following sequences can be described by a polynomial, and if so, of what degree.</div>
+<ol class="decimal" id="sec_polyfit-3-16-1-1-1">
+<li id="sec_polyfit-3-16-1-1-1-1"><div class="para" id="p-derived-sec_polyfit-3-16-1-1-1-1"><span class="process-math">\(\displaystyle 1, 2, 4, 8, 16, \ldots\)</span></div></li>
+<li id="sec_polyfit-3-16-1-1-1-2"><div class="para" id="p-derived-sec_polyfit-3-16-1-1-1-2"><span class="process-math">\(\displaystyle 0, 7, 50, 183, 484, 1055, \ldots\)</span></div></li>
+<li id="sec_polyfit-3-16-1-1-1-3"><div class="para" id="p-derived-sec_polyfit-3-16-1-1-1-3"><span class="process-math">\(\displaystyle 1,1,2,3,5,8,13,\ldots\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="sec_polyfit-3-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec_polyfit-3-16-2-1"><ol class="decimal" id="sec_polyfit-3-16-2-1-1">
+<li id="sec_polyfit-3-16-2-1-1-1"><div class="para" id="sec_polyfit-3-16-2-1-1-1-1">As we saw in <a href="sec_polyfit.html#example-deltak" class="xref" data-knowl="./knowl/xref/example-deltak.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.1">Example 2.3.1</a>, this sequence is not <span class="process-math">\(\Delta^k\)</span>-constant for any <span class="process-math">\(k\text{.}\)</span> Therefore the closed formula for the sequence is not a polynomial. In fact, we know the closed formula is <span class="process-math">\(a_n = 2^n\text{,}\)</span> which grows faster than any polynomial (so is not a polynomial).</div></li>
+<li id="sec_polyfit-3-16-2-1-1-2"><div class="para" id="sec_polyfit-3-16-2-1-1-2-1">The sequence of first differences is <span class="process-math">\(7, 43, 133, 301, 571,\ldots\text{.}\)</span> The second differences are: <span class="process-math">\(36, 90, 168, 270,\ldots\text{.}\)</span> Third difference: <span class="process-math">\(54, 78, 102,\ldots\text{.}\)</span> Fourth differences: <span class="process-math">\(24, 24, \ldots\text{.}\)</span> As far as we can tell, this sequence of differences is constant so the sequence is <span class="process-math">\(\Delta^4\)</span>-constant and as such the closed formula is a degree 4 polynomial.</div></li>
+<li id="sec_polyfit-3-16-2-1-1-3"><div class="para" id="sec_polyfit-3-16-2-1-1-3-1">This is the Fibonacci sequence.  The sequence of first differences is <span class="process-math">\(0, 1, 1, 2, 3, 5, 8, \ldots\text{,}\)</span> the second differences are <span class="process-math">\(1, 0, 1, 1, 2, 3, 5\ldots\text{.}\)</span> We notice that after the first few terms, we get the original sequence back. So there will never be constant differences, so the closed formula for the Fibonacci sequence is not a polynomial.</div></li>
+</ol></div></div></details></div></article></section><section class="exercises" id="exercises_seq-polyfit"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ww-poly-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div id="webwork-115" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="115" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_3-Polynomial_Fitting/2_3_1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-115')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-115-1-1-1">Use polynomial fitting to find the formula for the <span class="process-math">\(n\)</span>th term of the sequence <span class="process-math">\((a_n)_{n \ge 0}\)</span> which starts,</div> <div class="para" id="extracted-webwork-115-1-1-2"><span class="process-math">\({0, -1, 4, 15, 32, 55}, \ldots\)</span></div> <div class="para" id="extracted-webwork-115-1-1-3">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="8-character blank" style="width: 3.636363636363636em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-115-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-115-1-3-1">
+<span class="process-math">\(a_n = {3n^{2}-4n}\text{.}\)</span> Here we know that we are looking for a quadratic because the second differences are constant. So <span class="process-math">\(a_n = an^2 + bn + c\text{.}\)</span> Since <span class="process-math">\(a_0 = 0\text{,}\)</span> we know <span class="process-math">\(c= 0\text{.}\)</span> So just solve the system</div> <div class="para" id="extracted-webwork-115-1-3-2"><span class="process-math">\(\begin{aligned}
+{-1} \amp  = a + b\\
+{4} \amp  = 4a + 2b
+\end{aligned}\)</span></div> <div class="para" id="extracted-webwork-115-1-3-3">to find <span class="process-math">\(a = 3\)</span> and <span class="process-math">\(b = -4\text{.}\)</span>
+</div>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-poly-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div id="webwork-116" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="116" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_3-Polynomial_Fitting/2_3_2.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-116')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-116-1-1-1">Use polynomial fitting to find the formula for the <span class="process-math">\(n\)</span>th term of the sequence <span class="process-math">\((a_n)_{n \ge 0}\)</span> which starts,</div> <div class="para" id="extracted-webwork-116-1-1-2"><span class="process-math">\({-4, 5, 20, 41, 68, 101}, \ldots\)</span></div> <div class="para" id="extracted-webwork-116-1-1-3">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="8-character blank" style="width: 3.636363636363636em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-116-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-116-1-3-1">
+<span class="process-math">\(a_n = {3n^{2}+6n-4}\text{.}\)</span> Here we know that we are looking for a quadratic because the second differences are constant. So <span class="process-math">\(a_n = an^2 + bn + c\text{.}\)</span> Since <span class="process-math">\(a_0 = {-4}\)</span> know <span class="process-math">\(c= {-4}\text{.}\)</span> So just solve the system</div> <div class="para" id="extracted-webwork-116-1-3-2"><span class="process-math">\(\begin{aligned}
+{5} \amp  = a + b + {-4}\\
+{20} \amp  = 4a + 2b + {-4}
+\end{aligned}\)</span></div> <div class="para" id="extracted-webwork-116-1-3-3">to find <span class="process-math">\(a = {3}\)</span> and <span class="process-math">\(b = {6}\text{.}\)</span>
+</div>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-poly-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div id="webwork-117" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="117" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_3-Polynomial_Fitting/2_3_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-117')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-117-1-1-1">Use polynomial fitting to find the formula for the <span class="process-math">\(n\)</span>th term of the sequence <span class="process-math">\((a_n)_{n \ge 0}\)</span> which starts,</div> <div class="para logical" id="extracted-webwork-117-1-1-2"><div class="displaymath process-math">
+\begin{equation*}
+{2, 7, 30, 89, 202, 387}, \ldots
+\end{equation*}
+</div></div> <div class="para" id="extracted-webwork-117-1-1-3">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="8-character blank" style="width: 3.636363636363636em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-117-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-117-1-3-1">
+<span class="process-math">\(a_n = {3n^{3}+2n+2}\text{.}\)</span> Here we know that we are looking for a cubic because the third differences are constant. So <span class="process-math">\(a_n = an^3 + bn^2 + cn + d\text{.}\)</span> Since <span class="process-math">\(a_0 = {2}\)</span> know <span class="process-math">\(d= {2}\text{.}\)</span> So just solve the system</div> <div class="para logical" id="extracted-webwork-117-1-3-2"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+{7} \amp  = a + b + c + {2}\\
+{30} \amp  = 8a + 4b + 2c + {2}\\
+{89} \amp  = 27a + 9b + 3c + {2}\\
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para" id="extracted-webwork-117-1-3-3">to find <span class="process-math">\(a = {3}\text{,}\)</span> <span class="process-math">\(b = 0\text{,}\)</span> and <span class="process-math">\(c = {2}\text{.}\)</span>
+</div>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-poly-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div id="webwork-118" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="118" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_3-Polynomial_Fitting/2_3_4.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-118')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-118-1-1-1">Use polynomial fitting to find the formula for the <span class="process-math">\(n\)</span>th term of the sequence <span class="process-math">\((a_n)_{n \ge 1}\)</span> which starts,</div> <div class="para" id="extracted-webwork-118-1-1-2">
+<span class="process-math">\({6, 9, 16, 33, 66}, \ldots\)</span> Note the first term above is <span class="process-math">\(a_1\text{,}\)</span> not <span class="process-math">\(a_0\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-118-1-1-3">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="8-character blank" style="width: 3.636363636363636em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-118-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-118-1-3-1">
+<span class="process-math">\(a_n = {n^{3}-4n^{2}+8n+1}\text{.}\)</span> Here we know that we are looking for a cubic because the third differences are constant. So <span class="process-math">\(a_n = an^3 + bn^2 + cn + d\text{.}\)</span> We can work backwards to find that <span class="process-math">\(a_0 = {1}\text{,}\)</span> so we know <span class="process-math">\(d= {1}\text{.}\)</span> Then solve the system,</div> <div class="para" id="extracted-webwork-118-1-3-2"><span class="process-math">\(\begin{aligned}
+{6} \amp  = a + b + c + {1}\\
+{9} \amp  = 8a + 4b + 2c + {1}\\
+{16} \amp  = 27a + 9b + 3c + {1}\\
+\end{aligned}\)</span></div> <div class="para" id="extracted-webwork-118-1-3-3">to find <span class="process-math">\(a = {1}\text{,}\)</span> <span class="process-math">\(b = {-4}\text{,}\)</span> and <span class="process-math">\(c = {8}\text{.}\)</span>
+</div>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_seq-polyfit-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_seq-polyfit-5-1-1">
+<div class="para">Make up sequences that have</div>
+<ol class="lower-alpha" id="exercises_seq-polyfit-5-1-1-1">
+<li id="exercises_seq-polyfit-5-1-1-1-1"><div class="para" id="p-derived-exercises_seq-polyfit-5-1-1-1-1">3, 3, 3, 3, … as its second differences.</div></li>
+<li id="exercises_seq-polyfit-5-1-1-1-2"><div class="para" id="p-derived-exercises_seq-polyfit-5-1-1-1-2">1, 2, 3, 4, 5, … as its third differences.</div></li>
+<li id="exercises_seq-polyfit-5-1-1-1-3"><div class="para" id="p-derived-exercises_seq-polyfit-5-1-1-1-3">1, 2, 4, 8, 16, … as its 100th differences.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercises_seq-polyfit-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq-polyfit-6-1-1">Consider the sequence <span class="process-math">\(1, 3, 7, 13, 21, \ldots\text{.}\)</span> Explain how you know the closed formula for the sequence will be quadratic. Then “guess” the correct formula by comparing this sequence to the squares <span class="process-math">\(1, 4, 9, 16, \ldots\)</span> (do not use polynomial fitting).</div>
+<div class="solutions"><details id="exercises_seq-polyfit-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq-polyfit-6-2-1"><span class="process-math">\(a_n = n^2 - n + 1\text{.}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq-polyfit-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq-polyfit-7-1-1">Use a similar technique as in the previous exercise to find a closed formula for the sequence <span class="process-math">\(2, 11, 34, 77, 146, 247,\ldots\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises_seq-polyfit-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq-polyfit-7-2-1"><span class="process-math">\(a_n = n^3 + n^2 - n + 1\)</span></div></div></details></div></article><article class="exercise exercise-like" id="ww-poly-diff"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div id="webwork-119" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="119" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_3-Polynomial_Fitting/2_3_8.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-119')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-119-1-1-1">Suppose Suppose <span class="process-math">\(a_n = {n^{2}+5n-3}\text{.}\)</span> Find a closed formula for the sequence of differences by computing <span class="process-math">\(a_n - a_{n-1}\text{.}\)</span>  Simplify your answer as much as posible.</div> <div class="para" id="extracted-webwork-119-1-1-2">
+<span class="process-math">\(a_n - a_{n-1} =\)</span> <span class="fillin underline" role="img" aria-label="12-character blank" style="width: 5.454545454545454em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-119-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-119-1-3-1">
+<span class="process-math">\(a_{n-1} = (n-1)^2 + 5(n-1)  - 3 = {n^{2}+3n-7}\text{.}\)</span> Thus <span class="process-math">\(a_n - a_{n-1} = {2n+4}\text{.}\)</span> Note that this is linear (arithmetic).</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_seq-polyfit-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq-polyfit-9-1-1">Generalize <a href="sec_polyfit.html#ww-poly-diff" class="xref" data-knowl="./knowl/xref/ex-quad-diff.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.3.8">Exercise 2.3.8</a>: Find a closed formula for the sequence of differences of <span class="process-math">\(a_n = an^2 + bn + c\text{.}\)</span> That is, prove that every quadratic sequence has arithmetic differences.</div>
+<div class="solutions"><details id="exercises_seq-polyfit-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq-polyfit-9-2-1">
+<span class="process-math">\(a_{n-1} = a(n-1)^2 + b(n-1) + c = an^2 - 2an + a + bn - b + c\text{.}\)</span> Therefore <span class="process-math">\(a_n - a_{n-1} = 2an - a + b\text{,}\)</span> which is arithmetic. Notice that this is not quite the derivative of <span class="process-math">\(a_n\text{,}\)</span> which would be <span class="process-math">\(2an + b\text{,}\)</span> but it is close.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq-polyfit-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq-polyfit-10-1-1">Can you use polynomial fitting to find the formula for the <span class="process-math">\(n\)</span>th term of the sequence 4, 7, 11, 18, 29, 47, …? Explain why or why not.</div>
+<div class="solutions"><details id="exercises_seq-polyfit-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq-polyfit-10-2-1">No. The sequence of differences is the same as the original sequence so no differences will be constant.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq-polyfit-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq-polyfit-11-1-1">Will the <span class="process-math">\(n\)</span>th sequence of differences of <span class="process-math">\(2, 6, 18, 54, 162, \ldots\)</span> ever be constant? Explain.</div>
+<div class="solutions"><details id="exercises_seq-polyfit-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_seq-polyfit-11-2-1">No. The sequence is geometric, and in fact has closed formula <span class="process-math">\(2\cdot 3^n\text{.}\)</span> This is an exponential function, which is not equal to any polynomial of any degree. If the <span class="process-math">\(n\)</span>th sequence of differences was constant, then the closed formula for the original sequence would be a degree <span class="process-math">\(n\)</span> polynomial.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_seq-polyfit-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="exercises_seq-polyfit-12-2-1">In their down time, ghost pirates enjoy stacking cannonballs in triangular based pyramids (aka, tetrahedrons), like those pictured here:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:8%;margin-right:8%;">
+<div class="sbspanel bottom" style="width:9.523809523809524%;"><img src="generated/latex-image/exercises_seq-polyfit-12-2-2-1.svg" role="img" class="contained" alt="A single shaded circle (meant to represent a cannonball)"></div>
+<div class="sbspanel bottom" style="width:21.4285714285714%;"><img src="generated/latex-image/exercises_seq-polyfit-12-2-2-2.svg" role="img" class="contained" alt="Four overlapping circles, drawn to represent cannonballs stacked with a layer of three in a triangle with a single cannonball resting on top."></div>
+<div class="sbspanel bottom" style="width:30.952380952381%;"><img src="generated/latex-image/exercises_seq-polyfit-12-2-2-3.svg" role="img" class="contained" alt="Overlapping circles drawn to represent a three-dimensional tetrahedron of balls consisting of a triangle of 6 balls supporting a triangle of 3, with a single ball balanced on top."></div>
+</div></div> <div class="para" id="exercises_seq-polyfit-12-2-3">Note, these are solid tetrahedrons, so there will be some cannonballs obscured from view (the picture on the right has one cannonball in the back not shown in the picture, for example)</div> <div class="para logical" id="exercises_seq-polyfit-12-2-4">
+<div class="para">The pirates wonder how many cannonballs would be required to build a pyramid 15 layers high (thus breaking the world cannonball stacking record). Can you help?</div>
+<ol class="lower-alpha" id="exercises_seq-polyfit-12-2-4-1">
+<li id="exercises_seq-polyfit-12-2-4-1-1"><div class="para" id="exercises_seq-polyfit-12-2-4-1-1-1">Let <span class="process-math">\(P(n)\)</span> denote the number of cannonballs needed to create a pyramid <span class="process-math">\(n\)</span> layers high. So <span class="process-math">\(P(1) = 1\text{,}\)</span> <span class="process-math">\(P(2) = 4\text{,}\)</span> and so on. Calculate <span class="process-math">\(P(3)\text{,}\)</span> <span class="process-math">\(P(4)\)</span> and <span class="process-math">\(P(5)\text{.}\)</span>
+</div></li>
+<li id="exercises_seq-polyfit-12-2-4-1-2"><div class="para" id="exercises_seq-polyfit-12-2-4-1-2-1">Use polynomial fitting to find a closed formula for <span class="process-math">\(P(n)\text{.}\)</span> Show your work.</div></li>
+<li id="exercises_seq-polyfit-12-2-4-1-3"><div class="para" id="exercises_seq-polyfit-12-2-4-1-3-1">Answer the pirate’s question: how many cannonballs do they need to make a pyramid 15 layers high?</div></li>
+<li id="exercises_seq-polyfit-12-2-4-1-4"><div class="para" id="exercises_seq-polyfit-12-2-4-1-4-1">Bonus: Locate this sequence in Pascal’s triangle. Why does that make sense? </div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="ww-poly-5"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div id="webwork-120" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="120" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_3-Polynomial_Fitting/2_3_13.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-120')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-120-1-1-1">Use polynomial fitting to find the formula for the <span class="process-math">\(n\)</span>th term of the sequence <span class="process-math">\((a_n)_{n \ge 1}\)</span> which starts,</div> <div class="para" id="extracted-webwork-120-1-1-2">
+<span class="process-math">\({3, 8, 18, 36, 65}, \ldots\)</span> Note the first term above is <span class="process-math">\(a_1\text{,}\)</span> not <span class="process-math">\(a_0\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-120-1-1-3">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="8-character blank" style="width: 3.636363636363636em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-120-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-120-1-3-1">
+<span class="process-math">\(a_n = {\left({\frac{1}{2}}\right)n^{3}-\left({\frac{1}{2}}\right)n^{2}+3n}\text{.}\)</span> Here we know that we are looking for a cubic because the third differences are constant. So <span class="process-math">\(a_n = an^3 + bn^2 + cn + d\text{.}\)</span> We can work backwards to find that <span class="process-math">\(a_0 = {0}\text{,}\)</span> so we know <span class="process-math">\(d= {0}\text{.}\)</span> Then solve the system,</div> <div class="para" id="extracted-webwork-120-1-3-2"><span class="process-math">\(\begin{aligned}
+{3} \amp  = a + b + c\\
+{8} \amp  = 8a + 4b + 2c\\
+{18} \amp  = 27a + 9b + 3c\\
+\end{aligned}\)</span></div> <div class="para" id="extracted-webwork-120-1-3-3">to find <span class="process-math">\(a = {{\frac{1}{2}}}\text{,}\)</span> <span class="process-math">\(b = {-{\frac{1}{2}}}\text{,}\)</span> and <span class="process-math">\(c = {3}\text{.}\)</span>
+</div>
+</div></details></div>
+</div>
+</div></article></section></section></div>
+

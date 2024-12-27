@@ -1,0 +1,446 @@
+---
+title:
+---
+<div id="ptx-content" class="ptx-content"><section class="section" id="sec_comb-proofs"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Combinatorial Proofs</span>
+</h2>
+<section class="introduction" id="sec_comb-proofs-4"><article class="project-like" id="sec_comb-proofs-4-1"><h6 class="heading">
+<span class="type">Investigate!</span> </h6>
+<div class="para logical" id="sec_comb-proofs-4-1-1"><ol class="decimal" id="sec_comb-proofs-4-1-1-1">
+<li id="sec_comb-proofs-4-1-1-1-1"><div class="para logical" id="sec_comb-proofs-4-1-1-1-1-1">
+<div class="para">The Stanley Cup is decided in a best of 7 tournament between two teams. In how many ways can your team win? Let’s answer this question two ways:</div>
+<ol class="lower-alpha" id="sec_comb-proofs-4-1-1-1-1-1-1">
+<li id="sec_comb-proofs-4-1-1-1-1-1-1-1"><div class="para" id="sec_comb-proofs-4-1-1-1-1-1-1-1-1">How many of the 7 games does your team need to win? How many ways can this happen?</div></li>
+<li id="sec_comb-proofs-4-1-1-1-1-1-1-2"><div class="para" id="sec_comb-proofs-4-1-1-1-1-1-1-2-1">What if the tournament goes all 7 games? So you win the last game. How many ways can the first 6 games go down?</div></li>
+<li id="sec_comb-proofs-4-1-1-1-1-1-1-3"><div class="para" id="sec_comb-proofs-4-1-1-1-1-1-1-3-1">What if the tournament goes just 6 games? How many ways can this happen? What about 5 games? 4 games?</div></li>
+<li id="sec_comb-proofs-4-1-1-1-1-1-1-4"><div class="para" id="sec_comb-proofs-4-1-1-1-1-1-1-4-1">What are the two different ways to compute the number of ways your team can win? Write down an equation involving binomial coefficients (that is, <span class="process-math">\({n \choose k}\)</span>’s). What pattern in Pascal’s triangle is this an example of?</div></li>
+</ol>
+</div></li>
+<li id="sec_comb-proofs-4-1-1-1-2"><div class="para" id="sec_comb-proofs-4-1-1-1-2-1">Generalize. What if the rules changed and you played a best of <span class="process-math">\(9\)</span> tournament (5 wins required)? What if you played an <span class="process-math">\(n\)</span> game tournament with <span class="process-math">\(k\)</span> wins required to be named champion?</div></li>
+</ol></div></article></section><section class="subsection" id="subsec_patternsPascal"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Patterns in Pascal’s Triangle</span>
+</h3>
+<div class="para" id="subsec_patternsPascal-3">Have a look again at Pascal’s triangle. Forget for a moment where it comes from. Just look at it as a mathematical object. What do you notice?</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/pascal-small.svg" role="img" class="contained" alt="The first 7 rows of Pascal’s Triangle.  A triangular array of hexagons, each row containing one more hexagon that the row above it.  In each hexagon is an integer: 1’s on the border of the triangle, and every integer inside the triangle the sum of the two integers above it.  The last row contains the numbers 1, 7, 21, 35, 35, 21, 7, and 1."></div></div></div>
+<div class="para logical" id="subsec_patternsPascal-5">
+<div class="para">There are lots of patterns hidden away in the triangle, enough to fill a reasonably sized book. Here are just a few of the most obvious ones:</div>
+<ol class="decimal" id="subsec_patternsPascal-5-1">
+<li id="subsec_patternsPascal-5-1-1"><div class="para" id="subsec_patternsPascal-5-1-1-1">The entries on the border of the triangle are all 1.</div></li>
+<li id="subsec_patternsPascal-5-1-2"><div class="para" id="subsec_patternsPascal-5-1-2-1">Any entry not on the border is the sum of the two entries above it.</div></li>
+<li id="subsec_patternsPascal-5-1-3"><div class="para" id="subsec_patternsPascal-5-1-3-1">The triangle is symmetric. In any row, entries on the left side are mirrored on the right side.</div></li>
+<li id="subsec_patternsPascal-5-1-4"><div class="para" id="subsec_patternsPascal-5-1-4-1">The sum of all entries on a given row is a power of 2. (You should check this!)</div></li>
+</ol>
+</div>
+<div class="para logical" id="subsec_patternsPascal-6">
+<div class="para">We would like to state these observations in a more precise way, and then prove that they are correct. Now each entry in Pascal’s triangle is in fact a binomial coefficient. The 1 on the very top of the triangle is <span class="process-math">\({0 \choose 0}\text{.}\)</span> The next row (which we will call row 1, even though it is not the top-most row) consists of <span class="process-math">\({1 \choose 0}\)</span> and <span class="process-math">\({1 \choose 1}\text{.}\)</span> Row 4 (the row 1, 4, 6, 4, 1) consists of the binomial coefficients</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{4 \choose 0} ~~ {4 \choose 1} ~~ {4 \choose 2} ~~ {4 \choose 3} ~~ {4 \choose 4}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec_patternsPascal-7">
+<div class="para">Given this description of the elements in Pascal’s triangle, we can rewrite the above observations as follows: </div>
+<ol class="decimal" id="subsec_patternsPascal-7-2">
+<li id="subsec_patternsPascal-7-2-1"><div class="para" id="p-derived-subsec_patternsPascal-7-2-1">
+<span class="process-math">\({n \choose 0} = 1\)</span> and <span class="process-math">\({n \choose n} = 1\text{.}\)</span>
+</div></li>
+<li id="subsec_patternsPascal-7-2-2"><div class="para" id="p-derived-subsec_patternsPascal-7-2-2"><span class="process-math">\({n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}\text{.}\)</span></div></li>
+<li id="subsec_patternsPascal-7-2-3"><div class="para" id="p-derived-subsec_patternsPascal-7-2-3"><span class="process-math">\({n \choose k} = {n \choose n-k}\text{.}\)</span></div></li>
+<li id="subsec_patternsPascal-7-2-4"><div class="para" id="p-derived-subsec_patternsPascal-7-2-4"><span class="process-math">\({n\choose 0} + {n \choose 1} + {n \choose 2} + \cdots + {n \choose n} = 2^n\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="para" id="subsec_patternsPascal-8">Each of these is an example of a <dfn class="terminology">binomial identity</dfn>  : an identity (i.e., equation) involving binomial coefficients.</div>
+<div class="para logical" id="subsec_patternsPascal-9">
+<div class="para">Our goal is to establish these identities. We wish to prove that they hold for all values of <span class="process-math">\(n\)</span> and <span class="process-math">\(k\text{.}\)</span> These proofs can be done in many ways. One option would be to give algebraic proofs, using the formula for <span class="process-math">\({n \choose k}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose k} = \frac{n!}{(n-k)!\,k!}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec_patternsPascal-10">Here’s how you might do that for the second identity above.</div>
+<article class="example example-like" id="subsec_patternsPascal-11"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec_patternsPascal-11-1-1">
+<div class="para">Give an algebraic proof for the binomial identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose k} = {n-1\choose k-1} + {n-1 \choose k}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="subsec_patternsPascal-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><article class="proof" id="subsec_patternsPascal-11-2-1"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para logical" id="subsec_patternsPascal-11-2-1-1">
+<div class="para">By the definition of <span class="process-math">\({n \choose k}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n-1 \choose k-1} = \frac{(n-1)!}{(n-1-(k-1))!(k-1)!} = \frac{(n-1)!}{(n-k)!(k-1)!}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n-1 \choose k} = \frac{(n-1)!}{(n-1-k)!k!}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec_patternsPascal-11-2-1-2">
+<div class="para">Thus, starting with the right-hand side of the equation:</div>
+<div class="displaymath process-math" id="subsec_patternsPascal-11-2-1-2-1">
+\begin{align*}
+{n-1 \choose k-1} + {n-1 \choose k} \amp = \frac{(n-1)!}{(n-k)!(k-1)!}+ \frac{(n-1)!}{(n-1-k)!\,k!}\\
+\amp = \frac{(n-1)!k}{(n-k)!\,k!} + \frac{(n-1)!(n-k)}{(n-k)!\,k!}\\
+\amp = \frac{(n-1)!(k+n-k)}{(n-k)!\,k!}\\
+\amp = \frac{n!}{(n-k)!\, k!}\\
+\amp = {n \choose k}\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="subsec_patternsPascal-11-2-1-3">The second line (where the common denominator is found) works because <span class="process-math">\(k(k-1)! = k!\)</span> and <span class="process-math">\((n-k)(n-k-1)! = (n-k)!\text{.}\)</span>
+</div></article></div></details></div></article><div class="para" id="subsec_patternsPascal-12">This is certainly a valid proof, but also is entirely useless. Even if you understand the proof perfectly, it does not tell you <em class="emphasis">why</em> the identity is true. A better approach would be to explain what <span class="process-math">\({n \choose k}\)</span> <em class="emphasis">means</em> and then say why that is also what <span class="process-math">\({n-1 \choose k-1} + {n-1 \choose k}\)</span> means. Let’s see how this works for the four identities we observed above.</div>
+<article class="example example-like" id="subsec_patternsPascal-13"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_patternsPascal-13-1-1">Explain why <span class="process-math">\({n \choose 0} = 1\)</span> and <span class="process-math">\({n \choose n} = 1\text{.}\)</span>
+</div>
+<div class="solutions"><details id="subsec_patternsPascal-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec_patternsPascal-13-2-1">What do these binomial coefficients tell us? Well, <span class="process-math">\({n \choose 0}\)</span> gives the number of ways to select 0 objects from a collection of <span class="process-math">\(n\)</span> objects. There is only one way to do this, namely to not select any of the objects. Thus <span class="process-math">\({n \choose 0} = 1\text{.}\)</span> Similarly, <span class="process-math">\({n \choose n}\)</span> gives the number of ways to select <span class="process-math">\(n\)</span> objects from a collection of <span class="process-math">\(n\)</span> objects. There is only one way to do this: select all <span class="process-math">\(n\)</span> objects. Thus <span class="process-math">\({n \choose n} = 1\text{.}\)</span>
+</div> <div class="para" id="subsec_patternsPascal-13-2-2">Alternatively, we know that <span class="process-math">\({n \choose 0}\)</span> is the number of <span class="process-math">\(n\)</span>-bit strings with weight 0. There is only one such string, the string of all 0’s. So <span class="process-math">\({n \choose 0} = 1\text{.}\)</span> Similarly <span class="process-math">\({n \choose n}\)</span> is the number of <span class="process-math">\(n\)</span>-bit strings with weight <span class="process-math">\(n\text{.}\)</span> There is only one string with this property, the string of all 1’s.</div> <div class="para" id="subsec_patternsPascal-13-2-3">Another way: <span class="process-math">\({n \choose 0}\)</span> gives the number of subsets of a set of size <span class="process-math">\(n\)</span> containing 0 elements. There is only one such subset, the empty set. <span class="process-math">\({n \choose n}\)</span> gives the number of subsets containing <span class="process-math">\(n\)</span> elements. The only such subset is the original set (of all elements).</div>
+</div></details></div></article><article class="example example-like" id="subsec_patternsPascal-14"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec_patternsPascal-14-1-1">Explain why <span class="process-math">\({n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="subsec_patternsPascal-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec_patternsPascal-14-2-1">The easiest way to see this is to consider bit strings. <span class="process-math">\({n \choose k}\)</span> is the number of bit strings of length <span class="process-math">\(n\)</span> containing <span class="process-math">\(k\)</span> 1’s. Of all of these strings, some start with a 1 and the rest start with a 0. First consider all the bit strings which start with a 1. After the 1, there must be <span class="process-math">\(n-1\)</span> more bits (to get the total length up to <span class="process-math">\(n\)</span>) and exactly <span class="process-math">\(k-1\)</span> of them must be 1’s (as we already have one, and we need <span class="process-math">\(k\)</span> total). How many strings are there like that? There are exactly <span class="process-math">\({n-1 \choose k-1}\)</span> such bit strings, so of all the length <span class="process-math">\(n\)</span> bit strings containing <span class="process-math">\(k\)</span> 1’s, <span class="process-math">\({n-1 \choose k-1}\)</span> of them start with a 1. Similarly, there are <span class="process-math">\({n-1\choose k}\)</span> which start with a 0 (we still need <span class="process-math">\(n-1\)</span> bits and now <span class="process-math">\(k\)</span> of them must be 1’s). Since there are <span class="process-math">\({n-1 \choose k}\)</span> bit strings containing <span class="process-math">\(n-1\)</span> bits with <span class="process-math">\(k\)</span> 1’s, that is the number of length <span class="process-math">\(n\)</span> bit strings with <span class="process-math">\(k\)</span> 1’s which start with a 0. Therefore <span class="process-math">\({n \choose k} = {n-1\choose k-1} + {n-1 \choose k}\text{.}\)</span>
+</div> <div class="para" id="subsec_patternsPascal-14-2-2">Another way: consider the question, how many ways can you select <span class="process-math">\(k\)</span> pizza toppings from a menu containing <span class="process-math">\(n\)</span> choices? One way to do this is just <span class="process-math">\({n \choose k}\text{.}\)</span> Another way to answer the same question is to first decide whether or not you want anchovies. If you do want anchovies, you still need to pick <span class="process-math">\(k-1\)</span> toppings, now from just <span class="process-math">\(n-1\)</span> choices. That can be done in <span class="process-math">\({n-1 \choose k-1}\)</span> ways. If you do not want anchovies, then you still need to select <span class="process-math">\(k\)</span> toppings from <span class="process-math">\(n-1\)</span> choices (the anchovies are out). You can do that in <span class="process-math">\({n-1 \choose k}\)</span> ways. Since the choices with anchovies are disjoint from the choices without anchovies, the total choices are <span class="process-math">\({n-1 \choose k-1}+{n-1 \choose k}\text{.}\)</span> But wait. We answered the same question in two different ways, so the two answers must be the same. Thus <span class="process-math">\({n \choose k} = {n-1\choose k-1} + {n-1 \choose k}\text{.}\)</span>
+</div> <div class="para" id="subsec_patternsPascal-14-2-3">You can also explain (prove) this identity by counting subsets, or even lattice paths.</div>
+</div></details></div></article><article class="example example-like" id="example-symmetry-formula"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="example-symmetry-formula-1-1">Prove the binomial identity <span class="process-math">\({n \choose k} = {n \choose n-k}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="example-symmetry-formula-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="example-symmetry-formula-2-1">Why is this true? <span class="process-math">\({n \choose k}\)</span> counts the number of ways to select <span class="process-math">\(k\)</span> things from <span class="process-math">\(n\)</span> choices. On the other hand, <span class="process-math">\({n \choose n-k}\)</span> counts the number of ways to select <span class="process-math">\(n-k\)</span> things from <span class="process-math">\(n\)</span> choices. Are these really the same? Well, what if instead of selecting the <span class="process-math">\(n-k\)</span> things you choose to exclude them. How many ways are there to choose <span class="process-math">\(n-k\)</span> things to exclude from <span class="process-math">\(n\)</span> choices. Clearly this is <span class="process-math">\({n \choose n-k}\)</span> as well (it doesn’t matter whether you include or exclude the things once you have chosen them). And if you exclude <span class="process-math">\(n-k\)</span> things, then you are including the other <span class="process-math">\(k\)</span> things. So the set of outcomes should be the same.</div> <div class="para" id="example-symmetry-formula-2-2">Let’s try the pizza counting example like we did above. How many ways are there to pick <span class="process-math">\(k\)</span> toppings from a list of <span class="process-math">\(n\)</span> choices? On the one hand, the answer is simply <span class="process-math">\({n \choose k}\text{.}\)</span> Alternatively, you could make a list of all the toppings you don’t want. To end up with a pizza containing exactly <span class="process-math">\(k\)</span> toppings, you need to pick <span class="process-math">\(n-k\)</span> toppings to not put on the pizza. You have <span class="process-math">\({n \choose n-k}\)</span> choices for the toppings you don’t want. Both of these ways give you a pizza with <span class="process-math">\(k\)</span> toppings, in fact all the ways to get a pizza with <span class="process-math">\(k\)</span> toppings. Thus these two answers must be the same: <span class="process-math">\({n \choose k} = {n \choose n-k}\text{.}\)</span>
+</div> <div class="para" id="example-symmetry-formula-2-3">You can also prove (explain) this identity using bit strings, subsets, or lattice paths. The bit string argument is nice: <span class="process-math">\({n \choose k}\)</span> counts the number of bit strings of length <span class="process-math">\(n\)</span> with <span class="process-math">\(k\)</span> 1’s. This is also the number of bit string of length <span class="process-math">\(n\)</span> with <span class="process-math">\(k\)</span> 0’s (just replace each 1 with a 0 and each 0 with a 1). But if a string of length <span class="process-math">\(n\)</span> has <span class="process-math">\(k\)</span> 0’s, it must have <span class="process-math">\(n-k\)</span> 1’s. And there are exactly <span class="process-math">\({n\choose n-k}\)</span> strings of length <span class="process-math">\(n\)</span> with <span class="process-math">\(n-k\)</span> 1’s.</div>
+</div></details></div></article><article class="example example-like" id="ex-comb-proof-rowsum"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="ex-comb-proof-rowsum-1-1">Prove the binomial identity <span class="process-math">\({n\choose 0} + {n \choose 1} + {n\choose 2} + \cdots + {n \choose n} = 2^n\text{.}\)</span>
+</div>
+<div class="solutions"><details id="ex-comb-proof-rowsum-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-comb-proof-rowsum-2-1">Let’s do a “pizza proof” again. We need to find a question about pizza toppings which has <span class="process-math">\(2^n\)</span> as the answer. How about this: If a pizza joint offers <span class="process-math">\(n\)</span> toppings, how many pizzas can you build using any number of toppings from no toppings to all toppings, using each topping at most once?</div> <div class="para" id="ex-comb-proof-rowsum-2-2">On one hand, the answer is <span class="process-math">\(2^n\text{.}\)</span> For each topping you can say “yes” or “no,” so you have two choices for each topping.</div> <div class="para" id="ex-comb-proof-rowsum-2-3">On the other hand, divide the possible pizzas into disjoint groups: the pizzas with no toppings, the pizzas with one topping, the pizzas with two toppings, etc. If we want no toppings, there is only one pizza like that (the empty pizza, if you will) but it would be better to think of that number as <span class="process-math">\({n \choose 0}\)</span> since we choose 0 of the <span class="process-math">\(n\)</span> toppings. How many pizzas have 1 topping? We need to choose 1 of the <span class="process-math">\(n\)</span> toppings, so <span class="process-math">\({n \choose 1}\text{.}\)</span> We have:</div> <div class="para logical" id="ex-comb-proof-rowsum-2-4"><ul class="disc" id="ex-comb-proof-rowsum-2-4-1">
+<li id="ex-comb-proof-rowsum-2-4-1-1"><div class="para" id="p-derived-ex-comb-proof-rowsum-2-4-1-1">Pizzas with 0 toppings: <span class="process-math">\({n \choose 0}\)</span>
+</div></li>
+<li id="ex-comb-proof-rowsum-2-4-1-2"><div class="para" id="p-derived-ex-comb-proof-rowsum-2-4-1-2">Pizzas with 1 topping: <span class="process-math">\({n \choose 1}\)</span>
+</div></li>
+<li id="ex-comb-proof-rowsum-2-4-1-3"><div class="para" id="p-derived-ex-comb-proof-rowsum-2-4-1-3">Pizzas with 2 toppings: <span class="process-math">\({n \choose 2}\)</span>
+</div></li>
+<li id="ex-comb-proof-rowsum-2-4-1-4"><div class="para" id="p-derived-ex-comb-proof-rowsum-2-4-1-4"><span class="process-math">\(\displaystyle \vdots\)</span></div></li>
+<li id="ex-comb-proof-rowsum-2-4-1-5"><div class="para" id="p-derived-ex-comb-proof-rowsum-2-4-1-5">Pizzas with <span class="process-math">\(n\)</span> toppings: <span class="process-math">\({n \choose n}\text{.}\)</span>
+</div></li>
+</ul></div> <div class="para" id="ex-comb-proof-rowsum-2-5">The total number of possible pizzas will be the sum of these, which is exactly the left-hand side of the identity we are trying to prove.</div> <div class="para" id="ex-comb-proof-rowsum-2-6">Again, we could have proved the identity using subsets, bit strings, or lattice paths (although the lattice path argument is a little tricky).</div>
+</div></details></div></article><div class="para" id="subsec_patternsPascal-17">Hopefully this gives some idea of how explanatory proofs of binomial identities can go. It is worth pointing out that more traditional proofs can also be beautiful.<details class="ptx-footnote" aria-live="polite" id="subsec_patternsPascal-17-1"><summary class="ptx-footnote__number" title="Footnote 1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="subsec_patternsPascal-17-1">Most every binomial identity can be proved using mathematical induction, using the recursive definition for <span class="process-math">\({n \choose k}\text{.}\)</span> We will discuss induction in <a href="sec_seq-induction.html" class="internal" title="Section 2.5: Induction">Section 2.5</a>.</div></details> For example, consider the following rather slick proof of the last identity.</div>
+<div class="para logical" id="subsec_patternsPascal-18">
+<div class="para">Expand the binomial <span class="process-math">\((x+y)^n\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x + y)^n = {n \choose 0}x^n + {n \choose 1}x^{n-1}y + {n \choose 2}x^{n-2}y^2 + \cdots + {n \choose n-1}x\cdot y^{n-1} + {n \choose n}y^n\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec_patternsPascal-19">
+<div class="para">Let <span class="process-math">\(x = 1\)</span> and <span class="process-math">\(y = 1\text{.}\)</span> We get:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(1 + 1)^n = {n \choose 0}1^n + {n \choose 1}1^{n-1}1 + {n \choose 2}1^{n-2}1^2 + \cdots + {n \choose n-1}1\cdot 1^{n-1} + {n \choose n}1^n\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec_patternsPascal-20">
+<div class="para">Of course this simplifies to:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(2)^n = {n \choose 0} + {n \choose 1} + {n \choose 2} + \cdots + {n \choose n-1} + {n \choose n}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec_patternsPascal-21">Something fun to try: Let <span class="process-math">\(x = 1\)</span> and <span class="process-math">\(y = 2\text{.}\)</span> Neat huh?</div></section><section class="subsection" id="subsec_moreProofs"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">More Proofs</span>
+</h3>
+<div class="para" id="subsec_moreProofs-2"> The explanatory proofs given in the above examples are typically called <dfn class="terminology">combinatorial proofs</dfn>. In general, to give a combinatorial proof for a binomial identity, say <span class="process-math">\(A = B\)</span> you do the following:</div>
+<div class="para logical" id="subsec_moreProofs-3"><ol class="decimal" id="subsec_moreProofs-3-1">
+<li id="subsec_moreProofs-3-1-1"><div class="para" id="subsec_moreProofs-3-1-1-1">Find a counting problem you will be able to answer in two ways.</div></li>
+<li id="subsec_moreProofs-3-1-2"><div class="para" id="subsec_moreProofs-3-1-2-1">Explain why one answer to the counting problem is <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="subsec_moreProofs-3-1-3"><div class="para" id="subsec_moreProofs-3-1-3-1">Explain why the other answer to the counting problem is <span class="process-math">\(B\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="para" id="subsec_moreProofs-4">Since both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are the answers to the same question, we must have <span class="process-math">\(A = B\text{.}\)</span>
+</div>
+<div class="para" id="subsec_moreProofs-5">The tricky thing is coming up with the question. This is not always obvious, but it gets easier the more counting problems you solve. You will start to recognize types of answers as the answers to types of questions. More often what will happen is you will be solving a counting problem and happen to think up two different ways of finding the answer. Now you have a binomial identity and the proof is right there. The proof <em class="emphasis">is</em> the problem you just solved together with your two solutions.</div>
+<div class="para" id="subsec_moreProofs-6">For example, consider this counting question:</div>
+<blockquote class="blockquote" id="subsec_moreProofs-7"><div class="para" id="subsec_moreProofs-7-1">How many 10-letter words use exactly four A’s, three B’s, two C’s and one D?</div></blockquote>
+<div class="para logical" id="subsec_moreProofs-8">
+<div class="para">Let’s try to solve this problem. We have 10 spots for letters to go. Four of those need to be A’s. We can pick the four A-spots in <span class="process-math">\({10 \choose 4}\)</span> ways. Now where can we put the B’s? Well there are only 6 spots left, we need to pick <span class="process-math">\(3\)</span> of them. This can be done in <span class="process-math">\({6 \choose 3}\)</span> ways. The two C’s need to go in two of the 3 remaining spots, so we have <span class="process-math">\({3 \choose 2}\)</span> ways of doing that. That leaves just one spot of the D, but we could write that 1 choice as <span class="process-math">\({1 \choose 1}\text{.}\)</span> Thus the answer is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{10 \choose 4}{6 \choose 3}{3 \choose 2}{1 \choose 1}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec_moreProofs-9">
+<div class="para">But why stop there? We can find the answer another way too. First let’s decide where to put the one D: we have 10 spots, we need to choose 1 of them, so this can be done in <span class="process-math">\({10 \choose 1}\)</span> ways. Next, choose one of the <span class="process-math">\({9 \choose 2}\)</span> ways to place the two C’s. We now have <span class="process-math">\(7\)</span> spots left, and three of them need to be filled with B’s. There are <span class="process-math">\({7 \choose 3}\)</span> ways to do this. Finally the A’s can be placed in <span class="process-math">\({4 \choose 4}\)</span> (that is, only one) ways. So another answer to the question is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{10 \choose 1}{9 \choose 2}{7 \choose 3}{4 \choose 4}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec_moreProofs-10">
+<div class="para">Interesting. This gives us the binomial identity:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{10 \choose 4}{6 \choose 3}{3 \choose 2}{1 \choose 1} = {10 \choose 1}{9 \choose 2}{7 \choose 3}{4 \choose 4}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec_moreProofs-11">Here are a couple more binomial identities with combinatorial proofs.</div>
+<article class="example example-like" id="ex-comb-proof-3elemsets"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ex-comb-proof-3elemsets-1-1">
+<div class="para">Prove the identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 n + 2(n-1) + 3 (n-2) + \cdots + (n-1) 2 + n 1 = {n+2 \choose 3}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="ex-comb-proof-3elemsets-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-comb-proof-3elemsets-2-1">To give a combinatorial proof we need to think up a question we can answer in two ways: one way needs to give the left-hand-side of the identity, the other way needs to be the right-hand-side of the identity. Our clue to what question to ask comes from the right-hand side: <span class="process-math">\({n+2 \choose 3}\)</span> counts the number of ways to select 3 things from a group of <span class="process-math">\(n+2\)</span> things. Let’s name those things <span class="process-math">\(1, 2, 3, \ldots, n+2\text{.}\)</span> In other words, we want to find 3-element subsets of those numbers (since order should not matter, subsets are exactly the right thing to think about). We will have to be a bit clever to explain why the left-hand-side also gives the number of these subsets. Here’s the proof.</div> <article class="proof" id="ex-comb-proof-3elemsets-2-2"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para" id="ex-comb-proof-3elemsets-2-2-1">Consider the question “How many 3-element subsets are there of the set <span class="process-math">\(\{1,2,3,\ldots,
+n+2\}\text{?}\)</span>” We answer this in two ways:</div> <div class="para" id="ex-comb-proof-3elemsets-2-2-2">Answer 1: We must select 3 elements from the collection of <span class="process-math">\(n+2\)</span> elements. This can be done in <span class="process-math">\({n+2 \choose 3}\)</span> ways.</div> <div class="para" id="ex-comb-proof-3elemsets-2-2-3">Answer 2: Break this problem up into cases by what the middle number in the subset is. Say each subset is <span class="process-math">\(\{a,b,c\}\)</span> written in increasing order. We count the number of subsets for each distinct value of <span class="process-math">\(b\text{.}\)</span> The smallest possible value of <span class="process-math">\(b\)</span> is <span class="process-math">\(2\text{,}\)</span> and the largest is <span class="process-math">\(n+1\text{.}\)</span>
+</div> <div class="para" id="ex-comb-proof-3elemsets-2-2-4">When <span class="process-math">\(b = 2\text{,}\)</span> there are <span class="process-math">\(1 \cdot n\)</span> subsets: 1 choice for <span class="process-math">\(a\)</span> and <span class="process-math">\(n\)</span> choices (3 through <span class="process-math">\(n+2\)</span>) for <span class="process-math">\(c\text{.}\)</span>
+</div> <div class="para" id="ex-comb-proof-3elemsets-2-2-5">When <span class="process-math">\(b = 3\text{,}\)</span> there are <span class="process-math">\(2 \cdot (n-1)\)</span> subsets: 2 choices for <span class="process-math">\(a\)</span> and <span class="process-math">\(n-1\)</span> choices for <span class="process-math">\(c\text{.}\)</span>
+</div> <div class="para" id="ex-comb-proof-3elemsets-2-2-6">When <span class="process-math">\(b = 4\text{,}\)</span> there are <span class="process-math">\(3 \cdot (n-2)\)</span> subsets: 3 choices for <span class="process-math">\(a\)</span> and <span class="process-math">\(n-2\)</span> choices for <span class="process-math">\(c\text{.}\)</span>
+</div> <div class="para" id="ex-comb-proof-3elemsets-2-2-7">And so on. When <span class="process-math">\(b = n+1\text{,}\)</span> there are <span class="process-math">\(n\)</span> choices for <span class="process-math">\(a\)</span> and only 1 choice for <span class="process-math">\(c\text{,}\)</span> so <span class="process-math">\(n \cdot 1\)</span> subsets.</div> <div class="para logical" id="ex-comb-proof-3elemsets-2-2-8">
+<div class="para">Therefore the total number of subsets is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 n + 2 (n-1) + 3 (n-2) + \cdots + (n-1)2 + n 1\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-comb-proof-3elemsets-2-2-9">
+<div class="para">Since Answer 1 and Answer 2 are answers to the same question, they must be equal. Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 n + 2 (n-1) + 3 (n-2) + \cdots + (n-1) 2 + n 1 = {n+2 \choose 3}\text{.}
+\end{equation*}
+</div>
+</div></article>
+</div></details></div></article><article class="example example-like" id="subsec_moreProofs-13"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec_moreProofs-13-1-1">
+<div class="para">Prove the binomial identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose 0}^2 + {n \choose 1}^2 + {n \choose 2}^2 + \cdots + {n \choose n}^2 = {2n \choose n}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="subsec_moreProofs-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec_moreProofs-13-2-1">We will give two different proofs of this fact. The first will be very similar to the previous example (counting subsets). The second proof is a little slicker, using lattice paths.</div> <article class="proof" id="subsec_moreProofs-13-2-2"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para" id="subsec_moreProofs-13-2-2-1">Consider the question: “How many pizzas can you make using <span class="process-math">\(n\)</span> toppings when there are <span class="process-math">\(2n\)</span> toppings to choose from?”</div> <div class="para" id="subsec_moreProofs-13-2-2-2">Answer 1: There are <span class="process-math">\(2n\)</span> toppings, from which you must choose <span class="process-math">\(n\text{.}\)</span> This can be done in <span class="process-math">\({2n \choose n}\)</span> ways.</div> <div class="para" id="subsec_moreProofs-13-2-2-3">Answer 2: Divide the toppings into two groups of <span class="process-math">\(n\)</span> toppings (perhaps <span class="process-math">\(n\)</span> meats and <span class="process-math">\(n\)</span> veggies). Any choice of <span class="process-math">\(n\)</span> toppings must include some number from the first group and some number from the second group. Consider each possible number of meat toppings separately:</div> <div class="para" id="subsec_moreProofs-13-2-2-4">0 meats: <span class="process-math">\({n \choose 0}{n \choose n}\text{,}\)</span> since you need to choose 0 of the <span class="process-math">\(n\)</span> meats and <span class="process-math">\(n\)</span> of the <span class="process-math">\(n\)</span> veggies.</div> <div class="para" id="subsec_moreProofs-13-2-2-5">1 meat: <span class="process-math">\({n \choose 1}{n \choose n-1}\text{,}\)</span> since you need 1 of <span class="process-math">\(n\)</span> meats so <span class="process-math">\(n-1\)</span> of <span class="process-math">\(n\)</span> veggies.</div> <div class="para" id="subsec_moreProofs-13-2-2-6">2 meats: <span class="process-math">\({n \choose 2}{n \choose n-2}\text{.}\)</span> Choose 2 meats and the remaining <span class="process-math">\(n-2\)</span> toppings from the <span class="process-math">\(n\)</span> veggies.</div> <div class="para" id="subsec_moreProofs-13-2-2-7">And so on. The last case is <span class="process-math">\(n\)</span> meats, which can be done in <span class="process-math">\({n \choose n}{n \choose 0}\)</span> ways.</div> <div class="para logical" id="subsec_moreProofs-13-2-2-8">
+<div class="para">Thus the total number of pizzas possible is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose 0}{n \choose n} + {n \choose 1}{n \choose n-1} + {n \choose 2}{n \choose n-2} + \cdots + {n \choose n}{n \choose 0}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec_moreProofs-13-2-2-9">
+<div class="para">This is not quite the left-hand side … yet. Notice that <span class="process-math">\({n \choose n} = {n \choose 0}\)</span> and <span class="process-math">\({n \choose n-1} = {n  \choose 1}\)</span> and so on, by the identity in <a href="sec_comb-proofs.html#example-symmetry-formula" class="xref" data-knowl="./knowl/xref/example-symmetry-formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.4">Example 1.4.4</a>. Thus we do indeed get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-symmetry-formula.html">
+\begin{equation*}
+{n \choose 0}^2 + {n \choose 1}^2 + {n \choose 2}^2 + \cdots + {n \choose n}^2\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec_moreProofs-13-2-2-10">
+<div class="para">Since these two answers are answers to the same question, they must be equal, and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose 0}^2 + {n \choose 1}^2 + {n \choose 2}^2 + \cdots + {n \choose n}^2 = {2n \choose n}\text{.}
+\end{equation*}
+</div>
+</div></article> <div class="para" id="subsec_moreProofs-13-2-3">For an alternative proof, we use lattice paths. This is reasonable to consider because the right-hand side of the identity reminds us of the number of paths from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((n,n)\text{.}\)</span>
+</div> <article class="proof" id="subsec_moreProofs-13-2-4"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para" id="subsec_moreProofs-13-2-4-1">Consider the question: How many lattice paths are there from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((n,n)\text{?}\)</span>
+</div> <div class="para" id="subsec_moreProofs-13-2-4-2">Answer 1: We must travel <span class="process-math">\(2n\)</span> steps, and <span class="process-math">\(n\)</span> of them must be in the up direction. Thus there are <span class="process-math">\({2n \choose n}\)</span> paths.</div> <div class="para" id="subsec_moreProofs-13-2-4-3">Answer 2: Note that any path from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((n,n)\)</span> must cross the line <span class="process-math">\(x + y = n\text{.}\)</span> That is, any path must pass through exactly one of the points: <span class="process-math">\((0,n)\text{,}\)</span> <span class="process-math">\((1,n-1)\text{,}\)</span> <span class="process-math">\((2,n-2)\text{,}\)</span> …, <span class="process-math">\((n, 0)\text{.}\)</span> For example, this is what happens in the case <span class="process-math">\(n = 4\text{:}\)</span>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/lattice-paths-comb-proof.svg" role="img" class="contained" alt="A light gray grid with points (0,0) and (4,4) identified in the lower left and upper right corners respectively.  The line x + y = 4 is shown extending from the top left to bottom right corner.  The line intersects the labeled points (0,4), (1,3), (2,2), (3,1), and (4,0)."></div></div></div> <div class="para" id="subsec_moreProofs-13-2-4-5">How many paths pass through <span class="process-math">\((0,n)\text{?}\)</span> To get to that point, you must travel <span class="process-math">\(n\)</span> units, and <span class="process-math">\(0\)</span> of them are to the right, so there are <span class="process-math">\({n \choose 0}\)</span> ways to get to <span class="process-math">\((0,n)\text{.}\)</span> From <span class="process-math">\((0,n)\)</span> to <span class="process-math">\((n,n)\)</span> takes <span class="process-math">\(n\)</span> steps, and <span class="process-math">\(0\)</span> of them are up. So there are <span class="process-math">\({n \choose 0}\)</span> ways to get from <span class="process-math">\((0,n)\)</span> to <span class="process-math">\((n,n)\text{.}\)</span> Therefore there are <span class="process-math">\({n \choose 0}{n \choose 0}\)</span> paths from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((n,n)\)</span> through the point <span class="process-math">\((0,n)\text{.}\)</span>
+</div> <div class="para" id="subsec_moreProofs-13-2-4-6">What about through <span class="process-math">\((1,n-1)\text{.}\)</span> There are <span class="process-math">\({n \choose 1}\)</span> paths to get there (<span class="process-math">\(n\)</span> steps, 1 to the right) and <span class="process-math">\({n \choose 1}\)</span> paths to complete the journey to <span class="process-math">\((n,n)\)</span> (<span class="process-math">\(n\)</span> steps, <span class="process-math">\(1\)</span> up). So there are <span class="process-math">\({n \choose 1}{n \choose 1}\)</span> paths from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((n,n)\)</span> through <span class="process-math">\((1,n-1)\text{.}\)</span>
+</div> <div class="para" id="subsec_moreProofs-13-2-4-7">In general, to get to <span class="process-math">\((n,n)\)</span> through the point <span class="process-math">\((k,n-k)\)</span> we have <span class="process-math">\({n \choose k}\)</span> paths to the midpoint and then <span class="process-math">\({n \choose k}\)</span> paths from the midpoint to <span class="process-math">\((n,n)\text{.}\)</span> So there are <span class="process-math">\({n \choose k}{n \choose k}\)</span> paths from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((n,n)\)</span> through <span class="process-math">\((k, n-k)\text{.}\)</span>
+</div> <div class="para logical" id="subsec_moreProofs-13-2-4-8">
+<div class="para">All together then the total paths from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((n,n)\)</span> passing through exactly one of these midpoints is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose 0}^2 + {n \choose 1}^2 + {n \choose 2}^2 + \cdots + {n \choose n}^2\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec_moreProofs-13-2-4-9">
+<div class="para">Since these two answers are answers to the same question, they must be equal, and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose 0}^2 + {n \choose 1}^2 + {n \choose 2}^2 + \cdots + {n \choose n}^2 = {2n \choose n}\text{.}
+\end{equation*}
+</div>
+</div></article>
+</div></details></div></article></section><section class="exercises" id="exercises_comb-proofs"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercises_comb-proofs-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="exercises_comb-proofs-1-1-1">Give a combinatorial proof of the identity <span class="process-math">\(2+2+2 = 3\cdot 2\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises_comb-proofs-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><article class="proof" id="exercises_comb-proofs-1-2-1"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para" id="exercises_comb-proofs-1-2-1-1">Question: How many 2-letter words start with <em class="emphasis">a</em>, <em class="emphasis">b</em>, or <em class="emphasis">c</em> and end with either <em class="emphasis">y</em> or <em class="emphasis">z</em>?</div> <div class="para" id="exercises_comb-proofs-1-2-1-2">Answer 1: There are two words that start with <em class="emphasis">a</em>, two that start with <em class="emphasis">b</em>, two that start with <em class="emphasis">c</em>, for a total of <span class="process-math">\(2+2+2\text{.}\)</span>
+</div> <div class="para" id="exercises_comb-proofs-1-2-1-3">Answer 2: There are three choices for the first letter and two choices for the second letter, for a total of <span class="process-math">\(3 \cdot 2\text{.}\)</span>
+</div> <div class="para" id="exercises_comb-proofs-1-2-1-4">Since the two answers are both answers to the same question, they are equal. Thus <span class="process-math">\(2 + 2 + 2 = 3\cdot 2\text{.}\)</span>
+</div></article></div></details></div></article><article class="exercise exercise-like" id="exercises_comb-proofs-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_comb-proofs-2-2-1">
+<div class="para">Suppose you own <span class="process-math">\(x\)</span> fezzes and <span class="process-math">\(y\)</span> bow ties. Of course, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are both greater than 1.</div>
+<ol class="lower-alpha" id="exercises_comb-proofs-2-2-1-5">
+<li id="exercises_comb-proofs-2-2-1-5-1"><div class="para" id="exercises_comb-proofs-2-2-1-5-1-1">How many combinations of fez and bow tie can you make? You can wear only one fez and one bow tie at a time. Explain.</div></li>
+<li id="exercises_comb-proofs-2-2-1-5-2"><div class="para" id="exercises_comb-proofs-2-2-1-5-2-1">Explain why the answer is <em class="emphasis">also</em> <span class="process-math">\({x+y \choose 2} - {x \choose 2} - {y \choose 2}\text{.}\)</span> (If this is what you claimed the answer was in part (a), try it again.)</div></li>
+<li id="exercises_comb-proofs-2-2-1-5-3"><div class="para logical" id="exercises_comb-proofs-2-2-1-5-3-1">
+<div class="para">Use your answers to parts (a) and (b) to give a combinatorial proof of the identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{x+y \choose 2} - {x \choose 2} - {y \choose 2} = xy.\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercises_comb-proofs-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="exercises_comb-proofs-3-1-1">How many triangles can you draw using the dots below as vertices?</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/img-semicircle-triangles.svg" role="img" class="contained" alt="Twelve dots arranged in a half circle.  Seven dots lie on the horizontal diameter of the circle, the remaining five lie on the circumference of the circle."></div></div></div> <div class="para logical" id="exercises_comb-proofs-3-1-3"><ol class="lower-alpha" id="exercises_comb-proofs-3-1-3-1">
+<li id="exercises_comb-proofs-3-1-3-1-1"><div class="para" id="exercises_comb-proofs-3-1-3-1-1-1">Find an expression for the answer which is the sum of three terms involving binomial coefficients.</div></li>
+<li id="exercises_comb-proofs-3-1-3-1-2"><div class="para" id="exercises_comb-proofs-3-1-3-1-2-1">Find an expression for the answer which is the difference of two  binomial coefficients.</div></li>
+<li id="exercises_comb-proofs-3-1-3-1-3"><div class="para" id="exercises_comb-proofs-3-1-3-1-3-1">Generalize the above to state and prove a binomial identity using a combinatorial proof.  Say you have <span class="process-math">\(x\)</span> points on the horizontal axis and <span class="process-math">\(y\)</span> points in the semi-circle.</div></li>
+</ol></div>
+<div class="solutions"><details id="exercises_comb-proofs-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para logical" id="exercises_comb-proofs-3-2-1">
+<div class="para">There will be 185 triangles.  But to find them …</div>
+<ol class="lower-alpha" id="exercises_comb-proofs-3-2-1-2">
+<li id="exercises_comb-proofs-3-2-1-2-1"><div class="para" id="exercises_comb-proofs-3-2-1-2-1-1">How many vertices of the triangle can be on the horizontal axis?</div></li>
+<li id="exercises_comb-proofs-3-2-1-2-2"><div class="para" id="exercises_comb-proofs-3-2-1-2-2-1">Will <em class="emphasis">any</em> three dots work as the vertices?</div></li>
+</ol>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises_comb-proofs-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="exercises_comb-proofs-4-1-1">Consider all the triangles you can create using the points shown below as vertices. Note, we are not allowing degenerate triangles (ones with all three vertices on the same line) but we do allow non-right triangles.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/triangle-dots-repeat.svg" role="img" class="contained" alt="Five equally spaced dots in a vertical line and six additional equally spaced dots extending to the right in a horizontal line from the lowest dot (forming a right angle)."></div></div></div> <div class="para logical" id="exercises_comb-proofs-4-1-3"><ol class="lower-alpha" id="exercises_comb-proofs-4-1-3-1">
+<li id="exercises_comb-proofs-4-1-3-1-1"><div class="para" id="exercises_comb-proofs-4-1-3-1-1-1">Find the number of triangles, and explain why your answer is correct.</div></li>
+<li id="exercises_comb-proofs-4-1-3-1-2"><div class="para" id="exercises_comb-proofs-4-1-3-1-2-1">Find the number of triangles again, using a different method. Explain why your new method works.</div></li>
+<li id="exercises_comb-proofs-4-1-3-1-3"><div class="para" id="exercises_comb-proofs-4-1-3-1-3-1">State a binomial identity that your two answers above establish (that is, give the binomial identity that your two answers a proof for). Then generalize this using <span class="process-math">\(m\)</span>’s and <span class="process-math">\(n\)</span>’s.</div></li>
+</ol></div>
+<div class="solutions"><details id="exercises_comb-proofs-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_comb-proofs-4-2-1">The answer is 120.</div></div></details></div></article><article class="exercise exercise-like" id="exc-bridesmaids"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="exc-bridesmaids-1-1">A woman is getting married. She has 15 best friends but can only select 6 of them to be her bridesmaids, one of which needs to be her maid of honor. How many ways can she do this?</div> <ol class="lower-alpha" id="exc-bridesmaids-1-2">
+<li id="exc-bridesmaids-1-2-1"><div class="para" id="exc-bridesmaids-1-2-1-1">What if she first selects the 6 bridesmaids, and then selects one of them to be the maid of honor?</div></li>
+<li id="exc-bridesmaids-1-2-2"><div class="para" id="exc-bridesmaids-1-2-2-1">What if she first selects her maid of honor, and then 5 other bridesmaids?</div></li>
+<li id="exc-bridesmaids-1-2-3"><div class="para" id="exc-bridesmaids-1-2-3-1">Explain why <span class="process-math">\(6 {15 \choose 6} = 15 {14 \choose 5}\text{.}\)</span>
+</div></li>
+</ol>
+<div class="solutions"><details id="exc-bridesmaids-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exc-bridesmaids-2-1"><ol class="lower-alpha" id="exc-bridesmaids-2-1-1">
+<li id="exc-bridesmaids-2-1-1-1"><div class="para" id="exc-bridesmaids-2-1-1-1-1">She has <span class="process-math">\({15 \choose 6}\)</span> ways to select the 6 bridesmaids, and then for each way, has 6 choices for the maid of honor. Thus she has <span class="process-math">\({15 \choose 6}6\)</span> choices.</div></li>
+<li id="exc-bridesmaids-2-1-1-2"><div class="para" id="exc-bridesmaids-2-1-1-2-1">She has 15 choices for who will be her maid of honor. Then she needs to select 5 of the remaining 14 friends to be bridesmaids, which she can do in <span class="process-math">\({14 \choose 5}\)</span> ways. Thus she has <span class="process-math">\(15 {14 \choose 5}\)</span> choices.</div></li>
+<li id="exc-bridesmaids-2-1-1-3"><div class="para" id="exc-bridesmaids-2-1-1-3-1">We have answered the question (how many wedding parties can the bride choose from) in two ways. The first way gives the left-hand side of the identity and the second way gives the right-hand side of the identity. Therefore the identity holds.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises_comb-proofs-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_comb-proofs-6-1-1">
+<div class="para">Consider the identity:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k{n\choose k} = n{n-1 \choose k-1}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha" id="exercises_comb-proofs-6-1-1-2">
+<li id="exercises_comb-proofs-6-1-1-2-1"><div class="para" id="exercises_comb-proofs-6-1-1-2-1-1">Is this true? Try it for a few values of <span class="process-math">\(n\)</span> and <span class="process-math">\(k\text{.}\)</span>
+</div></li>
+<li id="exercises_comb-proofs-6-1-1-2-2"><div class="para" id="exercises_comb-proofs-6-1-1-2-2-1">Use the formula for <span class="process-math">\({n \choose k}\)</span> to give an algebraic proof of the identity.</div></li>
+<li id="exercises_comb-proofs-6-1-1-2-3"><div class="para" id="exercises_comb-proofs-6-1-1-2-3-1">Give a combinatorial proof of the identity.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_comb-proofs-6-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_comb-proofs-6-2-1">Try <a href="sec_comb-proofs.html#exc-bridesmaids" class="xref" data-knowl="./knowl/xref/exc-bridesmaids.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.5">Exercise 1.4.5</a>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises_comb-proofs-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="exercises_comb-proofs-7-1-1">Give a combinatorial proof of the identity <span class="process-math">\({n \choose 2}{n-2 \choose k-2} = {n\choose k}{k \choose 2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<details id="exercises_comb-proofs-7-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_comb-proofs-7-2-1">What if you wanted a pair of co-maids-of-honor?</div></div></details><details id="exercises_comb-proofs-7-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><article class="proof" id="exercises_comb-proofs-7-3-1"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para" id="exercises_comb-proofs-7-3-1-1">Question: You have a large container filled with ping-pong balls, all with a different number on them. You must select <span class="process-math">\(k\)</span> of the balls, putting two of them in a jar and the others in a box. How many ways can you do this?</div> <div class="para" id="exercises_comb-proofs-7-3-1-2">Answer 1: First select 2 of the <span class="process-math">\(n\)</span> balls to put in the jar. Then select <span class="process-math">\(k-2\)</span> of the remaining <span class="process-math">\(n-2\)</span> balls to put in the box. The first task can be completed in <span class="process-math">\({n \choose 2}\)</span> different ways, the second task in <span class="process-math">\({n-2 \choose k-2}\)</span> ways. Thus there are <span class="process-math">\({n \choose 2}{n-2 \choose k-2}\)</span> ways to select the balls.</div> <div class="para" id="exercises_comb-proofs-7-3-1-3">Answer 2: First select <span class="process-math">\(k\)</span> balls from the <span class="process-math">\(n\)</span> in the container. Then pick 2 of the <span class="process-math">\(k\)</span> balls you picked to put in the jar, placing the remaining <span class="process-math">\(k-2\)</span> in the box. The first task can be completed in <span class="process-math">\({n \choose k}\)</span> ways, the second task in <span class="process-math">\({k \choose 2}\)</span> ways. Thus there are <span class="process-math">\({n \choose k}{k \choose 2}\)</span> ways to select the balls.</div> <div class="para" id="exercises_comb-proofs-7-3-1-4">Since both answers count the same thing, they must be equal and the identity is established.</div></article></div></details>
+</div></article><article class="exercise exercise-like" id="exercises_comb-proofs-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_comb-proofs-8-1-1">
+<div class="para">Consider the binomial identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\binom{n}{1} + 2 \binom{n}{2} + 3 \binom{n}{3} + \cdots + n\binom{n}{n} = n2^{n-1}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha" id="exercises_comb-proofs-8-1-1-2">
+<li id="exercises_comb-proofs-8-1-1-2-1"><div class="para" id="exercises_comb-proofs-8-1-1-2-1-1">Give a combinatorial proof of this identity.  Hint: What if some number of a group of <span class="process-math">\(n\)</span> people wanted to go to an escape room, and among those going, one needed to be the team captain?</div></li>
+<li id="exercises_comb-proofs-8-1-1-2-2"><div class="para" id="exercises_comb-proofs-8-1-1-2-2-1">Give an alternate proof by multiplying out <span class="process-math">\((1+x)^n\)</span> and taking derivatives of both sides.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_comb-proofs-8-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_comb-proofs-8-2-1">For the combinatorial proof: what if you don’t yet know how many bridesmaids you will have?</div></div></details></div></article><article class="exercise exercise-like" id="exercises_comb-proofs-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="exercises_comb-proofs-9-1-1">Give a combinatorial proof for the identity <span class="process-math">\(1 + 2 + 3 + \cdots + n = {n+1 \choose 2}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises_comb-proofs-9-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_comb-proofs-9-2-1">Count handshakes.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_comb-proofs-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4> <div class="para" id="exercises_comb-proofs-10-1-2">Consider the bit strings in <span class="process-math">\(\B^6_2\)</span> (bit strings of length 6 and weight 2).</div> <ol class="lower-alpha" id="exercises_comb-proofs-10-1-3">
+<li id="exercises_comb-proofs-10-1-3-1"><div class="para" id="exercises_comb-proofs-10-1-3-1-1">How many of those bit strings start with 1?</div></li>
+<li id="exercises_comb-proofs-10-1-3-2"><div class="para" id="exercises_comb-proofs-10-1-3-2-1">How many of those bit strings start with 01?</div></li>
+<li id="exercises_comb-proofs-10-1-3-3"><div class="para" id="exercises_comb-proofs-10-1-3-3-1">How many of those bit strings start with 001?</div></li>
+<li id="exercises_comb-proofs-10-1-3-4"><div class="para" id="exercises_comb-proofs-10-1-3-4-1">Are there any other strings we have not counted yet? Which ones, and how many are there?</div></li>
+<li id="exercises_comb-proofs-10-1-3-5"><div class="para" id="exercises_comb-proofs-10-1-3-5-1">How many bit strings are there total in <span class="process-math">\(\B^6_2\text{?}\)</span>
+</div></li>
+<li id="exercises_comb-proofs-10-1-3-6"><div class="para" id="exercises_comb-proofs-10-1-3-6-1">What binomial identity have you just given a combinatorial proof for?</div></li>
+</ol></article><article class="exercise exercise-like" id="exercises_comb-proofs-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_comb-proofs-11-3-1">
+<div class="para">Let’s count <dfn class="terminology">ternary</dfn> digit strings, that is, strings in which each digit can be 0, 1, or 2.</div>
+<ol class="lower-alpha" id="exercises_comb-proofs-11-3-1-2">
+<li id="exercises_comb-proofs-11-3-1-2-1"><div class="para" id="exercises_comb-proofs-11-3-1-2-1-1">How many ternary digit strings contain exactly <span class="process-math">\(n\)</span> digits?</div></li>
+<li id="exercises_comb-proofs-11-3-1-2-2"><div class="para" id="exercises_comb-proofs-11-3-1-2-2-1">How many ternary digit strings contain exactly <span class="process-math">\(n\)</span> digits and <span class="process-math">\(n\)</span> 2’s.</div></li>
+<li id="exercises_comb-proofs-11-3-1-2-3"><div class="para" id="exercises_comb-proofs-11-3-1-2-3-1">How many ternary digit strings contain exactly <span class="process-math">\(n\)</span> digits and <span class="process-math">\(n-1\)</span> 2’s. (Hint: where can you put the non-2 digit, and then what could it be?)</div></li>
+<li id="exercises_comb-proofs-11-3-1-2-4"><div class="para" id="exercises_comb-proofs-11-3-1-2-4-1">How many ternary digit strings contain exactly <span class="process-math">\(n\)</span> digits and <span class="process-math">\(n-2\)</span> 2’s. (Hint: see previous hint)</div></li>
+<li id="exercises_comb-proofs-11-3-1-2-5"><div class="para" id="exercises_comb-proofs-11-3-1-2-5-1">How many ternary digit strings contain exactly <span class="process-math">\(n\)</span> digits and <span class="process-math">\(n-k\)</span> 2’s.</div></li>
+<li id="exercises_comb-proofs-11-3-1-2-6"><div class="para" id="exercises_comb-proofs-11-3-1-2-6-1">How many ternary digit strings contain exactly <span class="process-math">\(n\)</span> digits and no 2’s. (Hint: what kind of a string is this?)</div></li>
+<li id="exercises_comb-proofs-11-3-1-2-7"><div class="para logical" id="exercises_comb-proofs-11-3-1-2-7-1">
+<div class="para">Use the above parts to give a combinatorial proof for the identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n \choose 0} + 2{n \choose 1} + 2^2{n \choose 2} + 2^3{n \choose 3} + \cdots + 2^n{n \choose n} = 3^n\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercises_comb-proofs-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="exercises_comb-proofs-12-1-1">How many ways are there to rearrange the letters in the word “rearrange”? Answer this question in at least two different ways to establish a binomial identity.</div></article><article class="exercise exercise-like" id="exercises_comb-proofs-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_comb-proofs-13-1-1">
+<div class="para">Establish the identity below using a combinatorial proof.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{2 \choose 2}{n \choose 2} + {3 \choose 2}{n-1 \choose 2} + {4\choose 2}{n-2 \choose 2} + \cdots + {n\choose 2}{2\choose 2} = {n+3 \choose 5}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="exercises_comb-proofs-13-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_comb-proofs-13-2-1">This one might remind you of <a href="sec_comb-proofs.html#ex-comb-proof-3elemsets" class="xref" data-knowl="./knowl/xref/ex-comb-proof-3elemsets.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.6">Example 1.4.6</a>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises_comb-proofs-14"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises_comb-proofs-14-1-1">
+<div class="para">In <a href="sec_comb-proofs.html#ex-comb-proof-rowsum" class="xref" data-knowl="./knowl/xref/ex-comb-proof-rowsum.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.5">Example 1.4.5</a> we established that the sum of any row in Pascal’s triangle is a power of two.  Specifically,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-comb-proof-rowsum.html">
+\begin{equation*}
+{n\choose 0} + {n \choose 1} + {n\choose 2} + \cdots + {n \choose n} = 2^n\text{.}
+\end{equation*}
+</div>
+<div class="para">The argument given there used the counting question, “how many pizzas can you build using any number of <span class="process-math">\(n\)</span> different toppings?”  To practice, give new proofs of this identity using different questions.</div>
+<ol class="lower-alpha" id="exercises_comb-proofs-14-1-1-4">
+<li id="exercises_comb-proofs-14-1-1-4-1"><div class="para" id="exercises_comb-proofs-14-1-1-4-1-1">Use a question about counting subsets.</div></li>
+<li id="exercises_comb-proofs-14-1-1-4-2"><div class="para" id="exercises_comb-proofs-14-1-1-4-2-1">Use a question about counting bit strings.</div></li>
+<li id="exercises_comb-proofs-14-1-1-4-3"><div class="para" id="exercises_comb-proofs-14-1-1-4-3-1">Use a question about counting lattice paths.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises_comb-proofs-14-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exercises_comb-proofs-14-2-1">For the lattice paths, think about what sort of paths <span class="process-math">\(2^n\)</span> would count.  Not all the paths will end at the same point, but you could describe the set of end points as a line.</div></div></details></div></article></section></section></div>
+

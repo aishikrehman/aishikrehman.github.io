@@ -13,7 +13,7 @@
 
 @font-face {
     font-family: 'English';
-    src: local("Arial");
+    src: local("Times New Roman");
 }
 
 :root,
@@ -848,7 +848,7 @@ progress {
     .container-md,
     .container-sm,
     .container-xl {
-        max-width: 1000px
+        max-width: 1050px
     }
 }
 
@@ -870,7 +870,7 @@ progress {
     --bs-breakpoint-md: 768px;
     --bs-breakpoint-lg: 992px;
     --bs-breakpoint-xl: 1200px;
-    --bs-breakpoint-xxl: 1400px
+    --bs-breakpoint-xxl: 100px
 }
 
 .row {

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ঐশিক রেহমান</title>
+    <link>https://aishikrehman.com/discrete-mathematics/</link>
+    <description>Recent content on ঐশিক রেহমান</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>bn-BD</language>
+    <managingEditor>hello@aishikrehman.com (ঐশিক রেহমান)</managingEditor>
+    <webMaster>hello@aishikrehman.com (ঐশিক রেহমান)</webMaster>
+    <atom:link href="https://aishikrehman.com/discrete-mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://aishikrehman.com/discrete-mathematics/how-to-use-this-book/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hello@aishikrehman.com (ঐশিক রেহমান)</author>
+      <guid>https://aishikrehman.com/discrete-mathematics/how-to-use-this-book/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>About the Author</title>
+      <link>https://aishikrehman.com/discrete-mathematics/about-the-author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hello@aishikrehman.com (ঐশিক রেহমান)</author>
+      <guid>https://aishikrehman.com/discrete-mathematics/about-the-author/</guid>
+      <description>KennethH.RosenhashadalongcareerasaDistinguished Member of theTechnical Staff&#xA;atAT&amp;amp;TLaboratories in MonmouthCounty,NewJersey.Hecurrentlyholdstheposition&#xA;of Visiting Research Professor at Monmouth University, where he teaches graduate courses in&#xA;computer science.&#xA;Dr. Rosen received his B.S. in Mathematics from the University of Michigan, Ann Arbor&#xA;(1972), and his Ph.D. in Mathematics from M.I.T. (1976), where he wrote his thesis in the area&#xA;of number theory under the direction of Harold Stark. Before joining Bell Laboratories in 1982,&#xA;he held positions at the University of Colorado, Boulder; The Ohio State University, Columbus;</description>
+    </item>
+    <item>
+      <title>Preface</title>
+      <link>https://aishikrehman.com/discrete-mathematics/preface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hello@aishikrehman.com (ঐশিক রেহমান)</author>
+      <guid>https://aishikrehman.com/discrete-mathematics/preface/</guid>
+      <description>Inwriting this book, I was guided by my long-standing experience and interest in teaching&#xA;discrete mathematics. For the student, my purpose was to present material in a precise,&#xA;readable manner, with the concepts and techniques of discrete mathematics clearly presented&#xA;and demonstrated. My goal was to show the relevance and practicality of discrete mathematics&#xA;to students, who are often skeptical. I wanted to give students studying computer science all of</description>
+    </item>
+    <item>
+      <title>The Foundation: Logic and Proofs</title>
+      <link>https://aishikrehman.com/discrete-mathematics/the-foundations-logic-and-proofs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hello@aishikrehman.com (ঐশিক রেহমান)</author>
+      <guid>https://aishikrehman.com/discrete-mathematics/the-foundations-logic-and-proofs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>যুক্তিবাক্য - প্রপোজিশনাল লজিক</title>
+      <link>https://aishikrehman.com/discrete-mathematics/propositional-logic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hello@aishikrehman.com (ঐশিক রেহমান)</author>
+      <guid>https://aishikrehman.com/discrete-mathematics/propositional-logic/</guid>
+      <description>১.১ প্রপোজিশন? প্রপোজিশন বা যুক্তিবাক্য হলো এমন কোনো বিবৃতিমূলক বাক্য যা অবশ্যই সত্য অথবা অবশ্যই মিথ্যা হবে কিন্তু কখনোই উভয়টি হবে না। যুক্তিবাক্য হলো লজিক তৈরির প্রাথমিক ভিত্তি। কোনো গাণিতিক ঘটনা তথা বাক্যের সত্যাসত্য যাচাই করার জন্য প্রথমেই সেটিকে অবশ্যই যুক্তিবাক্য হতে হবে।&#xA;কোনো বাক্যের যুক্তিবাক্য হওয়ার শর্ত হলো অবশ্যই বাক্যটির একটি ট্রুথভ্যালু বা সত্যাসত্য মান থাকতে হবে। হয়ত সেটি সত্যি কিংবা মিথ্যা দুইটার একটি হবে। প্রপোজিশনে কোন অস্পষ্টতা থাকবে না। একই সঙ্গে সত্যি ও মিথ্যা দুটোই হতে পারে এরকম বাক্যও প্রপোজিশন হতে পারে না। কোন বাক্যের সত্যি বা মিথ্যা কোনরকম ভ্যালু না থাকলে সেটিও প্রপোজিশন নয়। অর্থাৎ প্রপোজিশন হতে হলে অবশ্যই সত্য অথবা অবশ্যই মিথ্যা হতে হবে।</description>
+    </item>
+  </channel>
+</rss>

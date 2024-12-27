@@ -1,0 +1,459 @@
+---
+title:
+---
+<div id="ptx-content" class="ptx-content"><section class="section" id="sec_recurrence"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">Solving Recurrence Relations</span>
+</h2>
+<section class="introduction" id="sec_recurrence-3"><article class="project-like" id="sec_recurrence-3-1"><h6 class="heading">
+<span class="type">Investigate!</span> </h6>
+<div class="para logical" id="sec_recurrence-3-1-1">
+<div class="para">Consider the recurrence relation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = 5a_{n-1} - 6a_{n-2}\text{.}
+\end{equation*}
+</div>
+<ol class="decimal" id="sec_recurrence-3-1-1-2">
+<li id="sec_recurrence-3-1-1-2-1"><div class="para" id="sec_recurrence-3-1-1-2-1-1">What sequence do you get if the initial conditions are <span class="process-math">\(a_0 = 1\text{,}\)</span> <span class="process-math">\(a_1 = 2\text{?}\)</span> Give a closed formula for this sequence.</div></li>
+<li id="sec_recurrence-3-1-1-2-2"><div class="para" id="sec_recurrence-3-1-1-2-2-1">What sequence do you get if the initial conditions are <span class="process-math">\(a_0 = 1\text{,}\)</span> <span class="process-math">\(a_1 = 3\text{?}\)</span> Give a closed formula.</div></li>
+<li id="sec_recurrence-3-1-1-2-3"><div class="para" id="sec_recurrence-3-1-1-2-3-1">What if <span class="process-math">\(a_0 = 2\)</span> and <span class="process-math">\(a_1 = 5\text{?}\)</span> Find a closed formula.</div></li>
+</ol>
+</div></article> <div class="para" id="sec_recurrence-3-2">We have seen that it is often easier to find recursive definitions than closed formulas. Lucky for us, there are a few techniques for converting recursive definitions to closed formulas. Doing so is called <dfn class="terminology">solving a recurrence relation</dfn>. Recall that the recurrence relation is a recursive definition without the initial conditions. For example, the recurrence relation for the Fibonacci sequence  is <span class="process-math">\(F_n = F_{n-1} + F_{n-2}\text{.}\)</span> (This, together with the initial conditions <span class="process-math">\(F_0 = 0\)</span> and <span class="process-math">\(F_1 = 1\)</span> give the entire recursive <em class="emphasis">definition</em> for the sequence.)</div> <article class="example example-like" id="sec_recurrence-3-3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_recurrence-3-3-2-1">Find a recurrence relation and initial conditions for <span class="process-math">\(1, 5, 17, 53, 161, 485\ldots\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_recurrence-3-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec_recurrence-3-3-3-1">Finding the recurrence relation would be easier if we had some context for the problem (like the Tower of Hanoi, for example). Alas, we have only the sequence. Remember, the recurrence relation tells you how to get from previous terms to future terms. What is going on here? We could look at the differences between terms: <span class="process-math">\(4, 12, 36, 108, \ldots\text{.}\)</span> Notice that these are growing by a factor of 3. Is the original sequence as well? <span class="process-math">\(1\cdot 3 = 3\text{,}\)</span> <span class="process-math">\(5 \cdot 3 = 15\text{,}\)</span> <span class="process-math">\(17 \cdot 3 = 51\)</span> and so on. It appears that we always end up with 2 less than the next term. Aha!</div> <div class="para" id="sec_recurrence-3-3-3-2">So <span class="process-math">\(a_n = 3a_{n-1} + 2\)</span> is our recurrence relation and the initial condition is <span class="process-math">\(a_0 = 1\text{.}\)</span>
+</div>
+</div></details></div></article> <div class="para" id="sec_recurrence-3-4">We are going to try to <em class="emphasis">solve</em> these recurrence relations. By this we mean something very similar to solving differential equations: we want to find a function of <span class="process-math">\(n\)</span> (a closed formula) which satisfies the recurrence relation, as well as the initial condition.<details class="ptx-footnote" aria-live="polite" id="sec_recurrence-3-4-3"><summary class="ptx-footnote__number" title="Footnote 2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="sec_recurrence-3-4-3">Recurrence relations are sometimes called difference equations since they can describe the difference between terms and this highlights the relation to differential equations further.</div></details> Just like for differential equations, finding a solution might be tricky, but checking that the solution is correct is easy. </div> <article class="example example-like" id="sec_recurrence-3-5"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_recurrence-3-5-2-1">Check that <span class="process-math">\(a_n = 2^n + 1\)</span> is a solution to the recurrence relation <span class="process-math">\(a_n = 2a_{n-1} - 1\)</span> with <span class="process-math">\(a_1 = 3\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_recurrence-3-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_recurrence-3-5-3-1">
+<div class="para">First, it is easy to check the initial condition: <span class="process-math">\(a_1\)</span> should be <span class="process-math">\(2^1 + 1\)</span> according to our closed formula. Indeed, <span class="process-math">\(2^1 + 1 = 3\text{,}\)</span> which is what we want. To check that our proposed solution satisfies the recurrence relation, try plugging it in.</div>
+<div class="displaymath process-math" id="sec_recurrence-3-5-3-1-4">
+\begin{align*}
+2a_{n-1} - 1 \amp = 2(2^{n-1} + 1) - 1\\
+\amp = 2^n + 2 - 1\\
+\amp = 2^n +1\\
+\amp = a_n\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="sec_recurrence-3-5-3-2">That’s what our recurrence relation says! We have a solution.</div>
+</div></details></div></article> <div class="para" id="sec_recurrence-3-6">Sometimes we can be clever and solve a recurrence relation by inspection. We generate the sequence using the recurrence relation and keep track of what we are doing so that we can see how to jump to finding just the <span class="process-math">\(a_n\)</span> term. Here are two examples of how you might do that.</div> <div class="para logical" id="sec_recurrence-3-7">
+<div class="para">
+<dfn class="terminology">Telescoping</dfn>  refers to the phenomenon when many terms in a large sum cancel out—so the sum “telescopes.” For example:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(2 - 1) + (3 - 2) + (4 - 3) + \cdots + (100 - 99) + (101 - 100) = -1 + 101
+\end{equation*}
+</div>
+<div class="para">because every third term looks like: <span class="process-math">\(2 + -2 = 0\text{,}\)</span> and then <span class="process-math">\(3 + -3 = 0\)</span> and so on.</div>
+</div> <div class="para" id="sec_recurrence-3-8">We can use this behavior to solve recurrence relations. Here is an example.</div> <article class="example example-like" id="sec_recurrence-3-9"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_recurrence-3-9-1-1">Solve the recurrence relation <span class="process-math">\(a_n = a_{n-1} + n\)</span> with initial term <span class="process-math">\(a_0 = 4\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_recurrence-3-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec_recurrence-3-9-2-1">To get a feel for the recurrence relation, write out the first few terms of the sequence: <span class="process-math">\(4, 5, 7, 10, 14, 19, \ldots\text{.}\)</span> Look at the difference between terms. <span class="process-math">\(a_1 - a_0 = 1\)</span> and <span class="process-math">\(a_2 - a_1 = 2\)</span> and so on. The key thing here is that the difference between terms is <span class="process-math">\(n\text{.}\)</span> We can write this explicitly: <span class="process-math">\(a_n - a_{n-1} = n\text{.}\)</span> Of course, we could have arrived at this conclusion directly from the recurrence relation by subtracting <span class="process-math">\(a_{n-1}\)</span> from both sides.</div> <div class="para logical" id="sec_recurrence-3-9-2-2">
+<div class="para">Now use this equation over and over again, changing <span class="process-math">\(n\)</span> each time:</div>
+<div class="displaymath process-math" id="sec_recurrence-3-9-2-2-2">
+\begin{align*}
+a_1 - a_0 \amp = 1\\
+a_2 - a_1 \amp = 2\\
+a_3 - a_2 \amp = 3\\
+\vdots \quad \amp \quad \vdots\\
+a_n - a_{n-1} \amp = n\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-9-2-3">
+<div class="para">Add all these equations together. On the right-hand side, we get the sum <span class="process-math">\(1 + 2 + 3 + \cdots + n\text{.}\)</span> We already know this can be simplified to <span class="process-math">\(\frac{n(n+1)}{2}\text{.}\)</span> What happens on the left-hand side? We get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a_1 - a_0) + (a_2 - a_1) + (a_3 - a_2) + \cdots (a_{n-1} - a_{n-2})+ (a_n - a_{n-1})\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-9-2-4">
+<div class="para">This sum telescopes. We are left with only the <span class="process-math">\(-a_0\)</span> from the first equation and the <span class="process-math">\(a_n\)</span> from the last equation. Putting this all together we have <span class="process-math">\(-a_0 + a_n = \frac{n(n+1)}{2}\)</span> or <span class="process-math">\(a_n = \frac{n(n+1)}{2} + a_0\text{.}\)</span> But we know that <span class="process-math">\(a_0 = 4\text{.}\)</span> So the solution to the recurrence relation, subject to the initial condition is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = \frac{n(n+1)}{2} + 4\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="sec_recurrence-3-9-2-5">(Now that we know that, we should notice that the sequence is the result of adding 4 to each of the triangular numbers.) </div>
+</div></details></div></article> <div class="para" id="sec_recurrence-3-10">The above example shows a way to solve recurrence relations of the form <span class="process-math">\(a_n = a_{n-1} + f(n)\)</span> where <span class="process-math">\(\sum_{k = 1}^n f(k)\)</span> has a known closed formula. If you rewrite the recurrence relation as <span class="process-math">\(a_n - a_{n-1} = f(n)\text{,}\)</span> and then add up all the different equations with <span class="process-math">\(n\)</span> ranging between 1 and <span class="process-math">\(n\text{,}\)</span> the left-hand side will always give you <span class="process-math">\(a_n - a_0\text{.}\)</span> The right-hand side will be <span class="process-math">\(\sum_{k = 1}^n f(k)\text{,}\)</span> which is why we need to know the closed formula for that sum.</div> <div class="para" id="sec_recurrence-3-11">However, telescoping will not help us with a recursion such as <span class="process-math">\(a_n = 3a_{n-1} + 2\)</span> since the left-hand side will not telescope. You will have <span class="process-math">\(-3a_{n-1}\)</span>’s but only one <span class="process-math">\(a_{n-1}\text{.}\)</span> However, we can still be clever if we use <dfn class="terminology">iteration</dfn>.</div> <div class="para" id="sec_recurrence-3-12">We have already seen an example of iteration when we found the closed formula for arithmetic and geometric sequences. The idea is, we <em class="emphasis">iterate</em>  the process of finding the next term, starting with the known initial condition, up until we have <span class="process-math">\(a_n\text{.}\)</span> Then we simplify. In the arithmetic sequence example, we simplified by multiplying <span class="process-math">\(d\)</span> by the number of times we add it to <span class="process-math">\(a\)</span> when we get to <span class="process-math">\(a_n\text{,}\)</span> to get from <span class="process-math">\(a_n = a + d + d + d + \cdots + d\)</span> to <span class="process-math">\(a_n = a + dn\text{.}\)</span>
+</div> <div class="para" id="sec_recurrence-3-13">To see how this works, let’s go through the same example we used for telescoping, but this time use iteration.</div> <article class="example example-like" id="sec_recurrence-3-14"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_recurrence-3-14-1-1">Use iteration to solve the recurrence relation <span class="process-math">\(a_n = a_{n-1} + n\)</span> with <span class="process-math">\(a_0 = 4\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_recurrence-3-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_recurrence-3-14-2-1">
+<div class="para">Again, start by writing down the recurrence relation when <span class="process-math">\(n = 1\text{.}\)</span> This time, don’t subtract the <span class="process-math">\(a_{n-1}\)</span> terms to the other side:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_1 = a_0 + 1\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-14-2-2">
+<div class="para">Now <span class="process-math">\(a_2 = a_1 + 2\text{,}\)</span> but we know what <span class="process-math">\(a_1\)</span> is. By substitution, we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_2 = (a_0 + 1) + 2\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-14-2-3">
+<div class="para">Now go to <span class="process-math">\(a_3 = a_2 + 3\text{,}\)</span> using our known value of <span class="process-math">\(a_2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_3 = ((a_0 + 1) + 2) + 3\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-14-2-4">
+<div class="para">We notice a pattern. Each time, we take the previous term and add the current index. So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = ((((a_0 + 1) +2)+3)+\cdots + n-1) + n\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-14-2-5">
+<div class="para">Regrouping terms, we notice that <span class="process-math">\(a_n\)</span> is just <span class="process-math">\(a_0\)</span> plus the sum of the integers from <span class="process-math">\(1\)</span> to <span class="process-math">\(n\text{.}\)</span> So, since <span class="process-math">\(a_0 = 4\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = 4 + \frac{n(n+1)}{2}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article> <div class="para" id="sec_recurrence-3-15">Of course in this case we still needed to know formula for the sum of <span class="process-math">\(1,\ldots,n\text{.}\)</span> Let’s try iteration with a sequence for which telescoping doesn’t work.</div> <article class="example example-like" id="sec_recurrence-3-16"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec_recurrence-3-16-1-1">Solve the recurrence relation <span class="process-math">\(a_n = 3a_{n-1} + 2\)</span> subject to <span class="process-math">\(a_0 = 1\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_recurrence-3-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_recurrence-3-16-2-1">
+<div class="para">Again, we iterate the recurrence relation, building up to the index <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="sec_recurrence-3-16-2-1-2">
+\begin{align*}
+a_1 \amp = 3a_0 + 2\\
+a_2 \amp = 3(a_1) + 2 = 3(3a_0 + 2) + 2\\
+a_3 \amp = 3[a_2] + 2 = 3[3(3a_0 + 2) + 2] + 2\\
+\vdots \amp \qquad \vdots \qquad \qquad \vdots\\
+a_n \amp = 3(a_{n-1}) + 2 = 3(3(3(3\cdots(3a_0 + 2) + 2) + 2)\cdots + 2)+ 2\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-16-2-2">
+<div class="para">It is difficult to see what is happening here because we have to distribute all those 3’s. Let’s try again, this time simplifying a bit as we go.</div>
+<div class="displaymath process-math" id="sec_recurrence-3-16-2-2-1">
+\begin{align*}
+a_1 \amp = 3a_0 + 2\\
+a_2 \amp = 3(a_1) + 2 = 3(3a_0 + 2) + 2 = 3^2a_0 + 2\cdot 3 + 2\\
+a_3 \amp = 3[a_2] + 2 = 3[3^2a_0 + 2\cdot 3 + 2] + 2 = 3^3 a_0 + 2 \cdot 3^2 + 2 \cdot 3 + 2\\
+\vdots \amp \qquad\quad \vdots \hspace{2in} \vdots\\
+a_n \amp = 3(a_{n-1}) + 2 = 3(3^{n-1}a_0 + 2 \cdot 3^{n-2} + \cdots +2)+ 2\\
+\amp \qquad \qquad = 3^n a_0 + 2\cdot 3^{n-1} + 2 \cdot 3^{n-2} + \cdots + 2\cdot 3 + 2\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-3-16-2-3">
+<div class="para">Now we simplify. <span class="process-math">\(a_0 = 1\text{,}\)</span> so we have <span class="process-math">\(3^n + \langle\text{stuff}\rangle\text{.}\)</span> Note that all the other terms have a 2 in them. In fact, we have a geometric sum with first term <span class="process-math">\(2\)</span> and common ratio <span class="process-math">\(3\text{.}\)</span> We have seen how to simplify <span class="process-math">\(2 + 2\cdot 3 + 2 \cdot 3^2 + \cdots + 2\cdot 3^{n-1}\text{.}\)</span> We get <span class="process-math">\(\frac{2-2\cdot 3^n}{-2}\)</span> which simplifies to <span class="process-math">\(3^n - 1\text{.}\)</span> Putting this together with the first <span class="process-math">\(3^n\)</span> term gives our closed formula:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = 2\cdot 3^n - 1\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article> <div class="para" id="sec_recurrence-3-17"> Iteration can be messy, but when the recurrence relation only refers to one previous term (and maybe some function of <span class="process-math">\(n\)</span>) it can work well. However, trying to iterate a recurrence relation such as <span class="process-math">\(a_n = 2 a_{n-1} + 3 a_{n-2}\)</span> will be way too complicated. We would need to keep track of two sets of previous terms, each of which were expressed by two previous terms, and so on. The length of the formula would grow exponentially (double each time, in fact). Luckily there happens to be a method for solving recurrence relations which works very well on relations like this.</div></section><section class="subsection" id="sec_recurrence-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">The Characteristic Root Technique</span>
+</h3>
+<div class="para" id="sec_recurrence-4-3">Suppose we want to solve a recurrence relation expressed as a combination of the two previous terms, such as <span class="process-math">\(a_n = a_{n-1} + 6a_{n-2}\text{.}\)</span> In other words, we want to find a function of <span class="process-math">\(n\)</span> which satisfies <span class="process-math">\(a_n - a_{n-1} - 6a_{n-2} = 0\text{.}\)</span> Now iteration is too complicated, but think just for a second what would happen if we <em class="emphasis">did</em> iterate. In each step, we would, among other things, multiply a previous iteration by 6. So our closed formula would include <span class="process-math">\(6\)</span> multiplied some number of times. Thus it is reasonable to guess the solution will contain parts that look geometric. Perhaps the solution will take the form <span class="process-math">\(r^n\)</span> for some constant <span class="process-math">\(r\text{.}\)</span>
+</div>
+<div class="para logical" id="sec_recurrence-4-4">
+<div class="para">The nice thing is, we know how to check whether a formula is actually a solution to a recurrence relation: plug it in. What happens if we plug in <span class="process-math">\(r^n\)</span> into the recursion above? We get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r^n - r^{n-1} - 6r^{n-2} = 0\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_recurrence-4-5">
+<div class="para">Now solve for <span class="process-math">\(r\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r^{n-2}(r^2 - r - 6) = 0\text{,}
+\end{equation*}
+</div>
+<div class="para">so by factoring, <span class="process-math">\(r = -2\)</span> or <span class="process-math">\(r = 3\)</span> (or <span class="process-math">\(r = 0\text{,}\)</span> although this does not help us). This tells us that <span class="process-math">\(a_n = (-2)^n\)</span> is a solution to the recurrence relation, as is <span class="process-math">\(a_n = 3^n\text{.}\)</span> Which one is correct? They both are, unless we specify initial conditions. Notice we could also have <span class="process-math">\(a_n = (-2)^n + 3^n\text{.}\)</span> Or <span class="process-math">\(a_n = 7(-2)^n + 4\cdot 3^n\text{.}\)</span> In fact, for any <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(a_n = a(-2)^n + b 3^n\)</span> is a solution (try plugging this into the recurrence relation). To find the values of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> use the initial conditions.</div>
+</div>
+<div class="para" id="sec_recurrence-4-6">This points us in the direction of a more general technique for solving recurrence relations. Notice we will always be able to factor out the <span class="process-math">\(r^{n-2}\)</span> as we did above. So we really only care about the other part. We call this other part the <dfn class="terminology">characteristic equation</dfn>  for the recurrence relation. We are interested in finding the roots of the characteristic equation, which are called (surprise) the <dfn class="terminology">characteristic roots</dfn>.</div>
+<article class="assemblage assemblage-like" id="sec_recurrence-4-7"><h4 class="heading"><span class="title">Characteristic Roots.</span></h4>
+<div class="para logical" id="sec_recurrence-4-7-2">
+<div class="para"> Given a recurrence relation <span class="process-math">\(a_n + \alpha a_{n-1} + \beta a_{n-2} = 0\text{,}\)</span> the <dfn class="terminology">characteristic polynomial</dfn> is </div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^2 + \alpha x + \beta
+\end{equation*}
+</div>
+<div class="para">giving the <dfn class="terminology">characteristic equation</dfn>: </div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^2 + \alpha x + \beta = 0\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_recurrence-4-7-3">
+<div class="para"> If <span class="process-math">\(r_1\)</span> and <span class="process-math">\(r_2\)</span> are two distinct roots of the characteristic polynomial (i.e., solutions to the characteristic equation), then the solution to the recurrence relation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = ar_1^n + br_2^n\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants determined by the initial conditions.</div>
+</div></article><article class="example example-like" id="sec_recurrence-4-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec_recurrence-4-8-1-1">Solve the recurrence relation <span class="process-math">\(a_n = 7a_{n-1} - 10 a_{n-2}\)</span> with <span class="process-math">\(a_0 = 2\)</span> and <span class="process-math">\(a_1 = 3\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_recurrence-4-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_recurrence-4-8-2-1">
+<div class="para">Rewrite the recurrence relation <span class="process-math">\(a_n - 7a_{n-1} + 10a_{n-2} = 0\text{.}\)</span> Now form the characteristic equation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^2 - 7x + 10 = 0
+\end{equation*}
+</div>
+<div class="para">and solve for <span class="process-math">\(x\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x - 2) (x - 5) = 0
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(x = 2\)</span> and <span class="process-math">\(x = 5\)</span> are the characteristic roots. We therefore know that the solution to the recurrence relation will have the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = a 2^n + b 5^n\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-4-8-2-2">
+<div class="para">To find <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> plug in <span class="process-math">\(n =0\)</span> and <span class="process-math">\(n = 1\)</span> to get a system of two equations with two unknowns:</div>
+<div class="displaymath process-math" id="sec_recurrence-4-8-2-2-5">
+\begin{align*}
+2 \amp = a 2^0 + b 5^0 = a + b\\
+3 \amp = a 2^1 + b 5^1 = 2a + 5b
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec_recurrence-4-8-2-3">
+<div class="para">Solving this system gives <span class="process-math">\(a = \frac{7}{3}\)</span> and <span class="process-math">\(b = -\frac{1}{3}\)</span> so the solution to the recurrence relation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = \frac{7}{3}2^n - \frac{1}{3} 5^n\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><div class="para" id="sec_recurrence-4-9">Perhaps the most famous recurrence relation is <span class="process-math">\(F_n = F_{n-1} + F_{n-2}\text{,}\)</span> which together with the initial conditions <span class="process-math">\(F_0 = 0\)</span> and <span class="process-math">\(F_1= 1\)</span> defines the Fibonacci sequence.  But notice that this is precisely the type of recurrence relation on which we can use the characteristic root technique. When you do, the only thing that changes is that the characteristic equation does not factor, so you need to use the quadratic formula to find the characteristic roots. In fact, doing so gives the third most famous irrational number, <span class="process-math">\(\varphi\text{,}\)</span> the <dfn class="terminology">golden ratio</dfn>. </div>
+<div class="para" id="sec_recurrence-4-10">Before leaving the characteristic root technique, we should think about what might happen when you solve the characteristic equation. We have an example above in which the characteristic polynomial has two distinct roots. These roots can be integers, or perhaps irrational numbers (requiring the quadratic formula to find them). In these cases, we know what the solution to the recurrence relation looks like.</div>
+<div class="para" id="sec_recurrence-4-11">However, it is possible for the characteristic polynomial to have only one root. This can happen if the characteristic polynomial factors as <span class="process-math">\((x - r)^2\text{.}\)</span> It is still the case that <span class="process-math">\(r^n\)</span> would be a solution to the recurrence relation, but we won’t be able to find solutions for all initial conditions using the general form <span class="process-math">\(a_n = ar_1^n + br_2^n\text{,}\)</span> since we can’t distinguish between <span class="process-math">\(r_1^n\)</span> and <span class="process-math">\(r_2^n\text{.}\)</span> We are in luck though:</div>
+<article class="assemblage assemblage-like" id="asmb-char-rep-roots"><h4 class="heading"><span class="title">Characteristic Root Technique for Repeated Roots.</span></h4>
+<div class="para logical" id="asmb-char-rep-roots-4">
+<div class="para">Suppose the recurrence relation <span class="process-math">\(a_n = \alpha a_{n-1} + \beta a_{n-2}\)</span> has a characteristic polynomial with only one root <span class="process-math">\(r\text{.}\)</span> Then the solution to the recurrence relation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = ar^n + bnr^n
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants determined by the initial conditions.</div>
+</div></article><div class="para" id="sec_recurrence-4-13">Notice the extra <span class="process-math">\(n\)</span> in <span class="process-math">\(bnr^n\text{.}\)</span> This allows us to solve for the constants <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> from the initial conditions.</div>
+<article class="example example-like" id="sec_recurrence-4-14"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec_recurrence-4-14-1-1">Solve the recurrence relation <span class="process-math">\(a_n = 6a_{n-1} - 9a_{n-2}\)</span> with initial conditions <span class="process-math">\(a_0 = 1\)</span> and <span class="process-math">\(a_1 = 4\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec_recurrence-4-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec_recurrence-4-14-2-1">
+<div class="para">The characteristic polynomial is <span class="process-math">\(x^2 - 6x + 9\text{.}\)</span> We solve the characteristic equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^2 - 6x + 9 = 0
+\end{equation*}
+</div>
+<div class="para">by factoring:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x - 3)^2 = 0
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(x =3\)</span> is the only characteristic root. Therefore we know that the solution to the recurrence relation has the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = a 3^n + bn3^n
+\end{equation*}
+</div>
+<div class="para">for some constants <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> Now use the initial conditions:</div>
+<div class="displaymath process-math" id="sec_recurrence-4-14-2-1-8">
+\begin{align*}
+a_0 = 1 \amp = a 3^0 + b\cdot 0 \cdot 3^0 = a\\
+a_1 = 4 \amp = a\cdot 3 + b\cdot 1 \cdot3 = 3a + 3b\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(a = 1\text{,}\)</span> we find that <span class="process-math">\(b = \frac{1}{3}\text{.}\)</span> Therefore the solution to the recurrence relation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = 3^n + \frac{1}{3}n3^n\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><div class="para" id="sec_recurrence-4-15">Although we will not consider examples more complicated than these, this characteristic root technique can be applied to much more complicated recurrence relations.  For example, <span class="process-math">\(a_n = 2a_{n-1} + a_{n-2} - 3a_{n-3}\)</span> has characteristic polynomial <span class="process-math">\(x^3 - 2 x^2 - x + 3\text{.}\)</span> Assuming you see how to factor such a degree 3 (or more) polynomial you can easily find the characteristic roots and as such solve the recurrence relation (the solution would look like <span class="process-math">\(a_n = ar_1^n + br_2^n + cr_3^n\)</span> if there were 3 distinct roots).  It is also possible that the characteristics roots are complex numbers. </div>
+<div class="para" id="sec_recurrence-4-16">However, the characteristic root technique is only useful for solving recurrence relations in a particular form: <span class="process-math">\(a_n\)</span> is given as a linear combination of some number of previous terms.  These recurrence relations are called <dfn class="terminology">linear homogeneous recurrence relations with constant coefficients</dfn>.  The “homogeneous” refers to the fact that there is no additional term in the recurrence relation other than a multiple of <span class="process-math">\(a_j\)</span> terms.  For example, <span class="process-math">\(a_n = 2a_{n-1} + 1\)</span> is <em class="emphasis">non-homogeneous</em> because of the additional constant 1.  There are general methods of solving such things, but we will not consider them here, other than through the use of telescoping or iteration described above.</div></section><section class="exercises" id="exercises-sec-recurrence"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercises-sec-recurrence-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="exercises-sec-recurrence-1-1-1">Find the next two terms in <span class="process-math">\((a_n)_{n\ge 0}\)</span> beginning <span class="process-math">\(3, 5, 11, 21, 43, 85\ldots\text{.}\)</span> Then give a recursive definition for the sequence. Finally, use the characteristic root technique to find a closed formula for the sequence.</div>
+<div class="solutions"><details id="exercises-sec-recurrence-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises-sec-recurrence-1-2-1">
+<div class="para">171 and 341. <span class="process-math">\(a_n = a_{n-1} + 2a_{n-2}\)</span> with <span class="process-math">\(a_0 = 3\)</span> and <span class="process-math">\(a_1 = 5\text{.}\)</span> Closed formula: <span class="process-math">\(a_n = \frac{8}{3}2^n + \frac{1}{3}(-1)^n\text{.}\)</span> To find this solve the characteristic equation, <span class="process-math">\(x^2 - x - 2 = 0\text{,}\)</span> to get characteristic roots <span class="process-math">\(x = 2\)</span> and <span class="process-math">\(x=-1\text{.}\)</span> Then solve the system</div>
+<div class="displaymath process-math" id="exercises-sec-recurrence-1-2-1-8">
+\begin{align*}
+3 \amp = a + b\\
+5 \amp = 2a - b
+\end{align*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-sec-recurrence-2-1-1">
+<div class="para">Consider the sequences <span class="process-math">\(2, 5, 12, 29, 70, 169, 408,\ldots\)</span> (with <span class="process-math">\(a_0 = 2\)</span>).</div>
+<ol class="lower-alpha" id="exercises-sec-recurrence-2-1-1-3">
+<li id="exercises-sec-recurrence-2-1-1-3-1"><div class="para" id="exercises-sec-recurrence-2-1-1-3-1-1">Describe the rate of growth of this sequence.</div></li>
+<li id="exercises-sec-recurrence-2-1-1-3-2"><div class="para" id="exercises-sec-recurrence-2-1-1-3-2-1">Find a recursive definition for the sequence.</div></li>
+<li id="exercises-sec-recurrence-2-1-1-3-3"><div class="para" id="exercises-sec-recurrence-2-1-1-3-3-1">Find a closed formula for the sequence.</div></li>
+<li id="exercises-sec-recurrence-2-1-1-3-4"><div class="para" id="exercises-sec-recurrence-2-1-1-3-4-1">If you look at the sequence of differences between terms, and then the sequence of second differences, the sequence of third differences, and so on, will you ever get a constant sequence? Explain how you know.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="ww-rec-tel-itr"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div id="webwork-121" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="121" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_4-Solving_Recurrence_Relations/2_4_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-121')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-121-1-1-1">Solve the recurrence relation <span class="process-math">\(a_n = a_{n-1} + 2^n\)</span> with <span class="process-math">\(a_0 = 2\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-121-1-1-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+<div class="solutions">
+<details id="extracted-webwork-121-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="extracted-webwork-121-1-2-1">Use telescoping or iteration.</div></div></details><details id="extracted-webwork-121-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-121-1-4-1">
+<span class="process-math">\(a_n = 0 + 2^{n+1}\text{.}\)</span>  We should use telescoping or iteration here.  For example, telescoping gives</div>  <div class="para" id="extracted-webwork-121-1-4-2"><span class="process-math">\(\displaystyle{\newcommand{\amp}{\amp }\begin{aligned}
+a_1 - a_0 \amp = 2^1\\
+a_2 - a_1 \amp = 2^2\\
+a_3 - a_2 \amp = 2^3\\
+\vdots\amp \vdots \\
+a_n - a_{n-1} \amp = 2^n
+\end{aligned}}\)</span></div> <div class="para" id="extracted-webwork-121-1-4-3">which sums to <span class="process-math">\(a_n - a_0 = 2^{n+1} - 2\)</span> (using the multiply-shift-subtract technique for the geometric series on the right-hand side).  Substituting <span class="process-math">\(a_0 = 2\)</span> and solving for <span class="process-math">\(a_n\)</span> completes the solution.</div>
+</div></details>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="exercises-sec-recurrence-4-1-1">Show that <span class="process-math">\(4^n\)</span> is a solution to the recurrence relation <span class="process-math">\(a_n = 3a_{n-1} + 4a_{n-2}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises-sec-recurrence-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises-sec-recurrence-4-2-1">We claim <span class="process-math">\(a_n = 4^n\)</span> works. Plug it in: <span class="process-math">\(4^n = 3(4^{n-1}) + 4(4^{n-2})\text{.}\)</span> This works - just simplify the right-hand side.</div></div></details></div></article><article class="exercise exercise-like" id="ww-rec-croots1"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div id="webwork-122" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="122" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_4-Solving_Recurrence_Relations/2_4_5.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-122')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-122-1-1-1">Find the solution to the recurrence relation <span class="process-math">\(a_n = -a_{n-1} + 6a_{n-2}\)</span> with initial terms <span class="process-math">\(a_0 = {2}\)</span> and <span class="process-math">\(a_1 = {-1}\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-122-1-1-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-122-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-122-1-3-1">By the Characteristic Root Technique. <span class="process-math">\(a_n = {2^{n}+\left(-3\right)^{n}}\text{.}\)</span>
+</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-rec-croots-diff-inits"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div id="webwork-123" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="123" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_4-Solving_Recurrence_Relations/2_4_6.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-123')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-123-1-1-1">Find the solution to the recurrence relation <span class="process-math">\(a_n = 5a_{n-1} + 14a_{n-2}\)</span> with initial terms <span class="process-math">\(a_0 = {2}\)</span> and <span class="process-math">\(a_1 = {5}\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-123-1-1-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="27-character blank" style="width: 12.2727272727273em;"></span>
+</div> <div class="para" id="extracted-webwork-123-1-1-3">Find the solution to the recurrence relation <span class="process-math">\(b_n = 5b_{n-1} + 14b_{n-2}\)</span> with initial terms <span class="process-math">\(b_0 = 2\)</span> and <span class="process-math">\(b_1 = {11}\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-123-1-1-4">
+<span class="process-math">\(b_n =\)</span> <span class="fillin underline" role="img" aria-label="26-character blank" style="width: 11.8181818181818em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-123-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-123-1-4-1">The characteristic roots for both sequences are -2 and 7 (since the two sequence have the same recurrence relation, they have the same characteristic roots).  Solving the for coefficients in each case gives the closed formulas. We have <span class="process-math">\(a_n = {\left(-2\right)^{n}+7^{n}}\)</span> and <span class="process-math">\(b_n = {\left({\frac{1}{3}}\right)\!\left(-2\right)^{n}+\left({\frac{5}{3}}\right)\cdot 7^{n}}\text{.}\)</span>
+</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-rec-croots2"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div id="webwork-124" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="124" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/2-Sequences/2_4-Solving_Recurrence_Relations/2_4_7.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-124')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-124-1-1-1">Find the solution to the recurrence relation <span class="process-math">\(a_n = 5a_{n-1} + 6a_{n-2}\)</span> with initial terms <span class="process-math">\(a_0 = 3\)</span> and <span class="process-math">\(a_1 = 13\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-124-1-1-2">
+<span class="process-math">\(a_n =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+<div class="solutions"><details id="extracted-webwork-124-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-124-1-3-1">By the Characteristic Root Technique. <span class="process-math">\(a_n = {\left({\frac{5}{7}}\right)\!\left(-1\right)^{n}+\left({\frac{16}{7}}\right)\cdot 6^{n}}\text{.}\)</span>
+</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="exercises-sec-recurrence-8-1-1">Suppose that <span class="process-math">\(r^n\)</span> and <span class="process-math">\(q^n\)</span> are both solutions to a recurrence relation of the form <span class="process-math">\(a_n = \alpha a_{n-1} + \beta a_{n-2}\text{.}\)</span> Prove that <span class="process-math">\(c\cdot r^n + d \cdot q^n\)</span> is also a solution to the recurrence relation, for any constants <span class="process-math">\(c, d\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-sec-recurrence-9-1-1">
+<div class="para">Think back to the magical candy machine at your neighborhood grocery store. Suppose that the first time a quarter is put into the machine 1 Skittle comes out. The second time, 4 Skittles, the third time 16 Skittles, the fourth time 64 Skittles, etc.</div>
+<ol class="lower-alpha" id="exercises-sec-recurrence-9-1-1-1">
+<li id="exercises-sec-recurrence-9-1-1-1-1"><div class="para" id="exercises-sec-recurrence-9-1-1-1-1-1">Find both a recursive and closed formula for how many Skittles the <em class="emphasis">n</em>th customer gets.</div></li>
+<li id="exercises-sec-recurrence-9-1-1-1-2"><div class="para" id="exercises-sec-recurrence-9-1-1-1-2-1">Check your solution for the closed formula by solving the recurrence relation using the Characteristic Root technique.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-sec-recurrence-10-1-1">
+<div class="para">Let <span class="process-math">\(a_n\)</span> be the number of <span class="process-math">\(1 \times n\)</span> tile designs you can make using <span class="process-math">\(1 \times 1\)</span> squares available in 4 colors and <span class="process-math">\(1 \times 2\)</span> dominoes available in 5 colors.</div>
+<ol class="lower-alpha" id="exercises-sec-recurrence-10-1-1-5">
+<li id="exercises-sec-recurrence-10-1-1-5-1"><div class="para" id="exercises-sec-recurrence-10-1-1-5-1-1">First, find a recurrence relation to describe the problem. Explain why the recurrence relation is correct (in the context of the problem).</div></li>
+<li id="exercises-sec-recurrence-10-1-1-5-2"><div class="para" id="exercises-sec-recurrence-10-1-1-5-2-1">Write out the first 6 terms of the sequence <span class="process-math">\(a_1, a_2, \ldots\text{.}\)</span>
+</div></li>
+<li id="exercises-sec-recurrence-10-1-1-5-3"><div class="para" id="exercises-sec-recurrence-10-1-1-5-3-1">Solve the recurrence relation. That is, find a closed formula for <span class="process-math">\(a_n\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises-sec-recurrence-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises-sec-recurrence-10-2-1"><ol class="lower-alpha" id="exercises-sec-recurrence-10-2-1-1">
+<li id="exercises-sec-recurrence-10-2-1-1-1"><div class="para" id="exercises-sec-recurrence-10-2-1-1-1-1"><span class="process-math">\(a_n = 4a_{n-1} + 5a_{n-2}\text{.}\)</span></div></li>
+<li id="exercises-sec-recurrence-10-2-1-1-2"><div class="para" id="exercises-sec-recurrence-10-2-1-1-2-1">4, 21, 104, 521, 2604, 13021</div></li>
+<li id="exercises-sec-recurrence-10-2-1-1-3"><div class="para" id="exercises-sec-recurrence-10-2-1-1-3-1"><span class="process-math">\(a_n = \frac{5}{6} 5^n + \frac{1}{6}(-1)^n
+\text{.}\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-sec-recurrence-11-1-1">
+<div class="para">You have access to <span class="process-math">\(1 \times 1\)</span> tiles which come in 2 different colors and <span class="process-math">\(1\times 2\)</span> tiles which come in 3 different colors. We want to figure out how many different <span class="process-math">\(1 \times n\)</span> path designs we can make out of these tiles.</div>
+<ol class="lower-alpha" id="exercises-sec-recurrence-11-1-1-4">
+<li id="exercises-sec-recurrence-11-1-1-4-1"><div class="para" id="exercises-sec-recurrence-11-1-1-4-1-1">Find a recursive definition for the sequence <span class="process-math">\(a_n\)</span> of paths of length <span class="process-math">\(n\text{.}\)</span>
+</div></li>
+<li id="exercises-sec-recurrence-11-1-1-4-2"><div class="para" id="exercises-sec-recurrence-11-1-1-4-2-1">Solve the recurrence relation using the Characteristic Root technique.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-sec-recurrence-12-1-1">
+<div class="para">Solve the recurrence relation <span class="process-math">\(a_n = 2a_{n-1} - a_{n-2}\text{.}\)</span>
+</div>
+<ol class="lower-alpha" id="exercises-sec-recurrence-12-1-1-2">
+<li id="exercises-sec-recurrence-12-1-1-2-1"><div class="para" id="exercises-sec-recurrence-12-1-1-2-1-1">What is the solution if the initial terms are <span class="process-math">\(a_0 = 1\)</span> and <span class="process-math">\(a_1 = 2\text{?}\)</span>
+</div></li>
+<li id="exercises-sec-recurrence-12-1-1-2-2"><div class="para" id="exercises-sec-recurrence-12-1-1-2-2-1">What do the initial terms need to be in order for <span class="process-math">\(a_9 = 30\text{?}\)</span>
+</div></li>
+<li id="exercises-sec-recurrence-12-1-1-2-3"><div class="para" id="exercises-sec-recurrence-12-1-1-2-3-1">For which <span class="process-math">\(x\)</span> are there initial terms which make <span class="process-math">\(a_9 = x\text{?}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="exercises-sec-recurrence-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exercises-sec-recurrence-12-2-1">
+<div class="para">We have characteristic polynomial <span class="process-math">\(x^2 - 2x + 1\text{,}\)</span> which has <span class="process-math">\(x = 1\)</span> as the only repeated root. Thus using the characteristic root technique for repeated roots, the general solution is <span class="process-math">\(a_n = a + bn\)</span> where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> depend on the initial conditions.</div>
+<ol class="lower-alpha" id="exercises-sec-recurrence-12-2-1-6">
+<li id="exercises-sec-recurrence-12-2-1-6-1"><div class="para" id="p-derived-exercises-sec-recurrence-12-2-1-6-1"><span class="process-math">\(a_n = 1 + n\text{.}\)</span></div></li>
+<li id="exercises-sec-recurrence-12-2-1-6-2"><div class="para" id="exercises-sec-recurrence-12-2-1-6-2-1">For example, we could have <span class="process-math">\(a_0 = 21\)</span> and <span class="process-math">\(a_1 = 22\text{.}\)</span>
+</div></li>
+<li id="exercises-sec-recurrence-12-2-1-6-3"><div class="para" id="exercises-sec-recurrence-12-2-1-6-3-1">For every <span class="process-math">\(x\text{.}\)</span> Take <span class="process-math">\(a_0 = x-9\)</span> and <span class="process-math">\(a_1 = x-8\text{.}\)</span>
+</div></li>
+</ol>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises-sec-recurrence-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-sec-recurrence-13-1-1">
+<div class="para">Consider the recurrence relation <span class="process-math">\(a_n = 4a_{n-1} - 4a_{n-2}\text{.}\)</span>
+</div>
+<ol class="lower-alpha" id="exercises-sec-recurrence-13-1-1-2">
+<li id="exercises-sec-recurrence-13-1-1-2-1"><div class="para" id="exercises-sec-recurrence-13-1-1-2-1-1">Find the general solution to the recurrence relation (beware the repeated root).</div></li>
+<li id="exercises-sec-recurrence-13-1-1-2-2"><div class="para" id="exercises-sec-recurrence-13-1-1-2-2-1">Find the solution when <span class="process-math">\(a_0 = 1\)</span> and <span class="process-math">\(a_1 = 2\text{.}\)</span>
+</div></li>
+<li id="exercises-sec-recurrence-13-1-1-2-3"><div class="para" id="exercises-sec-recurrence-13-1-1-2-3-1">Find the solution when <span class="process-math">\(a_0 = 1\)</span> and <span class="process-math">\(a_1 = 8\text{.}\)</span>
+</div></li>
+</ol>
+</div></article></section></section></div>
+

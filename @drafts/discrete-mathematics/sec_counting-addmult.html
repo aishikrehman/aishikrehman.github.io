@@ -1,0 +1,1460 @@
+---
+title: Additive and Multiplicative Principles
+---
+
+<section class="introduction" id="sec_counting-addmult-6">
+    <article class="project-like" id="sec_counting-addmult-6-1">
+        <h6 class="heading">
+            <span class="type">Investigate!</span>
+        </h6>
+        <div class="para logical" id="sec_counting-addmult-6-1-1">
+            <ol class="decimal" id="sec_counting-addmult-6-1-1-1">
+                <li id="sec_counting-addmult-6-1-1-1-1">
+                    <div class="para logical" id="sec_counting-addmult-6-1-1-1-1-1">
+                        <div class="para">A restaurant offers 8 appetizers and 14 entrées. How many choices do
+                            you have if:</div>
+                        <ol class="lower-alpha" id="sec_counting-addmult-6-1-1-1-1-1-1">
+                            <li id="sec_counting-addmult-6-1-1-1-1-1-1-1">
+                                <div class="para" id="p-derived-sec_counting-addmult-6-1-1-1-1-1-1-1">you will
+                                    eat one dish, either an appetizer or an entrée?</div>
+                            </li>
+                            <li id="sec_counting-addmult-6-1-1-1-1-1-1-2">
+                                <div class="para" id="p-derived-sec_counting-addmult-6-1-1-1-1-1-1-2">you are
+                                    extra hungry and want to eat both an appetizer and an entrée?</div>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li id="sec_counting-addmult-6-1-1-1-2">
+                    <div class="para" id="sec_counting-addmult-6-1-1-1-2-1">Think about the methods you used to
+                        solve question 1. Write down the rules for these methods.</div>
+                </li>
+                <li id="sec_counting-addmult-6-1-1-1-3">
+                    <div class="para logical" id="sec_counting-addmult-6-1-1-1-3-1">
+                        <div class="para">Do your rules work? A standard deck of playing cards has 26 red cards
+                            and 12 face cards.</div>
+                        <ol class="lower-alpha" id="sec_counting-addmult-6-1-1-1-3-1-1">
+                            <li id="sec_counting-addmult-6-1-1-1-3-1-1-1">
+                                <div class="para" id="p-derived-sec_counting-addmult-6-1-1-1-3-1-1-1">How many
+                                    ways can you select a card which is either red or a face card?</div>
+                            </li>
+                            <li id="sec_counting-addmult-6-1-1-1-3-1-1-2">
+                                <div class="para" id="p-derived-sec_counting-addmult-6-1-1-1-3-1-1-2">How many
+                                    ways can you select a card which is both red and a face card?</div>
+                            </li>
+                            <li id="sec_counting-addmult-6-1-1-1-3-1-1-3">
+                                <div class="para" id="p-derived-sec_counting-addmult-6-1-1-1-3-1-1-3">How many
+                                    ways can you select two cards so that the first one is red and the second
+                                    one is a face card?</div>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </article>
+    <div class="para" id="sec_counting-addmult-6-2">Consider this rather simple counting problem: at Red Dogs
+        and Donuts, there are 14 varieties of donuts, and 16 types of hot dogs. If you want either a donut or a
+        dog, how many options do you have? This isn’t too hard, just add 14 and 16. Will that always work? What
+        is important here?</div>
+    <article class="assemblage assemblage-like" id="sec_counting-addmult-6-3">
+        <h3 class="heading"><span class="title">Additive Principle.</span></h3>
+        <div class="para" id="sec_counting-addmult-6-3-3">The <dfn class="terminology">additive principle</dfn>
+            states that if event <span class="process-math">\(A\)</span> can occur in <span
+                class="process-math">\(m\)</span> ways, and event <span class="process-math">\(B\)</span> can
+            occur in <span class="process-math">\(n\)</span> <em class="emphasis">disjoint</em> ways, then the
+            event “<span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span>” can occur
+            in <span class="process-math">\(m + n\)</span> ways.</div>
+    </article>
+    <div class="para" id="sec_counting-addmult-6-4"> It is important that the events be <dfn
+            class="terminology">disjoint</dfn>: i.e., that there is no way for <span
+            class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> to both happen at the
+        same time. For example, a standard deck of 52 cards contains <span class="process-math">\(26\)</span>
+        red cards and <span class="process-math">\(12\)</span> face cards. However, the number of ways to select
+        a card which is either red or a face card is not <span class="process-math">\(26 + 12 =
+            38\text{.}\)</span> This is because there are 6 cards which are both red and face cards.</div>
+    <article class="example example-like" id="sec_counting-addmult-6-5">
+        <h3 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.1</span><span class="period">.</span>
+        </h3>
+        <div class="para" id="sec_counting-addmult-6-5-1-1"> How many two letter “words” start with either A or
+            B? (A <dfn class="terminology">word</dfn> is just a string of letters; it doesn’t have to be
+            English, or even pronounceable.)</div>
+        <div class="solutions">
+            <details id="sec_counting-addmult-6-5-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para" id="sec_counting-addmult-6-5-2-1">First, how many two letter words start
+                        with A? We just need to select the second letter, which can be accomplished in 26 ways.
+                        So there are 26 words starting with A. There are also 26 words that start with B. To
+                        select a word which starts with either A or B, we can pick the word from the first 26 or
+                        the second 26, for a total of 52 words.</div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <div class="para" id="sec_counting-addmult-6-6">The additive principle also works with more than two events.
+        Say, in addition to your 14 choices for donuts and 16 for dogs, you would also consider eating one of 15
+        waffles? How many choices do you have now? You would have <span class="process-math">\(14 + 16 + 15 =
+            45\)</span> options.</div>
+    <article class="example example-like" id="sec_counting-addmult-6-7">
+        <h3 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.2</span><span class="period">.</span>
+        </h3>
+        <div class="para" id="sec_counting-addmult-6-7-1-1">How many two letter words start with one of the 5
+            vowels?</div>
+        <div class="solutions">
+            <details id="sec_counting-addmult-6-7-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para" id="sec_counting-addmult-6-7-2-1">There are 26 two letter words starting
+                        with A, another 26 starting with E, and so on. We will have 5 groups of 26. So we add 26
+                        to itself 5 times. Of course it would be easier to just multiply <span
+                            class="process-math">\(5\cdot 26\text{.}\)</span> We are really using the additive
+                        principle again, just using multiplication as a shortcut.</div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <article class="example example-like" id="sec_counting-addmult-6-8">
+        <h3 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.3</span><span class="period">.</span>
+        </h3>
+        <div class="para" id="sec_counting-addmult-6-8-1-1">Suppose you are going for some fro-yo. You can pick
+            one of 6 yogurt choices, and one of 4 toppings. How many choices do you have?</div>
+        <div class="solutions">
+            <details id="sec_counting-addmult-6-8-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para" id="sec_counting-addmult-6-8-2-1">Break your choices up into disjoint
+                        events: <span class="process-math">\(A\)</span> are the choices with the first topping,
+                        <span class="process-math">\(B\)</span> the choices featuring the second topping, and so
+                        on. There are four events; each can occur in 6 ways (one for each yogurt flavor). The
+                        events are disjoint, so the total number of choices is <span class="process-math">\(6 +
+                            6 + 6 + 6 = 24\text{.}\)</span>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <div class="para" id="sec_counting-addmult-6-9">Note that in both of the previous examples, when using the
+        additive principle on a bunch of events all the same size, it is quicker to multiply. This really is the
+        same, and not just because <span class="process-math">\(6 + 6 + 6 + 6 = 4\cdot 6\text{.}\)</span> We can
+        first select the topping in 4 ways (that is, we first select which of the disjoint events we will take).
+        For each of those first 4 choices, we now have 6 choices of yogurt. We have:</div>
+    <article class="assemblage assemblage-like" id="sec_counting-addmult-6-10">
+        <h3 class="heading"><span class="title">Multiplicative Principle.</span></h3>
+        <div class="para" id="sec_counting-addmult-6-10-3">The <dfn class="terminology">multiplicative
+                principle</dfn> states that if event <span class="process-math">\(A\)</span> can occur in <span
+                class="process-math">\(m\)</span> ways, and each possibility for <span
+                class="process-math">\(A\)</span> allows for exactly <span class="process-math">\(n\)</span>
+            ways for event <span class="process-math">\(B\text{,}\)</span> then the event “<span
+                class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span>” can occur in
+            <span class="process-math">\(m \cdot n\)</span> ways.</div>
+    </article>
+    <div class="para" id="sec_counting-addmult-6-11">The multiplicative principle generalizes to more than two
+        events as well.</div>
+    <article class="example example-like" id="sec_counting-addmult-6-12">
+        <h3 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.4</span><span class="period">.</span>
+        </h3>
+        <div class="para" id="sec_counting-addmult-6-12-1-1">How many license plates can you make out of three
+            letters followed by three numerical digits?</div>
+        <div class="solutions">
+            <details id="sec_counting-addmult-6-12-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para" id="sec_counting-addmult-6-12-2-1">Here we have six events: the first
+                        letter, the second letter, the third letter, the first digit, the second digit, and the
+                        third digit. The first three events can each happen in 26 ways; the last three can each
+                        happen in 10 ways. So the total number of license plates will be <span
+                            class="process-math">\(26\cdot 26\cdot 26 \cdot 10 \cdot 10 \cdot
+                            10\text{,}\)</span> using the multiplicative principle.</div>
+                    <div class="para" id="sec_counting-addmult-6-12-2-2">Does this make sense? Think about how
+                        we would pick a license plate. How many choices we would have? First, we need to pick
+                        the first letter. There are 26 choices. Now for each of those, there are 26 choices for
+                        the second letter: 26 second letters with first letter A, 26 second letters with first
+                        letter B, and so on. We add 26 to itself 26 times. Or quicker: there are <span
+                            class="process-math">\(26 \cdot 26\)</span> choices for the first two letters.</div>
+                    <div class="para" id="sec_counting-addmult-6-12-2-3">Now for each choice of the first two
+                        letters, we have 26 choices for the third letter. That is, 26 third letters for the
+                        first two letters AA, 26 choices for the third letter after starting AB, and so on.
+                        There are <span class="process-math">\(26 \cdot 26\)</span> of these <span
+                            class="process-math">\(26\)</span> third letter choices, for a total of <span
+                            class="process-math">\((26\cdot26)\cdot 26\)</span> choices for the first three
+                        letters. And for each of these <span class="process-math">\(26\cdot26\cdot26\)</span>
+                        choices of letters, we have a bunch of choices for the remaining digits.</div>
+                    <div class="para" id="sec_counting-addmult-6-12-2-4">In fact, there are going to be exactly
+                        1000 choices for the numbers. We can see this because there are 1000 three-digit numbers
+                        (000 through 999). This is 10 choices for the first digit, 10 for the second, and 10 for
+                        the third. The multiplicative principle says we multiply: <span
+                            class="process-math">\(10\cdot 10 \cdot 10 = 1000\text{.}\)</span>
+                    </div>
+                    <div class="para" id="sec_counting-addmult-6-12-2-5">All together, there were <span
+                            class="process-math">\(26^3\)</span> choices for the three letters, and <span
+                            class="process-math">\(10^3\)</span> choices for the numbers, so we have a total of
+                        <span class="process-math">\(26^3 \cdot 10^3\)</span> choices of license plates.</div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <div class="para" id="sec_counting-addmult-6-13">Careful: “and” doesn’t mean “times.” For example, how many
+        playing cards are both red and a face card? Not <span class="process-math">\(26 \cdot
+            12\text{.}\)</span> The answer is 6, and we needed to know something about cards to answer that
+        question.</div>
+    <div class="para" id="sec_counting-addmult-6-14">Another caution: how many ways can you select two cards, so
+        that the first one is a red card and the second one is a face card? This looks more like the
+        multiplicative principle (you are counting two separate events) but the answer is not <span
+            class="process-math">\(26 \cdot 12\)</span> here either. The problem is that while there are 26 ways
+        for the first card to be selected, it is not the case that <em class="emphasis">for each</em> of those
+        there are 12 ways to select the second card. If the first card was both red and a face card, then there
+        would be only 11 choices for the second card.<details class="ptx-footnote" aria-live="polite"
+            id="sec_counting-addmult-6-14-3">
+            <summary class="ptx-footnote__number" title="Footnote 1.1"><sup> 1 </sup></summary>
+            <div class="ptx-footnote__contents" id="sec_counting-addmult-6-14-3">To solve this problem, you
+                could break it into two cases. First, count how many ways there are to select the two cards when
+                the first card is a red non-face card. Second, count how many ways when the first card is a red
+                face card. Doing so makes the events in each separate case independent, so the multiplicative
+                principle can be applied.</div>
+        </details>
+    </div>
+    <article class="example example-like" id="example-counting-functions-all">
+        <h3 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span
+                class="title">Counting functions.</span>
+        </h3>
+        <div class="para" id="example-counting-functions-all-4-1">How many functions <span
+                class="process-math">\(f:\{1,2,3,4,5\} \to \{a,b,c,d\}\)</span> are there?</div>
+        <div class="solutions">
+            <details id="example-counting-functions-all-5" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para" id="example-counting-functions-all-5-1">Remember that a function sends
+                        each element of the domain to exactly one element of the codomain. To determine a
+                        function, we just need to specify the image of each element in the domain. Where can we
+                        send 1? There are 4 choices. Where can we send 2? Again, 4 choices. What we have here is
+                        5 “events” (picking the image of an element in the domain) each of which can happen in 4
+                        ways (the choices for that image). Thus there are <span class="process-math">\(4 \cdot 4
+                            \cdot 4 \cdot 4 \cdot 4 = 4^5\)</span> functions.</div>
+                    <div class="para" id="example-counting-functions-all-5-2">This is more than just an example
+                        of how we can use the multiplicative principle in a particular counting question. What
+                        we have here is a general interpretation of certain applications of the multiplicative
+                        principle using rigorously defined mathematical objects: functions. Whenever we have a
+                        counting question that asks for the number of outcomes of a repeated event, we can
+                        interpret that as asking for the number of functions from <span
+                            class="process-math">\(\{1,2,\ldots, n\}\)</span> (where <span
+                            class="process-math">\(n\)</span> is the number of times the event is repeated) to
+                        <span class="process-math">\(\{1,2,\ldots,k\}\)</span> (where <span
+                            class="process-math">\(k\)</span> is the number of ways that event can occur).</div>
+                </div>
+            </details>
+        </div>
+    </article>
+</section>
+<section class="subsection" id="subsec_countingWithSets">
+    <h3 class="heading hide-type">
+        <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span
+            class="space"> </span><span class="title">Counting With Sets</span>
+    </h3>
+    <div class="para" id="subsec_countingWithSets-2">Do you believe the additive and multiplicative principles?
+        How would you convince someone they are correct? This is surprisingly difficult. They seem so simple, so
+        obvious. But why do they work?</div>
+    <div class="para" id="subsec_countingWithSets-3">To make things clearer, and more mathematically rigorous,
+        we will use sets. Do not skip this section! It might seem like we are just trying to give a proof of
+        these principles, but we are doing a lot more. If we understand the additive and multiplicative
+        principles rigorously, we will be better at applying them, and knowing when and when not to apply them
+        at all.</div>
+    <div class="para" id="subsec_countingWithSets-4">We will look at the additive and multiplicative principles
+        in a slightly different way. Instead of thinking about event <span class="process-math">\(A\)</span> and
+        event <span class="process-math">\(B\text{,}\)</span> we want to think of a set <span
+            class="process-math">\(A\)</span> and a set <span class="process-math">\(B\text{.}\)</span> The sets
+        will contain all the different ways the event can happen. (It will be helpful to be able to switch back
+        and forth between these two models when checking that we have counted correctly.) Here’s what we mean:
+    </div>
+    <article class="example example-like" id="subsec_countingWithSets-5">
+        <h4 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.6</span><span class="period">.</span>
+        </h4>
+        <div class="para logical" id="subsec_countingWithSets-5-1-1">
+            <div class="para">Suppose you own 9 shirts and 5 pairs of pants.</div>
+            <ol class="decimal" id="subsec_countingWithSets-5-1-1-1">
+                <li id="subsec_countingWithSets-5-1-1-1-1">
+                    <div class="para" id="subsec_countingWithSets-5-1-1-1-1-1">How many outfits can you make?
+                    </div>
+                </li>
+                <li id="subsec_countingWithSets-5-1-1-1-2">
+                    <div class="para" id="subsec_countingWithSets-5-1-1-1-2-1">If today is half-naked-day, and
+                        you will wear only a shirt or only a pair of pants, how many choices do you have?</div>
+                </li>
+            </ol>
+        </div>
+        <div class="solutions">
+            <details id="subsec_countingWithSets-5-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para" id="subsec_countingWithSets-5-2-1">By now you should agree that the answer
+                        to the first question is <span class="process-math">\(9 \cdot 5 = 45\)</span> and the
+                        answer to the second question is <span class="process-math">\(9 + 5 =
+                            14\text{.}\)</span> These are the multiplicative and additive principles. There are
+                        two events: picking a shirt and picking a pair of pants. The first event can happen in 9
+                        ways and the second event can happen in 5 ways. To get both a shirt and a pair of pants,
+                        you multiply. To get just one article of clothing, you add.</div>
+                    <div class="para" id="subsec_countingWithSets-5-2-2">Now look at this using sets. There are
+                        two sets, call them <span class="process-math">\(S\)</span> and <span
+                            class="process-math">\(P\text{.}\)</span> The set <span
+                            class="process-math">\(S\)</span> contains all 9 shirts so <span
+                            class="process-math">\(|S| = 9\)</span> while <span class="process-math">\(|P| =
+                            5\text{,}\)</span> since there are 5 elements in the set <span
+                            class="process-math">\(P\)</span> (namely your 5 pairs of pants). What are we asking
+                        in terms of these sets? Well in question 2, we really want <span
+                            class="process-math">\(|S \cup P|\text{,}\)</span> the number of elements in the
+                        union of shirts and pants. This is just <span class="process-math">\(|S| + |P|\)</span>
+                        (since there is no overlap; <span class="process-math">\(|S \cap P| = 0\)</span>).
+                        Question 1 is slightly more complicated. Your first guess might be to find <span
+                            class="process-math">\(|S \cap P|\text{,}\)</span> but this is not right (there is
+                        nothing in the intersection). We are not asking for how many clothing items are both a
+                        shirt and a pair of pants. Instead, we want one of each. We could think of this as
+                        asking how many pairs <span class="process-math">\((x,y)\)</span> there are, where <span
+                            class="process-math">\(x\)</span> is a shirt and <span
+                            class="process-math">\(y\)</span> is a pair of pants. As we will soon verify, this
+                        number is <span class="process-math">\(|S| \cdot |P|\text{.}\)</span>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <div class="para" id="subsec_countingWithSets-6">From this example we can see right away how to rephrase our
+        additive principle in terms of sets:</div>
+    <article class="assemblage assemblage-like" id="subsec_countingWithSets-7">
+        <h4 class="heading"><span class="title">Additive Principle (with sets).</span></h4>
+        <div class="para logical" id="subsec_countingWithSets-7-5">
+            <div class="para">Given two sets <span class="process-math">\(A\)</span> and <span
+                    class="process-math">\(B\text{,}\)</span> if <span class="process-math">\(A \cap B =
+                    \emptyset\)</span> (that is, if there is no element in common to both <span
+                    class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span>), then</div>
+            <div class="displaymath process-math">
+                \begin{equation*}
+                \card{A \cup B} = \card{A} + \card{B}\text{.}
+                \end{equation*}
+            </div>
+        </div>
+    </article>
+    <div class="para" id="subsec_countingWithSets-8">This hardly needs a proof. To find <span
+            class="process-math">\(A \cup B\text{,}\)</span> you take everything in <span
+            class="process-math">\(A\)</span> and throw in everything in <span
+            class="process-math">\(B\text{.}\)</span> Since there is no element in both sets already, you will
+        have <span class="process-math">\(\card{A}\)</span> things and add <span
+            class="process-math">\(\card{B}\)</span> new things to it. This is what adding does! Of course, we
+        can easily extend this to any number of disjoint sets.</div>
+    <div class="para" id="subsec_countingWithSets-9">From the example above, we see that in order to investigate
+        the multiplicative principle carefully, we need to consider ordered pairs. We should define this
+        carefully:</div>
+    <article class="assemblage assemblage-like" id="subsec_countingWithSets-10">
+        <h4 class="heading"><span class="title">Cartesian Product.</span></h4>
+        <div class="para logical" id="subsec_countingWithSets-10-3">
+            <div class="para">Given sets <span class="process-math">\(A\)</span> and <span
+                    class="process-math">\(B\text{,}\)</span> we can form the <em class="emphasis">set</em>
+            </div>
+            <div class="displaymath process-math">
+                \begin{equation*}
+                A \times B = \{(x,y) \st x \in A \wedge y \in B\}
+                \end{equation*}
+            </div>
+            <div class="para">to be the set of all ordered pairs <span class="process-math">\((x,y)\)</span>
+                where <span class="process-math">\(x\)</span> is an element of <span
+                    class="process-math">\(A\)</span> and <span class="process-math">\(y\)</span> is an element
+                of <span class="process-math">\(B\text{.}\)</span> We call <span class="process-math">\(A \times
+                    B\)</span> the <dfn class="terminology">Cartesian product</dfn> of <span
+                    class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span>
+            </div>
+        </div>
+    </article>
+    <article class="example example-like" id="subsec_countingWithSets-11">
+        <h4 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.7</span><span class="period">.</span>
+        </h4>
+        <div class="para" id="subsec_countingWithSets-11-1-1">Let <span class="process-math">\(A =
+                \{1,2\}\)</span> and <span class="process-math">\(B=\{3,4,5\}\text{.}\)</span> Find <span
+                class="process-math">\(A \times B\text{.}\)</span>
+        </div>
+        <div class="solutions">
+            <details id="subsec_countingWithSets-11-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para logical" id="subsec_countingWithSets-11-2-1">
+                        <div class="para">We want to find ordered pairs <span
+                                class="process-math">\((a,b)\)</span> where <span
+                                class="process-math">\(a\)</span> can be either <span
+                                class="process-math">\(1\)</span> or <span class="process-math">\(2\)</span> and
+                            <span class="process-math">\(b\)</span> can be either 3, 4, or 5. <span
+                                class="process-math">\(A \times B\)</span> is the set of all of these pairs:
+                        </div>
+                        <div class="displaymath process-math">
+                            \begin{equation*}
+                            A \times B = \{(1,3), (1,4), (1,5), (2,3), (2,4), (2,5)\}\text{.}
+                            \end{equation*}
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <div class="para logical" id="subsec_countingWithSets-12">
+        <div class="para">The question is, what is <span class="process-math">\(\card{A \times
+                B}\text{?}\)</span> To figure this out, write out <span class="process-math">\(A \times
+                B\text{.}\)</span> Let <span class="process-math">\(A = \{a_1,a_2, a_3, \ldots,
+                a_m\}\)</span> and <span class="process-math">\(B = \{b_1,b_2, b_3, \ldots, b_n\}\)</span> (so
+            <span class="process-math">\(\card{A} = m\)</span> and <span class="process-math">\(\card{B} =
+                n\)</span>). The set <span class="process-math">\(A \times B\)</span> contains all pairs with
+            the first half of the pair being some <span class="process-math">\(a_i \in A\)</span> and the second
+            being one of the <span class="process-math">\(b_j \in B\text{.}\)</span> In other words:</div>
+        <div class="displaymath process-math" id="subsec_countingWithSets-12-10">
+            \begin{align*}
+            A \times B = \{ \amp (a_1, b_1), (a_1, b_2), (a_1, b_3), \ldots (a_1, b_n),\\
+            \amp (a_2, b_1), (a_2, b_2), (a_2, b_3), \ldots, (a_2, b_n),\\
+            \amp (a_3, b_1), (a_3, b_2), (a_3, b_3), \ldots, (a_3, b_n),\\
+            \amp \vdots\\
+            \amp (a_m, b_1), (a_m, b_2), (a_m, b_3), \ldots, (a_m, b_n)\}\text{.}
+            \end{align*}
+        </div>
+    </div>
+    <div class="para" id="subsec_countingWithSets-13">Notice what we have done here: we made <span
+            class="process-math">\(m\)</span> rows of <span class="process-math">\(n\)</span> pairs, for a total
+        of <span class="process-math">\(m \cdot n\)</span> pairs.</div>
+    <div class="para logical" id="subsec_countingWithSets-14">
+        <div class="para">Each row above is really <span class="process-math">\(\{a_i\} \times B\)</span> for
+            some <span class="process-math">\(a_i \in A\text{.}\)</span> That is, we fixed the <span
+                class="process-math">\(A\)</span>-element. Broken up this way, we have</div>
+        <div class="displaymath process-math">
+            \begin{equation*}
+            A \times B = (\{a_1\} \times B) \cup (\{a_2\} \times B) \cup (\{a_3\}\times B) \cup \cdots \cup
+            (\{a_m\} \times B)\text{.}
+            \end{equation*}
+        </div>
+    </div>
+    <div class="para" id="subsec_countingWithSets-15">So <span class="process-math">\(A \times B\)</span> is
+        really the union of <span class="process-math">\(m\)</span> disjoint sets. Each of those sets has <span
+            class="process-math">\(n\)</span> elements in them. The total (using the additive principle) is
+        <span class="process-math">\(n + n + n + \cdots + n = m \cdot n\text{.}\)</span>
+    </div>
+    <div class="para" id="subsec_countingWithSets-16">To summarize:</div>
+    <article class="assemblage assemblage-like" id="subsec_countingWithSets-17">
+        <h4 class="heading"><span class="title">Multiplicative Principle (with sets).</span></h4>
+        <div class="para" id="subsec_countingWithSets-17-5">Given two sets <span
+                class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> we have
+            <span class="process-math">\(\card{A \times B} = \card{A} \cdot \card{B}\text{.}\)</span>
+        </div>
+    </article>
+    <div class="para" id="subsec_countingWithSets-18">Again, we can easily extend this to any number of sets.
+    </div>
+</section>
+<section class="subsection" id="subsec_PIE">
+    <h3 class="heading hide-type">
+        <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span
+            class="space"> </span><span class="title">Principle of Inclusion/Exclusion</span>
+    </h3>
+    <article class="project-like" id="subsec_PIE-5">
+        <h6 class="heading">
+            <span class="type">Investigate!</span>
+        </h6>
+        <div class="para" id="subsec_PIE-5-1">A recent buzz marketing campaign for <em class="emphasis">Village
+                Inn</em> surveyed patrons on their pie preferences. People were asked whether they enjoyed (A)
+            Apple, (B) Blueberry or (C) Cherry pie (respondents answered yes or no to each type of pie, and
+            could say yes to more than one type). The following table shows the results of the survey.</div>
+        <div class="sidebyside">
+            <div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+                <div class="sbspanel fixed-width top" style="width:100%;">
+                    <table class="tabular">
+                        <tr>
+                            <td class="r m b1 r1 l0 t0 lines">Pies enjoyed:</td>
+                            <td class="c m b1 r0 l0 t0 lines">A</td>
+                            <td class="c m b1 r0 l0 t0 lines">B</td>
+                            <td class="c m b1 r0 l0 t0 lines">C</td>
+                            <td class="c m b1 r0 l0 t0 lines">AB</td>
+                            <td class="c m b1 r0 l0 t0 lines">AC</td>
+                            <td class="c m b1 r0 l0 t0 lines">BC</td>
+                            <td class="c m b1 r0 l0 t0 lines">ABC</td>
+                        </tr>
+                        <tr>
+                            <td class="r m b0 r1 l0 t0 lines">Number of people:</td>
+                            <td class="c m b0 r0 l0 t0 lines">20</td>
+                            <td class="c m b0 r0 l0 t0 lines">13</td>
+                            <td class="c m b0 r0 l0 t0 lines">26</td>
+                            <td class="c m b0 r0 l0 t0 lines">9</td>
+                            <td class="c m b0 r0 l0 t0 lines">15</td>
+                            <td class="c m b0 r0 l0 t0 lines">7</td>
+                            <td class="c m b0 r0 l0 t0 lines">5</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="para" id="subsec_PIE-5-3">How many of those asked enjoy at least one of the kinds of pie?
+            Also, explain why the answer is not 95.</div>
+    </article>
+    <div class="para" id="subsec_PIE-6"> While we are thinking about sets, consider what happens to the additive
+        principle when the sets are NOT disjoint. Suppose we want to find <span class="process-math">\(\card{A
+            \cup B}\)</span> and know that <span class="process-math">\(\card{A} = 10\)</span> and <span
+            class="process-math">\(\card{B} = 8\text{.}\)</span> This is not enough information though. We do
+        not know how many of the 8 elements in <span class="process-math">\(B\)</span> are also elements of
+        <span class="process-math">\(A\text{.}\)</span> However, if we also know that <span
+            class="process-math">\(\card{A \cap B} = 6\text{,}\)</span> then we can say exactly how many
+        elements are in <span class="process-math">\(A\text{,}\)</span> and, of those, how many are in <span
+            class="process-math">\(B\)</span> and how many are not (6 of the 10 elements are in <span
+            class="process-math">\(B\text{,}\)</span> so 4 are in <span class="process-math">\(A\)</span> but
+        not in <span class="process-math">\(B\)</span>). We could fill in a Venn diagram as follows:</div>
+    <div class="sidebyside">
+        <div class="sbsrow" style="margin-left:30%;margin-right:30%;">
+            <div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/subsec_PIE-7-1.svg"
+                    role="img" class="contained"
+                    alt="Intersecting circles labeled A and B.  Inside the region enclosed by both circles is the number 6.  The number 4 is in the region inside A but outside B.  The number 2 is in the region inside B but outside A.">
+            </div>
+        </div>
+    </div>
+    <div class="para" id="subsec_PIE-8">This says there are 6 elements in <span class="process-math">\(A \cap
+            B\text{,}\)</span> 4 elements in <span class="process-math">\(A \setminus B\)</span> and 2 elements
+        in <span class="process-math">\(B \setminus A\text{.}\)</span> Now <em class="emphasis">these</em> three
+        sets <em class="emphasis">are</em> disjoint, so we can use the additive principle to find the number of
+        elements in <span class="process-math">\(A \cup B\text{.}\)</span> It is <span class="process-math">\(6
+            + 4 + 2 = 12\text{.}\)</span>
+    </div>
+    <div class="para" id="subsec_PIE-9">This will always work, but drawing a Venn diagram is more than we need
+        to do. In fact, it would be nice to relate this problem to the case where <span
+            class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint. Is there
+        one rule we can make that works in either case?</div>
+    <div class="para logical" id="subsec_PIE-10">
+        <div class="para">Here is another way to get the answer to the problem above. Start by just adding <span
+                class="process-math">\(\card{A} + \card{B}\text{.}\)</span> This is <span
+                class="process-math">\(10 + 8 = 18\text{,}\)</span> which would be the answer if <span
+                class="process-math">\(\card{A \cap B} = 0\text{.}\)</span> We see that we are off by exactly 6,
+            which just so happens to be <span class="process-math">\(\card{A \cap B}\text{.}\)</span> So perhaps
+            we guess,</div>
+        <div class="displaymath process-math">
+            \begin{equation*}
+            \card{A \cup B} = \card{A} + \card{B} - \card{A \cap B}\text{.}
+            \end{equation*}
+        </div>
+    </div>
+    <div class="para" id="subsec_PIE-11">This works for this one example. Will it always work? Think about what
+        we are doing here. We want to know how many things are either in <span class="process-math">\(A\)</span>
+        or <span class="process-math">\(B\)</span> (or both). We can throw in everything in <span
+            class="process-math">\(A\text{,}\)</span> and everything in <span
+            class="process-math">\(B\text{.}\)</span> This would give <span class="process-math">\(\card{A} +
+            \card{B}\)</span> many elements. But of course when you actually take the union, you do not repeat
+        elements that are in both. So far we have counted every element in <span class="process-math">\(A \cap
+            B\)</span> exactly twice: once when we put in the elements from <span
+            class="process-math">\(A\)</span> and once when we included the elements from <span
+            class="process-math">\(B\text{.}\)</span> We correct by subtracting out the number of elements we
+        have counted twice. So we added them in twice, subtracted once, leaving them counted only one time.
+    </div>
+    <div class="para" id="subsec_PIE-12">In other words, we have:</div>
+    <article class="assemblage assemblage-like" id="subsec_PIE-13">
+        <h4 class="heading"><span class="title">Cardinality of a union (2 sets).</span></h4>
+        <div class="para logical" id="subsec_PIE-13-4">
+            <div class="para">For any finite sets <span class="process-math">\(A\)</span> and <span
+                    class="process-math">\(B\text{,}\)</span>
+            </div>
+            <div class="displaymath process-math">
+                \begin{equation*}
+                \card{A \cup B} = \card{A} + \card{B} - \card{A \cap B}\text{.}
+                \end{equation*}
+            </div>
+        </div>
+    </article>
+    <div class="para" id="subsec_PIE-14">We can do something similar with three sets.</div>
+    <article class="example example-like" id="subsec_PIE-15">
+        <h4 class="heading">
+            <span class="type">Example</span><span class="space"> </span><span
+                class="codenumber">1.1.8</span><span class="period">.</span>
+        </h4>
+        <div class="para" id="subsec_PIE-15-1-1">An examination in three subjects, Algebra, Biology, and
+            Chemistry, was taken by 41 students. The following table shows how many students failed in each
+            single subject and in their various combinations:</div>
+        <div class="sidebyside">
+            <div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+                <div class="sbspanel fixed-width top" style="width:100%;">
+                    <table class="tabular">
+                        <tr>
+                            <td class="r m b1 r1 l0 t0 lines">Subject:</td>
+                            <td class="c m b1 r0 l0 t0 lines">A</td>
+                            <td class="c m b1 r0 l0 t0 lines">B</td>
+                            <td class="c m b1 r0 l0 t0 lines">C</td>
+                            <td class="c m b1 r0 l0 t0 lines">AB</td>
+                            <td class="c m b1 r0 l0 t0 lines">AC</td>
+                            <td class="c m b1 r0 l0 t0 lines">BC</td>
+                            <td class="c m b1 r0 l0 t0 lines">ABC</td>
+                        </tr>
+                        <tr>
+                            <td class="r m b0 r1 l0 t0 lines">Failed:</td>
+                            <td class="c m b0 r0 l0 t0 lines">12</td>
+                            <td class="c m b0 r0 l0 t0 lines">5</td>
+                            <td class="c m b0 r0 l0 t0 lines">8</td>
+                            <td class="c m b0 r0 l0 t0 lines">2</td>
+                            <td class="c m b0 r0 l0 t0 lines">6</td>
+                            <td class="c m b0 r0 l0 t0 lines">3</td>
+                            <td class="c m b0 r0 l0 t0 lines">1</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="para" id="subsec_PIE-15-1-3">How many students failed at least one subject?</div>
+        <div class="solutions">
+            <details id="subsec_PIE-15-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para" id="subsec_PIE-15-2-1">The answer is not 37, even though the sum of the
+                        numbers above is 37. For example, while 12 students failed Algebra, 2 of those students
+                        also failed Biology, 6 also failed Chemistry, and 1 of those failed all three subjects.
+                        In fact, that 1 student who failed all three subjects is counted a total of 7 times in
+                        the total 37. To clarify things, let us think of the students who failed Algebra as the
+                        elements of the set <span class="process-math">\(A\text{,}\)</span> and similarly for
+                        sets <span class="process-math">\(B\)</span> and <span
+                            class="process-math">\(C\text{.}\)</span> The one student who failed all three
+                        subjects is the lone element of the set <span class="process-math">\(A \cap B \cap
+                            C\text{.}\)</span> Thus, in Venn diagrams:</div>
+                    <div class="sidebyside">
+                        <div class="sbsrow" style="margin-left:32%;margin-right:32%;">
+                            <div class="sbspanel top" style="width:100%;"><img
+                                    src="generated/latex-image/subsec_PIE-15-2-2-1.svg" role="img"
+                                    class="contained"
+                                    alt="Three intersecting circles labeled A, B, and C.  The center region inside all three circles contains the number 1.">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="para" id="subsec_PIE-15-2-3">Now let’s fill in the other intersections. We know
+                        <span class="process-math">\(A\cap B\)</span> contains 2 elements, but 1 element has
+                        already been counted. So we should put a 1 in the region where <span
+                            class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span>
+                        intersect (but <span class="process-math">\(C\)</span> does not). Similarly, we
+                        calculate the cardinality of <span class="process-math">\((A\cap C) \setminus
+                            B\text{,}\)</span> and <span class="process-math">\((B \cap C) \setminus
+                            A\text{:}\)</span>
+                    </div>
+                    <div class="sidebyside">
+                        <div class="sbsrow" style="margin-left:32%;margin-right:32%;">
+                            <div class="sbspanel top" style="width:100%;"><img
+                                    src="generated/latex-image/subsec_PIE-15-2-4-1.svg" role="img"
+                                    class="contained"
+                                    alt="Three intersecting circles labeled A, B, and C.  The center region inside all three circles contains the number 1.  The region above this, inside both A and B but outside C, contains the number 1.  The region inside both A and C but outside B contains the number 5.  The region inside B and C but outside A contains the number 2.">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="para" id="subsec_PIE-15-2-5">Next, we determine the numbers which should go in
+                        the remaining regions, including outside of all three circles. This last number is the
+                        number of students who did not fail any subject:</div>
+                    <div class="sidebyside">
+                        <div class="sbsrow" style="margin-left:32%;margin-right:32%;">
+                            <div class="sbspanel top" style="width:100%;"><img
+                                    src="generated/latex-image/subsec_PIE-15-2-6-1.svg" role="img"
+                                    class="contained"
+                                    alt="Three intersecting circles labeled A, B, and C.  The center region inside all three circles contains the number 1.  The region above this, inside both A and B but outside C, contains the number 1.  The region inside both A and C but outside B contains the number 5.  The region inside B and C but outside A contains the number 2.  The region just inside A contains the number 5; the region just inside B contains the number 1; the region just inside C contains the number 0.  The number 26 is outside all three circles.">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="para" id="subsec_PIE-15-2-7">We found 5 goes in the “<span
+                            class="process-math">\(A\)</span> only” region because the entire circle for <span
+                            class="process-math">\(A\)</span> needed to have a total of 12, and 7 were already
+                        accounted for. Similarly, we calculate the “<span class="process-math">\(B\)</span>
+                        only” region to contain only 1 student and the “<span class="process-math">\(C\)</span>
+                        only” region to contain no students.</div>
+                    <div class="para" id="subsec_PIE-15-2-8">Thus the number of students who failed at least one
+                        class is 15 (the sum of the numbers in each of the eight disjoint regions). The number
+                        of students who passed all three classes is 26: the total number of students, 41, less
+                        the 15 who failed at least one class.</div>
+                    <div class="para" id="subsec_PIE-15-2-9">Note that we can also answer other questions. For
+                        example, how many students failed just Chemistry? None. How many passed Algebra but
+                        failed both Biology and Chemistry? This corresponds to the region inside both <span
+                            class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> but
+                        outside of <span class="process-math">\(A\text{,}\)</span> containing 2 students.</div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <div class="para" id="subsec_PIE-16">Could we have solved the problem above in an algebraic way? While the
+        additive principle generalizes to any number of sets, when we add a third set here, we must be careful.
+        With two sets, we needed to know the cardinalities of <span class="process-math">\(A\text{,}\)</span>
+        <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(A \cap B\)</span> in
+        order to find the cardinality of <span class="process-math">\(A \cup B\text{.}\)</span> With three sets
+        we need more information. There are more ways the sets can combine. Not surprisingly then, the formula
+        for cardinality of the union of three non-disjoint sets is more complicated:</div>
+    <article class="assemblage assemblage-like" id="subsec_PIE-17">
+        <h4 class="heading"><span class="title">Cardinality of a union (3 sets).</span></h4>
+        <div class="para logical" id="subsec_PIE-17-4">
+            <div class="para">For any finite sets <span class="process-math">\(A\text{,}\)</span> <span
+                    class="process-math">\(B\text{,}\)</span> and <span
+                    class="process-math">\(C\text{,}\)</span>
+            </div>
+            <div class="displaymath process-math">
+                \begin{equation*}
+                \card{A \cup B \cup C} = \card{A} + \card{B} + \card{C} - \card{A \cap B} - \card{A \cap C} -
+                \card{B \cap C} + \card{A \cap B \cap C}\text{.}
+                \end{equation*}
+            </div>
+        </div>
+    </article>
+    <div class="para" id="subsec_PIE-18">To determine how many elements are in at least one of <span
+            class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> or <span
+            class="process-math">\(C\)</span> we add up all the elements in each of those sets. However, when we
+        do that, any element in both <span class="process-math">\(A\)</span> and <span
+            class="process-math">\(B\)</span> is counted twice. Also, each element in both <span
+            class="process-math">\(A\)</span> and <span class="process-math">\(C\)</span> is counted twice, as
+        are elements in <span class="process-math">\(B\)</span> and <span
+            class="process-math">\(C\text{,}\)</span> so we take each of those out of our sum once. But now what
+        about the elements which are in <span class="process-math">\(A \cap B \cap C\)</span> (in all three
+        sets)? We added them in three times, but also removed them three times. They have not yet been counted.
+        Thus we add those elements back in at the end.</div>
+    <div class="para logical" id="subsec_PIE-19">
+        <div class="para">Returning to our example above, we have <span class="process-math">\(\card{A} =
+                12\text{,}\)</span> <span class="process-math">\(\card{B} = 5\text{,}\)</span> <span
+                class="process-math">\(\card{C} = 8\text{.}\)</span> We also have <span
+                class="process-math">\(\card{A \cap B} = 2\text{,}\)</span> <span class="process-math">\(\card{A
+                \cap C} = 6\text{,}\)</span> <span class="process-math">\(\card{B \cap C} = 3\text{,}\)</span>
+            and <span class="process-math">\(\card{A \cap B \cap C} = 1\text{.}\)</span> Therefore:</div>
+        <div class="displaymath process-math">
+            \begin{equation*}
+            \card{A \cup B \cup C} = 12 + 5 + 8 - 2 - 6 - 3 + 1 = 15\text{.}
+            \end{equation*}
+        </div>
+    </div>
+    <div class="para" id="subsec_PIE-20">This is what we got when we solved the problem using Venn diagrams.
+    </div>
+    <div class="para" id="subsec_PIE-21">This process of adding in, then taking out, then adding back in, and so
+        on is called the <em class="emphasis">Principle of Inclusion/Exclusion</em>, or simply PIE. We will
+        return to this counting technique later to solve for more complicated problems (involving more than 3
+        sets).</div>
+</section>
+<section class="exercises" id="exercises_counting-addmult">
+    <h3 class="heading hide-type">
+        <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span
+            class="space"> </span><span class="title">Exercises</span>
+    </h3>
+    <article class="exercise exercise-like" id="ww-addmult-outfits">
+        <h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+        <div id="webwork-34" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="34" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_1.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-34')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para" id="extracted-webwork-34-1-1-1">Your wardrobe consists of 6 shirts, 5 pairs of
+                    pants, and 19 bow ties. How many different outfits can you make?</div>
+                <div class="para" id="extracted-webwork-34-1-1-2">You can make <span class="fillin underline"
+                        role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span>
+                    outfits.</div>
+                <div class="solutions">
+                    <details id="extracted-webwork-34-1-3" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para" id="extracted-webwork-34-1-3-1">There are <span
+                                    class="process-math">\(6 \cdot 5 \cdot 19 = {570}\)</span> outfits. Use the
+                                multiplicative principle.</div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-ties">
+        <h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+        <div id="webwork-35" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="35" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_2.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-35')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para logical" id="extracted-webwork-35-1-1-1">
+                    <div class="para">For your college interview, you must wear a tie. You own 8 regular
+                        (boring) ties and 4 (cool) bow ties.</div>
+                    <ol class="lower-alpha" id="extracted-webwork-35-1-1-1-1">
+                        <li id="extracted-webwork-35-1-1-1-1-1">
+                            <div class="para" id="extracted-webwork-35-1-1-1-1-1-1">How many choices do you have
+                                for your neck-wear?</div>
+                        </li>
+                        <li id="extracted-webwork-35-1-1-1-1-2">
+                            <div class="para" id="extracted-webwork-35-1-1-1-1-2-1">You realize that the
+                                interview is for clown college, so you should probably wear both a regular tie
+                                and a bow tie. How many choices do you have now?</div>
+                        </li>
+                        <li id="extracted-webwork-35-1-1-1-1-3">
+                            <div class="para" id="extracted-webwork-35-1-1-1-1-3-1">For the rest of your outfit,
+                                you have 6 shirts, 5 skirts, 2 pants, and 4 dresses. You want to select either a
+                                shirt to wear with a skirt or pants, or just a dress. How many outfits do you
+                                have to choose from?</div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="solutions">
+                    <details id="extracted-webwork-35-1-5" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para logical" id="extracted-webwork-35-1-5-1">
+                                <ol class="lower-alpha" id="extracted-webwork-35-1-5-1-1">
+                                    <li id="extracted-webwork-35-1-5-1-1-1">
+                                        <div class="para" id="extracted-webwork-35-1-5-1-1-1-1">
+                                            <span class="process-math">\(8 + 4 = {12}\)</span> ties. Use the
+                                            additive principle.
+                                        </div>
+                                    </li>
+                                    <li id="extracted-webwork-35-1-5-1-1-2">
+                                        <div class="para" id="extracted-webwork-35-1-5-1-1-2-1">
+                                            <span class="process-math">\(8 \cdot 4 = {32}\)</span> ties. Use the
+                                            multiplicative principle
+                                        </div>
+                                    </li>
+                                    <li id="extracted-webwork-35-1-5-1-1-3">
+                                        <div class="para" id="extracted-webwork-35-1-5-1-1-3-1">
+                                            <span class="process-math">\(6 \cdot (5+2) + 4 = 42\)</span>
+                                            outfits.
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="exercises_counting-addmult-3">
+        <h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+        <div class="para logical" id="exercises_counting-addmult-3-1-1">
+            <div class="para">Your Blu-ray collection consists of 9 comedies and 7 horror movies. Give an
+                example of a question for which the answer is:</div>
+            <ol class="lower-alpha" id="exercises_counting-addmult-3-1-1-1">
+                <li id="exercises_counting-addmult-3-1-1-1-1">
+                    <div class="para" id="exercises_counting-addmult-3-1-1-1-1-1">16.</div>
+                </li>
+                <li id="exercises_counting-addmult-3-1-1-1-2">
+                    <div class="para" id="exercises_counting-addmult-3-1-1-1-2-1">63.</div>
+                </li>
+            </ol>
+        </div>
+        <div class="solutions">
+            <details id="exercises_counting-addmult-3-2" class="solution solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span>
+                </summary>
+                <div class="solution solution-like knowl__content">
+                    <div class="para logical" id="exercises_counting-addmult-3-2-1">
+                        <ol class="lower-alpha" id="exercises_counting-addmult-3-2-1-1">
+                            <li id="exercises_counting-addmult-3-2-1-1-1">
+                                <div class="para" id="exercises_counting-addmult-3-2-1-1-1-1">For example, 16 is
+                                    the number of choices you have if you want to watch one movie, either a
+                                    comedy or horror flick.</div>
+                            </li>
+                            <li id="exercises_counting-addmult-3-2-1-1-2">
+                                <div class="para" id="exercises_counting-addmult-3-2-1-1-2-1">For example, 63 is
+                                    the number of choices you have if you will watch two movies, first a comedy
+                                    and then a horror.</div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-hex">
+        <h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+        <div id="webwork-36" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="36" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_4.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-36')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para" id="extracted-webwork-36-1-1-1">We usually write numbers in decimal form (or
+                    base 10), meaning numbers are composed using 10 different “digits” <span
+                        class="process-math">\(\{0,1,\ldots, 9\}\text{.}\)</span> Sometimes though it is useful
+                    to write numbers hexadecimal or base 16. Now there are 16 distinct digits that can be used
+                    to form numbers: <span class="process-math">\(\{0, 1, \ldots, 9, \mathrm{A, B, C, D, E,
+                        F}\}\text{.}\)</span> So for example, a 3 digit hexadecimal number might be 2B8.</div>
+                <div class="para logical" id="extracted-webwork-36-1-1-2">
+                    <ol class="lower-alpha" id="extracted-webwork-36-1-1-2-1">
+                        <li id="extracted-webwork-36-1-1-2-1-1">
+                            <div class="para" id="extracted-webwork-36-1-1-2-1-1-1">How many 6-digit
+                                hexadecimals are there in which the first digit is E or F?</div>
+                        </li>
+                        <li id="extracted-webwork-36-1-1-2-1-2">
+                            <div class="para" id="extracted-webwork-36-1-1-2-1-2-1">How many 5-digit
+                                hexadecimals start with a letter (A-F) and end with a numeral (0-9)?</div>
+                        </li>
+                        <li id="extracted-webwork-36-1-1-2-1-3">
+                            <div class="para" id="extracted-webwork-36-1-1-2-1-3-1">How many 3-digit
+                                hexadecimals start with a letter (A-F) or end with a numeral (0-9) (or both)?
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="solutions">
+                    <details id="extracted-webwork-36-1-5" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para logical" id="extracted-webwork-36-1-5-1">
+                                <ol class="lower-alpha" id="extracted-webwork-36-1-5-1-1">
+                                    <li id="extracted-webwork-36-1-5-1-1-1">
+                                        <div class="para" id="extracted-webwork-36-1-5-1-1-1-1">There are
+                                            1048576 6-digit hexadecimals in which the first digit is an E (one
+                                            for each choice of the remaining digits). Similarly, there are
+                                            1048576 hexadecimals in which the first digit is an F. We want the
+                                            union of these two disjoint sets, so there are <span
+                                                class="process-math">\(1048576 + 1048576 =
+                                                2\cdot1048576=2097152\)</span> 6-digits hexadecimals in which
+                                            the first digit is either an E or an F.</div>
+                                    </li>
+                                    <li id="extracted-webwork-36-1-5-1-1-2">
+                                        <div class="para" id="extracted-webwork-36-1-5-1-1-2-1">We can select
+                                            the first digit in 6 ways, digits 2-4 in 16 ways each, and the final
+                                            digit in 10 ways. Thus there are <span class="process-math">\(6\cdot
+                                                16^{3} \cdot 10 = 245760\)</span> hexadecimals given these
+                                            restrictions.</div>
+                                    </li>
+                                    <li id="extracted-webwork-36-1-5-1-1-3">
+                                        <div class="para" id="extracted-webwork-36-1-5-1-1-3-1">The number of
+                                            3-digit hexadecimals that start with a letter is <span
+                                                class="process-math">\(6 \cdot 16^2 = 1536\text{.}\)</span> The
+                                            number of 3-hexadecimals that end with a numeral is <span
+                                                class="process-math">\(16^{2} \cdot 10 = 2560\text{.}\)</span>
+                                            We want all the elements from both these sets. However, both sets
+                                            include those 3-digit hexadecimals which <em
+                                                class="emphasis">both</em> start with a letter and end with a
+                                            numeral( <span class="process-math">\(6\cdot16^{1}\cdot
+                                                10=960\)</span>) so we must subtract these (once). Thus the
+                                            number of 3-digit hexadecimals starting with a letter or ending with
+                                            a numeral is:</div>
+                                        <div class="para" id="extracted-webwork-36-1-5-1-1-3-2"><span
+                                                class="process-math">\(\displaystyle{ 1536 + 2560 - 960 = 3136
+                                                }\)</span></div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-pie-possible">
+        <h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+        <div id="webwork-37" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="37" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_5.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-37')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para logical" id="extracted-webwork-37-1-1-1">
+                    <div class="para">Suppose you have sets <span class="process-math">\(A\)</span> and <span
+                            class="process-math">\(B\)</span> with <span
+                            class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left| #1
+                            \right|}\card{A} = 8\)</span> and <span
+                            class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left| #1
+                            \right|}\card{B} = 18\text{.}\)</span>
+                    </div>
+                    <ol class="lower-alpha" id="extracted-webwork-37-1-1-1-5">
+                        <li id="extracted-webwork-37-1-1-1-5-1">
+                            <div class="para" id="extracted-webwork-37-1-1-1-5-1-1">What is the largest possible
+                                value for <span
+                                    class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                    #1 \right|}\card{A \cap B}\text{?}\)</span>
+                            </div>
+                        </li>
+                        <li id="extracted-webwork-37-1-1-1-5-2">
+                            <div class="para" id="extracted-webwork-37-1-1-1-5-2-1">What is the smallest
+                                possible value for <span
+                                    class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                    #1 \right|}\card{A \cap B}\text{?}\)</span>
+                            </div>
+                        </li>
+                        <li id="extracted-webwork-37-1-1-1-5-3">
+                            <div class="para" id="extracted-webwork-37-1-1-1-5-3-1">What are the possible values
+                                for <span
+                                    class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                    #1 \right|}\card{A \cup B}\text{?}\)</span>
+                            </div>
+                            <div class="para" id="extracted-webwork-37-1-1-1-5-3-2">
+                                <span class="fillin underline" role="img" aria-label="5-character blank"
+                                    style="width: 2.272727272727273em;"></span><span
+                                    class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                    #1 \right|}\le \card{A \cup B} \le\)</span> <span class="fillin underline"
+                                    role="img" aria-label="5-character blank"
+                                    style="width: 2.272727272727273em;"></span>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="solutions">
+                    <details id="extracted-webwork-37-1-6" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para logical" id="extracted-webwork-37-1-6-1">
+                                <ol class="lower-alpha" id="extracted-webwork-37-1-6-1-1">
+                                    <li id="extracted-webwork-37-1-6-1-1-1">
+                                        <div class="para" id="extracted-webwork-37-1-6-1-1-1-1">To maximize the
+                                            number of elements in common between <span
+                                                class="process-math">\(A\)</span> and <span
+                                                class="process-math">\(B\text{,}\)</span> make <span
+                                                class="process-math">\(A \subset B\text{.}\)</span> This would
+                                            give <span
+                                                class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                                #1 \right|}\card{A \cap B} = 8\text{.}\)</span>
+                                        </div>
+                                    </li>
+                                    <li id="extracted-webwork-37-1-6-1-1-2">
+                                        <div class="para" id="extracted-webwork-37-1-6-1-1-2-1">
+                                            <span class="process-math">\(A\)</span> and <span
+                                                class="process-math">\(B\)</span> might have no elements in
+                                            common, giving <span
+                                                class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                                #1 \right|}\card{A\cap B} = 0\text{.}\)</span>
+                                        </div>
+                                    </li>
+                                    <li id="extracted-webwork-37-1-6-1-1-3">
+                                        <div class="para" id="extracted-webwork-37-1-6-1-1-3-1">
+                                            <span
+                                                class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                                #1 \right|}18 \le \card{A \cup B} \le 26\text{.}\)</span> In
+                                            fact, when <span
+                                                class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                                #1 \right|}\card{A \cap B} = 0\)</span> then <span
+                                                class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                                #1 \right|}\card{A \cup B} = 26\)</span> and when <span
+                                                class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                                #1 \right|}\card{A \cap B} = 8\)</span> then <span
+                                                class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                                #1 \right|}\card{A \cup B} = 18\text{.}\)</span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-union-plus-int">
+        <h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+        <div id="webwork-38" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="38" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_6.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-38')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para" id="extracted-webwork-38-1-1-1">If <span
+                        class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left| #1
+                        \right|}\card{A} = 4\)</span> and <span
+                        class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left| #1
+                        \right|}\card{B} = 10\text{,}\)</span> what is <span
+                        class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left| #1
+                        \right|}\card{A \cup B} + \card{A \cap B}\text{?}\)</span>
+                </div>
+                <div class="solutions">
+                    <details id="extracted-webwork-38-1-3" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para" id="extracted-webwork-38-1-3-1">
+                                <span
+                                    class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                    #1 \right|}\card{A \cup B} + \card{A \cap B} = {14}\text{.}\)</span> Use
+                                PIE: We know <span
+                                    class="process-math">\(\renewcommand{\bar}{\overline}\newcommand{\card}[1]{\left|
+                                    #1 \right|}\card{A \cup B} = \card{A} + \card{B} - \card{A \cap B} = 4 + 10
+                                    - \card{A \cap B} \text{.}\)</span>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-pie-tv">
+        <h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+        <div id="webwork-39" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="39" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_7.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-39')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para" id="extracted-webwork-39-1-1-1">A group of college students were asked about
+                    their TV watching habits. Of those surveyed, 30 students watch <em class="emphasis">The
+                        Walking Dead</em>, 18 watch <em class="emphasis">The Blacklist</em>, and 29 watch <em
+                        class="emphasis">Game of Thrones</em>. Additionally, 11 watch <em class="emphasis">The
+                        Walking Dead</em> and <em class="emphasis">The Blacklist</em>, 10 watch <em
+                        class="emphasis">The Walking Dead</em> and <em class="emphasis">Game of Thrones</em>,
+                    and 14 watch <em class="emphasis">The Blacklist</em> and <em class="emphasis">Game of
+                        Thrones</em>. There are 8 students who watch all three shows. How many students surveyed
+                    watched at least one of the shows?</div>
+                <div class="solutions">
+                    <details id="extracted-webwork-39-1-3" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para" id="extracted-webwork-39-1-3-1">50 students. Use Venn diagram or
+                                PIE: <span class="process-math">\(30 + 18 + 29 - (11 + 10+14) + 8=
+                                    {50}\text{.}\)</span>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-pie-potato">
+        <h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+        <div id="webwork-40" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="40" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_8.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-40')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para" id="extracted-webwork-40-1-1-1">In a recent survey, 89 students reported
+                    whether they liked their potatoes Mashed, French-fried, or Twice-baked. 32 liked them
+                    mashed, 33 liked French fried, and 40 liked twice baked potatoes. Additionally, 15 students
+                    liked both mashed and fried potatoes, 12 liked French fries and twice baked potatoes, 19
+                    liked mashed and baked, and 10 liked all three styles. How many students <em
+                        class="emphasis">hate</em> potatoes? Explain why your answer is correct.</div>
+                <div class="solutions">
+                    <details id="extracted-webwork-40-1-3" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para" id="extracted-webwork-40-1-3-1">Using the principle of
+                                inclusion/exclusion, the number of students who like their potatoes in at least
+                                one of the ways described is</div>
+                            <div class="para" id="extracted-webwork-40-1-3-2"><span
+                                    class="process-math">\(\displaystyle{ 32 + 33 + 40 -(15 + 12 + 19) +10 =
+                                    {69}.
+                                    }\)</span></div>
+                            <div class="para" id="extracted-webwork-40-1-3-3">Therefore there are <span
+                                    class="process-math">\(89 - {69} = {20}\)</span> students who do not like
+                                potatoes. You can also do this problem with a Venn diagram.</div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-pie-multiples1">
+        <h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+        <div id="webwork-41" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="41" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_9.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-41')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para" id="extracted-webwork-41-1-1-1">For how many <span class="process-math">\(n
+                        \in \{1,2, \ldots, 640\}\)</span> is <span class="process-math">\(n\)</span> a multiple
+                    of one or more of 8, 3, or 5?</div>
+                <div class="solutions">
+                    <details id="extracted-webwork-41-1-2" class="hint solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span>
+                        </summary>
+                        <div class="hint solution-like knowl__content">
+                            <div class="para" id="extracted-webwork-41-1-2-1">To find out how many numbers are
+                                divisible by 8 and 5, for example, take <span
+                                    class="process-math">\(640/(8\cdot5)\)</span> and round down.</div>
+                        </div>
+                    </details>
+                    <details id="extracted-webwork-41-1-4" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para" id="extracted-webwork-41-1-4-1">342 values of <span
+                                    class="process-math">\(n\text{.}\)</span> Use PIE: <span
+                                    class="process-math">\(80 + 213+ 128 - (26 + 16 + 42) + 5\)</span> or a Venn
+                                diagram. To find out how many numbers are divisible by 3 and 5, for example,
+                                take <span class="process-math">\(640/(3\cdot5)\)</span> and round down.</div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-pie-multiples2">
+        <h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+        <div id="webwork-42" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="42" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_10.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-42')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para" id="extracted-webwork-42-1-1-1">How many positive integers less than 1250 are
+                    multiples of 6, 7, or 5? Use the Principle of Inclusion/Exclusion.</div>
+                <div class="solutions">
+                    <details id="extracted-webwork-42-1-3" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para" id="extracted-webwork-42-1-3-1">To find out how many numbers
+                                strictly less than 1250 are multiples of 6, we can divide 1250 by 6 and round
+                                down. There are 208 many of these. Similarly, there are 178 multiples of 7 and
+                                249 multiples of 5 less than 1250.</div>
+                            <div class="para" id="extracted-webwork-42-1-3-2">We also need the combinations of
+                                these. To be a multiple of 6 and 7 means you are a multiple of 42 , and there
+                                are 29 multiples of 6 and 7. There will be 41 multiples of 6 and 5. There will
+                                be 35 multiples of 7 and 5. Finally, there will be 5 multiples of all three.
+                            </div>
+                            <div class="para" id="extracted-webwork-42-1-3-3">Using PIE, we get</div>
+                            <div class="para" id="extracted-webwork-42-1-3-4"><span
+                                    class="process-math">\(\displaystyle{ 208 +178+ 249 - (29 + 41 + 35) + 5 =
+                                    {535}
+                                    }\)</span></div>
+                            <div class="para" id="extracted-webwork-42-1-3-5">multiples of 6, 7, or 5 less than
+                                1250.</div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="exercises_counting-addmult-11">
+        <h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+        <div class="para logical" id="exercises_counting-addmult-11-1-1">
+            <div class="para">Let <span class="process-math">\(A\text{,}\)</span> <span
+                    class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> be
+                sets.</div>
+            <ol class="lower-alpha" id="exercises_counting-addmult-11-1-1-4">
+                <li id="exercises_counting-addmult-11-1-1-4-1">
+                    <div class="para" id="p-derived-exercises_counting-addmult-11-1-1-4-1">Find <span
+                            class="process-math">\(\card{(A \cup C)\setminus B}\)</span> provided <span
+                            class="process-math">\(\card{A} = 50\text{,}\)</span> <span
+                            class="process-math">\(\card{B} = 45\text{,}\)</span> <span
+                            class="process-math">\(\card{C} = 40\text{,}\)</span> <span
+                            class="process-math">\(\card{A\cap B} = 20\text{,}\)</span> <span
+                            class="process-math">\(\card{A \cap C} = 15\text{,}\)</span> <span
+                            class="process-math">\(\card{B \cap C} = 23\text{,}\)</span> and <span
+                            class="process-math">\(\card{A \cap B \cap C} = 12\text{.}\)</span>
+                    </div>
+                </li>
+                <li id="exercises_counting-addmult-11-1-1-4-2">
+                    <div class="para" id="p-derived-exercises_counting-addmult-11-1-1-4-2">Describe a set in
+                        terms of <span class="process-math">\(A\text{,}\)</span> <span
+                            class="process-math">\(B\text{,}\)</span> and <span
+                            class="process-math">\(C\)</span> with cardinality 26.</div>
+                </li>
+            </ol>
+        </div>
+        <div class="solutions">
+            <details id="exercises_counting-addmult-11-2" class="hint solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span>
+                </summary>
+                <div class="hint solution-like knowl__content">
+                    <div class="para" id="exercises_counting-addmult-11-2-1">For part (a) you could use the
+                        formula for PIE, but for part (b) you might be better off drawing a Venn diagram.</div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="ww-addmult-words">
+        <h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+        <div id="webwork-43" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org"
+            data-seed="43" data-localize-correct="Correct" data-localize-incorrect="Incorrect"
+            data-localize-blank="Blank" data-localize-submit="Submit"
+            data-localize-check-responses="Check Responses" data-localize-reveal="Reveal"
+            data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint"
+            data-localize-solution="Solution"
+            data-sourceFilePath="Contrib/DMOI/1-Counting/1_1-Additive_and_Multiplicative_Principles/1_1_12.pg"
+            data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous"
+            aria-live="polite">
+            <div class="problem-buttons"><button class="webwork-button"
+                    onclick="handleWW('webwork-43')">Activate</button></div>
+            <div class="problem-contents">
+                <div class="para logical" id="extracted-webwork-43-1-1-1">
+                    <div class="para">We want to build 6 letter “words” using only the first <span
+                            class="process-math">\(n =11\)</span> letters of the alphabet. For example, if <span
+                            class="process-math">\(n = 5\)</span> we can use the first 5 letters, <span
+                            class="process-math">\(\{a, b, c, d, e \}\)</span> (Recall, words are just strings
+                        of letters, not necessarily actual English words.)</div>
+                    <ol class="lower-alpha" id="extracted-webwork-43-1-1-1-6">
+                        <li id="extracted-webwork-43-1-1-1-6-1">
+                            <div class="para" id="extracted-webwork-43-1-1-1-6-1-1">How many of these words are
+                                there total?</div>
+                        </li>
+                        <li id="extracted-webwork-43-1-1-1-6-2">
+                            <div class="para" id="extracted-webwork-43-1-1-1-6-2-1">How many of these words
+                                contain no repeated letters?</div>
+                        </li>
+                        <li id="extracted-webwork-43-1-1-1-6-3">
+                            <div class="para" id="extracted-webwork-43-1-1-1-6-3-1">How many of these words
+                                start with the sub-word “ade”?</div>
+                        </li>
+                        <li id="extracted-webwork-43-1-1-1-6-4">
+                            <div class="para" id="extracted-webwork-43-1-1-1-6-4-1">How many of these words
+                                either start with “ade” or end with “be” or both?</div>
+                        </li>
+                        <li id="extracted-webwork-43-1-1-1-6-5">
+                            <div class="para" id="extracted-webwork-43-1-1-1-6-5-1">How many of the words
+                                containing no repeats also do not contain the sub-word “bed”?</div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="solutions">
+                    <details id="extracted-webwork-43-1-7" class="solution solution-like born-hidden-knowl">
+                        <summary class="knowl__link"><span class="type">Solution</span><span
+                                class="period">.</span></summary>
+                        <div class="solution solution-like knowl__content">
+                            <div class="para logical" id="extracted-webwork-43-1-7-1">
+                                <ol class="lower-alpha" id="extracted-webwork-43-1-7-1-1">
+                                    <li id="extracted-webwork-43-1-7-1-1-1">
+                                        <div class="para" id="extracted-webwork-43-1-7-1-1-1-1">
+                                            <span class="process-math">\(11^{6} = {1.77156\times
+                                                10^{6}}\)</span> words, since you select from 11 letters 6
+                                            times.
+                                        </div>
+                                    </li>
+                                    <li id="extracted-webwork-43-1-7-1-1-2">
+                                        <div class="para" id="extracted-webwork-43-1-7-1-1-2-1">(<span
+                                                class="process-math">\(11)\cdot (10)\cdot (9) \dots (11-6+1) =
+                                                {332640}\)</span> words. After selecting a letter, you have
+                                            fewer letters to select for the next one.</div>
+                                    </li>
+                                    <li id="extracted-webwork-43-1-7-1-1-3">
+                                        <div class="para" id="extracted-webwork-43-1-7-1-1-3-1">
+                                            <span class="process-math">\(11 ^ {3} ={1331}\)</span> words: you
+                                            need to select the letters that follow the “ade.”
+                                        </div>
+                                    </li>
+                                    <li id="extracted-webwork-43-1-7-1-1-4">
+                                        <div class="para" id="extracted-webwork-43-1-7-1-1-4-1">
+                                            <span class="process-math">\(11^{3} + 11^{4} -
+                                                11^{1}={15961}\)</span> words. There are <span
+                                                class="process-math">\(11^{3}\)</span> words which start with
+                                            “ade” and another <span class="process-math">\(11^{4}\)</span> words
+                                            that end with “be.” Then we need to subtract the words that have
+                                            both, which we have overcounted.
+                                        </div>
+                                    </li>
+                                    <li id="extracted-webwork-43-1-7-1-1-5">
+                                        <div class="para" id="extracted-webwork-43-1-7-1-1-5-1">
+                                            <span class="process-math">\((11 \cdot (11-1) \cdot (11-2) \dots
+                                                (11-6+1)) - (4\cdot (8)\cdot (8-1) \cdot (8-2) \dots 8-3+1)) =
+                                                {331296}\)</span> words. All possible words without repeats
+                                            minus the bad ones. The taboo word “bed” can be in any of 4
+                                            positions, and for each position we must choose the remaining 3
+                                            letters from the remaining 8 letters in our alphabet.
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="exercises_counting-addmult-13">
+        <h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+        <div class="para" id="exercises_counting-addmult-13-1-1">For how many three digit numbers (100 to 999)
+            is the <em class="emphasis">sum of the digits</em> even? (For example, <span
+                class="process-math">\(343\)</span> has an even sum of digits: <span
+                class="process-math">\(3+4+3 = 10\)</span> which is even.) Find the answer and explain why it is
+            correct in at least two <em class="emphasis">different</em> ways.</div>
+        <div class="solutions">
+            <details id="exercises_counting-addmult-13-2" class="hint solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span>
+                </summary>
+                <div class="hint solution-like knowl__content">
+                    <div class="para" id="exercises_counting-addmult-13-2-1">You could consider cases. For
+                        example, any number of the form ODD-ODD-EVEN will have an even sum. Alternatively, how
+                        many three digit numbers have the sum of their digits even if the first two digits are
+                        54? What if the first two digits are 19?</div>
+                </div>
+            </details>
+        </div>
+    </article>
+    <article class="exercise exercise-like" id="exercises_counting-addmult-14">
+        <h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+        <div class="para" id="exercises_counting-addmult-14-2-1">The number 735000 factors as <span
+                class="process-math">\(2^3 \cdot 3 \cdot 5^4 \cdot 7^2\text{.}\)</span> How many divisors does
+            it have? Explain your answer using the multiplicative principle.</div>
+        <div class="solutions">
+            <details id="exercises_counting-addmult-14-3" class="hint solution-like born-hidden-knowl">
+                <summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span>
+                </summary>
+                <div class="hint solution-like knowl__content">
+                    <div class="para" id="exercises_counting-addmult-14-3-1">For a simpler example, there are 4
+                        divisors of <span class="process-math">\(6 = 2\cdot 3\text{.}\)</span> They are <span
+                            class="process-math">\(1 = 2^0\cdot 3^0\text{,}\)</span> <span
+                            class="process-math">\(2 = 2^1\cdot 3^0\text{,}\)</span> <span
+                            class="process-math">\(3 = 2^0\cdot 3^1\)</span> and <span class="process-math">\(6
+                            = 2^1\cdot 3^1\text{.}\)</span>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </article>
+</section>
+</section>
+</div>

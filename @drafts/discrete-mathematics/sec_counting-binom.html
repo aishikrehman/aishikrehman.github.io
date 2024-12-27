@@ -1,0 +1,425 @@
+---
+title:
+---
+<div id="ptx-content" class="ptx-content"><section class="section" id="sec_counting-binom"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Binomial Coefficients</span>
+</h2>
+<section class="introduction" id="sec_counting-binom-2"><article class="project-like" id="sec_counting-binom-2-1"><h6 class="heading">
+<span class="type">Investigate!</span> </h6> <div class="para" id="sec_counting-binom-2-1-3">In chess, a rook can move only in straight lines (not diagonally). Fill in each square of the chess board below with the number of different shortest paths the rook, in the upper left corner, can take to get to that square. For example, one square is already filled in. There are six different paths from the rook to the square: DDRR (down down right right), DRDR, DRRD, RDDR, RDRD and RRDD.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/chessboard.svg" role="img" class="contained" alt="An 8x8 checkerboard containing an image of a rook chess piece in the top left corner.  The square in the third row, third column contains the number 6."></div></div></div></article> <div class="para" id="sec_counting-binom-2-2">Here are some apparently different discrete objects we can count: subsets, bit strings, lattice paths, and binomial coefficients. We will give an example of each type of counting problem (and say what these things even are). As we will see, these counting problems are surprisingly similar.</div></section><section class="subsection" id="sec_counting-binom-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Subsets</span>
+</h3>
+<div class="para" id="sec_counting-binom-3-4">Subsets should be familiar, otherwise read over <a href="sec_intro-sets.html" class="internal" title="Section 0.3: Sets">Section 0.3</a> again. Suppose we look at the set <span class="process-math">\(A = \{1,2,3,4,5\}\text{.}\)</span> How many subsets of <span class="process-math">\(A\)</span> contain exactly 3 elements?</div>
+<div class="para" id="sec_counting-binom-3-5">First, a simpler question: How many subsets of <span class="process-math">\(A\)</span> are there total? In other words, what is <span class="process-math">\(|\pow(A)|\)</span> (the cardinality of the power set of <span class="process-math">\(A\)</span>)? Think about how we would build a subset. We need to decide, for each of the elements of <span class="process-math">\(A\text{,}\)</span> whether or not to include the element in our subset. So we need to decide “yes” or “no” for the element 1. And for each choice we make, we need to decide “yes” or “no” for the element 2. And so on. For each of the 5 elements, we have 2 choices. Therefore the number of subsets is simply <span class="process-math">\(2\cdot 2\cdot 2 \cdot 2\cdot 2 = 2^5\)</span> (by the multiplicative principle).</div>
+<div class="para" id="sec_counting-binom-3-6">Of those 32 subsets, how many have 3 elements? This is not obvious. Note that we cannot just use the multiplicative principle. Maybe we want to say we have 2 choices (yes/no) for the first element, 2 choices for the second, 2 choices for the third, and then only 1 choice for the other two. But what if we said “no” to one of the first three elements? Then we would have two choices for the 4th element. What a mess!</div>
+<div class="para" id="sec_counting-binom-3-7">Another (bad) idea: we need to pick three elements to be in our subset. There are 5 elements to choose from. So there are 5 choices for the first element, and for each of those 4 choices for the second, and then 3 for the third (last) element. The multiplicative principle would say then that there are a total of <span class="process-math">\(5 \cdot 4 \cdot 3 = 60\)</span> ways to select the 3-element subset. But this cannot be correct (<span class="process-math">\(60 &gt; 32\)</span> for one thing). One of the outcomes we would get from these choices would be the set <span class="process-math">\(\{3,2,5\}\text{,}\)</span> by choosing the element 3 first, then the element 2, then the element 5. Another outcome would be <span class="process-math">\(\{5,2,3\}\)</span> by choosing the element 5 first, then the element 2, then the element 3. But these are the same set! We can correct this by dividing: for each set of three elements, there are 6 outcomes counted among our 60 (since there are 3 choices for which element we list first, 2 for which we list second, and 1 for which we list last). So we expect there to be 10 3-element subsets of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="para" id="sec_counting-binom-3-8">Is this right? Well, we could list out all 10 of them, being very systematic in doing so, to make sure we don’t miss any or list any twice. Or we could try to count how many subsets of <span class="process-math">\(A\)</span> <em class="emphasis">don’t</em> have 3 elements in them. How many have no elements? Just 1 (the empty set). How many have 5? Again, just 1. These are the cases in which we say “no” to all elements, or “yes” to all elements. Okay, what about the subsets which contain a single element? There are 5 of these. We must say “yes” to exactly one element, and there are 5 to choose from. This is also the number of subsets containing 4 elements. Those are the ones for which we must say “no” to exactly one element.</div>
+<div class="para" id="sec_counting-binom-3-9">So far we have counted 12 of the 32 subsets. We have not yet counted the subsets with cardinality 2 and with cardinality 3. There are a total of 20 subsets left to split up between these two groups. But the number of each must be the same! If we say “yes” to exactly two elements, that can be accomplished in exactly the same number of ways as the number of ways we can say “no” to exactly two elements. So the number of 2-element subsets is equal to the number of 3-element subsets. Together there are 20 of these subsets, so 10 each.</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width top" style="width:100%;"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Number of elements:</td>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">Number of subsets:</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines">10</td>
+<td class="c m b0 r0 l0 t0 lines">10</td>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></div></div></section><section class="subsection" id="sec_counting-binom-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Bit Strings</span>
+</h3>
+<div class="para logical" id="sec_counting-binom-4-3">
+<div class="para"> “Bit” is short for “binary digit,” so a <dfn class="terminology">bit string</dfn> is a string of binary digits. The <dfn class="terminology">binary digits</dfn> are simply the numbers 0 and 1. All of the following are bit strings:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1001 \quad 0 \quad 1111 \quad 1010101010\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_counting-binom-4-4"> The number of bits (0’s or 1’s) in the string is the <dfn class="terminology">length</dfn> of the string; the strings above have lengths 4, 1, 4, and 10 respectively. We also can ask how many of the bits are 1’s. The number of 1’s in a bit string is the <dfn class="terminology">weight</dfn> of the string; the weights of the above strings are 2, 0, 4, and 5 respectively.</div>
+<article class="assemblage assemblage-like" id="sec_counting-binom-4-5"><h4 class="heading"><span class="title">Bit Strings.</span></h4>
+<div class="para logical" id="sec_counting-binom-4-5-8"><ul class="disc" id="sec_counting-binom-4-5-8-1">
+<li id="sec_counting-binom-4-5-8-1-1"><div class="para" id="sec_counting-binom-4-5-8-1-1-1">An <dfn class="terminology"><span class="process-math">\(n\)</span>-bit string</dfn> is a bit string of length <span class="process-math">\(n\text{.}\)</span> That is, it is a string containing <span class="process-math">\(n\)</span> symbols, each of which is a bit, either 0 or 1.</div></li>
+<li id="sec_counting-binom-4-5-8-1-2"><div class="para" id="sec_counting-binom-4-5-8-1-2-1">The <dfn class="terminology">weight</dfn>  of a bit string is the number of 1’s in it.</div></li>
+<li id="sec_counting-binom-4-5-8-1-3"><div class="para" id="p-derived-sec_counting-binom-4-5-8-1-3">
+<span class="process-math">\(\B^n\)</span>  is the <em class="emphasis">set</em> of all <span class="process-math">\(n\)</span>-bit strings.</div></li>
+<li id="sec_counting-binom-4-5-8-1-4"><div class="para" id="p-derived-sec_counting-binom-4-5-8-1-4">
+<span class="process-math">\(\B^n_k\)</span>  is the set of all <span class="process-math">\(n\)</span>-bit strings of weight <span class="process-math">\(k\text{.}\)</span>
+</div></li>
+</ul></div></article><div class="para" id="sec_counting-binom-4-6">For example, the elements of the set <span class="process-math">\(\B^3_2\)</span> are the bit strings 011, 101, and 110. Those are the only strings containing three bits exactly two of which are 1’s.</div>
+<div class="para" id="sec_counting-binom-4-7">The counting questions: How many bit strings have length 5? How many of those have weight 3? In other words, we are asking for the cardinalities <span class="process-math">\(|\B^5|\)</span> and <span class="process-math">\(|\B^5_3|\text{.}\)</span>
+</div>
+<div class="para" id="sec_counting-binom-4-8">To find the number of 5-bit strings is straight forward. We have 5 bits, and each can either be a 0 or a 1. So there are 2 choices for the first bit, 2 choices for the second, and so on. By the multiplicative principle, there are <span class="process-math">\(2 \cdot 2 \cdot 2\cdot 2 \cdot 2 = 2^5 = 32\)</span> such strings.</div>
+<div class="para logical" id="sec_counting-binom-4-9">
+<div class="para">Finding the number of 5-bit strings of weight 3 is harder. Think about how such a string could start. The first bit must be either a 0 or a 1. In the first case (the string starts with a 0), we must then decide on four more bits. To have a total of three 1’s, among those four remaining bits there must be three 1’s. To count all of these strings, we must include all 4-bit strings of weight 3. In the second case (the string starts with a 1), we still have four bits to choose, but now only two of them can be 1’s, so we should look at all the 4-bit strings of weight 2. So the strings in <span class="process-math">\(\B^5_3\)</span> all have the form <span class="process-math">\(1\B^4_2\)</span> (that is, a 1 followed by a string from <span class="process-math">\(\B^4_2\)</span>) or <span class="process-math">\(0\B^4_3\text{.}\)</span> These two sets are disjoint, so we can use the additive principle:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\B^5_3| = |\B^4_2| + |\B^4_3|\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_counting-binom-4-10">
+<div class="para"> This is an example of a <dfn class="terminology">recurrence relation</dfn>. We represented one instance of our counting problem in terms of two simpler instances of the problem. If only we knew the cardinalities of <span class="process-math">\(\B^4_2\)</span> and <span class="process-math">\(\B^4_3\text{.}\)</span> Repeating the same reasoning,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\B^4_2| = |\B^3_1| + |\B^3_2| \quad \mbox{and} \quad |\B^4_3| = |\B^3_2| + |\B^3_3|\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_counting-binom-4-11">We can keep going down, but this should be good enough. Both <span class="process-math">\(\B^3_1\)</span> and <span class="process-math">\(\B^3_2\)</span> contain 3 bit strings: we must pick one of the three bits to be a 1 (three ways to do that) or one of the three bits to be a 0 (three ways to do that). Also, <span class="process-math">\(\B^3_3\)</span> contains just one string: 111. Thus <span class="process-math">\(|\B^4_2| = 6\)</span> and <span class="process-math">\(|\B^4_3| = 4\text{,}\)</span> which puts <span class="process-math">\(\B^5_3\)</span> at a total of 10 strings.</div>
+<div class="para" id="sec_counting-binom-4-12"> But wait —32 and 10 were the answers to the counting questions about subsets. Coincidence? Not at all. Each bit string can be thought of as a <em class="emphasis">code</em> for a subset. To represent the subsets of <span class="process-math">\(A = \{1,2,3,4,5\}\text{,}\)</span> we can use 5-bit strings, one bit for each element of <span class="process-math">\(A\text{.}\)</span> Each bit in the string is a 0 if its corresponding element of <span class="process-math">\(A\)</span> is not in the subset, and a 1 if the element of <span class="process-math">\(A\)</span> is in the subset. Remember, deciding the subset amounted to a sequence of five yes/no votes for the elements of <span class="process-math">\(A\text{.}\)</span> Instead of yes, we put a 1; instead of no, we put a 0.</div>
+<div class="para" id="sec_counting-binom-4-13">For example, the bit string <span class="process-math">\(11001\)</span> represents the subset <span class="process-math">\(\{1,2,5\}\)</span> since the first, second and fifth bits are 1’s. The subset <span class="process-math">\(\{3,5\}\)</span> would be coded by the string <span class="process-math">\(00101\text{.}\)</span> What we really have here is a bijection from <span class="process-math">\(\pow(A)\)</span> to <span class="process-math">\(\B^5\text{.}\)</span>
+</div>
+<div class="para" id="sec_counting-binom-4-14">Now for a subset to contain exactly three elements, the corresponding bit string must contain exactly three 1’s. In other words, the weight must be 3. Thus counting the number of 3-element subsets of <span class="process-math">\(A\)</span> is the same as counting the number 5-bit strings of weight 3.</div></section><section class="subsection" id="sec_counting-binom-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Lattice Paths</span>
+</h3>
+<div class="para" id="sec_counting-binom-5-2"> The <dfn class="terminology">integer lattice</dfn> is the set of all points in the Cartesian plane for which both the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> coordinates are integers. If you like to draw graphs on graph paper, the lattice is the set of all the intersections of the grid lines.</div>
+<div class="para" id="sec_counting-binom-5-3">A <dfn class="terminology">lattice path</dfn>  is one of the shortest possible paths connecting two points on the lattice, moving only horizontally and vertically. For example, here are three possible lattice paths from the point <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((3,2)\text{:}\)</span>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel top" style="width:31.0344827586207%;"><img src="generated/latex-image/lattice-path-1.svg" role="img" class="contained" alt="A grid of 12 dots arranged in a 4-wide by 3-high rectangle.  The lower-left dot is labeled (0,0).  The top right dot is labeled (3,2).  A bold line runs from the bottom left dot to the third dot on the bottom row, then turns up and runs to the top dot in that column, then turns right and runs to the top-right dot."></div>
+<div class="sbspanel top" style="width:31.0344827586207%;"><img src="generated/latex-image/lattice-path-2.svg" role="img" class="contained" alt="A grid of 12 dots arranged in a 4-wide by 3-high rectangle.  The lower-left dot is labeled (0,0).  The top right dot is labeled (3,2).  A bold line runs from the bottom up to the top left dot, and then to the top-right dot."></div>
+<div class="sbspanel top" style="width:31.0344827586207%;"><img src="generated/latex-image/lattice-path-3.svg" role="img" class="contained" alt="A grid of 12 dots arranged in a 4-wide by 3-high rectangle.  The lower-left dot is labeled (0,0).  The top right dot is labeled (3,2).  A bold line runs from the bottom left dot to the second dot on the bottom row, then turns up and runs to the next dot above it, then turns right and runs to the middle right dot, and finally turns up and runs to the top-right dot."></div>
+</div></div>
+<div class="para" id="sec_counting-binom-5-5">Notice to ensure the path is the <em class="emphasis">shortest</em> possible, each move must be either to the right or up. Additionally, in this case, note that no matter what path we take, we must make three steps right and two steps up. No matter what order we make these steps, there will always be 5 steps. Thus each path has <em class="emphasis">length</em> 5. </div>
+<div class="para" id="sec_counting-binom-5-6">The counting question: how many lattice paths are there between <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((3,2)\text{?}\)</span> We could try to draw all of these, or instead of drawing them, maybe just list which direction we travel on each of the 5 steps. One path might be RRUUR, or maybe UURRR, or perhaps RURRU (those correspond to the three paths drawn above). So how many such strings of R’s and U’s are there?</div>
+<div class="para" id="sec_counting-binom-5-7"> Notice that each of these strings must contain 5 symbols. Exactly 3 of them must be R’s (since our destination is 3 units to the right). This seems awfully familiar. In fact, what if we used <span class="process-math">\(1\)</span>’s instead of R’s and 0’s instead of U’s? Then we would just have 5-bit strings of weight 3. There are 10 of those, so there are 10 lattice paths from (0,0) to (3,2).</div>
+<div class="para" id="sec_counting-binom-5-8">The correspondence between bit strings and lattice paths does not stop there. Here is another way to count lattice paths. Consider the lattice shown below:</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/lattice-ab.svg" role="img" class="contained" alt="A grid of 12 dots arranged in a 4-wide by 3-high rectangle.  The lower-left dot is labeled (0,0).  The top right dot is labeled (3,2).  The dot on the top row directly to the left of (3,2) is labeled A; the dot directly below (3,2) is labeled B."></div></div></div>
+<div class="para" id="sec_counting-binom-5-10">Any lattice path from (0,0) to (3,2) must pass through exactly one of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> The point <span class="process-math">\(A\)</span> is 4 steps away from (0,0) and two of them are towards the right. The number of lattice paths to <span class="process-math">\(A\)</span> is the same as the number of 4-bit strings of weight 2, namely 6. The point <span class="process-math">\(B\)</span> is 4 steps away from (0,0), but now 3 of them are towards the right. So the number of paths to point <span class="process-math">\(B\)</span> is the same as the number of 4-bit strings of weight 3, namely 4. So the total number of paths to (3,2) is just <span class="process-math">\(6+4\text{.}\)</span> This is the same way we calculated the number of 5-bit strings of weight 3. The point: the exact same recurrence relation exists for bit strings and for lattice paths.</div></section><section class="subsection" id="sec_counting-binom-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Binomial Coefficients</span>
+</h3>
+<div class="para logical" id="sec_counting-binom-6-3">
+<div class="para"> <dfn class="terminology">Binomial coefficients</dfn> are the coefficients in the expanded version of a binomial, such as <span class="process-math">\((x+y)^5\text{.}\)</span> What happens when we multiply such a binomial out? We will expand <span class="process-math">\((x+y)^n\)</span> for various values of <span class="process-math">\(n\text{.}\)</span> Each of these are done by multiplying everything out (i.e., FOIL-ing) and then collecting like terms.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)^1 = x + y
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)^2 = x^2 + 2xy + y^2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_counting-binom-6-4">
+<div class="para">In fact, there is a quicker way to expand the above binomials. For example, consider the next one, <span class="process-math">\((x+y)^5\text{.}\)</span> What we are really doing is multiplying out,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)(x+y)(x+y)(x+y)(x+y)\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_counting-binom-6-5">If that looks daunting, go back to the case of <span class="process-math">\((x+y)^3 = (x+y)(x+y)(x+y)\text{.}\)</span> Why do we only have one <span class="process-math">\(x^3\)</span> and <span class="process-math">\(y^3\)</span> but three <span class="process-math">\(x^2y\)</span> and <span class="process-math">\(xy^2\)</span> terms? Every time we distribute over an <span class="process-math">\((x+y)\)</span> we create two copies of what is left, one multiplied by <span class="process-math">\(x\text{,}\)</span> the other multiplied by <span class="process-math">\(y\text{.}\)</span> To get <span class="process-math">\(x^3\text{,}\)</span> we need to pick the “multiplied by <span class="process-math">\(x\)</span>” side every time (we don’t have any <span class="process-math">\(y\)</span>’s in the term). This will only happen once. On the other hand, to get <span class="process-math">\(x^2y\)</span> we need to select the <span class="process-math">\(x\)</span> side twice and the <span class="process-math">\(y\)</span> side once. In other words, we need to pick one of the three <span class="process-math">\((x+y)\)</span> terms to “contribute” their <span class="process-math">\(y\text{.}\)</span>
+</div>
+<div class="para logical" id="sec_counting-binom-6-6">
+<div class="para">Similarly, in the expansion of <span class="process-math">\((x+y)^5\text{,}\)</span> there will be only one <span class="process-math">\(x^5\)</span> term and one <span class="process-math">\(y^5\)</span> term. This is because to get an <span class="process-math">\(x^5\text{,}\)</span> we need to use the <span class="process-math">\(x\)</span> term in each of the copies of the binomial <span class="process-math">\((x+y)\text{,}\)</span> and similarly for <span class="process-math">\(y^5\text{.}\)</span> What about <span class="process-math">\(x^4y\text{?}\)</span> To get terms like this, we need to use four <span class="process-math">\(x\)</span>’s and one <span class="process-math">\(y\text{,}\)</span> so we need exactly one of the five binomials to contribute a <span class="process-math">\(y\text{.}\)</span> There are 5 choices for this, so there are 5 ways to get <span class="process-math">\(x^4y\text{,}\)</span> so the coefficient of <span class="process-math">\(x^4y\)</span> is 5. This is also the coefficient for <span class="process-math">\(xy^4\)</span> for the same (but opposite) reason: there are 5 ways to pick which of the 5 binomials contribute the single <span class="process-math">\(x\text{.}\)</span> So far we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)^5 = x^5 + 5x^4y + \underline{~?~}~x^3y^2 + \underline{~?~}~x^2y^3 + 5 xy^4 + y^5\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_counting-binom-6-7">
+<div class="para">We still need the coefficients of <span class="process-math">\(x^3y^2\)</span> and <span class="process-math">\(x^2y^3\text{.}\)</span> In both cases, we need to pick exactly 3 of the 5 binomials to contribute one variable, the other two to contribute the other. Wait. This sounds familiar. We have 5 things, each can be one of two things, and we need a total of 3 of one of them. That’s just like taking 5 bits and making sure exactly 3 of them are 1’s. So the coefficient of <span class="process-math">\(x^3y^2\)</span> (and also <span class="process-math">\(x^2y^3\)</span>) will be exactly the same as the number of bit strings of length 5 and weight 3, which we found earlier to be 10. So we have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)^5 = x^5 + 5x^4y + 10x^3y^2 + 10x^2y^3 + 5 xy^4 + y^5\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_counting-binom-6-8">These numbers we keep seeing over and over again. They are the number of subsets of a particular size, the number of bit strings of a particular weight, the number of lattice paths, and the coefficients of these binomial products. We will call them <dfn class="terminology">binomial coefficients</dfn>. We even have a special symbol for them: <span class="process-math">\({n \choose k}\text{.}\)</span>
+</div>
+<article class="assemblage assemblage-like" id="sec_counting-binom-6-9"><h4 class="heading"><span class="title">Binomial Coefficients.</span></h4>
+<div class="para logical" id="sec_counting-binom-6-9-5">
+<div class="para">For each integer <span class="process-math">\(n \ge 0\)</span> and integer <span class="process-math">\(k\)</span> with <span class="process-math">\(0 \le k \le n\)</span> there is a number</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{n\choose k}\text{,}
+\end{equation*}
+</div>
+<div class="para">read “<span class="process-math">\(n\)</span> choose <span class="process-math">\(k\text{.}\)</span>” We have:</div>
+<ul class="disc" id="sec_counting-binom-6-9-5-6">
+<li id="sec_counting-binom-6-9-5-6-1"><div class="para" id="p-derived-sec_counting-binom-6-9-5-6-1">
+<span class="process-math">\({n\choose k} = |\B^n_k|\text{,}\)</span> the number of <span class="process-math">\(n\)</span>-bit strings of weight <span class="process-math">\(k\text{.}\)</span>
+</div></li>
+<li id="sec_counting-binom-6-9-5-6-2"><div class="para" id="p-derived-sec_counting-binom-6-9-5-6-2">
+<span class="process-math">\({n \choose k}\)</span> is the number of subsets of a set of size <span class="process-math">\(n\)</span> each with cardinality <span class="process-math">\(k\text{.}\)</span>
+</div></li>
+<li id="sec_counting-binom-6-9-5-6-3"><div class="para" id="p-derived-sec_counting-binom-6-9-5-6-3">
+<span class="process-math">\({n \choose k}\)</span> is the number of lattice paths of length <span class="process-math">\(n\)</span> containing <span class="process-math">\(k\)</span> steps to the right.</div></li>
+<li id="sec_counting-binom-6-9-5-6-4"><div class="para" id="p-derived-sec_counting-binom-6-9-5-6-4">
+<span class="process-math">\({n \choose k}\)</span> is the coefficient of <span class="process-math">\(x^ky^{n-k}\)</span> in the expansion of <span class="process-math">\((x+y)^n\text{.}\)</span>
+</div></li>
+<li id="sec_counting-binom-6-9-5-6-5"><div class="para" id="p-derived-sec_counting-binom-6-9-5-6-5">
+<span class="process-math">\({n \choose k}\)</span> is the number of ways to select <span class="process-math">\(k\)</span> objects from a total of <span class="process-math">\(n\)</span> objects.</div></li>
+</ul>
+</div></article><div class="para logical" id="sec_counting-binom-6-10">
+<div class="para">The last bullet point is usually taken as the definition of <span class="process-math">\({n \choose k}\text{.}\)</span> Out of <span class="process-math">\(n\)</span> objects we must choose <span class="process-math">\(k\)</span> of them, so there are <span class="process-math">\(n\)</span> choose <span class="process-math">\(k\)</span> ways of doing this. Each of our counting problems above can be viewed in this way:</div>
+<ul class="disc" id="sec_counting-binom-6-10-6">
+<li id="sec_counting-binom-6-10-6-1"><div class="para" id="sec_counting-binom-6-10-6-1-1">How many subsets of <span class="process-math">\(\{1,2,3,4,5\}\)</span> contain exactly 3 elements? We must choose <span class="process-math">\(3\)</span> of the 5 elements to be in our subset. There are <span class="process-math">\({5 \choose 3}\)</span> ways to do this, so there are <span class="process-math">\({5 \choose 3}\)</span> such subsets.</div></li>
+<li id="sec_counting-binom-6-10-6-2"><div class="para" id="sec_counting-binom-6-10-6-2-1">How many bit strings have length 5 and weight 3? We must choose <span class="process-math">\(3\)</span> of the 5 bits to be 1’s. There are <span class="process-math">\({5 \choose 3}\)</span> ways to do this, so there are <span class="process-math">\({5 \choose 3}\)</span> such bit strings.</div></li>
+<li id="sec_counting-binom-6-10-6-3"><div class="para" id="sec_counting-binom-6-10-6-3-1">How many lattice paths are there from (0,0) to (3,2)? We must choose 3 of the 5 steps to be towards the right. There are <span class="process-math">\({5 \choose 3}\)</span> ways to do this, so there are <span class="process-math">\({5 \choose 3}\)</span> such lattice paths.</div></li>
+<li id="sec_counting-binom-6-10-6-4"><div class="para" id="sec_counting-binom-6-10-6-4-1">What is the coefficient of <span class="process-math">\(x^3y^2\)</span> in the expansion of <span class="process-math">\((x+y)^5\text{?}\)</span> We must choose 3 of the 5 copies of the binomial to contribute an <span class="process-math">\(x\text{.}\)</span> There are <span class="process-math">\({5 \choose 3}\)</span> ways to do this, so the coefficient is <span class="process-math">\({5 \choose 3}\text{.}\)</span>
+</div></li>
+</ul>
+</div>
+<div class="para logical" id="sec_counting-binom-6-11">
+<div class="para">It should be clear that in each case above, we have the right answer. All we had to do is phrase the question correctly and it became obvious that <span class="process-math">\({5 \choose 3}\)</span> is correct. However, this does not tell us that the answer is in fact 10 in each case. We will eventually find a formula for <span class="process-math">\({n \choose k}\text{,}\)</span> but for now, look back at how we arrived at the answer 10 in our counting problems above. It all came down to bit strings, and we have a recurrence relation for bit strings:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\B^n_k| = |\B^{n-1}_{k-1}| + |\B^{n-1}_k|\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_counting-binom-6-12">Remember, this is because we can start the bit string with either a 1 or a 0. In both cases, we have <span class="process-math">\(n-1\)</span> more bits to pick. The strings starting with 1 must contain <span class="process-math">\(k-1\)</span> more 1’s, while the strings starting with 0 still need <span class="process-math">\(k\)</span> more 1’s.</div>
+<div class="para" id="sec_counting-binom-6-13">Since <span class="process-math">\(|\B^n_k| = {n \choose k}\text{,}\)</span> the same recurrence relation holds for binomial coefficients:</div>
+<article class="assemblage assemblage-like" id="sec_counting-binom-6-14"><h4 class="heading"><span class="title">Recurrence relation for <span class="process-math">\({n \choose k}\)</span>.</span></h4>
+<div class="para logical" id="sec_counting-binom-6-14-4"><div class="displaymath process-math">
+\begin{equation*}
+{n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}\text{.}
+\end{equation*}
+</div></div></article></section><section class="subsection" id="subsec_Pascal"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Pascal’s Triangle</span>
+</h3>
+<div class="para" id="subsec_Pascal-3">Let’s arrange the binomial coefficients <span class="process-math">\({n \choose k}\)</span> into a triangle like follows:</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/pascal-nCk.svg" role="img" class="contained" alt="Triangular array of binomial coefficients.  Each lower row extends equally on both sides beyond the row above.  Top row contains 0 choose 0.  Second row contains 1 choose 0 and 1 choose 1 (from left to right).  Third row contains 2 choose 0, 2 choose 1, and 2 choose 2. Below that the row contains 3 choose 0, 3 choose 1, 3 choose 2, and 3 choose 3.  The bottom row contains 4 choose 0 through 4 choose 4."></div></div></div>
+<div class="para" id="subsec_Pascal-5">This can continue as far down as we like. The recurrence relation for <span class="process-math">\({n \choose k}\)</span> tells us that each entry in the triangle is the sum of the two entries above it. The entries on the sides of the triangle are always 1. This is because <span class="process-math">\({n \choose 0} = 1\)</span> for all <span class="process-math">\(n\)</span> since there is only one way to pick 0 of <span class="process-math">\(n\)</span> objects and <span class="process-math">\({n \choose n} = 1\)</span> since there is one way to select all <span class="process-math">\(n\)</span> out of <span class="process-math">\(n\)</span> objects. Using the recurrence relation, and the fact that the sides of the triangle are 1’s, we can easily replace all the entries above with the correct values of <span class="process-math">\({n \choose k}\text{.}\)</span> Doing so gives us <dfn class="terminology">Pascal’s triangle</dfn>. </div>
+<div class="para" id="subsec_Pascal-6">We can use Pascal’s triangle to calculate binomial coefficients. For example, using the triangle below, we can find <span class="process-math">\({12 \choose 6} = 924\text{.}\)</span>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><img src="generated/latex-image/pascal-large.svg" role="img" class="contained" alt="The first 17 rows of Pascal’s Triangle.  A triangular array of hexagons, each row containing one more hexagon that the row above it.  In each hexagon is an integer: 1’s on the border of the triangle, and every integer inside the triangle the sum of the two integers above it."></div></div></div></section><section class="exercises" id="exercises_counting-binom"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ww-binom-subsets-all"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div id="webwork-44" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="44" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-44')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-44-1-1-1">
+<div class="para">Let <span class="process-math">\(S = {\left\{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15\right\}}\)</span>
+</div>
+<ol class="lower-alpha" id="extracted-webwork-44-1-1-1-2">
+<li id="extracted-webwork-44-1-1-1-2-1"><div class="para" id="extracted-webwork-44-1-1-1-2-1-1">How many subsets are there total?</div></li>
+<li id="extracted-webwork-44-1-1-1-2-2"><div class="para" id="extracted-webwork-44-1-1-1-2-2-1">How many subsets have <span class="process-math">\(\{2,3,5\}\)</span> as a subset?</div></li>
+<li id="extracted-webwork-44-1-1-1-2-3"><div class="para" id="extracted-webwork-44-1-1-1-2-3-1">How many subsets contain at least one odd number?</div></li>
+<li id="extracted-webwork-44-1-1-1-2-4"><div class="para" id="extracted-webwork-44-1-1-1-2-4-1">How many subsets contain exactly one even number?</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-44-1-6" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="extracted-webwork-44-1-6-1"><ol class="lower-alpha" id="extracted-webwork-44-1-6-1-1">
+<li id="extracted-webwork-44-1-6-1-1-1"><div class="para" id="extracted-webwork-44-1-6-1-1-1-1">
+<span class="process-math">\(2^{15} = 32768\)</span> subsets. We need to select yes/no for each of the 15 elements.</div></li>
+<li id="extracted-webwork-44-1-6-1-1-2"><div class="para" id="extracted-webwork-44-1-6-1-1-2-1">
+<span class="process-math">\(2^{12} = 4096\)</span> subsets.  We need to select yes/no for each of the remaining 12 elements.</div></li>
+<li id="extracted-webwork-44-1-6-1-1-3"><div class="para" id="extracted-webwork-44-1-6-1-1-3-1">
+<span class="process-math">\(2^{15} - 2^{7} = 32640\)</span> subsets.  We subtract the number of subsets which do <em class="emphasis">not</em> contain any odd numbers (<span class="process-math">\(2^{7}\)</span>-select yes or no for each even element) from the total number of possible subsets.</div></li>
+<li id="extracted-webwork-44-1-6-1-1-4"><div class="para" id="extracted-webwork-44-1-6-1-1-4-1">
+<span class="process-math">\({7 \choose 1}\cdot 2^{8} ={1792}\)</span> subsets.  First pick the even number.  Then say yes or no to each of the odd numbers.</div></li>
+</ol></div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-subsets-card"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div id="webwork-45" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="45" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_2.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-45')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-45-1-1-1">
+<div class="para">Let <span class="process-math">\(S = {\left\{1,2,3,4,5,6,7,8,9,10\right\}}\)</span>
+</div>
+<ol class="lower-alpha" id="extracted-webwork-45-1-1-1-2">
+<li id="extracted-webwork-45-1-1-1-2-1">
+<div class="para" id="extracted-webwork-45-1-1-1-2-1-1">How many subsets are there of cardinality 6?</div>
+<div class="para" id="extracted-webwork-45-1-1-1-2-1-2">
+<span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span>  (Note: you can enter “C(n,k)” for <span class="process-math">\(\binom{n}{k}\text{.}\)</span>)</div>
+</li>
+<li id="extracted-webwork-45-1-1-1-2-2"><div class="para" id="extracted-webwork-45-1-1-1-2-2-1">How many subsets of cardinality 6 have <span class="process-math">\(\{2,3,5\}\)</span> as a subset?</div></li>
+<li id="extracted-webwork-45-1-1-1-2-3"><div class="para" id="extracted-webwork-45-1-1-1-2-3-1">How many subsets of cardinality 6 contain at least one odd number?</div></li>
+<li id="extracted-webwork-45-1-1-1-2-4"><div class="para" id="extracted-webwork-45-1-1-1-2-4-1">How many subsets of cardinality 6 contain exactly one even number?</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-45-1-6" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="extracted-webwork-45-1-6-1"><ol class="lower-alpha" id="extracted-webwork-45-1-6-1-1">
+<li id="extracted-webwork-45-1-6-1-1-1"><div class="para" id="extracted-webwork-45-1-6-1-1-1-1">
+<span class="process-math">\({10\choose 6} = 210\)</span> subsets.</div></li>
+<li id="extracted-webwork-45-1-6-1-1-2"><div class="para" id="extracted-webwork-45-1-6-1-1-2-1">
+<span class="process-math">\({7 \choose 3} = 35\)</span> subsets.  We need to select 3 of the 7 remaining elements of <span class="process-math">\(S\)</span> to be in the subset.</div></li>
+<li id="extracted-webwork-45-1-6-1-1-3"><div class="para" id="extracted-webwork-45-1-6-1-1-3-1">
+<span class="process-math">\({10 \choose 6} = 210\)</span> subsets.  <em class="emphasis">All</em> subsets of cardinality 6 must contain at least one odd number.</div></li>
+<li id="extracted-webwork-45-1-6-1-1-4"><div class="para" id="extracted-webwork-45-1-6-1-1-4-1">
+<span class="process-math">\({5 \choose 1} = 5\)</span> subsets.  Select 1 of the 5 even numbers.  The remaining 5 odd numbers of <span class="process-math">\(S\)</span> must all be in the set.</div></li>
+</ol></div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-subsets-vs"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div id="webwork-46" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="46" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-46')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-46-1-1-1">
+<div class="para">Let <span class="process-math">\(A = {\left\{1,2,3,4\right\}} \text{.}\)</span>
+</div>
+<ol class="lower-alpha" id="extracted-webwork-46-1-1-1-2">
+<li id="extracted-webwork-46-1-1-1-2-1"><div class="para" id="extracted-webwork-46-1-1-1-2-1-1">How many subsets of <span class="process-math">\(A\)</span> are there? That is, find <span class="process-math">\(\newcommand{\pow}{\mathcal P}|\pow(A)|\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-46-1-1-1-2-2"><div class="para" id="extracted-webwork-46-1-1-1-2-2-1">How many subsets of <span class="process-math">\(A\)</span> contain exactly 3 elements?</div></li>
+<li id="extracted-webwork-46-1-1-1-2-3"><div class="para" id="extracted-webwork-46-1-1-1-2-3-1">How many subsets of <span class="process-math">\(A\)</span> contain only even numbers?</div></li>
+<li id="extracted-webwork-46-1-1-1-2-4"><div class="para" id="extracted-webwork-46-1-1-1-2-4-1">How many subsets of <span class="process-math">\(A\)</span> contain an even number of elements?</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-46-1-6" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="extracted-webwork-46-1-6-1"><ol class="lower-alpha" id="extracted-webwork-46-1-6-1-1">
+<li id="extracted-webwork-46-1-6-1-1-1"><div class="para" id="extracted-webwork-46-1-6-1-1-1-1">There are <span class="process-math">\({16}\)</span> subsets. This is <span class="process-math">\(2^4\text{,}\)</span> which makes sense because we are deciding yes or no on whether to include each element of <span class="process-math">\(A\)</span> in the subset.</div></li>
+<li id="extracted-webwork-46-1-6-1-1-2"><div class="para" id="extracted-webwork-46-1-6-1-1-2-1">Of the 4 elements in <span class="process-math">\(A\text{,}\)</span> we must choose 3 of them to be in the subset. So <span class="process-math">\({4 \choose 3} = {4}\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-46-1-6-1-1-3"><div class="para" id="extracted-webwork-46-1-6-1-1-3-1">For each of the 4 elements from <span class="process-math">\(A\text{,}\)</span> we must decide yes or no on whether to include them in the subset. However, for the odd numbers, we only have one choice: no. So there are only 2 elements we have two choices for, so the answer is <span class="process-math">\(2^{2} = {4}\text{.}\)</span> (Note, if you wish to exclude the empty set - it does not contain odd numbers, but no evens either - then you could subtract 1).</div></li>
+<li id="extracted-webwork-46-1-6-1-1-4">
+<div class="para" id="extracted-webwork-46-1-6-1-1-4-1">Count the number of subsets with each possible even cardinality:</div>
+<div class="para" id="extracted-webwork-46-1-6-1-1-4-2"><span class="process-math">\(\displaystyle{                    {4 \choose 0} + {4 \choose 2} + \dots... = {8}
+}\)</span></div>
+</li>
+</ol></div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-bitstrings"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div id="webwork-47" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="47" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_4.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-47')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-47-1-1-1">
+<div class="para">How many <span class="process-math">\(14\)</span>-bit strings (that is, bit strings of length 14) are there which:</div>
+<ol class="lower-alpha" id="extracted-webwork-47-1-1-1-2">
+<li id="extracted-webwork-47-1-1-1-2-1"><div class="para" id="extracted-webwork-47-1-1-1-2-1-1">Start with the sub-string 011?</div></li>
+<li id="extracted-webwork-47-1-1-1-2-2"><div class="para" id="extracted-webwork-47-1-1-1-2-2-1">Have weight 5 (i.e., contain exactly 5 1’s) and start with the sub-string 011?</div></li>
+<li id="extracted-webwork-47-1-1-1-2-3"><div class="para" id="extracted-webwork-47-1-1-1-2-3-1">Either start with <span class="process-math">\(011\)</span> or end with <span class="process-math">\(01\)</span> (or both)?</div></li>
+<li id="extracted-webwork-47-1-1-1-2-4"><div class="para" id="extracted-webwork-47-1-1-1-2-4-1">Have weight 5 and either start with <span class="process-math">\(011\)</span> or end with <span class="process-math">\(01\)</span> (or both)?</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-47-1-6" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="extracted-webwork-47-1-6-1"><ol class="lower-alpha" id="extracted-webwork-47-1-6-1-1">
+<li id="extracted-webwork-47-1-6-1-1-1"><div class="para" id="extracted-webwork-47-1-6-1-1-1-1">
+<span class="process-math">\(2^{11} = {2048}\text{.}\)</span> You have 2 choices for each of the remaining 11 bits.</div></li>
+<li id="extracted-webwork-47-1-6-1-1-2"><div class="para" id="extracted-webwork-47-1-6-1-1-2-1">
+<span class="process-math">\({11 \choose 3} = 165\text{.}\)</span> You need to choose 3 of the remaining 11 bits to be 1’s.</div></li>
+<li id="extracted-webwork-47-1-6-1-1-3"><div class="para" id="extracted-webwork-47-1-6-1-1-3-1">5632. There are <span class="process-math">\(2^{11}\)</span> strings that start with 011, and another <span class="process-math">\(2^{12}\)</span> which end with 01 (we choose 1 or 0 for 12 bits). However, we count the strings that start with 011 and end with 01 twice - there are <span class="process-math">\(2^{9}\)</span> such strings. So using PIE, we have <span class="process-math">\(2^{11} + 2^{12} - 2^{9} = {5632}\)</span>
+</div></li>
+<li id="extracted-webwork-47-1-6-1-1-4"><div class="para" id="extracted-webwork-47-1-6-1-1-4-1">624. There are <span class="process-math">\({11 \choose 3} = 165\)</span> strings of weight 5 which start with 011, and another <span class="process-math">\({12 \choose 4} ={495}\)</span> which end with 01. We have over counted again - there are weight 5 strings which both start with 011 and end with 01, in fact <span class="process-math">\({9 \choose 2} ={36}\)</span> of them. So all together we have <span class="process-math">\(165+{495}-{36} = {624}\)</span> strings.</div></li>
+</ol></div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-coin-rows"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div id="webwork-48" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="48" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_5.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-48')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-48-1-1-1">
+<div class="para">You break your piggy-bank to discover lots of pennies and nickels. You start arranging these in rows of 8 coins.</div>
+<ol class="lower-alpha" id="extracted-webwork-48-1-1-1-1">
+<li id="extracted-webwork-48-1-1-1-1-1"><div class="para" id="extracted-webwork-48-1-1-1-1-1-1">You find yourself making rows containing an equal number of pennies and nickels.  For fun, you decide to lay out every possible such row.  How many coins will you need?</div></li>
+<li id="extracted-webwork-48-1-1-1-1-2"><div class="para" id="extracted-webwork-48-1-1-1-1-2-1">How many coins would you need to make all possible rows of 8 coins (not necessarily with equal number of pennies and nickels)?</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-48-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="extracted-webwork-48-1-4-1"><ol class="lower-alpha" id="extracted-webwork-48-1-4-1-1">
+<li id="extracted-webwork-48-1-4-1-1-1"><div class="para" id="extracted-webwork-48-1-4-1-1-1-1">We can think of each row as a 8-bit string of weight 4 (since of the 8 coins, we require 4 to be pennies).  Thus there are <span class="process-math">\({8 \choose 4} = {70}\)</span> rows possible.  Each row requires 8 coins, so if we want to make all the rows at the same time, we will need 560 coins, half of them nickels and half of them pennies.</div></li>
+<li id="extracted-webwork-48-1-4-1-1-2"><div class="para" id="extracted-webwork-48-1-4-1-1-2-1">Now there are <span class="process-math">\(2^{8} = 256\)</span> rows possible, which is also <span class="process-math">\({8 \choose 0} + {8\choose 1} + {8 \choose 2} +\dots   + {8 \choose 8}\text{,}\)</span> if you break them up into rows containing 0, 1, 2, etc. pennies.  Thus, since there are 8 coins in each row, we need <span class="process-math">\(8 \cdot 256 = {2048}\)</span> total coins.</div></li>
+</ol></div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-bitstrings-ormore"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div id="webwork-49" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="49" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_6.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-49')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-49-1-1-1">How many 10-bit strings contain 4 or more 1’s?</div>
+<div class="solutions"><details id="extracted-webwork-49-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-49-1-3-1">Count the number of strings with each permissible number of 1’s separately, then add them up.  So there are <span class="process-math">\({10 \choose 4} + {10 \choose 5} + \cdots {10 \choose 10} = {848}\)</span> strings.</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-subsets-ormore"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div id="webwork-50" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="50" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_7.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-50')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-50-1-1-1">How many subsets of <span class="process-math">\(\{0,1,\ldots, 9\}\)</span> have cardinality 5 or more?</div>
+<div class="solutions">
+<details id="extracted-webwork-50-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="extracted-webwork-50-1-2-1">Break the question into 6 cases.</div></div></details><details id="extracted-webwork-50-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-50-1-4-1">This is the same as a question about 5-bit strings, since we can think of each subset as a 5-bit string with a 1 representing that we include that element in the subset.  <span class="process-math">\({10 \choose 5} + {10\choose 6} + \cdots + {10\choose 10} = {638}\)</span> subsets.</div></div></details>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-coef-simple"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div id="webwork-51" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="51" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_8.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-51')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-51-1-1-1">What is the coefficient of <span class="process-math">\(x^{9}\)</span> in <span class="process-math">\((x+3)^{17}\text{?}\)</span>
+</div>
+<div class="solutions"><details id="extracted-webwork-51-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-51-1-3-1">To get an <span class="process-math">\(x^{9}\text{,}\)</span> we must pick 9 of the 17 factors to contribute an <span class="process-math">\(x\text{,}\)</span> leaving the other 8 to contribute a 3. There are <span class="process-math">\({17 \choose 9}\)</span> ways to select these 9 factors. So the term containing an <span class="process-math">\(x^{9}\)</span> will be <span class="process-math">\({17 \choose 9}x^{9}3^{8}\text{.}\)</span> In other words, the coefficient of <span class="process-math">\(x^{9}\)</span> is <span class="process-math">\({17\choose 9}3^8 = {1.59498\times 10^{8}}\text{.}\)</span>
+</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-coef-comb"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div id="webwork-52" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="52" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_9.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-52')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-52-1-1-1">What is the coefficient of <span class="process-math">\(x^{6}\)</span> in the expansion of <span class="process-math">\((x+2)^{18} + x^4(x+3)^{21}\text{?}\)</span>
+</div>
+<div class="solutions"><details id="extracted-webwork-52-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-52-1-3-1">To get an <span class="process-math">\(x^{6}\)</span> from the first term, we must pick 6 of the 18 factors to contribute an <span class="process-math">\(x\text{,}\)</span> leaving the other 12 to contribute a 2. There are <span class="process-math">\({18 \choose 6}\)</span> ways to select these 6 factors, so the coefficient will be <span class="process-math">\({18 \choose 6} *2^{12}\text{.}\)</span> Now we must choose 2 of the factors in the second term to contribute an <span class="process-math">\(x\text{,}\)</span> leaving the other 19 terms to contribute a 3.  This gives us <span class="process-math">\({21 \choose 2}*3^{19}\)</span> for the coefficient resulting from this term.  In total, the term containing an <span class="process-math">\(x^{6}\)</span> will be  <span class="process-math">\({18 \choose 6} *2^{12} + {21 \choose 2}*3^{19}= {2.44151\times 10^{11}}\text{.}\)</span>
+</div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-lattice-paths"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div id="webwork-53" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="53" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_10.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-53')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-53-1-1-1">
+<div class="para">How many shortest lattice paths start at <span class="process-math">\((5,5)\)</span> and</div>
+<ol class="lower-alpha" id="extracted-webwork-53-1-1-1-2">
+<li id="extracted-webwork-53-1-1-1-2-1"><div class="para" id="extracted-webwork-53-1-1-1-2-1-1">end at <span class="process-math">\((14,14)\text{?}\)</span>
+</div></li>
+<li id="extracted-webwork-53-1-1-1-2-2"><div class="para" id="extracted-webwork-53-1-1-1-2-2-1">end at <span class="process-math">\((14,14)\)</span> and pass through <span class="process-math">\((12,9)\text{?}\)</span>
+</div></li>
+<li id="extracted-webwork-53-1-1-1-2-3"><div class="para" id="extracted-webwork-53-1-1-1-2-3-1">end at <span class="process-math">\((14,14)\)</span> and avoid  <span class="process-math">\((12,9)\text{?}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-53-1-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="extracted-webwork-53-1-5-1"><ol class="lower-alpha" id="extracted-webwork-53-1-5-1-1">
+<li id="extracted-webwork-53-1-5-1-1-1"><div class="para" id="extracted-webwork-53-1-5-1-1-1-1">
+<span class="process-math">\({ 18\choose 9} = {48620}\)</span> paths.  The paths all have length 18 (9 steps up and 9 steps right), we just select which 9 of those 18 should be right.</div></li>
+<li id="extracted-webwork-53-1-5-1-1-2"><div class="para" id="extracted-webwork-53-1-5-1-1-2-1">
+<span class="process-math">\({11 \choose 7}{7\choose 2} = {6930}\)</span> paths.  First travel to <span class="process-math">\((12,9)\text{,}\)</span> and then continue on to <span class="process-math">\((14,14)\)</span>) .</div></li>
+<li id="extracted-webwork-53-1-5-1-1-3"><div class="para" id="extracted-webwork-53-1-5-1-1-3-1">
+<span class="process-math">\({ 18\choose 9} - {11 \choose 7}{7\choose 2} = {41690}\)</span> paths.  Remove all the paths that you found in part (b).</div></li>
+</ol></div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-gridtown"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div id="webwork-54" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="54" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_11.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-54')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-54-1-1-1">Gridtown USA, besides having excellent donut shops, is known for its precisely laid out grid of streets and avenues. Streets run east-west, and avenues north-south, for the entire stretch of the town, never curving and never interrupted by parks or schools or the like.</div> <div class="para logical" id="extracted-webwork-54-1-1-2">
+<div class="para">Suppose you live on the corner of 8th and 8th and work on the corner of 17th and 17th. Thus you must travel 18 blocks to get to work as quickly as possible.</div>
+<ol class="lower-alpha" id="extracted-webwork-54-1-1-2-1"><li id="extracted-webwork-54-1-1-2-1-1"><div class="para" id="extracted-webwork-54-1-1-2-1-1-1">How many different routes can you take to work, assuming you want to get there as quickly as possible?</div></li></ol>
+</div> <div class="para logical" id="extracted-webwork-54-1-1-3"><ol class="lower-alpha" id="extracted-webwork-54-1-1-3-1"><li id="extracted-webwork-54-1-1-3-1-1"><div class="para" id="extracted-webwork-54-1-1-3-1-1-1">Now suppose you want to stop and get a donut on the way to work, from your favorite donut shop on the corner of 14th ave and 13th st. How many routes to work, stopping at the donut shop, can you take (again, ensuring the shortest possible route)?</div></li></ol></div> <div class="para logical" id="extracted-webwork-54-1-1-4"><ol class="lower-alpha" id="extracted-webwork-54-1-1-4-1"><li id="extracted-webwork-54-1-1-4-1-1"><div class="para" id="extracted-webwork-54-1-1-4-1-1-1">Disaster Strikes Gridtown: there is a pothole on 9th ave between 11th st and 12th st. How many routes to work can you take avoiding that unsightly (and dangerous) stretch of road?</div></li></ol></div> <div class="para logical" id="extracted-webwork-54-1-1-5"><ol class="lower-alpha" id="extracted-webwork-54-1-1-5-1"><li id="extracted-webwork-54-1-1-5-1-1"><div class="para" id="extracted-webwork-54-1-1-5-1-1-1">The pothole has been repaired (phew) and a new donut shop has opened on the corner of 9th ave and 11th st. How many routes to work drive by one or the other (or both) donut shops? Hint: the donut shops serve PIE.</div></li></ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="ww-binom-pizza"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div id="webwork-55" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="55" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Contrib/DMOI/1-Counting/1_2-Binomial_Coefficients/1_2_12.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-55')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-55-1-1-1">
+<div class="para">Suppose you are ordering a calzone from <em class="emphasis">D.P. Dough</em>. You want 5 distinct toppings, chosen from their list of 8 vegetarian toppings.</div>
+<ol class="lower-alpha" id="extracted-webwork-55-1-1-1-2">
+<li id="extracted-webwork-55-1-1-1-2-1"><div class="para" id="extracted-webwork-55-1-1-1-2-1-1">How many choices do you have for your calzone?</div></li>
+<li id="extracted-webwork-55-1-1-1-2-2"><div class="para" id="extracted-webwork-55-1-1-1-2-2-1">How many choices do you have for your calzone if you refuse to have green pepper as one of your toppings?</div></li>
+<li id="extracted-webwork-55-1-1-1-2-3"><div class="para" id="extracted-webwork-55-1-1-1-2-3-1">How many choices do you have for your calzone if you <em class="emphasis">insist</em> on having green pepper as one of your toppings?</div></li>
+</ol>
+</div> <div class="para" id="extracted-webwork-55-1-1-2">How do the three questions above relate to each other? Do you see why this makes sense?</div>
+<div class="solutions"><details id="extracted-webwork-55-1-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="extracted-webwork-55-1-5-1"><ol class="lower-alpha" id="extracted-webwork-55-1-5-1-1">
+<li id="extracted-webwork-55-1-5-1-1-1"><div class="para" id="extracted-webwork-55-1-5-1-1-1-1">
+<span class="process-math">\({8 \choose 5} = {56}\)</span> choices, since you have to select a 5-element subset of the set of 8 toppings.</div></li>
+<li id="extracted-webwork-55-1-5-1-1-2"><div class="para" id="extracted-webwork-55-1-5-1-1-2-1">
+<span class="process-math">\({7 \choose 5} = {21}\)</span> choices, since you must select 5 of the 7 non-green pepper toppings.</div></li>
+<li id="extracted-webwork-55-1-5-1-1-3"><div class="para" id="extracted-webwork-55-1-5-1-1-3-1">
+<span class="process-math">\({7 \choose 4} = {35}\)</span> choices, since you must select 4 of the remaining 7 non-green pepper toppings to have in addition to the green pepper.</div></li>
+</ol></div> <div class="para" id="extracted-webwork-55-1-5-2">Note that <span class="process-math">\({56}  = {21} + {35}\)</span> choices, which makes sense because every 5-topping pizza either has green pepper or does not have green pepper as a topping.</div>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises_counting-binom-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="exercises_counting-binom-13-1-1">Explain why the coefficient of <span class="process-math">\(x^5y^3\)</span> the same as the coefficient of <span class="process-math">\(x^3y^5\)</span> in the expansion of <span class="process-math">\((x+y)^8\text{?}\)</span>
+</div></article></section></section></div>
+

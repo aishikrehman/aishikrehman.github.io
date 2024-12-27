@@ -1,0 +1,42 @@
+{{ define "head" }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}discrete-mathematics/style.css">
+<script type="text/javascript" src="{{ .Site.BaseURL }}discrete-mathematics/scripts.js"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+{{ end }}
+{{ define "main" }}
+
+<article id="article" class="container" itemscope itemtype="https://schema.org/Article">
+  {{/* Article MetaData */}}
+  <div id="articleGrid" class="row g-3 my-2">
+    {{/* Left Sidebar */}}
+    <div id="articleSidebar" class="col-lg-4">
+      <div class="position-sticky" style="top: 2rem;">
+        {{ partial "discrete-mathematics/sidebar.html" . }}
+      </div>
+    </div>
+
+    {{/* Article Body */}}
+    <div id="articleContent" class="col-lg-8">
+      {{/* articleSchema */}}
+      <div id="articleSchema">
+        {{/* <div id="articleBraedcrumb">{{ partial "meta.breadcrumb.html" . }}</div> */}}
+        <h3 id="articleUnit">অনুচ্ছেদ {{string  .Params.unit}}</h3>
+        <h2 id="articleTitle" class="border-bottom pb-2 fw-bold" itemprop="headline">{{ .Title }}</h2>
+        <div id="articleNavigation" class="my-3">{{ partial "discrete-mathematics/posts.navigation.html" . }}</div>
+        <hr>
+        {{ if in .TableOfContents "li" }}<details open>
+          <summary class=" fw-bold">
+            {{/*  <i class="bi bi-list-columns-reverse"></i>   */}}
+            Table of Contents</summary>
+          {{ .TableOfContents }}
+        </details>
+        <hr>{{ end }}
+      </div>
+      <div id="articleBody" class="mt-4" itemprop="articleBody">{{.Content}}</div>
+      {{/*  <div id="articleNavigation" class="mt-5">{{ partial "discrete-mathematics/posts.navigation.html" . }}</div>  */}}
+    </div>
+  </div>
+</article>
+{{ end }}

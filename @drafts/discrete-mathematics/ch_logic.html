@@ -1,0 +1,39 @@
+---
+title:
+---
+<div id="ptx-content" class="ptx-content"><section class="chapter" id="ch_logic"><h2 class="heading">
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">3</span><span class="space"> </span><span class="title">Symbolic Logic and Proofs</span>
+</h2>
+<section class="introduction" id="ch_logic-2"><div class="para" id="ch_logic-2-1">Logic is the study of consequence. Given a few mathematical statements or facts, we would like to be able to draw some conclusions. For example, if I told you that a particular real-valued function was continuous on the interval <span class="process-math">\([0,1]\text{,}\)</span> and <span class="process-math">\(f(0) = -1\)</span> and <span class="process-math">\(f(1) = 5\text{,}\)</span> can we conclude that there is some point between <span class="process-math">\([0,1]\)</span> where the graph of the function crosses the <span class="process-math">\(x\)</span>-axis? Yes, we can, thanks to the Intermediate Value Theorem from Calculus. Can we conclude that there is exactly one point? No. Whenever we find an “answer” in math, we really have a (perhaps hidden) argument. Mathematics is really about proving general statements (like the Intermediate Value Theorem), and this too is done via an argument, usually called a proof. We start with some given conditions, the <em class="emphasis">premises</em> of our argument, and from these we find a consequence of interest, our <em class="emphasis">conclusion</em>.</div> <div class="para" id="ch_logic-2-2">The problem is, as you no doubt know from arguing with friends, not all arguments are <em class="emphasis">good</em> arguments. A “bad” argument is one in which the conclusion does not follow from the premises, i.e., the conclusion is not a consequence of the premises. Logic is the study of what makes an argument good or bad. In other words, logic aims to determine in which cases a conclusion is, or is not, a consequence of a set of premises.</div> <div class="para" id="ch_logic-2-3">By the way, “argument” is actually a technical term in math (and philosophy, another discipline which studies logic):</div> <article class="assemblage assemblage-like" id="ch_logic-2-4"><h2 class="heading"><span class="title">Arguments.</span></h2>
+<div class="para" id="ch_logic-2-4-2">An <dfn class="terminology">argument</dfn>  is a set of statements, one of which is called the <dfn class="terminology">conclusion</dfn>  and the rest of which are called <dfn class="terminology">premises</dfn>.  An argument is said to be <dfn class="terminology">valid</dfn>  if the conclusion must be true whenever the premises are all true. An argument is <dfn class="terminology">invalid</dfn> if it is not valid; it is possible for all the premises to be true and the conclusion to be false.</div></article> <div class="para" id="ch_logic-2-5">For example, consider the following two arguments:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width top" style="width:100%;"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">If Edith eats her vegetables, then she can have a cookie.</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">Edith eats her vegetables.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\therefore\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Edith gets a cookie.</td>
+</tr>
+</table></div></div></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width top" style="width:100%;"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Florence must eat her vegetables in order to get a cookie.</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">Florence eats her vegetables.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\therefore\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Florence gets a cookie.</td>
+</tr>
+</table></div></div></div> <div class="para" id="ch_logic-2-8">(The symbol “<span class="process-math">\(\therefore\)</span>”  means “therefore”)</div> <div class="para" id="ch_logic-2-9">Are these arguments valid? Hopefully you agree that the first one is but the second one is not. Logic tells us why by analyzing the structure of the statements in the argument. Notice the two arguments above look almost identical. Edith and Florence both eat their vegetables. In both cases there is a connection between the eating of vegetables and cookies. But we claim that it is valid to conclude that Edith gets a cookie, but not that Florence does. The difference must be in the connection between eating vegetables and getting cookies. We need to be skilled at reading and comprehending these sentences. Do the two sentences mean the same thing? Unfortunately, in everyday language we are often sloppy, and you might be tempted to say they are equivalent. But notice that just because Florence <em class="emphasis">must</em> eat her vegetables, we have not said that doing so would be <em class="emphasis">enough</em> (she might also need to clean her room, for example). In everyday (non-mathematical) practice, you might be tempted to say this “other direction” is implied. In mathematics, we never get that luxury.</div> <div class="para" id="ch_logic-2-10">Before proceeding, it might be a good idea to quickly review <a href="sec_intro-statements.html" class="internal" title="Section 0.2: Mathematical Statements">Section 0.2</a> where we first encountered statements and the various forms they can take. The goal now is to see what mathematical tools we can develop to better analyze these, and then to see how this helps read and write proofs.</div></section><nav class="summary-links"><ul>
+<li><a href="sec_propositional.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Propositional Logic</span></a></li>
+<li><a href="sec_logic-proofs.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Proofs</span></a></li>
+<li><a href="sec_logic-conc.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Chapter Summary</span></a></li>
+</ul></nav></section></div>
+

@@ -4,7 +4,7 @@
     <ul class="list-unstyled">
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
       <li class="border-top d-flex justify-content-between py-1">
-        <a href="/tags/{{ $name | urlize }}">{{ partial "fn.title.html" $name }}</a> ({{ .Count }})
+        <a href="{{ absLangURL "/tags/" }}{{ $name | urlize }}">{{ partial "fn.title.html" $name }}</a> ({{ .Count }})
       </li>
       {{ end }}
     </ul>
