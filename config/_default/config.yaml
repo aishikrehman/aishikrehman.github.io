@@ -7,7 +7,7 @@ theme: "tasmin"
 # enableGitInfo: true
 # googleAnalytics: "G-3NFDT41J8E"
 
-pagerSize: 5
+paginate: 5
 
 languages:
   bn:

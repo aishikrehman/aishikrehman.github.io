@@ -2,7 +2,7 @@
 <div id="termsSchema" class="bg-primary py-5">
   <div class="container d-lg-flex justify-content-between  py-2 py-lg-4">
     <div id="breadcrumb" class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
-      {{ partial "metabreadcrumb" . }}
+      {{ partial "meta.breadcrumb" . }}
     </div>
     <h1 class="h3 mb-0 text-light">{{ .Title }}</h1>
   </div>
@@ -14,7 +14,7 @@
       <div id="termsSidebar" class="col-md-4">
         <div class="position-sticky" style="top: 2rem;">
           {{/* Recent Posts */}}
-          {{ partial "widgetrecentPosts.html" . }}
+          {{ partial "widget.recentPosts.html" . }}
         </div>
       </div>
       <div class="col-md-1"></div>

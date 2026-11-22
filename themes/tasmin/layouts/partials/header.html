@@ -25,7 +25,7 @@
                 </div>
                 {{ end }}
                 {{/* Languages -- Only for Multiligual Site*/}}
-                {{ if hugo.IsMultilingual }}
+                {{ if .Site.IsMultiLingual }}
                 <div class="dropdown border-right" id="langSwitcher">
                     <button type="button" class="btn nav-link px-2" data-bs-toggle="dropdown" aria-expanded="false"
                         data-bs-display="static">
@@ -78,10 +78,10 @@
         </div>
     </nav>
     {{/* Secondary Navbar */}}
-    {{ partial "menulocal.html" . }}
+    {{ partial "menu.local.html" . }}
     {{/* Global Menus */}}
     {{ if .Site.Params.activateGlobalMenu }}
-    {{ partial "menuglobal.html" . }}
+    {{ partial "menu.global.html" . }}
     {{ end }}
     <div class="border-bottom"></div>
 </header>

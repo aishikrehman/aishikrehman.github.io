@@ -6,7 +6,7 @@
     <div class="page-title-overlap bg-primary py-5">
       <div class="container py-2 py-lg-4">
         <div class="block-center">
-          {{ partial "metabreadcrumb.html" . }}
+          {{ partial "meta.breadcrumb.html" . }}
           <h3 class="text-light pt-1">{{ .Title }}</h3>
         </div>
       </div>
@@ -32,7 +32,7 @@
               <p class="mb-5 text-justify">{{.Site.Params.description }}</p>
             </div>
             <div>
-              {{ partial "linkssocial.html" . }}
+              {{ partial "links.social.html" . }}
             </div>
           </div>
         </div>
