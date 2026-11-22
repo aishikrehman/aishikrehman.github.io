@@ -2,7 +2,7 @@
 <article id="article" class="container" itemscope itemtype="https://schema.org/Article">
   {{/* Article MetaData */}}
   <div id="articleSchema" class="mt-5">
-    <div id="articleBraedcrumb">{{ partial "meta.breadcrumb.html" . }}</div>
+    <div id="articleBraedcrumb">{{ partial "metabreadcrumb.html" . }}</div>
     <h3 id="articleTitle" itemprop="headline">{{ .Title }}</h3>
     <div id="articleAuthor" itemprop="author" itemscope itemtype="https://schema.org/Person">
       <i class="bi bi-person-fill-check pe-1"></i>
@@ -43,10 +43,10 @@
     <div id="articleSidebar" class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         {{/* relatedPosts */}}
-        {{ partial "widget.relatedPosts.html" . }}
+        {{ partial "widgetrelatedPosts.html" . }}
         {{/* recentPosts */}}
         <span class="d-block py-2"></span>
-        {{ partial "widget.recentPosts.html" . }}
+        {{ partial "widgetrecentPosts.html" . }}
         {{/* <div id="articleArchive">
           <h4>সংগ্রহশালা</h4>
           <ol class="list-unstyled">
@@ -66,7 +66,7 @@
         </div> */}}
         <span class="d-block py-2"></span>
         {{/*  All Tags  */}}
-        {{ partial "widget.allTags.html" . }}
+        {{ partial "widgetallTags.html" . }}
       </div>
     </div>
   </div>

@@ -4,16 +4,16 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "itemListElement": [
-        {{ if not (eq (len $.Data.Terms) 0) }}
-        {{ range $index, $page := .Data.Terms.Alphabetical }}
-        {{- if $index -}},{{- end -}}
-        {
-          "@type": "ListItem",
-          "position": {{ add $index 1 }},
-          "url": "{{absLangURL .Page.Title}}/"
-        }
-        {{ end}}
-        {{ end }}
+        {{- with $.Data.Terms -}}
+          {{- range $index, $term := .Alphabetical -}}
+            {{- if $index -}},{{- end -}}
+            {
+              "@type": "ListItem",
+              "position": {{ add $index 1 }},
+              "url": "{{ absLangURL ($term.Page.Title | urlize) }}/"
+            }
+          {{- end -}}
+        {{- end -}}
       ]
     }
 </script>
@@ -23,19 +23,21 @@
     <div class="row my-5">
         <div class="col-lg-4 col-md-6">
           <div class="section-title pt-4">
-            <p class="text-primary text-uppercase fw-bold mb-3">{{ partial "meta.breadcrumb.html" . }}</p>
+            <p class="text-primary text-uppercase fw-bold mb-3">{{ partial "metabreadcrumb.html" . }}</p>
             <h1>{{ partial "fn.title.html" .Title }}</h1>
             {{ with .Params.description }}<p>{{.}}</p> {{ end }}
           </div>
         </div>
-        {{ range .Data.Terms.Alphabetical }}
-        <div class="col-lg-4 col-md-6 service-item">
-            <a class="text-black" href="{{ .Page.Title | urlize }}">
-              <div class="block"> <span class="colored-box text-center h3 mb-4">{{ .Count }}</span>
-                <h3 class="mb-3 service-title">{{ partial "fn.title.html" .Page.Title }}</h3>
-              </div>
-            </a>
-          </div>
+        {{ with .Data.Terms }}
+          {{ range .Alphabetical }}
+          <div class="col-lg-4 col-md-6 service-item">
+              <a class="text-black" href="{{ .Page.Title | urlize }}">
+                <div class="block"> <span class="colored-box text-center h3 mb-4">{{ .Count }}</span>
+                  <h3 class="mb-3 service-title">{{ partial "fn.title.html" .Page.Title }}</h3>
+                </div>
+              </a>
+            </div>
+          {{ end }}
         {{ end }}
       </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Language.LanguageCode }}" {{ with .Site.Params.defaultColorMode }}data-bs-theme="{{.}}" {{ end }}>
 <head>
-    {{ partial "meta.data.html" . }}
+    {{ partial "metadata.html" . }}
     {{ partial "head.html" . }}
     {{ block "head" . }}{{ end }}
     {{ block "style" . }}{{ end -}}
